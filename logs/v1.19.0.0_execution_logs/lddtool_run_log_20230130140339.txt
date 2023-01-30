@@ -1,0 +1,43 @@
+
+>>  INFO LDDTOOL Version: 14.1.2
+>>  INFO IM Version Id: 1.19.0.0
+>>  INFO IM Namespace Id: pds
+>>  INFO IM Label Version Id: 1.25
+>>  INFO Date: Mon Jan 30 14:03:39 UTC 2023
+>>  INFO PARENT_DIR: /tmp/lddtool-14.1.2
+>>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.2/bin
+>>  INFO LIB_DIR: /tmp/lddtool-14.1.2/lib
+
+>>> INFO Init:  - Config.Properties Namespace Id Found:nh
+>>> INFO Init:  - Config.Properties Namespace Id Using:nh
+>>> INFO Init:  - LDD Dictionary_Type is Mission
+>>> INFO Attribute: <gain> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <left_side_median_bias> - The default minimum value provided by the attribute's data type is being overridden with -1.0
+>>> INFO Attribute: <physical_pixel_size> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <pivot_wavelength> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <right_side_median_bias> - The default minimum value provided by the attribute's data type is being overridden with -1.0
+>>> INFO Attribute: <tdi_median_bias_level> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <tdi_rate> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+
+ -- LDDTool Execution Summary --
+     0 warning(s)
+     0 error(s)
+     0 fatal error(s)
+
+Input:
+
+     - IM Version: 1J00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): /home/runner/work/ldd-nh/ldd-nh/src/PDS4_NH_IngestLDD.xml
+
+Output:
+
+     - ./PDS4_NH_1J00_1000.xsd
+     - ./PDS4_NH_1J00_1000.sch
+     - ./PDS4_NH_1J00_1000.xml
+     - ./PDS4_NH_1J00_1000.JSON
+
+>>  INFO Exit(0)

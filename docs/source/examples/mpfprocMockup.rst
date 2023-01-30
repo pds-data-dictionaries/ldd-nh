@@ -1,0 +1,903 @@
+#######################################################################
+Mockup Label: MVIC Panchromatic Framing Array, Processed Data
+#######################################################################
+
+This label is a mockup created for design purposes during the migration
+planning for the MVIC data. The test data file contained a single framing
+camera observation sequence from the MVIC Framing Array (identified as "mpf"
+in file names). This particular sequence resulted in 11 individual 
+frames.
+
+The mockup shows the entire *<Product_Observationsl>*
+structure, including the New Horizons dictionary classes, which are 
+found in the *<Mission_Area>* of the structure.
+
+  **Note** that the versions of both the New Horizons (nh:) and Small Bodies (sb:)
+  shown here are pre-release. Consult the current release documentation for changes
+  to these namespaces-in-development before attempting and real-would applications.
+
+.. code-block:: XML
+
+  <Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:disp="http://pds.nasa.gov/pds4/disp/v1" 
+    xmlns:geom="http://pds.nasa.gov/pds4/geom/v1" 
+    xmlns:img="http://pds.nasa.gov/pds4/img/v1" 
+    xmlns:sb="http://pds.nasa.gov/pds4/sb/v0" 
+    xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1" 
+    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd
+    http://pds.nasa.gov/pds4/disp/v1 https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1J00_1510.xsd
+    http://pds.nasa.gov/pds4/geom/v1 https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1J00_1970.xsd
+    http://pds.nasa.gov/pds4/img/v1  https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1J00_1870.xsd
+    http://pds.nasa.gov/pds4/sb/v0   https://pds.nasa.gov/pds4/sb/v0/PDS4_SB_1J00_0100.xsd
+    http://pds.nasa.gov/pds4/mission/nh/v1 https://pds.nasa.gov/pds4/mission/nh/v1/PDS4_NH_1J00_1000.xsd">
+    
+    <Identification_Area>
+        <logical_identifier>urn:nasa:pds:nh_mvic:kem1_cal:mpf_0408630768_0x539_sci</logical_identifier>
+        <version_id>1.0</version_id>
+        <title>New Horizons MVIC Panchromatic Framing Observation :mpf_0408630768_0x539_sci (Processed Data)</title>
+        <information_model_version>1.19.0.0</information_model_version>
+        <product_class>Product_Observational</product_class>
+
+        <Modification_History>
+            <Modification_Detail>
+                <modification_date>2023-01-02</modification_date>
+                <version_id>1.0</version_id>
+                <description>
+                    A.C.Raugh: Migrated from PDS3 product NH-A-MVIC-3-KEM1-V5.0:MPF_0408630768_0X539_SCI
+                </description>
+            </Modification_Detail>
+        </Modification_History>
+    </Identification_Area>
+
+    <Observation_Area>
+        <Time_Coordinates>
+            <start_date_time>2019-01-01T06:40:52.440Z</start_date_time>
+            <stop_date_time>2019-01-01T06:43:13.970Z</stop_date_time>
+        </Time_Coordinates>
+
+        <Primary_Result_Summary>
+            <purpose>Science</purpose>
+            <processing_level>Partially Processed</processing_level>
+            <Science_Facets>
+                <wavelength_range>Visible</wavelength_range>
+                <wavelength_range>Near Infrared</wavelength_range>
+                <discipline_name>Imaging</discipline_name>
+            </Science_Facets>
+        </Primary_Result_Summary>
+
+        <Investigation_Area>
+            <name>New Horizons Kuiper Belt Extended Mission 1</name>
+            <type>Mission</type>
+            <Internal_Reference>
+                <lid_reference>urn:nasa:pds:context:investigation:mission.new_horizons_kem1</lid_reference>
+                <reference_type>data_to_investigation</reference_type>
+            </Internal_Reference>
+        </Investigation_Area>
+
+        <Observing_System>
+            <Observing_System_Component>
+                <name>New Horizons Spacecraft</name>
+                <type>Host</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.nh</lid_reference>
+                    <reference_type>is_instrument_host</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <!-- There is no Instrument Package in PDS4 as yet.
+            <Observing_System_Component>
+                <name>RALPH</name>
+                <type>Instrument Package</type> 
+                <description>
+                    RALPH is an instrument package supporting two independent instrument,
+                    the Multispectral Visible Imaging Camera (MVIC) and the Linear Etalon
+                    Imaging Spectral Array (LEISA), that share a boresight, a focal plane, 
+                    and electronics. Detectors and pipeline processing are unique to each
+                    instrument.
+                </description>
+            </Observing_System_Component>
+            -->            
+            <Observing_System_Component>
+                <name>Multispectral Visible Imaging Camera (MVIC)</name>
+                <type>Instrument</type>
+                <description>
+                    Note that the MVIC instrument has seven distinct detectors, identified by
+                    the "nh:Detector" class metadata.
+                </description>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:nh.mvic</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+        </Observing_System>
+
+        <Target_Identification>
+            <name>(486958) Arrokoth</name>
+            <alternate_designation>2014 MU69</alternate_designation>
+            <type>Trans-Neptunian Object</type>
+            <Internal_Reference>
+                <lid_reference>urn:nasa:pds:context:target:trans-neptunian_object.486958_2014_mu69</lid_reference>
+                <reference_type>data_to_target</reference_type>
+            </Internal_Reference>
+        </Target_Identification>
+
+        <Mission_Area>
+            <nh:Mission_Parameters>
+                <nh:mission_phase_name>KEM1 Encounter</nh:mission_phase_name>
+                <nh:Observation_Parameters>
+                    <nh:telemetry_apid>0x539</nh:telemetry_apid>
+                    <nh:sequence_id>KEMV_MU69_DPDEEP_RIDE_MF_2019001A1</nh:sequence_id>
+                    <nh:observation_description>Departure MVIC Deep Ring Search Rider</nh:observation_description>
+                    <nh:Mission_Elapsed_Time>
+                        <nh:clock_partition>3</nh:clock_partition>
+                        <nh:start_clock_count>0408630770:14600</nh:start_clock_count>
+                        <nh:stop_clock_count>0408630911:41100</nh:stop_clock_count>
+                    </nh:Mission_Elapsed_Time>
+                    <nh:Detector>
+                        <nh:detector_name>MVIC Panchromatic Framing (FRAME) Array</nh:detector_name>
+                        <nh:detector_type>CCD</nh:detector_type>
+                        <nh:MVIC_Details>
+                            <nh:scan_type>FRAMING - Framing Mode</nh:scan_type>
+                        </nh:MVIC_Details>
+                    </nh:Detector>
+                </nh:Observation_Parameters>
+                <nh:MVIC_Calibration_Information>
+                    <nh:physical_pixel_size unit="micrometer">13.0000</nh:physical_pixel_size>
+                    <nh:read_noise>30.000</nh:read_noise>
+                    <nh:gain unit="electron/DN">58.6000</nh:gain>
+                    <nh:Framing_Biases>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>0</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">24.0</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">26.0</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>1</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">26.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>2</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">26.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>3</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">26.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>4</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">23.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>5</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">24.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>6</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">24.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>7</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">23.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>8</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">23.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>9</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">23.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>10</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">-1.00000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">-1.00000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                    </nh:Framing_Biases>
+                </nh:MVIC_Calibration_Information>
+                
+                <nh:MVIC_Conversion_Constants>
+                    <nh:pivot_wavelength unit="micrometer">0.692</nh:pivot_wavelength>
+                    <nh:Resolved_Source>
+                        <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom/sr)</nh:units_of_conversion_constants>
+                        <nh:solar_constant>98313.172</nh:solar_constant>
+                        <nh:jupiter_constant>84425.375</nh:jupiter_constant>
+                        <nh:pholus_constant>97097.703</nh:pholus_constant>
+                        <nh:pluto_constant>94817.766</nh:pluto_constant>
+                        <nh:charon_constant>97732.594</nh:charon_constant>
+                    </nh:Resolved_Source>
+                    <nh:Unresolved_Source>
+                        <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom)</nh:units_of_conversion_constants>
+                        <nh:solar_constant>2.506E+14</nh:solar_constant>
+                        <nh:jupiter_constant>2.152E+14</nh:jupiter_constant>
+                        <nh:pholus_constant>2.475E+14</nh:pholus_constant>
+                        <nh:pluto_constant>2.417E+14</nh:pluto_constant>
+                        <nh:charon_constant>2.491E+14</nh:charon_constant>
+                    </nh:Unresolved_Source>
+                </nh:MVIC_Conversion_Constants>
+            </nh:Mission_Parameters>
+        </Mission_Area>
+
+        <Discipline_Area>
+            <disp:Display_Settings>
+                <Local_Internal_Reference>
+                    <local_identifier_reference>Image</local_identifier_reference>
+                    <local_reference_type>display_settings_to_array</local_reference_type>
+                </Local_Internal_Reference>
+                <disp:Display_Direction>
+                    <disp:horizontal_display_axis>Sample</disp:horizontal_display_axis>
+                    <disp:horizontal_display_direction>Left to Right</disp:horizontal_display_direction>
+                    <disp:vertical_display_axis>Line</disp:vertical_display_axis>
+                    <disp:vertical_display_direction>Bottom to Top</disp:vertical_display_direction>
+                </disp:Display_Direction>
+            </disp:Display_Settings>
+
+            <img:Exposure>
+                <img:exposure_duration unit="s">10</img:exposure_duration>
+            </img:Exposure>
+            <img:Onboard_Compression>
+                <img:onboard_compression_class>Lossless</img:onboard_compression_class>
+            </img:Onboard_Compression>
+            
+            <geom:Geometry>
+                
+                <geom:comment>
+                    Note that the geometry parameters in this label were calculated by the
+                    mission using an unpublished kernel set still in development at the time 
+                    of archiving. These parameters are based on "predict geometry", which is
+                    generally not as accurate as metadata available at a later date.
+                </geom:comment>
+
+                <geom:Image_Display_Geometry>
+                    <geom:comment>
+                        The pointing in this class is calculated at the midpoint of the observing sequence and
+                        does not necessarily correspond to any single frame. Per-frame pointing is contained
+                        in the sb:Additional_Geometry_Metadata class.
+                    </geom:comment>
+                    <geom:geometry_reference_time_utc>2019-01-01T06:42:03.205Z</geom:geometry_reference_time_utc>
+                    <Local_Internal_Reference>
+                        <local_identifier_reference>Image</local_identifier_reference>
+                        <local_reference_type>display_to_data_object</local_reference_type>
+                    </Local_Internal_Reference>
+                    <geom:Geometry_Target_Identification>
+                        <geom:body_spice_name>2486958</geom:body_spice_name>
+                        <geom:name>(486958) Arrokoth</geom:name>
+                    </geom:Geometry_Target_Identification>
+                    <geom:Object_Orientation_RA_Dec>
+                        <geom:reference_pixel_location>Center</geom:reference_pixel_location>
+                        <geom:right_ascension_angle unit="deg">276.8</geom:right_ascension_angle>
+                        <geom:declination_angle unit="deg">-33.8</geom:declination_angle>
+                        <geom:celestial_north_clock_angle unit="deg">351.57838</geom:celestial_north_clock_angle>
+                        <geom:Reference_Frame_Identification>
+                            <geom:name>EME J2000</geom:name>
+                        </geom:Reference_Frame_Identification>
+                    </geom:Object_Orientation_RA_Dec>
+                    <geom:Object_Orientation_Clock_Angles>
+                        <geom:target_positive_pole_clock_angle unit="deg">264.7</geom:target_positive_pole_clock_angle>
+                        <geom:sun_direction_clock_angle unit="deg">133.8</geom:sun_direction_clock_angle>
+                    </geom:Object_Orientation_Clock_Angles>
+                    <geom:Quaternion_Plus_To_From>
+                        <geom:qcos>0.3391999442067836</geom:qcos>
+                        <geom:qsin1>0.5793975569923115</geom:qsin1>
+                        <geom:qsin2>0.3215769780838686</geom:qsin2>
+                        <geom:qsin3>0.6677051115334547</geom:qsin3>
+                        <geom:Rotate_From>
+                            <geom:name>MVIC Instrument Frame</geom:name>
+                        </geom:Rotate_From>
+                        <geom:Rotate_To>
+                            <geom:name>EME J2000</geom:name>
+                        </geom:Rotate_To>
+                    </geom:Quaternion_Plus_To_From>
+                </geom:Image_Display_Geometry>
+
+                <geom:Geometry_Orbiter>
+                    <geom:geometry_reference_time_utc>2019-01-01T05:13:44.714Z</geom:geometry_reference_time_utc>
+                    <geom:Orbiter_Identification>
+                        <geom:Geometry_Target_Identification>
+                            <geom:body_spice_name>2486958</geom:body_spice_name>
+                            <geom:name>(486958) Arrokoth</geom:name>
+                        </geom:Geometry_Target_Identification>
+                    </geom:Orbiter_Identification>
+                    <geom:Pixel_Dimensions>
+                        <geom:pixel_field_of_view_method>Constant</geom:pixel_field_of_view_method>
+                        <geom:horizontal_pixel_field_of_view unit="mrad">.0198065</geom:horizontal_pixel_field_of_view>
+                        <geom:vertical_pixel_field_of_view unit="mrad">.0198065</geom:vertical_pixel_field_of_view>
+                    </geom:Pixel_Dimensions>
+                    <geom:Distances>
+                        <geom:Distances_Specific>
+                            <geom:spacecraft_geocentric_distance unit="km">6620524663.557333</geom:spacecraft_geocentric_distance>
+                            <geom:spacecraft_heliocentric_distance unit="km">6474349486.445694</geom:spacecraft_heliocentric_distance>
+                            <geom:spacecraft_target_center_distance unit="km">17364.42363680587</geom:spacecraft_target_center_distance>
+                            <geom:target_geocentric_distance unit="km">6620676566.778128</geom:target_geocentric_distance>
+                            <geom:target_heliocentric_distance unit="km">6474366229.430338</geom:target_heliocentric_distance>
+                        </geom:Distances_Specific>
+                    </geom:Distances>
+                    <geom:Surface_Geometry>
+                        <geom:Surface_Geometry_Specific>
+                            <geom:subsolar_latitude unit="deg">-61.85812998743076</geom:subsolar_latitude>
+                            <geom:subsolar_longitude unit="deg">87.24761404769193</geom:subsolar_longitude>
+                            <geom:subspacecraft_latitude unit="deg">-53.47274657874268</geom:subspacecraft_latitude>
+                            <geom:subspacecraft_longitude unit="deg">111.6557853166782</geom:subspacecraft_longitude>
+                        </geom:Surface_Geometry_Specific>
+                    </geom:Surface_Geometry>
+                    <geom:Illumination_Geometry>
+                        <geom:Illumination_Specific>
+                            <geom:reference_location>Boresight Intercept Point</geom:reference_location>
+                            <geom:phase_angle unit="deg">15.4</geom:phase_angle>
+                            <geom:solar_elongation unit="deg">164.6</geom:solar_elongation>
+                        </geom:Illumination_Specific>
+                    </geom:Illumination_Geometry>
+                    <geom:Vectors>
+                        <geom:Vectors_Cartesian_Specific>
+                            <geom:Vector_Cartesian_Position_Spacecraft_To_Target>
+                                <geom:x_position unit="km">1656.2122</geom:x_position>
+                                <geom:y_position unit="km">-14549.6368</geom:y_position>
+                                <geom:z_position unit="km">-9332.1077</geom:z_position>
+                                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Position_Spacecraft_To_Target>
+                            <geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target>
+                                <geom:x_velocity unit="km/s">1.113444</geom:x_velocity>
+                                <geom:y_velocity unit="km/s">-13.442996</geom:y_velocity>
+                                <geom:z_velocity unit="km/s">-5.139864</geom:z_velocity>
+                                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target>
+                            <geom:Vector_Cartesian_Position_Sun_To_Target>
+                                <geom:x_position unit="km">1801863012.047373</geom:x_position>
+                                <geom:y_position unit="km">-5789632811.265433</geom:y_position>
+                                <geom:z_position unit="km">-2269550543.460596</geom:z_position>
+                                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Position_Sun_To_Target>
+                            <geom:Vector_Cartesian_Velocity_Target_Relative_To_Sun>
+                                <geom:x_velocity unit="km/s">4.370272</geom:x_velocity>
+                                <geom:y_velocity unit="km/s">1.336516</geom:y_velocity>
+                                <geom:z_velocity unit="km/s">0.445148</geom:z_velocity>
+                                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Velocity_Target_Relative_To_Sun>
+                            <geom:Vector_Cartesian_Position_Earth_To_Target>
+                                <geom:x_position unit="km">1828821837.219335</geom:x_position>
+                                <geom:y_position unit="km">-5922292146.245399</geom:y_position>
+                                <geom:z_position unit="km">-2327063519.570272</geom:z_position>
+                                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Position_Earth_To_Target>
+                            <geom:Vector_Cartesian_Velocity_Target_Relative_To_Earth>
+                                <geom:x_velocity unit="km/s">34.156224</geom:x_velocity>
+                                <geom:y_velocity unit="km/s">6.405462</geom:y_velocity>
+                                <geom:z_velocity unit="km/s">2.642036</geom:z_velocity>
+                                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Velocity_Target_Relative_To_Earth>
+                            <geom:Vector_Cartesian_Position_Sun_To_Spacecraft>
+                                <geom:x_position unit="km">1801956296.599184</geom:x_position>
+                                <geom:y_position unit="km">-5789592074.710976</geom:y_position>
+                                <geom:z_position unit="km">-2269532636.079516</geom:z_position>
+                                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Position_Sun_To_Spacecraft>
+                            <geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun>
+                                <geom:x_velocity unit="km/s">5.483717</geom:x_velocity>
+                                <geom:y_velocity unit="km/s">-12.1064806</geom:y_velocity>
+                                <geom:z_velocity unit="km/s">-4.694715</geom:z_velocity>
+                                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun>
+                            <geom:Vector_Cartesian_Position_Earth_To_Spacecraft>
+                                <geom:x_position unit="km">1827405810.34603</geom:x_position>
+                                <geom:y_position unit="km">-5922522508.111715</geom:y_position>
+                                <geom:z_position unit="km">-2327157486.28979</geom:z_position>
+                                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Position_Earth_To_Spacecraft>
+                            <geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth>
+                                <geom:x_velocity unit="km/s">35.316729</geom:x_velocity>
+                                <geom:y_velocity unit="km/s">-7.283111</geom:y_velocity>
+                                <geom:z_velocity unit="km/s">-2.604148</geom:z_velocity>
+                                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth>
+                        </geom:Vectors_Cartesian_Specific>
+                    </geom:Vectors>
+                </geom:Geometry_Orbiter>
+            </geom:Geometry>
+            
+            <sb:SB_Metadata>
+                <sb:Observation_Parameters>
+                    <sb:Exposure>
+                        <sb:exposure_duration unit="s">10.0</sb:exposure_duration>
+                        <sb:exposure_description>
+                            The exposure time is the same for each sequential frame in this observation
+                        </sb:exposure_description>
+                    </sb:Exposure>
+                    <sb:Filter>
+                        <sb:filter_name>Clear</sb:filter_name>
+                        <sb:filter_type>Neutral</sb:filter_type>
+                        <sb:short_wavelength_limit unit="nm">400</sb:short_wavelength_limit>
+                        <sb:long_wavelength_limit unit="nm">975</sb:long_wavelength_limit>
+                    </sb:Filter>
+                    <sb:Timing>
+                        <sb:midobservation_time_UTC_YMD>2019-01-01T05:13:44.714Z</sb:midobservation_time_UTC_YMD>
+                        <sb:midobservation_time_UTC_JD unit="julian day">2458484.7792038</sb:midobservation_time_UTC_JD>
+                        <sb:comment>
+                            This midobservation time is the midpoint of the observing sequence, and corresponds
+                            to the time for which the overall observational geometry is calculated.
+                        </sb:comment>
+                    </sb:Timing>
+                </sb:Observation_Parameters>
+                
+                <sb:Calibration_Information>
+                    <sb:Raw_Data_Product>
+                        <Internal_Reference>
+                            <lidvid_reference>urn:nasa:pds:nh_mvic:kem1_cal:mpf_0408630768_0x539_enf::1.0</lidvid_reference>
+                            <reference_type>processed_data_to_raw_data</reference_type>
+                        </Internal_Reference>
+                    </sb:Raw_Data_Product>
+                    <sb:Calibration_Applied>
+                        <sb:comment>
+                            The conversion to physical units depends on the spectral characteristics of the 
+                            object and whether it is resolved. Conversion constants are provided as part of
+                            the mission attributes in this label.
+                        </sb:comment>
+                        <sb:bias_subtraction>true</sb:bias_subtraction>
+                        <sb:flat_field_applied>true</sb:flat_field_applied>
+                        <sb:conversion_to_physical_units>false</sb:conversion_to_physical_units>
+                    </sb:Calibration_Applied>
+
+                    <sb:Calibration_Reference_Files>
+                        <sb:Flat_Field>
+                            <sb:file_name>mfr_flat_20070130.fits</sb:file_name>
+                            <Internal_Reference>
+                                <lidvid_reference>urn:nasa:pds:nh_mvic:calibration_files:mfr_flat::2.0</lidvid_reference>
+                                <reference_type>image_to_flat_field_file</reference_type>
+                            </Internal_Reference>
+                        </sb:Flat_Field>
+                    </sb:Calibration_Reference_Files>
+                </sb:Calibration_Information>
+                
+                <sb:Additional_Image_Metadata>
+                    <Local_Internal_Reference>
+                        <local_identifier_reference>Image</local_identifier_reference>
+                        <local_reference_type>image_to_additional_metadata</local_reference_type>
+                    </Local_Internal_Reference>
+
+                    <sb:image_observation_type>Frame Sequence</sb:image_observation_type>
+                    
+                    <sb:Ancillary_Data_Objects>
+                        <sb:Quality_Map>
+                            <Local_Internal_Reference>
+                                <local_identifier_reference>Quality</local_identifier_reference>
+                                <local_reference_type>image_to_quality_map</local_reference_type>
+                            </Local_Internal_Reference>
+                            <sb:Quality_Map_Definition>
+                                <sb:flags_are_bit_flags>true</sb:flags_are_bit_flags>
+                                <sb:best_quality_value>0</sb:best_quality_value>
+                                <sb:Quality_Flag_Definition>
+                                    <sb:flag_value>1</sb:flag_value>
+                                    <sb:flag_meaning>Housekeeping keyword out of yellow limits</sb:flag_meaning>
+                                </sb:Quality_Flag_Definition>
+                                <sb:Quality_Flag_Definition>
+                                    <sb:flag_value>2</sb:flag_value>
+                                    <sb:flag_meaning>Defect in one of the reference calibration files</sb:flag_meaning>
+                                </sb:Quality_Flag_Definition>
+                                <sb:Quality_Flag_Definition>
+                                    <sb:flag_value>4</sb:flag_value>
+                                    <sb:flag_meaning>Permanent CCD defect (e.g., dead pixel)</sb:flag_meaning>
+                                </sb:Quality_Flag_Definition>
+                                <sb:Quality_Flag_Definition>
+                                    <sb:flag_value>8</sb:flag_value>
+                                    <sb:flag_meaning>DN level in non-linear regime of detector</sb:flag_meaning>
+                                </sb:Quality_Flag_Definition>
+                                <sb:Quality_Flag_Definition>
+                                    <sb:flag_value>16</sb:flag_value>
+                                    <sb:flag_meaning>Zero-value pixel</sb:flag_meaning>
+                                </sb:Quality_Flag_Definition>
+                                <sb:Quality_Flag_Definition>
+                                    <sb:flag_value>32</sb:flag_value>
+                                    <sb:flag_meaning>Bad pixel not in any of the above categories</sb:flag_meaning>
+                                </sb:Quality_Flag_Definition>
+                            </sb:Quality_Map_Definition>
+                        </sb:Quality_Map>
+                        <sb:Error_Estimates_Map>
+                            <Local_Internal_Reference>
+                                <local_identifier_reference>ErrorEstimate</local_identifier_reference>
+                                <local_reference_type>image_to_error_map</local_reference_type>
+                            </Local_Internal_Reference>
+                        </sb:Error_Estimates_Map>
+                    </sb:Ancillary_Data_Objects>
+
+                    <sb:Additional_Geometry_Metadata>
+                        <sb:comment>
+                            Note that the geometry parameters in this label were calculated by the
+                            mission using an unpublished kernel set still in development at the time 
+                            of archiving. These parameters are based on "predict geometry", which is
+                            generally not as accurate as metadata available at a later date.
+                            
+                            The instrument position angles are calculated at the midpoint of the 
+                            observing sequence.
+                        </sb:comment>
+                        <sb:Instrument_Position_Angles>
+                            <sb:y_axis_position_angle unit="deg">76.24384745960108</sb:y_axis_position_angle>
+                            <sb:z_axis_position_angle unit="deg">166.2438474596011</sb:z_axis_position_angle>
+                        </sb:Instrument_Position_Angles>
+                    </sb:Additional_Geometry_Metadata>
+                    
+                    <sb:Per_Frame_Metadata>
+                        <sb:frame_number>0</sb:frame_number>
+                        <sb:frame_exposure_duration unit="s">10.0</sb:frame_exposure_duration>
+                        <sb:Midframe_Time>
+                            <sb:midobservation_time_UTC_YMD>2019-01-01T06:40:57.440Z</sb:midobservation_time_UTC_YMD>
+                            <sb:delta_time_from_sequence_start unit="s">5.0</sb:delta_time_from_sequence_start>
+                        </sb:Midframe_Time>
+                        <sb:Frame_Pointing>
+                            <sb:frame_center_ra unit="deg">93.94126963334442</sb:frame_center_ra>
+                            <sb:frame_center_dec unit="deg">18.30486036648045</sb:frame_center_dec>
+                            <sb:celestial_north_clock_angle unit="deg">76.24417555028195</sb:celestial_north_clock_angle>
+                        </sb:Frame_Pointing>
+                        <sb:Instrument_to_J2000_Quaternion>
+                            <sb:qcos>0.02133200110688761</sb:qcos>
+                            <sb:qsin1>-0.7295018068630121</sb:qsin1>
+                            <sb:qsin2>0.6549130919762196</sb:qsin2>
+                            <sb:qsin3>0.1961145111166537</sb:qsin3>
+                        </sb:Instrument_to_J2000_Quaternion>
+                    </sb:Per_Frame_Metadata>
+                    
+                    <sb:Per_Frame_Metadata>
+                        <sb:frame_number>1</sb:frame_number>
+                        <sb:frame_exposure_duration unit="s">10.0</sb:frame_exposure_duration>
+                        <sb:Midframe_Time>
+                            <sb:midobservation_time_UTC_YMD>2019-01-01T06:41:10.593Z</sb:midobservation_time_UTC_YMD>
+                            <sb:delta_time_from_sequence_start unit="s">18.15299999713898</sb:delta_time_from_sequence_start>
+                        </sb:Midframe_Time>
+                        <sb:Frame_Pointing>
+                            <sb:frame_center_ra unit="deg">93.94152431715064</sb:frame_center_ra>
+                            <sb:frame_center_dec unit="deg">18.30539781972034</sb:frame_center_dec>
+                            <sb:celestial_north_clock_angle unit="deg">76.24339609115043</sb:celestial_north_clock_angle>
+                        </sb:Frame_Pointing>
+                        <sb:Instrument_to_J2000_Quaternion>
+                            <sb:qcos>0.02132980536561482</sb:qcos>
+                            <sb:qsin1>-0.7295032444862805</sb:qsin1>
+                            <sb:qsin2>0.6549092258456225</sb:qsin2>
+                            <sb:qsin3>0.1961223128288641</sb:qsin3>
+                        </sb:Instrument_to_J2000_Quaternion>
+                    </sb:Per_Frame_Metadata>
+                    
+                    <sb:Per_Frame_Metadata>
+                        <sb:frame_number>2</sb:frame_number>
+                        <sb:frame_exposure_duration unit="s">10.0</sb:frame_exposure_duration>
+                        <sb:Midframe_Time>
+                            <sb:midobservation_time_UTC_YMD>2019-01-01T06:41:23.746Z</sb:midobservation_time_UTC_YMD>
+                            <sb:delta_time_from_sequence_start unit="s">31.30599999427795</sb:delta_time_from_sequence_start>
+                        </sb:Midframe_Time>
+                        <sb:Frame_Pointing>
+                            <sb:frame_center_ra unit="deg">93.94152308519195</sb:frame_center_ra>
+                            <sb:frame_center_dec unit="deg">18.30455981834362</sb:frame_center_dec>
+                            <sb:celestial_north_clock_angle unit="deg">76.24315898248132</sb:celestial_north_clock_angle>
+                        </sb:Frame_Pointing>
+                        <sb:Instrument_to_J2000_Quaternion>
+                            <sb:qcos>0.02132330502451953</sb:qcos>
+                            <sb:qsin1>-0.7295035357502035</sb:qsin1>
+                            <sb:qsin2>0.6549102479876323</sb:qsin2>
+                            <sb:qsin3>0.1961185230200374</sb:qsin3>
+                        </sb:Instrument_to_J2000_Quaternion>
+                    </sb:Per_Frame_Metadata>
+                    
+                    <sb:Per_Frame_Metadata>
+                        <sb:frame_number>3</sb:frame_number>
+                        <sb:frame_exposure_duration unit="s">10.0</sb:frame_exposure_duration>
+                        <sb:Midframe_Time>
+                            <sb:midobservation_time_UTC_YMD>2019-01-01T06:41:36.899Z</sb:midobservation_time_UTC_YMD>
+                            <sb:delta_time_from_sequence_start unit="s">44.45899999141693</sb:delta_time_from_sequence_start>
+                        </sb:Midframe_Time>
+                        <sb:Frame_Pointing>
+                            <sb:frame_center_ra unit="deg">93.94243716042934</sb:frame_center_ra>
+                            <sb:frame_center_dec unit="deg">18.30502429546362</sb:frame_center_dec>
+                            <sb:celestial_north_clock_angle unit="deg">76.24268121481965</sb:celestial_north_clock_angle>
+                        </sb:Frame_Pointing>
+                        <sb:Instrument_to_J2000_Quaternion>
+                            <sb:qcos>0.02132146650564566</sb:qcos>
+                            <sb:qsin1>-0.7295087078440583</sb:qsin1>
+                            <sb:qsin2>0.6549028240421432</sb:qsin2>
+                            <sb:qsin3>0.1961242751608453</sb:qsin3>
+                        </sb:Instrument_to_J2000_Quaternion>
+                    </sb:Per_Frame_Metadata>
+                    
+                    <sb:Per_Frame_Metadata>
+                        <sb:frame_number>4</sb:frame_number>
+                        <sb:frame_exposure_duration unit="s">10.0</sb:frame_exposure_duration>
+                        <sb:Midframe_Time>
+                            <sb:midobservation_time_UTC_YMD>2019-01-01T06:41:50.052Z</sb:midobservation_time_UTC_YMD>
+                            <sb:delta_time_from_sequence_start unit="s">57.61199998855591</sb:delta_time_from_sequence_start>
+                        </sb:Midframe_Time>
+                        <sb:Frame_Pointing>
+                            <sb:frame_center_ra unit="deg">93.94208586411156</sb:frame_center_ra>
+                            <sb:frame_center_dec unit="deg">18.30495773447827</sb:frame_center_dec>
+                            <sb:celestial_north_clock_angle unit="deg">76.2430073134865</sb:celestial_north_clock_angle>
+                        </sb:Frame_Pointing>
+                        <sb:Instrument_to_J2000_Quaternion>
+                            <sb:qcos>0.02132374716131024</sb:qcos>
+                            <sb:qsin1>-0.72950665965348</sb:qsin1>
+                            <sb:qsin2>0.6549057313638785</sb:qsin2>
+                            <sb:qsin3>0.1961219374648477</sb:qsin3>
+                        </sb:Instrument_to_J2000_Quaternion>
+                    </sb:Per_Frame_Metadata>
+                    
+                    <sb:Per_Frame_Metadata>
+                        <sb:frame_number>5</sb:frame_number>
+                        <sb:frame_exposure_duration unit="s">10.0</sb:frame_exposure_duration>
+                        <sb:Midframe_Time>
+                            <sb:midobservation_time_UTC_YMD>2019-01-01T06:42:03.205Z</sb:midobservation_time_UTC_YMD>
+                            <sb:delta_time_from_sequence_start unit="s">70.76499998569489</sb:delta_time_from_sequence_start>
+                        </sb:Midframe_Time>
+                        <sb:Frame_Pointing>
+                            <sb:frame_center_ra unit="deg">93.94167228018676</sb:frame_center_ra>
+                            <sb:frame_center_dec unit="deg">18.30448076866241</sb:frame_center_dec>
+                            <sb:celestial_north_clock_angle unit="deg">76.24384745960108</sb:celestial_north_clock_angle>
+                        </sb:Frame_Pointing>
+                        <sb:Instrument_to_J2000_Quaternion>
+                            <sb:qcos>0.02132696162203221</sb:qcos>
+                            <sb:qsin1>-0.7295042842775433</sb:qsin1>
+                            <sb:qsin2>0.6549106104371681</sb:qsin2>
+                            <sb:qsin3>0.1961141307134634</sb:qsin3>
+                        </sb:Instrument_to_J2000_Quaternion>
+                    </sb:Per_Frame_Metadata>
+                    
+                    <sb:Per_Frame_Metadata>
+                        <sb:frame_number>6</sb:frame_number>
+                        <sb:frame_exposure_duration unit="s">10.0</sb:frame_exposure_duration>
+                        <sb:Midframe_Time>
+                            <sb:midobservation_time_UTC_YMD>2019-01-01T06:42:16.358Z</sb:midobservation_time_UTC_YMD>
+                            <sb:delta_time_from_sequence_start unit="s">83.91799998283386</sb:delta_time_from_sequence_start>
+                        </sb:Midframe_Time>
+                        <sb:Frame_Pointing>
+                            <sb:frame_center_ra unit="deg">93.94158501398022</sb:frame_center_ra>
+                            <sb:frame_center_dec unit="deg">18.30389771482717</sb:frame_center_dec>
+                            <sb:celestial_north_clock_angle unit="deg">76.24302589436928</sb:celestial_north_clock_angle>
+                        </sb:Frame_Pointing>
+                        <sb:Instrument_to_J2000_Quaternion>
+                            <sb:qcos>0.02131840683028375</sb:qcos>
+                            <sb:qsin1>-0.7295041152370967</sb:qsin1>
+                            <sb:qsin2>0.6549107479726801</sb:qsin2>
+                            <sb:qsin3>0.1961152303423269</sb:qsin3>
+                        </sb:Instrument_to_J2000_Quaternion>
+                    </sb:Per_Frame_Metadata>
+                    
+                    <sb:Per_Frame_Metadata>
+                        <sb:frame_number>7</sb:frame_number>
+                        <sb:frame_exposure_duration unit="s">10.0</sb:frame_exposure_duration>
+                        <sb:Midframe_Time>
+                            <sb:midobservation_time_UTC_YMD>2019-01-01T06:42:29.511Z</sb:midobservation_time_UTC_YMD>
+                            <sb:delta_time_from_sequence_start unit="s">97.07099997997284</sb:delta_time_from_sequence_start>
+                        </sb:Midframe_Time>
+                        <sb:Frame_Pointing>
+                            <sb:frame_center_ra unit="deg">93.94172246247751</sb:frame_center_ra>
+                            <sb:frame_center_dec unit="deg">18.30435500338081</sb:frame_center_dec>
+                            <sb:celestial_north_clock_angle unit="deg">76.24229269410498</sb:celestial_north_clock_angle>
+                        </sb:Frame_Pointing>
+                        <sb:Instrument_to_J2000_Quaternion>
+                            <sb:qcos>0.02131622856547525</sb:qcos>
+                            <sb:qsin1>-0.7295048985077288</sb:qsin1>
+                            <sb:qsin2>0.6549078431842543</sb:qsin2>
+                            <sb:qsin3>0.1961222536805067</sb:qsin3>
+                        </sb:Instrument_to_J2000_Quaternion>
+                    </sb:Per_Frame_Metadata>
+                    
+                    <sb:Per_Frame_Metadata>
+                        <sb:frame_number>8</sb:frame_number>
+                        <sb:frame_exposure_duration unit="s">10.0</sb:frame_exposure_duration>
+                        <sb:Midframe_Time>
+                            <sb:midobservation_time_UTC_YMD>2019-01-01T06:42:42.664Z</sb:midobservation_time_UTC_YMD>
+                            <sb:delta_time_from_sequence_start unit="s">110.2239999771118</sb:delta_time_from_sequence_start>
+                        </sb:Midframe_Time>
+                        <sb:Frame_Pointing>
+                            <sb:frame_center_ra unit="deg">93.94210398189352</sb:frame_center_ra>
+                            <sb:frame_center_dec unit="deg">18.30548919180629</sb:frame_center_dec>
+                            <sb:celestial_north_clock_angle unit="deg">76.24313501860101</sb:celestial_north_clock_angle>
+                        </sb:Frame_Pointing>
+                        <sb:Instrument_to_J2000_Quaternion>
+                            <sb:qcos>0.02132769566012568</sb:qcos>
+                            <sb:qsin1>-0.7295065782288451</sb:qsin1>
+                            <sb:qsin2>0.6549049339540055</sb:qsin2>
+                            <sb:qsin3>0.1961244737440251</sb:qsin3>
+                        </sb:Instrument_to_J2000_Quaternion>
+                    </sb:Per_Frame_Metadata>
+                    
+                    <sb:Per_Frame_Metadata>
+                        <sb:frame_number>9</sb:frame_number>
+                        <sb:frame_exposure_duration unit="s">10.0</sb:frame_exposure_duration>
+                        <sb:Midframe_Time>
+                            <sb:midobservation_time_UTC_YMD>2019-01-01T06:42:55.817Z</sb:midobservation_time_UTC_YMD>
+                            <sb:delta_time_from_sequence_start unit="s">123.3769999742508</sb:delta_time_from_sequence_start>
+                        </sb:Midframe_Time>
+                        <sb:Frame_Pointing>
+                            <sb:frame_center_ra unit="deg">93.94136130460349</sb:frame_center_ra>
+                            <sb:frame_center_dec unit="deg">18.30471203536422</sb:frame_center_dec>
+                            <sb:celestial_north_clock_angle unit="deg">76.24287531597059</sb:celestial_north_clock_angle>
+                        </sb:Frame_Pointing>
+                        <sb:Instrument_to_J2000_Quaternion>
+                            <sb:qcos>0.02132268299486258</sb:qcos>
+                            <sb:qsin1>-0.7295026177663414</sb:qsin1>
+                            <sb:qsin2>0.6549105344638835</sb:qsin2>
+                            <sb:qsin3>0.1961210486158648</sb:qsin3>
+                        </sb:Instrument_to_J2000_Quaternion>
+                    </sb:Per_Frame_Metadata>
+                    
+                    <sb:Per_Frame_Metadata>
+                        <sb:frame_number>10</sb:frame_number>
+                        <sb:frame_exposure_duration unit="s">10.0</sb:frame_exposure_duration>
+                        <sb:Midframe_Time>
+                            <sb:midobservation_time_UTC_YMD>2019-01-01T06:43:08.970Z</sb:midobservation_time_UTC_YMD>
+                            <sb:delta_time_from_sequence_start unit="s">136.5299999713898</sb:delta_time_from_sequence_start>
+                        </sb:Midframe_Time>
+                        <sb:Frame_Pointing>
+                            <sb:frame_center_ra unit="deg">93.94499370129392</sb:frame_center_ra>
+                            <sb:frame_center_dec unit="deg">18.29649568239491</sb:frame_center_dec>
+                            <sb:celestial_north_clock_angle unit="deg">76.24156606546185</sb:celestial_north_clock_angle>
+                        </sb:Frame_Pointing>
+                        <sb:Instrument_to_J2000_Quaternion>
+                            <sb:qcos>0.02125917781985866</sb:qcos>
+                            <sb:qsin1>-0.729526110493996</sb:qsin1>
+                            <sb:qsin2>0.6548990916725287</sb:qsin2>
+                            <sb:qsin3>0.1960787627266722</sb:qsin3>
+                        </sb:Instrument_to_J2000_Quaternion>
+                    </sb:Per_Frame_Metadata>
+                </sb:Additional_Image_Metadata>
+            </sb:SB_Metadata>
+
+        </Discipline_Area>
+    </Observation_Area>
+    
+    <Reference_List>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:nh_doc:all:ralph_ssr</lid_reference>
+            <reference_type>data_to_document</reference_type>
+            <comment>
+                This document from Space Science Reviews describes technical and operational 
+                details of the RALPH instruments and detectors.
+            </comment>
+        </Internal_Reference>
+    </Reference_List>
+    
+    <File_Area_Observational>
+        <File>
+            <file_name>mpf_0408630768_0x539_eng.fit</file_name>
+            <comment>
+                This file contains a single Panchromatic Framing observation from the MVIC Pan Frame detector.
+                The image dimensions reflect the full area of the detector, not all of which contains data in 
+                all cases. Pixels not downloaded are filled with a "missing data" value of -1.00.
+            </comment>
+        </File>
+        
+        <!-- Primary ("extension 0" in some applications) header and data unit -->
+        
+        <Header>
+            <offset unit="byte">0</offset>
+            <object_length unit="byte">40320</object_length>
+            <parsing_standard_id>FITS 3.0</parsing_standard_id>
+            <description>
+                Primary FITS header unit. The New Horizons pipeline produced data in FITS format.
+            </description>
+        </Header>
+        <Array_3D_Image>
+            <name>Observational Data (DN)</name>
+            <local_identifier>Image</local_identifier>
+            <offset unit="byte">40320</offset>
+            <axes>3</axes>
+            <axis_index_order>Last Index Fastest</axis_index_order>
+            <description>
+                This array contains data only for pixels within the window(s) defined by the
+                Subframe(s) listed for this product. Other pixels have been set to -1.0, the
+                defined "missing_constant". 
+            </description>
+            <Element_Array>
+                <data_type>IEEE754MSBSingle</data_type>
+                <unit>DN</unit>
+            </Element_Array>
+            <Axis_Array>
+                <axis_name>Frame</axis_name>
+                <elements>11</elements>
+                <sequence_number>1</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Line</axis_name>
+                <elements>128</elements>
+                <sequence_number>2</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Sample</axis_name>
+                <elements>5024</elements>
+                <sequence_number>3</sequence_number>
+            </Axis_Array>
+            <Special_Constants>
+                <missing_constant>-1.000</missing_constant>
+            </Special_Constants>
+        </Array_3D_Image>
+        
+        <!-- First extension header and data unit -->
+        
+        <Header>
+            <offset unit="byte">28336320</offset>
+            <object_length unit="byte">2880</object_length>
+            <parsing_standard_id>FITS 3.0</parsing_standard_id>
+            <description>
+                FITS IMAGE extension header - a minimal header.
+            </description>
+        </Header>
+        <Array_3D>
+            <name>Per-pixel Error Estimate (DN)</name>
+            <local_identifier>ErrorEstimate</local_identifier>
+            <offset unit="byte">28339200</offset>
+            <axes>3</axes>
+            <axis_index_order>Last Index Fastest</axis_index_order>
+            <description>
+                This array provides per-pixel error estimates in DN for each of the corresponding
+                pixels in the primary data. It contains data only for pixels within the window(s) 
+                defined by the Subframe(s) listed for this product. Other pixels have been set to 
+                -1.0, the defined "missing_constant". 
+            </description>
+            <Element_Array>
+                <data_type>IEEE754MSBSingle</data_type>
+                <unit>DN</unit>
+            </Element_Array>
+            <Axis_Array>
+                <axis_name>Frame</axis_name>
+                <elements>11</elements>
+                <sequence_number>1</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Line</axis_name>
+                <elements>128</elements>
+                <sequence_number>2</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Sample</axis_name>
+                <elements>5024</elements>
+                <sequence_number>3</sequence_number>
+            </Axis_Array>
+            <Special_Constants>
+                <missing_constant>-1.00</missing_constant>
+            </Special_Constants>
+        </Array_3D>
+        
+        <!-- Second extension header and data unit -->
+        
+        <Header>
+            <offset unit="byte">56635200</offset>
+            <object_length unit="byte">2880</object_length>
+            <parsing_standard_id>FITS 3.0</parsing_standard_id>
+            <description>
+                FITS IMAGE extension header - minimal header. COMMENT cards include terse
+                quality code definitions.
+            </description>
+        </Header>
+        <Array_3D>
+            <name>Per-pixel Quality Assessment</name>
+            <local_identifier>Quality</local_identifier>
+            <offset unit="byte">56638080</offset>
+            <axes>3</axes>
+            <axis_index_order>Last Index Fastest</axis_index_order>
+            <Element_Array>
+                <data_type>SignedMSB2</data_type>
+            </Element_Array>
+            <Axis_Array>
+                <axis_name>Frame</axis_name>
+                <elements>11</elements>
+                <sequence_number>1</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Line</axis_name>
+                <elements>128</elements>
+                <sequence_number>2</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Sample</axis_name>
+                <elements>5024</elements>
+                <sequence_number>3</sequence_number>
+            </Axis_Array>
+            <Special_Constants>
+                <missing_constant>-1</missing_constant>
+            </Special_Constants>
+        </Array_3D>
+    </File_Area_Observational>
+    
+  </Product_Observational>

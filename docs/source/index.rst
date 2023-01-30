@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Example Namespace Documentation
-===================================
+New Horizons Mission Namespace Documentation
+==============================================
 
 .. include:: intro.md
 
@@ -14,10 +14,18 @@ Example Namespace Documentation
     :caption: User Guide
 
     user/user-guide
-
     
 .. toctree::
     :maxdepth: 3
     :caption: Detailed Documentation
 
-    detailed/example
+    detailed/outline
+    detailed/classList
+    detailed/attributeList
+    
+.. toctree::
+    :maxdepth: 3
+    :caption: Examples
+    
+    examples/mc0procMockup
+    examples/mpfprocMockup
