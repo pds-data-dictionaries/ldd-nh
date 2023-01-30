@@ -3,13 +3,11 @@
 >>  INFO IM Version Id: 1.19.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.25
->>  INFO Date: Mon Jan 30 13:54:06 UTC 2023
+>>  INFO Date: Mon Jan 30 14:03:39 UTC 2023
 >>  INFO PARENT_DIR: /tmp/lddtool-14.1.2
 >>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.2/bin
 >>  INFO LIB_DIR: /tmp/lddtool-14.1.2/lib
 
->>> ERROR Class:0001_NASA_PDS_1.nh.Mission_Parameters  Association:Additional_Image_Geometry  Class:Additional_Image_Geometry - Missing Component Class
->>> ERROR Association: Additional_Image_Geometry - Missing Component - Reference Type: component_of
 >>> INFO Init:  - Config.Properties Namespace Id Found:nh
 >>> INFO Init:  - Config.Properties Namespace Id Using:nh
 >>> INFO Init:  - LDD Dictionary_Type is Mission
@@ -23,7 +21,7 @@
 
  -- LDDTool Execution Summary --
      0 warning(s)
-     2 error(s)
+     0 error(s)
      0 fatal error(s)
 
 Input:
@@ -42,4 +40,4 @@ Output:
      - ./PDS4_NH_1J00_1000.xml
      - ./PDS4_NH_1J00_1000.JSON
 
->>  INFO Exit(1)
+>>  INFO Exit(0)
