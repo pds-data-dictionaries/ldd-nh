@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:nh  Version:1.0.0.0 - Mon Jan 30 14:03:39 UTC 2023 -->
+  <!-- PDS4 Schematron for Name Space Id:nh  Version:1.0.0.0 - Tue Apr 04 19:07:49 UTC 2023 -->
   <!-- Generated from the PDS4 Information Model Version 1.19.0.0 - System Build 13.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -83,9 +83,12 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="nh:MVIC_Details">
-      <sch:assert test="if (starts-with(nh:scan_type, 'TDI')) then (nh:tdi_rate) else (true())">
+      <sch:assert test="if (starts-with(nh:scan_type, 'TDI') and //pds:processing_level = ('Partially Processed')) then (nh:tdi_rate) else (true())">
         <title>nh:MVIC_Details/Rule</title>
-        In nh:MVIC_Details, the TDI rate must be provided for TDI scans.</sch:assert>
+        In nh:MVIC_Details, the TDI rate must be provided for TDI scans when processing level is partially processed (calibrated).</sch:assert>
+      <sch:assert test="if (//pds:processing_level != ('Partially Processed') and (nh:tdi_rate)) then (false()) else (true())">
+        <title>nh:MVIC_Details/Rule</title>
+        In nh:MVIC_Details, if pds:processing_level is not partially processed, then tdi_rate cannot be included.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

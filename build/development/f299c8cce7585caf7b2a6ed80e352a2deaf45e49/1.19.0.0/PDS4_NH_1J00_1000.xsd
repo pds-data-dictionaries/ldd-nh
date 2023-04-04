@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:nh  Version:1.0.0.0 - Mon Jan 30 14:03:39 UTC 2023 -->
+  <!-- PDS4 XML/Schema for Name Space Id:nh  Version:1.0.0.0 - Tue Apr 04 19:07:49 UTC 2023 -->
   <!-- Generated from the PDS4 Information Model Version 1.19.0.0 - System Build 13.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
@@ -593,7 +593,7 @@ _TBD_Ingest_LDD
         elements elsewhere in the label. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-    	<xs:pattern value='0x[0-9A-Z]{3}'/>
+    	<xs:pattern value='0x[0-9A-Za-z]{3}'/>
      <xs:minLength value="1"/>
      <xs:maxLength value="255"/>
 	   </xs:restriction>

@@ -1,12 +1,12 @@
 
->>  INFO LDDTOOL Version: 14.1.2
+>>  INFO LDDTOOL Version: 14.2.0
 >>  INFO IM Version Id: 1.19.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.25
->>  INFO Date: Mon Jan 30 14:03:39 UTC 2023
->>  INFO PARENT_DIR: /tmp/lddtool-14.1.2
->>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.2/bin
->>  INFO LIB_DIR: /tmp/lddtool-14.1.2/lib
+>>  INFO Date: Tue Apr 04 19:07:49 UTC 2023
+>>  INFO PARENT_DIR: /tmp/lddtool-14.2.0
+>>  INFO SCRIPT_DIR: /tmp/lddtool-14.2.0/bin
+>>  INFO LIB_DIR: /tmp/lddtool-14.2.0/lib
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:nh
 >>> INFO Init:  - Config.Properties Namespace Id Using:nh
@@ -29,6 +29,7 @@ Input:
      - IM Version: 1J00
      - PDS4 Flag: true
      - LDD Flag: true
+     - IM Version: true
      - Export JSON Flag: true
 
      - Ingest LDD(s): /home/runner/work/ldd-nh/ldd-nh/src/PDS4_NH_IngestLDD.xml
