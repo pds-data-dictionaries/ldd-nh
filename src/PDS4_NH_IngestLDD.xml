@@ -534,7 +534,7 @@
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <pattern>0x[0-9A-Z]{3}</pattern>
+      <pattern>0x[0-9A-Za-z]{3}</pattern>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -983,8 +983,13 @@
     <rule_context>nh:MVIC_Details</rule_context>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
-      <rule_test>if (starts-with(nh:scan_type, 'TDI')) then (nh:tdi_rate) else (true())</rule_test>
-      <rule_message>In nh:MVIC_Details, the TDI rate must be provided for TDI scans.</rule_message>
+      <rule_test>if (starts-with(nh:scan_type, 'TDI') and //pds:processing_level = ('Partially Processed')) then (nh:tdi_rate) else (true())</rule_test>
+      <rule_message>In nh:MVIC_Details, the TDI rate must be provided for TDI scans when processing level is partially processed (calibrated).</rule_message>
+    </DD_Rule_Statement>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>if (//pds:processing_level != ('Partially Processed') and (nh:tdi_rate)) then (false()) else (true())</rule_test>
+      <rule_message>In nh:MVIC_Details, if pds:processing_level is not partially processed, then tdi_rate cannot be included.</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
   
