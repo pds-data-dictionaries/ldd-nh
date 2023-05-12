@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'New Horizons'
+project = 'Example Namespace'
 # copyright = overidden by CSS specified below
-author = 'Anne Raugh, NASA Planetary Data System'
+author = 'NASA Planetary Data System'
 
 
 # -- General configuration ---------------------------------------------------
@@ -68,7 +68,7 @@ html_logo = '_static/images/PDS_Planets.png'
 html_context = {
     'display_github': True,
     "github_user": "pds-data-dictionaries",
-    "github_repo": "ldd-nh",
+    "github_repo": "ldd-template",
     "github_version": "main/docs/source/"
 }
 
