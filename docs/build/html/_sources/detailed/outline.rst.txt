@@ -1,0 +1,67 @@
+New Horizons Mission Namespace Outline
+##################################################
+
+*<nh:Mission_Parameters>* is the public entry point to the New Horizons Mission 
+namespace. This class contains all other NH classes and must be included to gain
+access to them. Below is a summary outline of all classes and attributes 
+currently available in the NH mission dictionary, in the order in which they 
+would appear in a label if every single one was used. 
+
+Note that there are no real cases in which every single mission class and 
+attribute would appear in a single label. The point of this outline is primarily
+to catalog what is present and show the required ordering within classes when
+they are included in a label.
+
+::
+
+  <nh:Mission_Parameters>
+      <nh:mission_phase_name>
+      
+      <nh:Observation_Parameters>
+          <nh:telemetry_apid>
+          <nh:sequence_id>
+          <nh:observation_description>
+          
+          <nh:Mission_Elapsed_Time>
+              <nh:clock_parition>
+              <nh:start_clock_count>
+              <nh:stop_clock_count>
+          
+          <nh:Detector>
+              <nh:detector_name>
+              <nh:detector_type>
+            
+              <nh:MVIC_Details>
+                  <nh:scan_type>
+                  <nh:tdi_rate>
+      
+      <nh:MVIC_Calibration_Information>
+          <nh:physical_pixel_size>
+          <nh:read_noise>
+          <nh:gain>
+          <nh:tdi_median_bias_level>
+          
+          <nh:Framing_Biases>
+              <nh:Frame_Bias_Levels>
+                  <nh:frame_number>
+                  <nh:left_side_median_bias>
+                  <nh:right_side_median_bias>
+      
+      <nh:MVIC_Conversion_Constants>
+          <nh:pivot_wavelength>
+          
+          <nh:Resolved_Source>
+              <nh:units_of_conversion_constants>
+              <nh:solar_constant>
+              <nh:jupiter_constant>
+              <nh:pholus_constant>
+              <nh:pluto_constant>
+              <nh:charon_constant>
+          
+          <nh:Unresolved_Source>
+              <nh:units_of_conversion_constants>
+              <nh:solar_constant>
+              <nh:jupiter_constant>
+              <nh:pholus_constant>
+              <nh:pluto_constant>
+              <nh:charon_constant>

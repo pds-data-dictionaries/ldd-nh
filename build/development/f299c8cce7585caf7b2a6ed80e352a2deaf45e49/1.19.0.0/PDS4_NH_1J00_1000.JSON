@@ -1,0 +1,1714 @@
+[
+  {
+    "dataDictionary": {
+      "Title": "PDS4 Data Dictionary" ,
+      "IM Version": "1.19.0.0" ,
+      "LDD Version": "1.0.0.0" ,
+      "Date": "2023-04-04T19:07:50Z" ,
+      "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
+      "namespaces": ["pds:", "nh:"] ,
+      "classDictionary": [
+        {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.nh.Detector" ,
+            "title": "Detector" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " The Detector class provides observation metadata relevant to the specific detector (an instrument may have more than one detector) used to collect the data. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Detector.nh.detector_name" ,
+                "title": "detector_name" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Detector.nh.detector_name"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Detector.nh.detector_type" ,
+                "title": "detector_type" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Detector.nh.detector_type"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Detector.nh.MVIC_Details" ,
+                "title": "MVIC_Details" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "classId": [
+                  "0001_NASA_PDS_1.nh.MVIC_Details"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.nh.Frame_Bias_Levels" ,
+            "title": "Frame_Bias_Levels" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " The Frame_Bias_Levels class records the frame number and left\/right bias levels for a single frame in a framing observation sequence. In the MVIC detector used for framing observations, the bias level for left and right sides of the detector may vary. Bias levels on each side are measured with every observation through shielded pixels on either side of the detector, the bias values for the pixels from each side them being averaged to return a single median bias level for each side of the detector. These bias levels are reported as left and right median bias levels for each frame. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Frame_Bias_Levels.nh.frame_number" ,
+                "title": "frame_number" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Frame_Bias_Levels.nh.frame_number"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Frame_Bias_Levels.nh.left_side_median_bias" ,
+                "title": "left_side_median_bias" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Frame_Bias_Levels.nh.left_side_median_bias"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Frame_Bias_Levels.nh.right_side_median_bias" ,
+                "title": "right_side_median_bias" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Frame_Bias_Levels.nh.right_side_median_bias"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.nh.Framing_Biases" ,
+            "title": "Framing_Biases" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " The Framing_Biases class contains one nh:Frame_Bias_Levels class for each individual frame of a framing observation. These classes provide the left and right side bias levels applied in calibrating the data. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Framing_Biases.nh.Frame_Bias_Levels" ,
+                "title": "Frame_Bias_Levels" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "*" ,
+                "classOrder": "1010" ,
+                "classId": [
+                  "0001_NASA_PDS_1.nh.Frame_Bias_Levels"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.nh.MVIC_Calibration_Information" ,
+            "title": "MVIC_Calibration_Information" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " The MVIC_Calibration_Information class gathers attributes related to the attributes of the detector and other information relevant to the calibration processing performed to produce the current data product. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.physical_pixel_size" ,
+                "title": "physical_pixel_size" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.physical_pixel_size"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.read_noise" ,
+                "title": "read_noise" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.read_noise"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.gain" ,
+                "title": "gain" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.gain"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.tdi_median_bias_level" ,
+                "title": "tdi_median_bias_level" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1040" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.tdi_median_bias_level"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.Framing_Biases" ,
+                "title": "Framing_Biases" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1050" ,
+                "classId": [
+                  "0001_NASA_PDS_1.nh.Framing_Biases"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.nh.MVIC_Conversion_Constants" ,
+            "title": "MVIC_Conversion_Constants" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " The MVIC_Conversion_Constants class provides the values needed to run the conversion from the calibrated pixel values to physical units. This conversion is dependent on the spectral distribition of the source, the MVIC detector wavelength range, and whether or not the source is resolved. A description of how to convert from data values to physical units is provided in the \"New Horizons SOC to Instrument Pipeline ICD\" document. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.MVIC_Conversion_Constants.nh.pivot_wavelength" ,
+                "title": "pivot_wavelength" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.MVIC_Conversion_Constants.nh.pivot_wavelength"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.MVIC_Conversion_Constants.nh.Resolved_Source" ,
+                "title": "Resolved_Source" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "classId": [
+                  "0001_NASA_PDS_1.nh.Resolved_Source"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.MVIC_Conversion_Constants.nh.Unresolved_Source" ,
+                "title": "Unresolved_Source" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "classId": [
+                  "0001_NASA_PDS_1.nh.Unresolved_Source"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.nh.MVIC_Details" ,
+            "title": "MVIC_Details" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " The MVIC_Details class collects observational parameters that are specific to the MVIC instrument and its various channels. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.MVIC_Details.nh.scan_type" ,
+                "title": "scan_type" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.MVIC_Details.nh.scan_type"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.MVIC_Details.nh.tdi_rate" ,
+                "title": "tdi_rate" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.MVIC_Details.nh.tdi_rate"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.nh.Mission_Elapsed_Time" ,
+            "title": "Mission_Elapsed_Time" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " The Mission_Elapsed_Time class provides spacecraft clock partition and count readings for the start and end of the observation(s) comprising the data product. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Mission_Elapsed_Time.nh.clock_partition" ,
+                "title": "clock_partition" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Mission_Elapsed_Time.nh.clock_partition"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Mission_Elapsed_Time.nh.start_clock_count" ,
+                "title": "start_clock_count" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Mission_Elapsed_Time.nh.start_clock_count"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Mission_Elapsed_Time.nh.stop_clock_count" ,
+                "title": "stop_clock_count" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Mission_Elapsed_Time.nh.stop_clock_count"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.nh.Mission_Parameters" ,
+            "title": "Mission_Parameters" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " The Mission_Parameters class presents the various New Horizons-specific metadata for both primary and extended missions. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Mission_Parameters.nh.mission_phase_name" ,
+                "title": "mission_phase_name" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Mission_Parameters.nh.mission_phase_name"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Mission_Parameters.nh.Observation_Parameters" ,
+                "title": "Observation_Parameters" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "classId": [
+                  "0001_NASA_PDS_1.nh.Observation_Parameters"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Mission_Parameters.nh.MVIC_Calibration_Information" ,
+                "title": "MVIC_Calibration_Information" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "classId": [
+                  "0001_NASA_PDS_1.nh.MVIC_Calibration_Information"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Mission_Parameters.nh.MVIC_Conversion_Constants" ,
+                "title": "MVIC_Conversion_Constants" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1040" ,
+                "classId": [
+                  "0001_NASA_PDS_1.nh.MVIC_Conversion_Constants"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.nh.Observation_Parameters" ,
+            "title": "Observation_Parameters" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " The Observation_Parameters class collects observational metadata that is specific to the mission, spacecraft, and instrument which produced the data product. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Observation_Parameters.nh.telemetry_apid" ,
+                "title": "telemetry_apid" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Observation_Parameters.nh.telemetry_apid"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Observation_Parameters.nh.sequence_id" ,
+                "title": "sequence_id" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Observation_Parameters.nh.sequence_id"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Observation_Parameters.nh.observation_description" ,
+                "title": "observation_description" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Observation_Parameters.nh.observation_description"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Observation_Parameters.nh.Mission_Elapsed_Time" ,
+                "title": "Mission_Elapsed_Time" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1040" ,
+                "classId": [
+                  "0001_NASA_PDS_1.nh.Mission_Elapsed_Time"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Observation_Parameters.nh.Detector" ,
+                "title": "Detector" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1050" ,
+                "classId": [
+                  "0001_NASA_PDS_1.nh.Detector"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.nh.Resolved_Source" ,
+            "title": "Resolved_Source" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " The Resolved_Source class presents MVIC conversion constants for converting calibrated pixel values into physical units for sources which are resolved. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Resolved_Source.nh.units_of_conversion_constants" ,
+                "title": "units_of_conversion_constants" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Resolved_Source.nh.units_of_conversion_constants"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Resolved_Source.nh.solar_constant" ,
+                "title": "solar_constant" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Resolved_Source.nh.solar_constant"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Resolved_Source.nh.jupiter_constant" ,
+                "title": "jupiter_constant" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Resolved_Source.nh.jupiter_constant"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Resolved_Source.nh.pholus_constant" ,
+                "title": "pholus_constant" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1040" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Resolved_Source.nh.pholus_constant"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Resolved_Source.nh.pluto_constant" ,
+                "title": "pluto_constant" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1050" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Resolved_Source.nh.pluto_constant"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Resolved_Source.nh.charon_constant" ,
+                "title": "charon_constant" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1060" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Resolved_Source.nh.charon_constant"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source" ,
+            "title": "Unresolved_Source" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " The Unresolved_Source class presents MVIC conversion constants for converting calibrated pixel values into physical units for sources which are not resolved. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source.nh.units_of_conversion_constants" ,
+                "title": "units_of_conversion_constants" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Unresolved_Source.nh.units_of_conversion_constants"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source.nh.solar_constant" ,
+                "title": "solar_constant" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Unresolved_Source.nh.solar_constant"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source.nh.jupiter_constant" ,
+                "title": "jupiter_constant" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Unresolved_Source.nh.jupiter_constant"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source.nh.pholus_constant" ,
+                "title": "pholus_constant" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1040" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Unresolved_Source.nh.pholus_constant"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source.nh.pluto_constant" ,
+                "title": "pluto_constant" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1050" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Unresolved_Source.nh.pluto_constant"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source.nh.charon_constant" ,
+                "title": "charon_constant" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1060" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.nh.Unresolved_Source.nh.charon_constant"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      ]
+    , "attributeDictionary": [
+        {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Detector.nh.detector_name" ,
+            "title": "detector_name" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The name of the detector that recorded the observation(s) comprising the product. For instruments with multiple detectors, as in the case of MVIC, for example, this string will include both the instrument ID and the specific detector ID. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "MVIC Blue (BLUE) Channel" ,
+                  "valueMeaning": " Data were obtained using the blue channel detector. The blue filter covers the range 400-550nm. " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MVIC Methane (CH4) Channel" ,
+                  "valueMeaning": " Data were obtained using the narrow band methane (CH4) channel detector. The CH4 filter covers the range 860-910nm " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MVIC Near Infrared (NIR) Channel" ,
+                  "valueMeaning": " Data were obtained using the Near IR channel detector. The NIR filter covers the range 780-975nm. " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MVIC Panchromatic 1 (PAN1) Channel" ,
+                  "valueMeaning": " Data were obtained using the panchromatic channel 1 (one) detector. The filter over the panchromatic detectors is clear; the coverage range is 400-975nm. " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MVIC Panchromatic 2 (PAN2) Channel" ,
+                  "valueMeaning": " Data were obtained using the panchromatic channel 2 (two) detector. The filter over the panchromatic detectors is clear; the coverage range is 400-975nm. " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MVIC Panchromatic Framing (FRAME) Array" ,
+                  "valueMeaning": " Data were obtained using the panchromatic framing array. The filter over the framing array is clear; the coverage range is 400-975nm. " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MVIC Red (RED) Channel" ,
+                  "valueMeaning": " Data were obtained using the red channel detector. The red filter covers the range 540-700nm. " ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Detector.nh.detector_type" ,
+            "title": "detector_type" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The detector_type attribute provides a brief indication of the type of hardware comprising the detector. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "CCD" ,
+                  "valueMeaning": "The detector is a standard CCD." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Frame_Bias_Levels.nh.frame_number" ,
+            "title": "frame_number" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The frame_number attribute is used to identify a single frame (or image plane) in an observation that is formatted as a 3D image cube. The first frame is numbered \"0\" (zero). " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_NonNegative_Integer" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0" ,
+            "maximumValue": "18446744073709551615" ,
+            "pattern": "[0-9]+" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Frame_Bias_Levels.nh.left_side_median_bias" ,
+            "title": "left_side_median_bias" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The left_side_median_bias attribute provides the median bias, in DN, determined by averaging the bias levels for the shielded pixels on the left side of the detector array. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.0" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Misc" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Misc" ,
+            "unitId": "DN, W\/m**2\/sr\/nm\/(DN\/s), electron\/DN, pixel" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Frame_Bias_Levels.nh.right_side_median_bias" ,
+            "title": "right_side_median_bias" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The right_side_median_bias attribute provides the median bias, in DN, determined by averaging the bias levels for the shielded pixels on the right side of the detector array. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.0" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Misc" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Misc" ,
+            "unitId": "DN, W\/m**2\/sr\/nm\/(DN\/s), electron\/DN, pixel" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.gain" ,
+            "title": "gain" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The gain attribute provides the gain setting applied to the data collection, in units of electrons\/DN. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0.0" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Misc" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Misc" ,
+            "unitId": "DN, W\/m**2\/sr\/nm\/(DN\/s), electron\/DN, pixel" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.physical_pixel_size" ,
+            "title": "physical_pixel_size" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The physical_pixel_size attribute gives the hardware dimension of a single, square pixel within the detector. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0.0" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Length" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Length" ,
+            "unitId": "AU, Angstrom, cm, km, m, micrometer, mm, nm" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.read_noise" ,
+            "title": "read_noise" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The read_noise attribute provides the noise level of the detector as a count of electrons. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.MVIC_Calibration_Information.nh.tdi_median_bias_level" ,
+            "title": "tdi_median_bias_level" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The tdi_median_bias_level attribute gives the medianan bias level of a time-delay integration observation. For TDI mode, bias levels in each detector were determined in-flight during early mission phases. They may vary depending on exposure length. See the \"New Horizonz SOC to Instrument Pipeline ICD\" document for details. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0.0" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Misc" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Misc" ,
+            "unitId": "DN, W\/m**2\/sr\/nm\/(DN\/s), electron\/DN, pixel" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.MVIC_Conversion_Constants.nh.pivot_wavelength" ,
+            "title": "pivot_wavelength" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The pivot_wavelength is used in converting the pixel values in the calibrated MVIC data into physical units. It is wavelength-dependent, but once defined is constant for each MVIC detector. A description of how to convert from data values to physical units is provided in the \"New Horizons SOC to Instrument Pipeline ICD\" document. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0.0" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Length" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Length" ,
+            "unitId": "AU, Angstrom, cm, km, m, micrometer, mm, nm" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.MVIC_Details.nh.scan_type" ,
+            "title": "scan_type" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The scan_type attribute indicates what sort of scanning was employed in collecting the data. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "FRAMING - Framing Mode" ,
+                  "valueMeaning": " The data were obtained as a sequence of 2D image frames. " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "TDI - Time Delay Integration Mode" ,
+                  "valueMeaning": " The data were obtained using time delayed integration (TDI). The TDI frequency should be provided in the nh:tdi_rate attribute. " ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.MVIC_Details.nh.tdi_rate" ,
+            "title": "tdi_rate" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The tdi_rate attribute is the rate at which charge was moved through successive rows of the detector in obtaining the observation. This rate was calculated to match the scan rate of the spacecraft. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0.0" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Frequency" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
+            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Mission_Elapsed_Time.nh.clock_partition" ,
+            "title": "clock_partition" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The clock_partition holds the mission clock partition counter. This is a simple integer " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_NonNegative_Integer" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0" ,
+            "maximumValue": "18446744073709551615" ,
+            "pattern": "[0-9]+" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Mission_Elapsed_Time.nh.start_clock_count" ,
+            "title": "start_clock_count" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The start_clock_count is the Mission Elapsed Time code at the start of the observation(s), formatted as spacecraft clock ticks and indicating whole and fractional seconds. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "[0-9]{10}:[0-9]{5}" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Mission_Elapsed_Time.nh.stop_clock_count" ,
+            "title": "stop_clock_count" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The stop_clock_count is the Mission Elapsed Time code at the end of the observation(s), formatted as spacecraft clock ticks and indicating whole and fractional seconds. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "[0-9]{10}:[0-9]{5}" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Mission_Parameters.nh.mission_phase_name" ,
+            "title": "mission_phase_name" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The formal identification of the mission phase. Phases are identified continuously from primary through extended missions. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "KEM1 Encounter" ,
+                  "valueMeaning": " New Horizons Kuiper Belt Extended Mission 1(KEM1) Encounter " ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Observation_Parameters.nh.observation_description" ,
+            "title": "observation_description" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The observation_description element provides a human-readable decoding of the nh:sequence_id string. It provides a basic description of the planned observation activity. Each instrument should have an accompanying ancillary\/documentation file that lists all the planned sequences for each instrument for each mission phase. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Observation_Parameters.nh.sequence_id" ,
+            "title": "sequence_id" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The sequence_id provides a long string encoded some infomation about the planned observing sequence. A more human-readable description should be provided in the nh:observation_description element. Each instrument should have an accompanying ancillary\/documentation file that lists all the planned sequences for each instrument for each mission phase. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Observation_Parameters.nh.telemetry_apid" ,
+            "title": "telemetry_apid" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The telemetry_apid is the application identifier for the observation. The values are specific to instrument and activity. The definitions for apIDs relevant to the archived observations are contained in various tables in the \"New Horizons SOC to Instrument Pipeline ICD document. The apID is used in formulating the file name, among other things. Metadata encoded in the apID is contained in separate metadata elements elsewhere in the label. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "0x[0-9A-Za-z]{3}" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Resolved_Source.nh.charon_constant" ,
+            "title": "charon_constant" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The nh:charon_constant attribute supplies the constant to be used for sources with spectral distribution similar to Pluto I (Charon) to convert MVIC calibrated data to physical units. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Resolved_Source.nh.jupiter_constant" ,
+            "title": "jupiter_constant" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The nh:jupiter_constant attribute supplies the constant to be used for sources with spectral distribution similar to Jupiter to convert MVIC calibrated data to physical units. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Resolved_Source.nh.pholus_constant" ,
+            "title": "pholus_constant" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The nh:pholus_constant attribute supplies the constant to be used for sources with spectral distribution similar to (5145) Pholus to convert MVIC calibrated data to physical units. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Resolved_Source.nh.pluto_constant" ,
+            "title": "pluto_constant" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The nh:pluto_constant attribute supplies the constant to be used for sources with spectral distribution similar to (134340) Pluto to convert MVIC calibrated data to physical units. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Resolved_Source.nh.solar_constant" ,
+            "title": "solar_constant" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The nh:solar_constant attribute supplies the constant to be used for sources with spectral distribution similar to the Sun to convert MVIC calibrated data to physical units. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Resolved_Source.nh.units_of_conversion_constants" ,
+            "title": "units_of_conversion_constants" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The MVIC calibrated data are not converted to physical units, because the conversion applied depends on the general spectrum of the object being converted and whether it is resolved. For resolved sources, the conversion produces data in units of radiance. For unresolved sources, the conversion results in units of flux (irradiance). This attribute contains the appropriate physical units for the conversion constants in the class in which it is contained to produce either radiance or flux units, as appropriate, when the conversion is applied. A description of how to convert from data values to physical units is provided in the \"New Horizons SOC to Instrument Pipeline ICD\" document. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "(DN\/s)\/(erg\/cm^2\/s\/Angstrom)" ,
+                  "valueMeaning": " Units for conversion factors for unresolved sources, to produce units of flux (irradiance) " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "(DN\/s)\/(erg\/cm^2\/s\/Angstrom\/sr)" ,
+                  "valueMeaning": " Units for conversion factors for resolved sources, to produce units of radiance. " ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source.nh.charon_constant" ,
+            "title": "charon_constant" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The nh:charon_constant attribute supplies the constant to be used for sources with spectral distribution similar to Pluto I (Charon) to convert MVIC calibrated data to physical units. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source.nh.jupiter_constant" ,
+            "title": "jupiter_constant" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The nh:jupiter_constant attribute supplies the constant to be used for sources with spectral distribution similar to Jupiter to convert MVIC calibrated data to physical units. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source.nh.pholus_constant" ,
+            "title": "pholus_constant" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The nh:pholus_constant attribute supplies the constant to be used for sources with spectral distribution similar to (5145) Pholus to convert MVIC calibrated data to physical units. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source.nh.pluto_constant" ,
+            "title": "pluto_constant" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The nh:pluto_constant attribute supplies the constant to be used for sources with spectral distribution similar to (134340) Pluto to convert MVIC calibrated data to physical units. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source.nh.solar_constant" ,
+            "title": "solar_constant" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The nh:solar_constant attribute supplies the constant to be used for sources with spectral distribution similar to the Sun to convert MVIC calibrated data to physical units. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.nh.Unresolved_Source.nh.units_of_conversion_constants" ,
+            "title": "units_of_conversion_constants" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "nh" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": " The MVIC calibrated data are not converted to physical units, because the conversion applied depends on the general spectrum of the object being converted and whether it is resolved. For resolved sources, the conversion produces data in units of radiance. For unresolved sources, the conversion results in units of flux (irradiance). This attribute contains the appropriate physical units for the conversion constants in the class in which it is contained to produce either radiance or flux units, as appropriate, when the conversion is applied. A description of how to convert from data values to physical units is provided in the \"New Horizons SOC to Instrument Pipeline ICD\" document. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "(DN\/s)\/(erg\/cm^2\/s\/Angstrom)" ,
+                  "valueMeaning": " Units for conversion factors for unresolved sources, to produce units of flux (irradiance) " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "(DN\/s)\/(erg\/cm^2\/s\/Angstrom\/sr)" ,
+                  "valueMeaning": " Units for conversion factors for resolved sources, to produce units of radiance. " ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
+          }
+        }
+      ]
+    }
+  }
+]
