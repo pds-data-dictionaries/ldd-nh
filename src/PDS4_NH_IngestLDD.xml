@@ -224,9 +224,45 @@
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <DD_Permissible_Value>
+        <value>Post-Launch Checkout</value>
+        <value_meaning>
+          New Horizons Mission Post-Launch Checkouts and Rehearsals
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Jupiter Encoutner</value>
+        <value_meaning>
+          New Horizons Mission Encounter with Jupiter
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Pluto Cruise</value>
+        <value_meaning>
+          New Horizons Mission Cruise Phase to Pluto
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Pluto-Charon Encounter</value>
+        <value_meaning>
+          New Horizons Mission Encounter with Pluto and Charon
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>KEM1 Cruise</value>
+        <value_meaning>
+          New Horizons Kuiper Belt Extended Mission 1 (KEM1) Cruise Phase
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
         <value>KEM1 Encounter</value>
         <value_meaning>
-          New Horizons Kuiper Belt Extended Mission 1(KEM1) Encounter
+          New Horizons Kuiper Belt Extended Mission 1 (KEM1) Encounter with Arrokoth
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>KEM2 Cruise</value>
+        <value_meaning>
+          New Horizons Kuiper Belt Extended Mission 2 (KEM2) Cruise Phase
         </value_meaning>
       </DD_Permissible_Value>
     </DD_Value_Domain>
