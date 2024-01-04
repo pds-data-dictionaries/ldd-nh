@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:nh  Version:1.0.0.0 - Thu Dec 21 00:31:30 UTC 2023 -->
-  <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
+  <!-- PDS4 Schematron for Name Space Id:nh  Version:1.0.0.0 - Thu Jan 04 15:58:17 MST 2024 -->
+  <!-- Generated from the PDS4 Information Model Version 1.19.0.0 - System Build 13.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
@@ -34,16 +34,16 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="nh:Frame_Bias_Levels/nh:left_side_median_bias">
-      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'electrons', 'nm/mm', 'pixel')">
+      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel')">
         <title>nh:Frame_Bias_Levels/nh:left_side_median_bias/nh:left_side_median_bias</title>
-        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'electrons', 'nm/mm', 'pixel'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="nh:Frame_Bias_Levels/nh:right_side_median_bias">
-      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'electrons', 'nm/mm', 'pixel')">
+      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel')">
         <title>nh:Frame_Bias_Levels/nh:right_side_median_bias/nh:right_side_median_bias</title>
-        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'electrons', 'nm/mm', 'pixel'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -55,9 +55,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="nh:MVIC_Calibration_Information/nh:gain">
-      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'electrons', 'nm/mm', 'pixel')">
+      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel')">
         <title>nh:MVIC_Calibration_Information/nh:gain/nh:gain</title>
-        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'electrons', 'nm/mm', 'pixel'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -69,9 +69,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="nh:MVIC_Calibration_Information/nh:tdi_median_bias_level">
-      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'electrons', 'nm/mm', 'pixel')">
+      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel')">
         <title>nh:MVIC_Calibration_Information/nh:tdi_median_bias_level/nh:tdi_median_bias_level</title>
-        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'electrons', 'nm/mm', 'pixel'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -107,9 +107,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="nh:Mission_Parameters/nh:mission_phase_name">
-      <sch:assert test=". = ('KEM1 Encounter')">
+      <sch:assert test=". = ('Jupiter Encoutner', 'KEM1 Cruise', 'KEM1 Encounter', 'KEM2 Cruise', 'Pluto Cruise', 'Pluto-Charon Encounter', 'Post-Launch Checkout')">
         <title>nh:Mission_Parameters/nh:mission_phase_name/nh:mission_phase_name</title>
-        The attribute nh:Mission_Parameters/nh:mission_phase_name must be equal to the value 'KEM1 Encounter'.</sch:assert>
+        The attribute nh:Mission_Parameters/nh:mission_phase_name must be equal to one of the following values 'Jupiter Encoutner', 'KEM1 Cruise', 'KEM1 Encounter', 'KEM2 Cruise', 'Pluto Cruise', 'Pluto-Charon Encounter', 'Post-Launch Checkout'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
