@@ -122,7 +122,7 @@
     <version_id>1.0</version_id>
     <local_identifier>detector_type</local_identifier>
     <nillable_flag>false</nillable_flag>
-    <submitter_name>ACT</submitter_name>
+    <submitter_name>ACR</submitter_name>
     <definition>
       The detector_type attribute provides a brief indication of the type of
       hardware comprising the detector.
