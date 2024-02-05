@@ -3,13 +3,13 @@ PDS Validate Tool Report
 
 Configuration:
    Version                       3.4.1
-   Date                          2024-02-05T18:02:54Z
+   Date                          2024-02-05T18:14:29Z
 
 Parameters:
    Targets                       [file:/home/runner/work/ldd-nh/ldd-nh/test/MVICmpfProc_VALID.xml]
    Rule Type                     pds4.label
-   User Specified Schemas        [file:/home/runner/work/ldd-nh/ldd-nh/build/development/1d8bba6e13405744a3aa46a32e4c6bc82b40fa6d/1.21.0.0/PDS4_NH_1L00_2000.xsd, file:/tmp/PDS4_PDS_1L00.xsd]
-   User Specified Schematrons    [file:/home/runner/work/ldd-nh/ldd-nh/build/development/1d8bba6e13405744a3aa46a32e4c6bc82b40fa6d/1.21.0.0/PDS4_NH_1L00_2000.sch, file:/tmp/PDS4_PDS_1L00.sch]
+   User Specified Schemas        [file:/home/runner/work/ldd-nh/ldd-nh/build/development/cbfa6de72a04026b32b17be26db741f374ee022f/1.19.0.0/PDS4_NH_1J00_1100.xsd, file:/tmp/PDS4_PDS_1J00.xsd]
+   User Specified Schematrons    [file:/home/runner/work/ldd-nh/ldd-nh/build/development/cbfa6de72a04026b32b17be26db741f374ee022f/1.19.0.0/PDS4_NH_1J00_1100.sch, file:/tmp/PDS4_PDS_1J00.sch]
    Severity Level                WARNING
    Recurse Directories           true
    File Filters Used             [*.xml, *.XML]
@@ -24,7 +24,7 @@ Product Level Validation Results
 
   FAIL: file:/home/runner/work/ldd-nh/ldd-nh/test/MVICmpfProc_VALID.xml
       WARNING  [warning.label.schema]   Cannot check versioning because no Schema given.
-      ERROR  [error.label.schema]   line 113, 36: cvc-complex-type.2.4.c: The matching wildcard is strict, but no declaration can be found for element 'nh:Mission_Parameters'.
+      ERROR  [error.label.schema]   line 195, 47: cvc-complex-type.2.4.a: Invalid content was found starting with element '{"http://pds.nasa.gov/pds4/mission/nh/v1":MVIC_Conversion_Constants}'. One of '{"http://pds.nasa.gov/pds4/mission/nh/v1":Radiometric_Conversion_Constants, "http://pds.nasa.gov/pds4/mission/nh/v1":Engineering_Conversion_Coeffcients}' is expected.
       WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
         1 product validation(s) completed
 
@@ -49,5 +49,5 @@ Summary:
     1            warning.label.missing_schematron_spec
 
 End of Report
-Completed execution in 4333 ms
+Completed execution in 4204 ms
 
