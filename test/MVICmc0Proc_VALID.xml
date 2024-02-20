@@ -162,7 +162,7 @@
     
     <Reference_List>
         <Internal_Reference>
-            <lid_reference>urn:nasa:pds:nh_doc:all:ralph_ssr</lid_reference>
+            <lid_reference>urn:nasa:pds:nh_documents:ralph:ralph_ssr</lid_reference>
             <reference_type>data_to_document</reference_type>
             <comment>
                 This document from Space Science Reviews describes technical and operational 
