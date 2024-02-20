@@ -221,7 +221,7 @@
       <DD_Permissible_Value>
         <value>Solar Wind Around Pluto</value>
         <value_meaning>
-          Data were obtained using the SWAP electrostaic analyzer.
+          Data were obtained using the SWAP electrostatic analyzer.
         </value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
@@ -260,7 +260,7 @@
         </value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
-        <value>Electrostaic</value>
+        <value>Electrostatic</value>
         <value_meaning>The detector is an elctrostic low energy plasma instrument.</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
