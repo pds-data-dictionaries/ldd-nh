@@ -512,7 +512,7 @@
       in the "New Horizons SOC to Instrument Pipeline ICD" document.
     </definition>
     <Internal_Reference>
-      <lid_reference>urn:nasa:pds:nh_doc:all:soc_inst_icd</lid_reference>
+      <lid_reference>urn:nasa:pds:nh_documents:mission:soc_inst_icd</lid_reference>
       <reference_type>attribute_to_document</reference_type>
     </Internal_Reference>
     <DD_Value_Domain>
@@ -707,7 +707,7 @@
       See the "New Horizonz SOC to Instrument Pipeline ICD" document for details.
     </definition>
     <Internal_Reference>
-      <lid_reference>urn:nasa:pds:nh_doc:all:soc_inst_icd</lid_reference>
+      <lid_reference>urn:nasa:pds:nh_documents:mission:soc_inst_icd</lid_reference>
       <reference_type>attribute_to_document</reference_type>
     </Internal_Reference>
     <DD_Value_Domain>
@@ -754,7 +754,7 @@
       apID is contained in separate metadata elements elsewhere in the label.
     </definition>
     <Internal_Reference>
-      <lid_reference>urn:nasa:pds:nh_doc:all:soc_inst_icd</lid_reference>
+      <lid_reference>urn:nasa:pds:nh_documents:mission:soc_inst_icd</lid_reference>
       <reference_type>attribute_to_document</reference_type>
     </Internal_Reference>
     <DD_Value_Domain>
@@ -784,7 +784,7 @@
       in the "New Horizons SOC to Instrument Pipeline ICD" document.
     </definition>
     <Internal_Reference>
-      <lid_reference>urn:nasa:pds:nh_doc:all:soc_inst_icd</lid_reference>
+      <lid_reference>urn:nasa:pds:nh_documents:mission:soc_inst_icd</lid_reference>
       <reference_type>attribute_to_document</reference_type>
     </Internal_Reference>
     <DD_Value_Domain>
@@ -986,7 +986,7 @@
       in the "New Horizons SOC to Instrument Pipeline ICD" document.
     </definition>
     <Internal_Reference>
-      <lid_reference>urn:nasa:pds:nh_doc:all:soc_inst_icd</lid_reference>
+      <lid_reference>urn:nasa:pds:nh_documents:mission:soc_inst_icd</lid_reference>
       <reference_type>class_to_document</reference_type>
     </Internal_Reference>
     <DD_Association>
@@ -1010,19 +1010,19 @@
   </DD_Class>
   
   <DD_Class>
-    <name>Engineering_Conversion_Coeffcients</name>
+    <name>Engineering_Unit_Conversions</name>
     <version_id>1.0</version_id>
-    <local_identifier>Engineering_Conversion_Coeffcients</local_identifier>
+    <local_identifier>Engineering_Unit_Conversions</local_identifier>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The Engineering_Conversion_Coeffcients class provides the values needed to run the
-      conversion from the digital number engieering values to physical units. 
+      The Engineering_Unit_Conversions class provides the values needed to convert
+      housekeeping values downlinked as digital numbers into engineering units.
       
       A description of how to convert from data values to physical units is provided
       in the "New Horizons SOC to Instrument Pipeline ICD" document.
     </definition>
     <Internal_Reference>
-      <lid_reference>urn:nasa:pds:nh_doc:all:soc_inst_icd</lid_reference>
+      <lid_reference>urn:nasa:pds:nh_documents:mission:soc_inst_icd</lid_reference>
       <reference_type>class_to_document</reference_type>
     </Internal_Reference>
     <DD_Association>
@@ -1039,7 +1039,8 @@
     <local_identifier>Engineering_Component</local_identifier>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The Engineering_Component class collects the engineering component measurement conversion equation properties.
+      The Engineering_Component class collects the engineering component measurement
+      conversion equation properties.
     </definition>
     <DD_Association>
       <identifier_reference>engineering_component_name</identifier_reference>
@@ -1068,12 +1069,13 @@
   </DD_Class>
   
   <DD_Class>
-    <name>Engineering_Conversion_Coeffcients</name>
+    <name>Engineering_Conversion_Coefficients</name>
     <version_id>1.0</version_id>
     <local_identifier>Engineering_Conversion_Coefficients</local_identifier>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The Engineering_Conversion_Coefficients class collects the polynomial coeffcients for the named Engineering Component.
+      The Engineering_Conversion_Coefficients class collects the polynomial
+      coeffcients for the named Engineering Component.
     </definition>
     <DD_Association>
       <identifier_reference>coefficient_0</identifier_reference>
@@ -1328,7 +1330,7 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>Engineering_Conversion_Coeffcients</identifier_reference>
+      <identifier_reference>Engineering_Unit_Conversions</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
