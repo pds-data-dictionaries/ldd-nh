@@ -204,7 +204,7 @@ found in the *<Mission_Area>* of the structure.
                     </nh:Framing_Biases>
                 </nh:MVIC_Calibration_Information>
                 
-                <nh:MVIC_Conversion_Constants>
+                <nh:Radiometric_Conversion_Constants>
                     <nh:pivot_wavelength unit="micrometer">0.692</nh:pivot_wavelength>
                     <nh:Resolved_Source>
                         <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom/sr)</nh:units_of_conversion_constants>
@@ -222,7 +222,7 @@ found in the *<Mission_Area>* of the structure.
                         <nh:pluto_constant>2.417E+14</nh:pluto_constant>
                         <nh:charon_constant>2.491E+14</nh:charon_constant>
                     </nh:Unresolved_Source>
-                </nh:MVIC_Conversion_Constants>
+                </nh:Radiometric_Conversion_Constants>
             </nh:Mission_Parameters>
         </Mission_Area>
 
@@ -749,7 +749,7 @@ found in the *<Mission_Area>* of the structure.
     
     <Reference_List>
         <Internal_Reference>
-            <lid_reference>urn:nasa:pds:nh_doc:all:ralph_ssr</lid_reference>
+            <lid_reference>urn:nasa:pds:nh_documents:ralph:ralph_ssr</lid_reference>
             <reference_type>data_to_document</reference_type>
             <comment>
                 This document from Space Science Reviews describes technical and operational 
