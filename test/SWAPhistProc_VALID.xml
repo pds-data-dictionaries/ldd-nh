@@ -2,10 +2,10 @@
 
 <!-- 
     
-    This label is a mockup of a SWAP Histogram product, created as part of the design process for the New
-    Horizons KEM2 PDS4 delivery. All references to the dictionaries other than the core and the New
-    Horizons dictionary itself have been removed to avoid irrelevant testing failures that would prevent
-    the NH schemas from building.
+    This label is a mockup of a SWAP Histogram product, created as part of the design process for the
+    New Horizons KEM2 PDS4 delivery. All references to the dictionaries other than the core and the New
+    Horizons dictionary itself have been removed to avoid irrelevant testing failures that would
+    prevent the NH schemas from building.
     
     A "real world" label would be required to have the appropriate classes from the Imaging, Geometry,
     Small Bodies, etc. dictionaries; and additional changes have been made to some core namespace
@@ -21,7 +21,7 @@
     xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"
     xmlns:sb="http://pds.nasa.gov/pds4/sb/v1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    
+
     <Identification_Area>
         <logical_identifier>urn:nasa:pds:nh_swap:kem2_cal:swa_0556675232_0x586_sci</logical_identifier>
         <version_id>1.0</version_id>
@@ -29,13 +29,13 @@
         <information_model_version>1.19.0.0</information_model_version>
         <product_class>Product_Observational</product_class>
     </Identification_Area>
-    
+
     <Observation_Area>
         <Time_Coordinates>
             <start_date_time>2023-09-10T18:08:35.833086Z</start_date_time>
             <stop_date_time>2023-09-10T18:09:38.833087Z</stop_date_time>
         </Time_Coordinates>
-        
+
         <Primary_Result_Summary>
             <purpose>Science</purpose>
             <processing_level>Calibrated</processing_level>
@@ -44,13 +44,16 @@
                 <discipline_name>Particles</discipline_name>
             </Science_Facets>
         </Primary_Result_Summary>
-        
+
         <Investigation_Area>
             <name>New Horizons Kuiper Belt Extended Mission 2</name>
             <type>Mission</type>
             <Internal_Reference>
-                <lid_reference>urn:nasa:pds:context:investigation:mission.new_horizons_kem2</lid_reference>
+                <lid_reference>urn:nasa:pds:context:investigation:mission.new_horizons_kem1</lid_reference>
                 <reference_type>data_to_investigation</reference_type>
+                <comment>Note that the LID reference is to the KEM1 investigation, to avoid CI
+                    failures due to a nonexistent context product. The correct KEM2 context product
+                    will be created eventually.</comment>
             </Internal_Reference>
         </Investigation_Area>
 
@@ -104,7 +107,7 @@
                 </nh:Observation_Parameters>
             </nh:Mission_Parameters>
         </Mission_Area>
-        
+
         <Discipline_Area/>
 
     </Observation_Area>
@@ -2265,5 +2268,4 @@
             </Record_Binary>
         </Table_Binary>
     </File_Area_Observational>
-    </Product_Observational>
-    
+</Product_Observational>
