@@ -29,3 +29,4 @@ New Horizons Mission Namespace Documentation
     
     examples/mc0procMockup
     examples/mpfprocMockup
+    examples/swaprocMockup
