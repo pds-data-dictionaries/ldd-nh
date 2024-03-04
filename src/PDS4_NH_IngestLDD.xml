@@ -425,6 +425,192 @@
   </DD_Attribute>
   
   <DD_Attribute>
+    <name>leisa_mode</name>
+    <version_id>1.0</version_id>
+    <local_identifier>leisa_mode</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The leisa_mode attribute describes the data collection readout mode of the LEISA instrument, where RAW is 
+      for un-subtracted readout mode and SUBTRACTED for correlated double sample (CDS) mode
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>RAW</value>
+        <value_meaning>
+          The LEISA readout mode is un-subtracted.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>SUBTRACTED</value>
+        <value_meaning>
+          The LEISA readout mode is subtracted.
+        </value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>leisa_offset_1</name>
+    <version_id>1.0</version_id>
+    <local_identifier>leisa_offset_1</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The leisa_offset_1 attribute provides the voltage offset, in DN,
+      in the first of the four LEISA quadrants.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <minimum_value>0</minimum_value> 
+      <unit_of_measure_type>Units_of_Misc</unit_of_measure_type>
+      <specified_unit_id>DN</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>leisa_offset_2</name>
+    <version_id>1.0</version_id>
+    <local_identifier>leisa_offset_2</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The leisa_offset_2 attribute provides the voltage offset, in DN,
+      in the second of the four LEISA quadrants.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <minimum_value>0</minimum_value> 
+      <unit_of_measure_type>Units_of_Misc</unit_of_measure_type>
+      <specified_unit_id>DN</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>leisa_offset_3</name>
+    <version_id>1.0</version_id>
+    <local_identifier>leisa_offset_3</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The leisa_offset_3 attribute provides the voltage offset, in DN,
+      in the third of the four LEISA quadrants.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <minimum_value>0</minimum_value> 
+      <unit_of_measure_type>Units_of_Misc</unit_of_measure_type>
+      <specified_unit_id>DN</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>leisa_offset_4</name>
+    <version_id>1.0</version_id>
+    <local_identifier>leisa_offset_4</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The leisa_offset_4 attribute provides the voltage offset, in DN,
+      in the fourth of the four LEISA quadrants.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <minimum_value>0</minimum_value> 
+      <unit_of_measure_type>Units_of_Misc</unit_of_measure_type>
+      <specified_unit_id>DN</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>leisa_rate</name>
+    <version_id>1.0</version_id>
+    <local_identifier>leisa_rate</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      LEISA exposure time (ms). Same as the Ralph exposure time that is expressed in seconds
+      and enumerated in the exposure_duration attribute.
+      There is zero dead time between frames so the frame rate is exactly 1/EXPTIME
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0</minimum_value> 
+      <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>leisa_side</name>
+    <version_id>1.0</version_id>
+    <local_identifier>leisa_side</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The leisa_side attribute indicates the hardware side in use during the observation sequence.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>A</value>
+        <value_meaning>
+          The LEISA "A" hardware side.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>B</value>
+        <value_meaning>
+          The LEISA "B" hardware side.
+        </value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>leisa_temperature</name>
+    <version_id>1.0</version_id>
+    <local_identifier>leisa_temperature</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The leisa_temperature attribute provides the temperature, in DN,
+      of the LEISA instrument.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <unit_of_measure_type>Units_of_Misc</unit_of_measure_type>
+      <specified_unit_id>DN</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute> 
+  
+  <DD_Attribute>
+    <name>met510</name>
+    <version_id>1.0</version_id>
+    <local_identifier>met510</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The met510 attribute provides the mission elapsed time (MET) of the Ralph housekeeping packet that marks the start of an observation, used to determine the observation start time and frame rate.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>-1.0</minimum_value> <!-- This is weird. It should be zero. -->
+      <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+      <specified_unit_id>s</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
     <name>mission_phase_name</name>
     <version_id>1.0</version_id>
     <local_identifier>mission_phase_name</local_identifier>
@@ -649,7 +835,7 @@
   
   <DD_Attribute>
     <name>scan_type</name>
-    <version_id>1.0</version_id>
+    <version_id>1.1</version_id>
     <local_identifier>scan_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
@@ -671,6 +857,12 @@
         <value>FRAMING - Framing Mode</value>
         <value_meaning>
           The data were obtained as a sequence of 2D image frames.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>LEISA</value>
+        <value_meaning>
+          The data were obtained as a sequence of LEISA frames.
         </value_meaning>
       </DD_Permissible_Value>
     </DD_Value_Domain>
@@ -813,7 +1005,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The tdi_median_bias_level attribute gives the medianan bias level of a time-delay
+      The tdi_median_bias_level attribute gives the median bias level of a time-delay
       integration observation. For TDI mode, bias levels in each detector were determined
       in-flight during early mission phases. They may vary depending on exposure length.
       See the "New Horizonz SOC to Instrument Pipeline ICD" document for details.
@@ -875,6 +1067,115 @@
       <pattern>0x[0-9A-Za-z]{3}</pattern>
     </DD_Value_Domain>
   </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>thruster_x_enable</name>
+    <version_id>1.0</version_id>
+    <local_identifier>thruster_x_enable</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The thruster_x_enable attribute describes the state of the x thruster. The state is either "enabled" or "disabled"
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>Enabled</value>
+        <value_meaning>
+          The x thruster is enabled.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Disabled</value>
+        <value_meaning>
+          The x thruster is disabled.
+        </value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>thruster_y_enable</name>
+    <version_id>1.0</version_id>
+    <local_identifier>thruster_y_enable</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The thruster_y_enable attribute describes the state of the y thruster. The state is either "enabled" or "disabled"
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>Enabled</value>
+        <value_meaning>
+          The y thruster is enabled.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Disabled</value>
+        <value_meaning>
+          The y thruster is disabled.
+        </value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>thruster_z_enable</name>
+    <version_id>1.0</version_id>
+    <local_identifier>thruster_z_enable</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The thruster_y_enable attribute describes the state of the z thruster. The state is either "enabled" or "disabled"
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>Enabled</value>
+        <value_meaning>
+          The z thruster is enabled.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Disabled</value>
+        <value_meaning>
+          The z thruster is disabled.
+        </value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>true510</name>
+    <version_id>1.0</version_id>
+    <local_identifier>true510</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The true510 attribute describes whether the 0x510 Ralph housekeeping packet is real (YES) or assumed from a gap (NO)
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>Yes</value>
+        <value_meaning>
+          The 0x510 Ralph housekeeping packet is real.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>No</value>
+        <value_meaning>
+          The 0x510 Ralph housekeeping packet is assumed from a gap in telemetry.
+        </value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
   
   <DD_Attribute>
     <name>units_of_conversion_constants</name>
@@ -954,8 +1255,21 @@
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association> 
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Ralph_Details</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>LEISA_Details</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
   </DD_Class>
+  
   
   <DD_Class>
     <name>Mission_Elapsed_Time</name>
@@ -1215,6 +1529,71 @@
     </DD_Association>
   </DD_Class>
   
+  <DD_Class>
+    <name>LEISA_Details</name>
+    <version_id>1.0</version_id>
+    <local_identifier>LEISA_Details</local_identifier>
+    <submitter_name>ACR</submitter_name>
+    <definition>
+      The LEISA_Details class collects observational parameters that are specific
+      to the LEISA instrument and its various channels.
+    </definition>
+    <DD_Association>
+      <identifier_reference>scan_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>leisa_mode</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>leisa_offset_1</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>leisa_offset_2</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>leisa_offset_3</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>leisa_offset_4</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>leisa_rate</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>leisa_side</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>leisa_temperature</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  
  
   <DD_Class>
     <name>MVIC_Details</name>
@@ -1287,6 +1666,28 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
+  
+  <DD_Class>
+    <name>Ralph_Details</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Ralph_Details</local_identifier>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The Ralph_Details class presents Ralph common instrument parameters needed for data calibration.
+    </definition>
+    <DD_Association>
+      <identifier_reference>met510</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>true510</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    </DD_Class>
   
   <DD_Class>
     <name>Resolved_Source</name>
