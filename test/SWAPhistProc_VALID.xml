@@ -104,6 +104,7 @@
                             <nh:sweep_samples_count>1284</nh:sweep_samples_count>
                         </nh:SWAP_Details>
                     </nh:Detector>
+                    <nh:Spacecraft_State/>
                 </nh:Observation_Parameters>
             </nh:Mission_Parameters>
         </Mission_Area>

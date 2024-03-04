@@ -128,6 +128,16 @@
                             <nh:scan_type>FRAMING - Framing Mode</nh:scan_type>
                         </nh:MVIC_Details>
                     </nh:Detector>
+                    <nh:Spacecraft_State>
+                        <nh:thruster_x_enable>true</nh:thruster_x_enable>
+                        <nh:thruster_y_enable>true</nh:thruster_y_enable>
+                        <nh:thruster_z_enable>true</nh:thruster_z_enable>
+                        <nh:gc_scan_rate>0.0</nh:gc_scan_rate>
+                        <nh:target_motion_rate>0.0</nh:target_motion_rate>
+                        <nh:relative_control_mode>false</nh:relative_control_mode>
+                        <nh:pointing_method>CB1</nh:pointing_method>
+                        <nh:spacecraft_spin_state>3-Axis</nh:spacecraft_spin_state>
+                    </nh:Spacecraft_State>
                 </nh:Observation_Parameters>
                 <nh:MVIC_Calibration_Information>
                     <nh:physical_pixel_size unit="micrometer">13.0000</nh:physical_pixel_size>
