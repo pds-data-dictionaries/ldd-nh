@@ -796,20 +796,8 @@
       The relative_control_mode attribute indicates if the relative control mode of the spacecraft was enabled during the operational sequence.
     </definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <DD_Permissible_Value>
-        <value>Enabled</value>
-        <value_meaning>
-          The relative_control_mode is enabled.
-        </value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Disabled</value>
-        <value_meaning>
-          The relative_control_mode is disabled.
-        </value_meaning>
-      </DD_Permissible_Value>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Boolean</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -1078,20 +1066,8 @@
       The thruster_x_enable attribute describes the state of the x thruster. The state is either "enabled" or "disabled"
     </definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <DD_Permissible_Value>
-        <value>Enabled</value>
-        <value_meaning>
-          The x thruster is enabled.
-        </value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Disabled</value>
-        <value_meaning>
-          The x thruster is disabled.
-        </value_meaning>
-      </DD_Permissible_Value>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Boolean</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -1105,20 +1081,8 @@
       The thruster_y_enable attribute describes the state of the y thruster. The state is either "enabled" or "disabled"
     </definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <DD_Permissible_Value>
-        <value>Enabled</value>
-        <value_meaning>
-          The y thruster is enabled.
-        </value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Disabled</value>
-        <value_meaning>
-          The y thruster is disabled.
-        </value_meaning>
-      </DD_Permissible_Value>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Boolean</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -1132,20 +1096,8 @@
       The thruster_y_enable attribute describes the state of the z thruster. The state is either "enabled" or "disabled"
     </definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <DD_Permissible_Value>
-        <value>Enabled</value>
-        <value_meaning>
-          The z thruster is enabled.
-        </value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Disabled</value>
-        <value_meaning>
-          The z thruster is disabled.
-        </value_meaning>
-      </DD_Permissible_Value>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Boolean</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
   
