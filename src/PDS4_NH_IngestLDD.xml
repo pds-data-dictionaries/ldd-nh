@@ -372,6 +372,22 @@
   </DD_Attribute>
   
   <DD_Attribute>
+    <name>gc_scan_rate</name>
+    <version_id>1.0</version_id>
+    <local_identifier>gc_scan_rate</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The gc_scan_rate attribute provides the scan rate of XXXXX in units of TBD
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  
+  <DD_Attribute>
     <name>jupiter_constant</name>
     <version_id>1.0</version_id>
     <local_identifier>jupiter_constant</local_identifier>
@@ -542,6 +558,33 @@
   </DD_Attribute>
   
   <DD_Attribute>
+    <name>pointing_method</name>
+    <version_id>1.0</version_id>
+    <local_identifier>pointing_method</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The pointing_method attribute indicates the spacecraft pointing method enabled during the operational sequence.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>CB1</value>
+        <value_meaning>
+          TBD
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>
+          TBD
+        </value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
     <name>read_noise</name>
     <version_id>1.0</version_id>
     <local_identifier>read_noise</local_identifier>
@@ -554,6 +597,33 @@
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>relative_control_mode</name>
+    <version_id>1.0</version_id>
+    <local_identifier>relative_control_mode</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The relative_control_mode attribute indicates if the relative control mode of the spacecraft was enabled during the operational sequence.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>Enabled</value>
+        <value_meaning>
+          The relative_control_mode is enabled.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Disabled</value>
+        <value_meaning>
+          The relative_control_mode is disabled.
+        </value_meaning>
+      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -643,6 +713,32 @@
   </DD_Attribute>
   
   <DD_Attribute>
+    <name>spacecraft_spin_state</name>
+    <version_id>1.0</version_id>
+    <local_identifier>spacecraft_spin_state</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The spacecraft_spin_state attribute indicates whichi of the spacecraft spin states was emplyed during the observation sequence.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>3-Axis</value>
+        <value_meaning>
+          TBD
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>
+          TBD
+        </value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
     <name>start_clock_count</name>
     <version_id>1.0</version_id>
     <local_identifier>start_clock_count</local_identifier>
@@ -690,6 +786,22 @@
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Integer</value_data_type>
+      <minimum_value>0</minimum_value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>target_motion_rate</name>
+    <version_id>1.0</version_id>
+    <local_identifier>target_motion_rate</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The target_motion_rate attribute is the rate of motion of the target with respect to the instrument detector in units of (TBR). 
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
       <minimum_value>0</minimum_value>
     </DD_Value_Domain>
   </DD_Attribute>
@@ -1168,6 +1280,12 @@
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
+    <DD_Association>
+      <identifier_reference>Spacecraft_State</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
   </DD_Class>
   
   <DD_Class>
@@ -1222,6 +1340,66 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
+  
+  <DD_Class>
+    <name>Spacecraft_State</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Spacecraft_State</local_identifier>
+    <submitter_name>MKC</submitter_name>
+    <definition>
+      The Spacecraft_State class collects observational parameters that are specific
+      to the spacecraft state at the time of the observation.
+    </definition>
+    <DD_Association>
+      <identifier_reference>thruster_x_enable</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>thruster_y_enable</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>thruster_z_enable</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>gc_scan_rate</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>target_motion_rate</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>relative_control_mode</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>pointing_method</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>spacecraft_spin_state</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  
   
   <DD_Class>
     <name>SWAP_Details</name>
