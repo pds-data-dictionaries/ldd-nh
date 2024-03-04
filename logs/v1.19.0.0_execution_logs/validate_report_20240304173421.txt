@@ -3,13 +3,13 @@ PDS Validate Tool Report
 
 Configuration:
    Version                       3.4.1
-   Date                          2024-02-23T01:13:12Z
+   Date                          2024-03-04T17:34:22Z
 
 Parameters:
-   Targets                       [file:/home/runner/work/ldd-nh/ldd-nh/test/MVICmc0Proc_VALID.xml]
+   Targets                       [file:/home/runner/work/ldd-nh/ldd-nh/test/SWAPhistProc_VALID.xml]
    Rule Type                     pds4.label
-   User Specified Schemas        [file:/home/runner/work/ldd-nh/ldd-nh/build/development/5307f6c086a3dd887c174d61f2e61b13abc5cd3a/1.19.0.0/PDS4_NH_1J00_1100.xsd, file:/tmp/PDS4_PDS_1J00.xsd]
-   User Specified Schematrons    [file:/home/runner/work/ldd-nh/ldd-nh/build/development/5307f6c086a3dd887c174d61f2e61b13abc5cd3a/1.19.0.0/PDS4_NH_1J00_1100.sch, file:/tmp/PDS4_PDS_1J00.sch]
+   User Specified Schemas        [file:/home/runner/work/ldd-nh/ldd-nh/build/development/c9a0ea3731f3c2443bf026747ff5a7df0808bf83/1.19.0.0/PDS4_NH_1J00_1100.xsd, file:/tmp/PDS4_PDS_1J00.xsd]
+   User Specified Schematrons    [file:/home/runner/work/ldd-nh/ldd-nh/build/development/c9a0ea3731f3c2443bf026747ff5a7df0808bf83/1.19.0.0/PDS4_NH_1J00_1100.sch, file:/tmp/PDS4_PDS_1J00.sch]
    Severity Level                WARNING
    Recurse Directories           true
    File Filters Used             [*.xml, *.XML]
@@ -22,19 +22,20 @@ Parameters:
 
 Product Level Validation Results
 
-  PASS: file:/home/runner/work/ldd-nh/ldd-nh/test/MVICmc0Proc_VALID.xml
+  FAIL: file:/home/runner/work/ldd-nh/ldd-nh/test/SWAPhistProc_VALID.xml
       WARNING  [warning.label.schema]   Cannot check versioning because no Schema given.
+      ERROR  [error.label.schema]   line 91, 44: cvc-complex-type.2.4.b: The content of element 'nh:Observation_Parameters' is not complete. One of '{"http://pds.nasa.gov/pds4/mission/nh/v1":Spacecraft_State}' is expected.
       WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
         1 product validation(s) completed
 
 Summary:
 
-  0 error(s)
+  1 error(s)
   2 warning(s)
 
   Product Validation Summary:
-    1          product(s) passed
-    0          product(s) failed
+    0          product(s) passed
+    1          product(s) failed
     0          product(s) skipped
 
   Referential Integrity Check Summary:
@@ -43,9 +44,10 @@ Summary:
     0          check(s) skipped
 
   Message Types:
+    1            error.label.schema
     1            warning.label.schema
     1            warning.label.missing_schematron_spec
 
 End of Report
-Completed execution in 4217 ms
+Completed execution in 5003 ms
 
