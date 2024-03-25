@@ -168,10 +168,10 @@ This class contains:
 .. _mvic-conversion-constants:
  
 *************************************************
-Subclass: <nh:MVIC_Conversion_Constants>
+Subclass: <nh:Radiometric_Conversion_Constants>
 *************************************************
 
-The *<nh:MVIC_Conversion_Constants>* class is used in labels for processed
+The *<nh:Radiometric_Conversion_Constants>* class is used in labels for processed
 data from all seven MVIC detectors. The MVIC pipeline does not produce "calibrated"
 data in the sense that PDS defines "calibrated" - specifically, "Data reduced to 
 physical units". The final reduction step depends on both the spectal characteristics
