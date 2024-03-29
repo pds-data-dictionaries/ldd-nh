@@ -1108,23 +1108,11 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The true510 attribute describes whether the 0x510 Ralph housekeeping packet is real (YES) or assumed from a gap (NO)
+      The true510 attribute describes whether the 0x510 Ralph housekeeping packet is real (true) or assumed from a gap (false)
     </definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <DD_Permissible_Value>
-        <value>Yes</value>
-        <value_meaning>
-          The 0x510 Ralph housekeeping packet is real.
-        </value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>No</value>
-        <value_meaning>
-          The 0x510 Ralph housekeeping packet is assumed from a gap in telemetry.
-        </value_meaning>
-      </DD_Permissible_Value>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Boolean</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
   
