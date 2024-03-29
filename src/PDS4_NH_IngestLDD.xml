@@ -753,20 +753,9 @@
       The pointing_method attribute indicates the spacecraft pointing method enabled during the operational sequence.
     </definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <DD_Permissible_Value>
-        <value>CB1</value>
-        <value_meaning>
-          TBD
-        </value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>
-          TBD
-        </value_meaning>
-      </DD_Permissible_Value>
+      <pattern>CB[1-3]|EARTH|SUN|ORBIT NORMAL|RADEC=([0-9]*\.[0-9]*,\s*\-?[0-9]*\.[0-9]*)</pattern>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -910,7 +899,7 @@
         </value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
-        <value>Other</value>
+        <value>Spinning</value>
         <value_meaning>
           TBD
         </value_meaning>
