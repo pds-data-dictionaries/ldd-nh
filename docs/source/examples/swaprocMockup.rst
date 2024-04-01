@@ -1,0 +1,2353 @@
+Mockup Label: SWAP ApID 0x586, Processed Data
+##################################################
+
+This label is a mockup created for design purposes. The data file
+it describes contains processed data SWAP histogram data (identified
+by telemetry ApID 0x586).
+
+The mockup shows the entire *<Product_Observationsl>* structure
+including the New Horizons dictionary classes, which are found in the
+*<Mission_Area>* of the structure. It is a valid label, except for the
+specified path/location of the mission dictionary .xsd file, which should
+be updated prior to attempting to validate it.
+
+  **Note** that the version of the New Horizons (nh:) dictionary shown
+  here is a pre-release. Consult the current release documentation for
+  changes to this namespace-in-development before attempting any real-
+  world applications.
+
+.. code-block:: XML
+    
+    <Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
+        xmlns:disp="http://pds.nasa.gov/pds4/disp/v1"
+        xmlns:geom="http://pds.nasa.gov/pds4/geom/v1"
+        xmlns:proc="http://pds.nasa.gov/pds4/proc/v1"
+        xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"
+        xmlns:sb="http://pds.nasa.gov/pds4/sb/v1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd
+        http://pds.nasa.gov/pds4/disp/v1 https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1J00_1510.xsd
+        http://pds.nasa.gov/pds4/geom/v1 https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1J00_1960.xsd
+        http://pds.nasa.gov/pds4/proc/v1 https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1J00_1300.xsd
+        http://pds.nasa.gov/pds4/mission/nh/v1 ../../../build/development/*/1.19.0.0/PDS4_NH_1J00_1100.xsd
+        http://pds.nasa.gov/pds4/sb/v1 https://pds.nasa.gov/pds4/sb/v1/PDS4_SB_1J00_1000.xsd">
+    
+    <Identification_Area>
+        <logical_identifier>urn:nasa:pds:nh_swap:kem2_cal:swa_0556675232_0x586_sci</logical_identifier>
+        <version_id>1.0</version_id>
+        <title>New Horizons SWAP Sample Calibrated Histogram Data</title>
+        <information_model_version>1.19.0.0</information_model_version>
+        <product_class>Product_Observational</product_class>
+    </Identification_Area>
+    
+    <Observation_Area>
+        <Time_Coordinates>
+            <start_date_time>2023-09-10T18:08:35.833086Z</start_date_time>
+            <stop_date_time>2023-09-10T18:09:38.833087Z</stop_date_time>
+        </Time_Coordinates>
+        
+        <Primary_Result_Summary>
+            <purpose>Science</purpose>
+            <processing_level>Calibrated</processing_level>
+            <Science_Facets>
+                <domain>Heliosphere</domain>
+                <discipline_name>Particles</discipline_name>
+            </Science_Facets>
+        </Primary_Result_Summary>
+        
+        <Investigation_Area>
+            <name>New Horizons Kuiper Belt Extended Mission 2</name>
+            <type>Mission</type>
+            <Internal_Reference>
+                <lid_reference>urn:nasa:pds:context:investigation:mission.new_horizons_kem2</lid_reference>
+                <reference_type>data_to_investigation</reference_type>
+            </Internal_Reference>
+        </Investigation_Area>
+
+        <Observing_System>
+            <Observing_System_Component>
+                <name>New Horizons Spacecraft</name>
+                <type>Host</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.nh</lid_reference>
+                    <reference_type>is_instrument_host</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>SWAP</name>
+                <type>Instrument</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:nh.swap</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+        </Observing_System>
+
+        <Target_Identification>
+            <name>Solar Wind</name>
+            <type>Plasma Stream</type>
+            <Internal_Reference>
+                <lid_reference>urn:nasa:pds:context:target:plasma_stream.solar_wind</lid_reference>
+                <reference_type>data_to_target</reference_type>
+            </Internal_Reference>
+        </Target_Identification>
+
+        <Mission_Area>
+            <nh:Mission_Parameters>
+                <nh:mission_phase_name>KEM2 Cruise</nh:mission_phase_name>
+                <nh:Observation_Parameters>
+                    <nh:telemetry_apid>0x586</nh:telemetry_apid>
+                    <nh:sequence_id>SWAP_TRK_251_1</nh:sequence_id>
+                    <nh:observation_description>SWAP Power OFF</nh:observation_description>
+                    <nh:Mission_Elapsed_Time>
+                        <nh:clock_partition>3</nh:clock_partition>
+                        <nh:start_clock_count>0556675232:00000</nh:start_clock_count>
+                        <nh:stop_clock_count>0556675295:00000</nh:stop_clock_count>
+                    </nh:Mission_Elapsed_Time>
+                    <nh:Detector>
+                        <nh:detector_name>Solar Wind Around Pluto</nh:detector_name>
+                        <nh:detector_type>Electrostatic</nh:detector_type>
+                        <nh:SWAP_Details>
+                            <nh:sweep_samples_count>1284</nh:sweep_samples_count>
+                        </nh:SWAP_Details>
+                    </nh:Detector>
+                </nh:Observation_Parameters>
+            </nh:Mission_Parameters>
+        </Mission_Area>
+        <Discipline_Area>
+            <geom:Geometry>
+                <geom:SPICE_Kernel_Files>
+                    <!-- SPICE kernel listing has been omitted here for brevity -->
+                </geom:SPICE_Kernel_Files>
+                <geom:Geometry_Orbiter>
+                    <geom:geometry_reference_time_utc>2023-09-10T18:09:07.316Z</geom:geometry_reference_time_utc>
+                    <geom:geometry_reference_time_tdb unit="s">747641416.4988446</geom:geometry_reference_time_tdb>
+                    <geom:Orbiter_Identification>
+                        <geom:Geometry_Target_Identification>
+                            <geom:name>Solar Wind</geom:name>
+                        </geom:Geometry_Target_Identification>
+                    </geom:Orbiter_Identification>
+                    <geom:Distances>
+                        <geom:Distances_Specific>
+                            <geom:spacecraft_geocentric_distance unit="km">8443507612.226274</geom:spacecraft_geocentric_distance>
+                            <geom:spacecraft_heliocentric_distance unit="km">8519324552.582178</geom:spacecraft_heliocentric_distance>
+                        </geom:Distances_Specific>
+                    </geom:Distances>
+                    <geom:Vectors>
+                        <geom:Vectors_Cartesian_Specific>
+                            <geom:Vector_Cartesian_Position_Sun_To_Spacecraft>
+                                <geom:x_position unit="km">-2604657186.626188</geom:x_position>
+                                <geom:y_position unit="km">7554480608.205512</geom:y_position>
+                                <geom:z_position unit="km">2953722145.468826</geom:z_position>
+                                <geom:light_time_correction_applied>None</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Position_Sun_To_Spacecraft>
+                            <geom:Vector_Cartesian_Position_Earth_To_Spacecraft>
+                                <geom:x_position unit="km">2457775162.027096</geom:x_position>
+                                <geom:y_position unit="km">-7523715923.028048</geom:y_position>
+                                <geom:z_position unit="km">-2940384457.893204</geom:z_position>
+                                <geom:light_time_correction_applied>None</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Position_Earth_To_Spacecraft>
+                            <geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun>
+                                <geom:x_velocity unit="km/s">-5.359432893566657</geom:x_velocity>
+                                <geom:y_velocity unit="km/s">11.77299466131345</geom:y_velocity>
+                                <geom:z_velocity unit="km/s">4.56295410415987</geom:z_velocity>
+                                <geom:light_time_correction_applied>None</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun>
+                            <geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth>
+                                <geom:x_velocity unit="km/s">-0.7950686046080202</geom:x_velocity>
+                                <geom:y_velocity unit="km/s">-38.32037430619861</geom:y_velocity>
+                                <geom:z_velocity unit="km/s">-16.07088706656015</geom:z_velocity>
+                                <geom:light_time_correction_applied>None</geom:light_time_correction_applied>
+                            </geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth>
+                        </geom:Vectors_Cartesian_Specific>
+                    </geom:Vectors>
+                </geom:Geometry_Orbiter>
+            </geom:Geometry>
+
+            <sb:SB_Metadata/>
+
+            <proc:Processing_Information>
+                <Local_Internal_Reference>
+                    <local_identifier_reference>data_file</local_identifier_reference>
+                    <local_reference_type>processing_information_to_data_object</local_reference_type>
+                </Local_Internal_Reference>
+                <proc:Process>
+                    <proc:name>NH SOC Data Processing Pipeline</proc:name>
+                    <proc:process_owner_name>TSOC</proc:process_owner_name>
+                    <proc:process_owner_institution_name>Southwest Research Institute</proc:process_owner_institution_name>
+                    <proc:Software>
+                        <proc:software_id>L1</proc:software_id>
+                        <proc:software_version_id>6.4</proc:software_version_id>
+                    </proc:Software>
+                </proc:Process>
+                <proc:Process>
+                    <proc:Software>
+                        <proc:software_id>SWAP Flight Software</proc:software_id>
+                        <proc:software_version_id>12</proc:software_version_id>
+                    </proc:Software>
+                    <proc:Software>
+                        <proc:software_id>SWAP Ground Processing Software</proc:software_id>
+                        <proc:software_version_id>4.0</proc:software_version_id>
+                    </proc:Software>
+                </proc:Process>
+            </proc:Processing_Information>
+        </Discipline_Area>
+    </Observation_Area>
+    <Reference_List>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:nh_swap:kem2_raw:swa_0556675232_0x586_eng</lid_reference>
+            <reference_type>data_to_raw_product</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:nh_documents:swap:swap_ssr</lid_reference>
+            <reference_type>data_to_document</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:nh_documents:mission:payload_ssr</lid_reference>
+            <reference_type>data_to_document</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:nh_documents:mission:soc_inst_icd</lid_reference>
+            <reference_type>data_to_document</reference_type>
+        </Internal_Reference>
+    </Reference_List>
+    <File_Area_Observational>
+        <File>
+            <file_name>swa_0556675232_0x586_sci.fit</file_name>
+            <local_identifier>data_file</local_identifier>
+            <creation_date_time>2023-12-22T14:22:32Z</creation_date_time>
+            <file_size unit="byte">864000</file_size>
+            <md5_checksum>27438c979d8d6ede1f164fa3238604fc</md5_checksum>
+        </File>
+        <Header>
+            <offset unit="byte">0</offset>
+            <object_length unit="byte">20160</object_length>
+            <parsing_standard_id>FITS 4.0</parsing_standard_id>
+        </Header>
+        <Array_2D>
+            <name>Primary Data Unit</name>
+            <offset unit="byte">20160</offset>
+            <axes>2</axes>
+            <axis_index_order>Last Index Fastest</axis_index_order>
+            <description>[TBS]</description>
+            <Element_Array>
+                <data_type>IEEE754MSBDouble</data_type>
+                <scaling_factor>1</scaling_factor>
+                <value_offset>0</value_offset>
+            </Element_Array>
+            <Axis_Array>
+                <axis_name>NAXIS1</axis_name>
+                <elements>64</elements>
+                <sequence_number>1</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>NAXIS2</axis_name>
+                <elements>47</elements>
+                <sequence_number>2</sequence_number>
+            </Axis_Array>
+        </Array_2D>
+        <Header>
+            <offset unit="byte">46080</offset>
+            <object_length unit="byte">2880</object_length>
+            <parsing_standard_id>FITS 4.0</parsing_standard_id>
+        </Header>
+        <Array_1D>
+            <name>TIMESTAMP</name>
+            <offset unit="byte">48960</offset>
+            <axes>1</axes>
+            <axis_index_order>Last Index Fastest</axis_index_order>
+            <description>TBS</description>
+            <Element_Array>
+                <data_type>IEEE754MSBDouble</data_type>
+            </Element_Array>
+            <Axis_Array>
+                <axis_name>NAXIS1</axis_name>
+                <elements>64</elements>
+                <sequence_number>1</sequence_number>
+            </Axis_Array>
+        </Array_1D>
+        <Header>
+            <offset unit="byte">51840</offset>
+            <object_length unit="byte">28800</object_length>
+            <parsing_standard_id>FITS 4.0</parsing_standard_id>
+        </Header>
+        <Table_Binary>
+            <name>Housekeeping</name>
+            <offset unit="byte">80640</offset>
+            <records>24</records>
+            <Record_Binary>
+                <fields>99</fields>
+                <groups>0</groups>
+                <record_length unit="byte">508</record_length>
+                <Field_Binary>
+                    <name>MET</name>
+                    <field_number>1</field_number>
+                    <field_location unit="byte">1</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <unit>s</unit>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SPICE_PACKET_MET</name>
+                    <field_number>2</field_number>
+                    <field_location unit="byte">5</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">18</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PACKET_UTC</name>
+                    <field_number>3</field_number>
+                    <field_location unit="byte">23</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">26</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PACKET_ET</name>
+                    <field_number>4</field_number>
+                    <field_location unit="byte">49</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>CMD_EXE_CNT</name>
+                    <field_number>5</field_number>
+                    <field_location unit="byte">57</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>CMD_REJ_CNT</name>
+                    <field_number>6</field_number>
+                    <field_location unit="byte">58</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>LUT_CHOICE</name>
+                    <field_number>7</field_number>
+                    <field_location unit="byte">59</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">6</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_SAFE</name>
+                    <field_number>8</field_number>
+                    <field_location unit="byte">65</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_SAFE</name>
+                    <field_number>9</field_number>
+                    <field_location unit="byte">67</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>WDT_ST</name>
+                    <field_number>10</field_number>
+                    <field_location unit="byte">69</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>RCV_SAFE_ST</name>
+                    <field_number>11</field_number>
+                    <field_location unit="byte">71</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SAFE_ST</name>
+                    <field_number>12</field_number>
+                    <field_location unit="byte">73</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_RATE_ST</name>
+                    <field_number>13</field_number>
+                    <field_location unit="byte">75</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_RATE_ST</name>
+                    <field_number>14</field_number>
+                    <field_location unit="byte">77</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_CURR_ST</name>
+                    <field_number>15</field_number>
+                    <field_location unit="byte">79</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_CURR_ST</name>
+                    <field_number>16</field_number>
+                    <field_location unit="byte">81</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_VOLT_ST</name>
+                    <field_number>17</field_number>
+                    <field_location unit="byte">83</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_VOLT_ST</name>
+                    <field_number>18</field_number>
+                    <field_location unit="byte">85</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>LVPS_VOLT_ST</name>
+                    <field_number>19</field_number>
+                    <field_location unit="byte">87</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>LVPS_CURR_ST</name>
+                    <field_number>20</field_number>
+                    <field_location unit="byte">89</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>OVR_TEMP_ST</name>
+                    <field_number>21</field_number>
+                    <field_location unit="byte">91</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>UND_TEMP_ST</name>
+                    <field_number>22</field_number>
+                    <field_location unit="byte">93</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>MODE</name>
+                    <field_number>23</field_number>
+                    <field_location unit="byte">95</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">5</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>MEMDP_ST</name>
+                    <field_number>24</field_number>
+                    <field_location unit="byte">100</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">7</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SENSOR_TEMP</name>
+                    <field_number>25</field_number>
+                    <field_location unit="byte">107</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>degC</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>HVSUPP_TEMP</name>
+                    <field_number>26</field_number>
+                    <field_location unit="byte">115</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>degC</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>CNTRLR_TEMP</name>
+                    <field_number>27</field_number>
+                    <field_location unit="byte">123</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>degC</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_VOLT</name>
+                    <field_number>28</field_number>
+                    <field_location unit="byte">131</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_VOLT</name>
+                    <field_number>29</field_number>
+                    <field_location unit="byte">139</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_CURR</name>
+                    <field_number>30</field_number>
+                    <field_location unit="byte">147</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>uA</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_CURR</name>
+                    <field_number>31</field_number>
+                    <field_location unit="byte">155</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>uA</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>P5_VOLT</name>
+                    <field_number>32</field_number>
+                    <field_location unit="byte">163</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>N5_VOLT</name>
+                    <field_number>33</field_number>
+                    <field_location unit="byte">171</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>P5_CURR</name>
+                    <field_number>34</field_number>
+                    <field_location unit="byte">179</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>mA</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>N5_CURR</name>
+                    <field_number>35</field_number>
+                    <field_location unit="byte">187</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>mA</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SWAP_REV</name>
+                    <field_number>36</field_number>
+                    <field_location unit="byte">195</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>LAST_OPCODE</name>
+                    <field_number>37</field_number>
+                    <field_location unit="byte">196</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">11</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PHD_LLD_LVL</name>
+                    <field_number>38</field_number>
+                    <field_location unit="byte">207</field_location>
+                    <data_type>SignedLSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <unit>V</unit>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>32768</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>MEMLD_ST</name>
+                    <field_number>39</field_number>
+                    <field_location unit="byte">209</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">8</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>DO_NOT_USE_0</name>
+                    <field_number>40</field_number>
+                    <field_location unit="byte">217</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">8</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>OPT1_ST</name>
+                    <field_number>41</field_number>
+                    <field_location unit="byte">225</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">7</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>OPT2_ST</name>
+                    <field_number>42</field_number>
+                    <field_location unit="byte">232</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">7</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_ST</name>
+                    <field_number>43</field_number>
+                    <field_location unit="byte">239</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">7</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_ST</name>
+                    <field_number>44</field_number>
+                    <field_location unit="byte">246</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">7</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SPARE1</name>
+                    <field_number>45</field_number>
+                    <field_location unit="byte">253</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_CNT_ST</name>
+                    <field_number>46</field_number>
+                    <field_location unit="byte">254</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_CNT_ST</name>
+                    <field_number>47</field_number>
+                    <field_location unit="byte">256</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_CURRTHR</name>
+                    <field_number>48</field_number>
+                    <field_location unit="byte">258</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>uA</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_CURRTHR</name>
+                    <field_number>49</field_number>
+                    <field_location unit="byte">266</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>uA</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_LVL</name>
+                    <field_number>50</field_number>
+                    <field_location unit="byte">274</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_LVL</name>
+                    <field_number>51</field_number>
+                    <field_location unit="byte">282</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>AGND_VOLT</name>
+                    <field_number>52</field_number>
+                    <field_location unit="byte">290</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>CEM_CURR</name>
+                    <field_number>53</field_number>
+                    <field_location unit="byte">298</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>uA</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ESA1_VOLT</name>
+                    <field_number>54</field_number>
+                    <field_location unit="byte">306</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ESA2_VOLT</name>
+                    <field_number>55</field_number>
+                    <field_location unit="byte">314</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>DFL1_VOLT</name>
+                    <field_number>56</field_number>
+                    <field_location unit="byte">322</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>DFL2_VOLT</name>
+                    <field_number>57</field_number>
+                    <field_location unit="byte">330</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>RPA1_VOLT</name>
+                    <field_number>58</field_number>
+                    <field_location unit="byte">338</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>RPA2_VOLT</name>
+                    <field_number>59</field_number>
+                    <field_location unit="byte">346</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>P2_5_VOLT</name>
+                    <field_number>60</field_number>
+                    <field_location unit="byte">354</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PHD_LLD_VOLT</name>
+                    <field_number>61</field_number>
+                    <field_location unit="byte">362</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_RATELIM</name>
+                    <field_number>62</field_number>
+                    <field_location unit="byte">370</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_RATELIM</name>
+                    <field_number>63</field_number>
+                    <field_location unit="byte">378</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>STIM_ENA</name>
+                    <field_number>64</field_number>
+                    <field_location unit="byte">386</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">8</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PPS_SEL_ST</name>
+                    <field_number>65</field_number>
+                    <field_location unit="byte">394</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PPS_DET_ST</name>
+                    <field_number>66</field_number>
+                    <field_location unit="byte">395</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">8</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>CEM_INT_LIM</name>
+                    <field_number>67</field_number>
+                    <field_location unit="byte">403</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>uA</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>CMD_ECHO_ST</name>
+                    <field_number>68</field_number>
+                    <field_location unit="byte">411</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">8</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>HV_PGSAFE_ST</name>
+                    <field_number>69</field_number>
+                    <field_location unit="byte">419</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">5</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>HV_PGENA_ST</name>
+                    <field_number>70</field_number>
+                    <field_location unit="byte">424</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">7</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>HV_ARM_ST</name>
+                    <field_number>71</field_number>
+                    <field_location unit="byte">431</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">7</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>CEM_INT_DIP</name>
+                    <field_number>72</field_number>
+                    <field_location unit="byte">438</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>V</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PLAN_ID</name>
+                    <field_number>73</field_number>
+                    <field_location unit="byte">446</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SWEEP_ID</name>
+                    <field_number>74</field_number>
+                    <field_location unit="byte">447</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE</name>
+                    <field_number>75</field_number>
+                    <field_location unit="byte">448</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_VLT1_ST</name>
+                    <field_number>76</field_number>
+                    <field_location unit="byte">456</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_CUR1_ST</name>
+                    <field_number>77</field_number>
+                    <field_location unit="byte">458</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_VLT1_ST</name>
+                    <field_number>78</field_number>
+                    <field_location unit="byte">460</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_CUR1_ST</name>
+                    <field_number>79</field_number>
+                    <field_location unit="byte">462</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_INT_ST</name>
+                    <field_number>80</field_number>
+                    <field_location unit="byte">464</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_INT_ST</name>
+                    <field_number>81</field_number>
+                    <field_location unit="byte">466</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>EEP2_RDY</name>
+                    <field_number>82</field_number>
+                    <field_location unit="byte">468</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">4</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>EEP1_RDY</name>
+                    <field_number>83</field_number>
+                    <field_location unit="byte">472</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">4</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>FPGA_TYPE</name>
+                    <field_number>84</field_number>
+                    <field_location unit="byte">476</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>FPGA_REV</name>
+                    <field_number>85</field_number>
+                    <field_location unit="byte">478</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SM_TLM</name>
+                    <field_number>86</field_number>
+                    <field_location unit="byte">479</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>HX_TLM</name>
+                    <field_number>87</field_number>
+                    <field_location unit="byte">481</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">3</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>RT_TLM</name>
+                    <field_number>88</field_number>
+                    <field_location unit="byte">484</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">3</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>HK_TLM</name>
+                    <field_number>89</field_number>
+                    <field_location unit="byte">487</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>FPGA_PUP_ST</name>
+                    <field_number>90</field_number>
+                    <field_location unit="byte">489</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>EEPL2_CKS_ST</name>
+                    <field_number>91</field_number>
+                    <field_location unit="byte">490</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>EEPL1_CKS_ST</name>
+                    <field_number>92</field_number>
+                    <field_location unit="byte">492</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>RAM_D_ST</name>
+                    <field_number>93</field_number>
+                    <field_location unit="byte">494</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>EEPC2_CKS_ST</name>
+                    <field_number>94</field_number>
+                    <field_location unit="byte">496</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>EEPC1_CKS_ST</name>
+                    <field_number>95</field_number>
+                    <field_location unit="byte">498</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>RAM_C_ST</name>
+                    <field_number>96</field_number>
+                    <field_location unit="byte">500</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PROM_CKS_ST</name>
+                    <field_number>97</field_number>
+                    <field_location unit="byte">502</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">2</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>CHKSUM</name>
+                    <field_number>98</field_number>
+                    <field_location unit="byte">504</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>CALCCHECKSUM</name>
+                    <field_number>99</field_number>
+                    <field_location unit="byte">505</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+            </Record_Binary>
+        </Table_Binary>
+        <Header>
+            <offset unit="byte">95040</offset>
+            <object_length unit="byte">17280</object_length>
+            <parsing_standard_id>FITS 4.0</parsing_standard_id>
+        </Header>
+        <Table_Binary>
+            <name>Quality</name>
+            <offset unit="byte">112320</offset>
+            <records>24</records>
+            <Record_Binary>
+                <fields>56</fields>
+                <groups>0</groups>
+                <record_length unit="byte">108</record_length>
+                <Field_Binary>
+                    <name>MET</name>
+                    <field_number>1</field_number>
+                    <field_location unit="byte">1</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <unit>s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SPICE_PACKET_MET</name>
+                    <field_number>2</field_number>
+                    <field_location unit="byte">5</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">18</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PACKET_UTC</name>
+                    <field_number>3</field_number>
+                    <field_location unit="byte">23</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">26</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PACKET_ET</name>
+                    <field_number>4</field_number>
+                    <field_location unit="byte">49</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>AGND_VOLT</name>
+                    <field_number>5</field_number>
+                    <field_location unit="byte">57</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>CMD_REJ_CNT</name>
+                    <field_number>6</field_number>
+                    <field_location unit="byte">58</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>CNTRLR_TEMP</name>
+                    <field_number>7</field_number>
+                    <field_location unit="byte">59</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>DFL1_VOLT</name>
+                    <field_number>8</field_number>
+                    <field_location unit="byte">60</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>DFL2_VOLT</name>
+                    <field_number>9</field_number>
+                    <field_location unit="byte">61</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>EEPC1_CKS_ST</name>
+                    <field_number>10</field_number>
+                    <field_location unit="byte">62</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>EEPC2_CKS_ST</name>
+                    <field_number>11</field_number>
+                    <field_location unit="byte">63</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>EEPL1_CKS_ST</name>
+                    <field_number>12</field_number>
+                    <field_location unit="byte">64</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>EEPL2_CKS_ST</name>
+                    <field_number>13</field_number>
+                    <field_location unit="byte">65</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ESA1_VOLT</name>
+                    <field_number>14</field_number>
+                    <field_location unit="byte">66</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ESA2_VOLT</name>
+                    <field_number>15</field_number>
+                    <field_location unit="byte">67</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>FPGA_PUP_ST</name>
+                    <field_number>16</field_number>
+                    <field_location unit="byte">68</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>HVSUPP_TEMP</name>
+                    <field_number>17</field_number>
+                    <field_location unit="byte">69</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>LVPS_CURR_ST</name>
+                    <field_number>18</field_number>
+                    <field_location unit="byte">70</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>LVPS_VOLT_ST</name>
+                    <field_number>19</field_number>
+                    <field_location unit="byte">71</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>N5_CURR</name>
+                    <field_number>20</field_number>
+                    <field_location unit="byte">72</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>N5_VOLT</name>
+                    <field_number>21</field_number>
+                    <field_location unit="byte">73</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>OVR_TEMP_ST</name>
+                    <field_number>22</field_number>
+                    <field_location unit="byte">74</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>P2_5_VOLT</name>
+                    <field_number>23</field_number>
+                    <field_location unit="byte">75</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>P5_CURR</name>
+                    <field_number>24</field_number>
+                    <field_location unit="byte">76</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>P5_VOLT</name>
+                    <field_number>25</field_number>
+                    <field_location unit="byte">77</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_CNT_ST</name>
+                    <field_number>26</field_number>
+                    <field_location unit="byte">78</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_CUR1_ST</name>
+                    <field_number>27</field_number>
+                    <field_location unit="byte">79</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_CURR</name>
+                    <field_number>28</field_number>
+                    <field_location unit="byte">80</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_CURR_ST</name>
+                    <field_number>29</field_number>
+                    <field_location unit="byte">81</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_INT_ST</name>
+                    <field_number>30</field_number>
+                    <field_location unit="byte">82</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_RATE_ST</name>
+                    <field_number>31</field_number>
+                    <field_location unit="byte">83</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_SAFE</name>
+                    <field_number>32</field_number>
+                    <field_location unit="byte">84</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_VLT1_ST</name>
+                    <field_number>33</field_number>
+                    <field_location unit="byte">85</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_VOLT</name>
+                    <field_number>34</field_number>
+                    <field_location unit="byte">86</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PCEM_VOLT_ST</name>
+                    <field_number>35</field_number>
+                    <field_location unit="byte">87</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PPS_DET_ST</name>
+                    <field_number>36</field_number>
+                    <field_location unit="byte">88</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PROM_CKS_ST</name>
+                    <field_number>37</field_number>
+                    <field_location unit="byte">89</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>RAM_C_ST</name>
+                    <field_number>38</field_number>
+                    <field_location unit="byte">90</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>RAM_D_ST</name>
+                    <field_number>39</field_number>
+                    <field_location unit="byte">91</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>RCV_SAFE_ST</name>
+                    <field_number>40</field_number>
+                    <field_location unit="byte">92</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>RPA1_VOLT</name>
+                    <field_number>41</field_number>
+                    <field_location unit="byte">93</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>RPA2_VOLT</name>
+                    <field_number>42</field_number>
+                    <field_location unit="byte">94</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SAFE_ST</name>
+                    <field_number>43</field_number>
+                    <field_location unit="byte">95</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_CNT_ST</name>
+                    <field_number>44</field_number>
+                    <field_location unit="byte">96</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_CUR1_ST</name>
+                    <field_number>45</field_number>
+                    <field_location unit="byte">97</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_CURR</name>
+                    <field_number>46</field_number>
+                    <field_location unit="byte">98</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_CURR_ST</name>
+                    <field_number>47</field_number>
+                    <field_location unit="byte">99</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_INT_ST</name>
+                    <field_number>48</field_number>
+                    <field_location unit="byte">100</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_RATE_ST</name>
+                    <field_number>49</field_number>
+                    <field_location unit="byte">101</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_SAFE</name>
+                    <field_number>50</field_number>
+                    <field_location unit="byte">102</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_VLT1_ST</name>
+                    <field_number>51</field_number>
+                    <field_location unit="byte">103</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_VOLT</name>
+                    <field_number>52</field_number>
+                    <field_location unit="byte">104</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SCEM_VOLT_ST</name>
+                    <field_number>53</field_number>
+                    <field_location unit="byte">105</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SENSOR_TEMP</name>
+                    <field_number>54</field_number>
+                    <field_location unit="byte">106</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>UND_TEMP_ST</name>
+                    <field_number>55</field_number>
+                    <field_location unit="byte">107</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>WDT_ST</name>
+                    <field_number>56</field_number>
+                    <field_location unit="byte">108</field_location>
+                    <data_type>UnsignedByte</data_type>
+                    <field_length unit="byte">1</field_length>
+                </Field_Binary>
+            </Record_Binary>
+        </Table_Binary>
+        <Header>
+            <offset unit="byte">115200</offset>
+            <object_length unit="byte">11520</object_length>
+            <parsing_standard_id>FITS 4.0</parsing_standard_id>
+        </Header>
+        <Table_Binary>
+            <name>Thrusters</name>
+            <offset unit="byte">126720</offset>
+            <records>5104</records>
+            <Record_Binary>
+                <fields>22</fields>
+                <groups>0</groups>
+                <record_length unit="byte">134</record_length>
+                <Field_Binary>
+                    <name>MET</name>
+                    <field_number>1</field_number>
+                    <field_location unit="byte">1</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SPICE_PACKET_MET</name>
+                    <field_number>2</field_number>
+                    <field_location unit="byte">9</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">18</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PACKET_UTC</name>
+                    <field_number>3</field_number>
+                    <field_location unit="byte">27</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">26</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PACKET_ET</name>
+                    <field_number>4</field_number>
+                    <field_location unit="byte">53</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_SH_VERNIER</name>
+                    <field_number>5</field_number>
+                    <field_location unit="byte">61</field_location>
+                    <data_type>SignedLSB2</data_type>
+                    <field_length unit="byte">2</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>32768</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_DATA_VALID_MET</name>
+                    <field_number>6</field_number>
+                    <field_location unit="byte">63</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_A1_FIRE</name>
+                    <field_number>7</field_number>
+                    <field_location unit="byte">71</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_A2_FIRE</name>
+                    <field_number>8</field_number>
+                    <field_location unit="byte">75</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_A3_FIRE</name>
+                    <field_number>9</field_number>
+                    <field_location unit="byte">79</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_B1_FIRE</name>
+                    <field_number>10</field_number>
+                    <field_location unit="byte">83</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_B2_FIRE</name>
+                    <field_number>11</field_number>
+                    <field_location unit="byte">87</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_B3_FIRE</name>
+                    <field_number>12</field_number>
+                    <field_location unit="byte">91</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_C1_FIRE</name>
+                    <field_number>13</field_number>
+                    <field_location unit="byte">95</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_C2_FIRE</name>
+                    <field_number>14</field_number>
+                    <field_location unit="byte">99</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_C3_FIRE</name>
+                    <field_number>15</field_number>
+                    <field_location unit="byte">103</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_D1_FIRE</name>
+                    <field_number>16</field_number>
+                    <field_location unit="byte">107</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_D2_FIRE</name>
+                    <field_number>17</field_number>
+                    <field_location unit="byte">111</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_D3_FIRE</name>
+                    <field_number>18</field_number>
+                    <field_location unit="byte">115</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_C4_FIRE</name>
+                    <field_number>19</field_number>
+                    <field_location unit="byte">119</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_D4_FIRE</name>
+                    <field_number>20</field_number>
+                    <field_location unit="byte">123</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_F1_FIRE</name>
+                    <field_number>21</field_number>
+                    <field_location unit="byte">127</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>GC1_F2_FIRE</name>
+                    <field_number>22</field_number>
+                    <field_location unit="byte">131</field_location>
+                    <data_type>SignedLSB4</data_type>
+                    <field_length unit="byte">4</field_length>
+                    <scaling_factor>1</scaling_factor>
+                    <value_offset>2147483648</value_offset>
+                </Field_Binary>
+            </Record_Binary>
+        </Table_Binary>
+        <Header>
+            <offset unit="byte">812160</offset>
+            <object_length unit="byte">31680</object_length>
+            <parsing_standard_id>FITS 4.0</parsing_standard_id>
+        </Header>
+        <Table_Binary>
+            <name>SPICE Orbit Attitude Calc</name>
+            <offset unit="byte">843840</offset>
+            <records>24</records>
+            <Record_Binary>
+                <fields>89</fields>
+                <groups>0</groups>
+                <record_length unit="byte">794</record_length>
+                <Field_Binary>
+                    <name>SPICE_PACKET_MET</name>
+                    <field_number>1</field_number>
+                    <field_location unit="byte">1</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">18</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>START_UTC_MET_0</name>
+                    <field_number>2</field_number>
+                    <field_location unit="byte">19</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">26</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>START_ET_0</name>
+                    <field_number>3</field_number>
+                    <field_location unit="byte">45</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>START_UTC_MET_1</name>
+                    <field_number>4</field_number>
+                    <field_location unit="byte">53</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">26</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>START_ET_1</name>
+                    <field_number>5</field_number>
+                    <field_location unit="byte">79</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>STOP_UTC_MET_0</name>
+                    <field_number>6</field_number>
+                    <field_location unit="byte">87</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">26</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>STOP_ET_0</name>
+                    <field_number>7</field_number>
+                    <field_location unit="byte">113</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>STOP_UTC_MET_1</name>
+                    <field_number>8</field_number>
+                    <field_location unit="byte">121</field_location>
+                    <data_type>ASCII_String</data_type>
+                    <field_length unit="byte">26</field_length>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>STOP_ET_1</name>
+                    <field_number>9</field_number>
+                    <field_location unit="byte">147</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE_JSP_XZ0_START</name>
+                    <field_number>10</field_number>
+                    <field_location unit="byte">155</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE_JSP_XZ1_START</name>
+                    <field_number>11</field_number>
+                    <field_location unit="byte">163</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE_JSP_XZ0_MID</name>
+                    <field_number>12</field_number>
+                    <field_location unit="byte">171</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE_JSP_XZ1_MID</name>
+                    <field_number>13</field_number>
+                    <field_location unit="byte">179</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE_JSP_XZ0_STOP</name>
+                    <field_number>14</field_number>
+                    <field_location unit="byte">187</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE_JSP_XZ1_STOP</name>
+                    <field_number>15</field_number>
+                    <field_location unit="byte">195</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>Y_SUN_ANG0_MIDDLE</name>
+                    <field_number>16</field_number>
+                    <field_location unit="byte">203</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>Y_JUP_ANG0_MIDDLE</name>
+                    <field_number>17</field_number>
+                    <field_location unit="byte">211</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>Y_EARTH_ANG0_MIDDLE</name>
+                    <field_number>18</field_number>
+                    <field_location unit="byte">219</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>Y_SUN_ANG1_MIDDLE</name>
+                    <field_number>19</field_number>
+                    <field_location unit="byte">227</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>Y_JUP_ANG1_MIDDLE</name>
+                    <field_number>20</field_number>
+                    <field_location unit="byte">235</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>Y_EARTH_ANG1_MIDDLE</name>
+                    <field_number>21</field_number>
+                    <field_location unit="byte">243</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>EARTH_SC_0_MIDDLE</name>
+                    <field_number>22</field_number>
+                    <field_location unit="byte">251</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>JUPITER_SC_0_MIDDLE</name>
+                    <field_number>23</field_number>
+                    <field_location unit="byte">259</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SUN_SC_0_MIDDLE</name>
+                    <field_number>24</field_number>
+                    <field_location unit="byte">267</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>EARTH_SC_1_MIDDLE</name>
+                    <field_number>25</field_number>
+                    <field_location unit="byte">275</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>JUPITER_SC_1_MIDDLE</name>
+                    <field_number>26</field_number>
+                    <field_location unit="byte">283</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SUN_SC_1_MIDDLE</name>
+                    <field_number>27</field_number>
+                    <field_location unit="byte">291</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PHI_SUN_SC_0</name>
+                    <field_number>28</field_number>
+                    <field_location unit="byte">299</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>THETA_SUN_SC_0</name>
+                    <field_number>29</field_number>
+                    <field_location unit="byte">307</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PHI_SUN_SC_1</name>
+                    <field_number>30</field_number>
+                    <field_location unit="byte">315</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>THETA_SUN_SC_1</name>
+                    <field_number>31</field_number>
+                    <field_location unit="byte">323</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_JUP_X_0</name>
+                    <field_number>32</field_number>
+                    <field_location unit="byte">331</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_JUP_Y_0</name>
+                    <field_number>33</field_number>
+                    <field_location unit="byte">339</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_JUP_Z_0</name>
+                    <field_number>34</field_number>
+                    <field_location unit="byte">347</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_JUP_VX_0</name>
+                    <field_number>35</field_number>
+                    <field_location unit="byte">355</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_JUP_VY_0</name>
+                    <field_number>36</field_number>
+                    <field_location unit="byte">363</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_JUP_VZ_0</name>
+                    <field_number>37</field_number>
+                    <field_location unit="byte">371</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_JUP_X_1</name>
+                    <field_number>38</field_number>
+                    <field_location unit="byte">379</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_JUP_Y_1</name>
+                    <field_number>39</field_number>
+                    <field_location unit="byte">387</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_JUP_Z_1</name>
+                    <field_number>40</field_number>
+                    <field_location unit="byte">395</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_JUP_VX_1</name>
+                    <field_number>41</field_number>
+                    <field_location unit="byte">403</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_JUP_VY_1</name>
+                    <field_number>42</field_number>
+                    <field_location unit="byte">411</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_JUP_VZ_1</name>
+                    <field_number>43</field_number>
+                    <field_location unit="byte">419</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_JUP_X_0</name>
+                    <field_number>44</field_number>
+                    <field_location unit="byte">427</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_JUP_Y_0</name>
+                    <field_number>45</field_number>
+                    <field_location unit="byte">435</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_JUP_Z_0</name>
+                    <field_number>46</field_number>
+                    <field_location unit="byte">443</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_JUP_VX_0</name>
+                    <field_number>47</field_number>
+                    <field_location unit="byte">451</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_JUP_VY_0</name>
+                    <field_number>48</field_number>
+                    <field_location unit="byte">459</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_JUP_VZ_0</name>
+                    <field_number>49</field_number>
+                    <field_location unit="byte">467</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_JUP_X_1</name>
+                    <field_number>50</field_number>
+                    <field_location unit="byte">475</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_JUP_Y_1</name>
+                    <field_number>51</field_number>
+                    <field_location unit="byte">483</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_JUP_Z_1</name>
+                    <field_number>52</field_number>
+                    <field_location unit="byte">491</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_JUP_VX_1</name>
+                    <field_number>53</field_number>
+                    <field_location unit="byte">499</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_JUP_VY_1</name>
+                    <field_number>54</field_number>
+                    <field_location unit="byte">507</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_JUP_VZ_1</name>
+                    <field_number>55</field_number>
+                    <field_location unit="byte">515</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE_PSP_XZ0_START</name>
+                    <field_number>56</field_number>
+                    <field_location unit="byte">523</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE_PSP_XZ1_START</name>
+                    <field_number>57</field_number>
+                    <field_location unit="byte">531</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE_PSP_XZ0_MID</name>
+                    <field_number>58</field_number>
+                    <field_location unit="byte">539</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE_PSP_XZ1_MID</name>
+                    <field_number>59</field_number>
+                    <field_location unit="byte">547</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE_PSP_XZ0_STOP</name>
+                    <field_number>60</field_number>
+                    <field_location unit="byte">555</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>ANGLE_PSP_XZ1_STOP</name>
+                    <field_number>61</field_number>
+                    <field_location unit="byte">563</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>Y_PLU_ANG0_MIDDLE</name>
+                    <field_number>62</field_number>
+                    <field_location unit="byte">571</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>Y_PLU_ANG1_MIDDLE</name>
+                    <field_number>63</field_number>
+                    <field_location unit="byte">579</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>deg</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PLUTO_SC_0_MIDDLE</name>
+                    <field_number>64</field_number>
+                    <field_location unit="byte">587</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>PLUTO_SC_1_MIDDLE</name>
+                    <field_number>65</field_number>
+                    <field_location unit="byte">595</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_PLU_X_0</name>
+                    <field_number>66</field_number>
+                    <field_location unit="byte">603</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_PLU_Y_0</name>
+                    <field_number>67</field_number>
+                    <field_location unit="byte">611</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_PLU_Z_0</name>
+                    <field_number>68</field_number>
+                    <field_location unit="byte">619</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_PLU_VX_0</name>
+                    <field_number>69</field_number>
+                    <field_location unit="byte">627</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_PLU_VY_0</name>
+                    <field_number>70</field_number>
+                    <field_location unit="byte">635</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_PLU_VZ_0</name>
+                    <field_number>71</field_number>
+                    <field_location unit="byte">643</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_PLU_X_1</name>
+                    <field_number>72</field_number>
+                    <field_location unit="byte">651</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_PLU_Y_1</name>
+                    <field_number>73</field_number>
+                    <field_location unit="byte">659</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_PLU_Z_1</name>
+                    <field_number>74</field_number>
+                    <field_location unit="byte">667</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_PLU_VX_1</name>
+                    <field_number>75</field_number>
+                    <field_location unit="byte">675</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_PLU_VY_1</name>
+                    <field_number>76</field_number>
+                    <field_location unit="byte">683</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_IAU_PLU_VZ_1</name>
+                    <field_number>77</field_number>
+                    <field_location unit="byte">691</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_PLU_X_0</name>
+                    <field_number>78</field_number>
+                    <field_location unit="byte">699</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_PLU_Y_0</name>
+                    <field_number>79</field_number>
+                    <field_location unit="byte">707</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_PLU_Z_0</name>
+                    <field_number>80</field_number>
+                    <field_location unit="byte">715</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_PLU_VX_0</name>
+                    <field_number>81</field_number>
+                    <field_location unit="byte">723</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_PLU_VY_0</name>
+                    <field_number>82</field_number>
+                    <field_location unit="byte">731</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_PLU_VZ_0</name>
+                    <field_number>83</field_number>
+                    <field_location unit="byte">739</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_PLU_X_1</name>
+                    <field_number>84</field_number>
+                    <field_location unit="byte">747</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_PLU_Y_1</name>
+                    <field_number>85</field_number>
+                    <field_location unit="byte">755</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_PLU_Z_1</name>
+                    <field_number>86</field_number>
+                    <field_location unit="byte">763</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_PLU_VX_1</name>
+                    <field_number>87</field_number>
+                    <field_location unit="byte">771</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_PLU_VY_1</name>
+                    <field_number>88</field_number>
+                    <field_location unit="byte">779</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+                <Field_Binary>
+                    <name>SC_J2000_PLU_VZ_1</name>
+                    <field_number>89</field_number>
+                    <field_location unit="byte">787</field_location>
+                    <data_type>IEEE754LSBDouble</data_type>
+                    <field_length unit="byte">8</field_length>
+                    <unit>km/s</unit>
+                </Field_Binary>
+            </Record_Binary>
+        </Table_Binary>
+    </File_Area_Observational>
+    </Product_Observational>
+    
