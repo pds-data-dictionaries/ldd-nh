@@ -769,8 +769,15 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      INADEQUATE [the pattern implies encoded information. How should the value be interpreted?] 
       The nh:pointing_method attribute indicates the spacecraft pointing method enabled during the operational sequence.
+
+      Possible enumerated values are 'CB1', 'CB2', 'CB3', 'EARTH', 'SUN' or 'ORBIT NORMAL', which describe the body or
+      plane used to establish a reference frame onboard the spacecraft for pointing purposes (where 'CB' stands for
+      central body). Alternatively, this value can take the form 'RADEC=[X],[Y]' (where [X] and [Y] represent a numeric
+      right ascension and declination in degrees, respectively) to indicate inertial pointing.
+
+      This value does *not* indicate that any particular axis of the spacecraft is aligned with the target or direction
+      indicated by the pointing method. This attribute is not applicable if nh:spacecraft_spin_state is 'Spinning'.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
