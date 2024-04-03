@@ -803,14 +803,13 @@
   </DD_Attribute>
   
   <DD_Attribute>
-    <name>relative_control_mode</name>
+    <name>relative_control_mode_active</name>
     <version_id>1.0</version_id>
-    <local_identifier>relative_control_mode</local_identifier>
+    <local_identifier>relative_control_mode_active</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      INADEQUATE [The attribute name should be more specific so that the boolean values can be immediately interpreted. For example, "relative_control_mode_active" would be better.]
-      The nh:relative_control_mode attribute is a true/false flag that indicates if the relative control mode of the spacecraft was enabled during the operational sequence.
+      The nh:relative_control_mode_active attribute is a true/false flag that indicates if the relative control mode of the spacecraft was enabled during the operational sequence.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -1074,13 +1073,14 @@
   </DD_Attribute>
   
   <DD_Attribute>
-    <name>thruster_x_enable</name>
+    <name>thruster_x_enabled</name>
     <version_id>1.0</version_id>
-    <local_identifier>thruster_x_enable</local_identifier>
+    <local_identifier>thruster_x_enabled</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      INADEQUATE [The attribute name should make the boolean value meaningful, e.g., "nh:thruster_x_enabled"] The nh:thruster_x_enable attribute describes the state of the x thruster. The state is either "enabled" or "disabled"
+      The nh:thruster_x_enabled attribute describes the state of the x thruster.
+      The thruster is either enabled ('true') or disabled ('false').
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -1089,13 +1089,14 @@
   </DD_Attribute>
   
   <DD_Attribute>
-    <name>thruster_y_enable</name>
+    <name>thruster_y_enabled</name>
     <version_id>1.0</version_id>
-    <local_identifier>thruster_y_enable</local_identifier>
+    <local_identifier>thruster_y_enabled</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      INADEQUATE [The attribute name should make the boolean value meaningful, e.g., "nh:thruster_y_enabled"] The nh:thruster_y_enable attribute describes the state of the y thruster. The state is either "enabled" or "disabled"
+      The nh:thruster_y_enabled attribute describes the state of the y thruster.
+      The thruster is either enabled ('true') or disabled ('false').
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -1104,13 +1105,14 @@
   </DD_Attribute>
   
   <DD_Attribute>
-    <name>thruster_z_enable</name>
+    <name>thruster_z_enabled</name>
     <version_id>1.0</version_id>
-    <local_identifier>thruster_z_enable</local_identifier>
+    <local_identifier>thruster_z_enabled</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      INADEQUATE [The attribute name should make the boolean value meaningful, e.g., "nh:thruster_x_enabled"] The nh:thruster_y_enable attribute describes the state of the z thruster. The state is either "enabled" or "disabled"
+      The nh:thruster_z_enabled attribute describes the state of the z thruster.
+      The thruster is either enabled ('true') or disabled ('false').
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -1751,19 +1753,19 @@
       to the spacecraft state at the time of the observation.
     </definition>
     <DD_Association>
-      <identifier_reference>thruster_x_enable</identifier_reference>
+      <identifier_reference>thruster_x_enabled</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>thruster_y_enable</identifier_reference>
+      <identifier_reference>thruster_y_enabled</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>thruster_z_enable</identifier_reference>
+      <identifier_reference>thruster_z_enabled</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1781,7 +1783,7 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>relative_control_mode</identifier_reference>
+      <identifier_reference>relative_control_mode_active</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
