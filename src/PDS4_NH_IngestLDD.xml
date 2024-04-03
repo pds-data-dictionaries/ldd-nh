@@ -274,9 +274,9 @@
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>Dust Imapct Counter</value>
-        <value_meaning>INADEQUATE [spell out "PVDF"] The detector is a set of permanently polarized PVDF plastic films      
-        that generate an electrical signal when dust particles penetrate their    
-        surface.
+        <value_meaning>The detector is a set of permanently polarized Polyvinylidene Fluoride
+          (PVDF) plastic films that generate an electrical signal when dust particles penetrate
+          their surface.
         </value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
