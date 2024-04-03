@@ -270,7 +270,7 @@
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <DD_Permissible_Value>
         <value>CCD</value>
-        <value_meaning>INADEQUATE [How is this different from the "Frame Transfer CCD" following?] The detector is a standard CCD.</value_meaning>
+        <value_meaning>The detector is a standard CCD.</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>Dust Imapct Counter</value>
@@ -282,10 +282,6 @@
       <DD_Permissible_Value>
         <value>Electrostatic</value>
         <value_meaning>The detector is an electrostatic low-energy plasma instrument.</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Frame Transfer CCD</value>
-        <value_meaning>The detector is a frame transfer CCD.</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>HgCdTe PICNIC array</value>
