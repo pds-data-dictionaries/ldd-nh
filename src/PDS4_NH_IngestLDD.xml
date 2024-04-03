@@ -18,7 +18,8 @@
     
     Initials/handles:
        ACR        Anne Raugh, SBN at UMD
-       C. Gobat   Caden Gobat, SWRI
+       MKC        M. Kate Crombie, Indigo Information Systems, LLC
+       cgobat     Caden Gobat, SwRI
        
     
     Modification History:
@@ -40,7 +41,7 @@
     <version_id>1.0</version_id>
     <local_identifier>arrokoth_constant</local_identifier>
     <nillable_flag>false</nillable_flag>
-    <submitter_name>C. Gobat</submitter_name>
+    <submitter_name>cgobat</submitter_name>
     <definition>
       The nh:arrokoth_constant attribute supplies the constant to be used for sources with 
       spectral distribution similar to (486958) Arrokoth (a.k.a., 2014 MU69) to convert 
