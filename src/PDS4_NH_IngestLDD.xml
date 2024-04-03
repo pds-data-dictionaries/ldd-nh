@@ -554,9 +554,9 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      INADEQUATE [Units are wrong for a rate, which would be (time^-1, not time). Exposure time is usually specified as am img: class unless there are special considitions that would be described here.] 
-      LEISA exposure time (ms). Same as the Ralph exposure time that is expressed in seconds and enumerated in the exposure_duration attribute.
-      There is zero dead time between frames so the frame rate is exactly 1/EXPTIME
+      Time between LEISA readouts. There is zero dead time between frames, so in practice,
+      this is equivalent to the exposure time found in the the img:exposure_duration attribute,
+      and the frame rate is exactly 1/(exposure time).
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
