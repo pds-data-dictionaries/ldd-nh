@@ -2,19 +2,23 @@
 Mockup Label: MVIC Panchromatic Framing Array, Processed Data
 #######################################################################
 
-This label is a mockup created for design purposes during the migration
-planning for the MVIC data. The test data file contained a single framing
+This label mockup has been updated for version 1.1.0.0 of the mission
+dictionary. Namespace references have been updated, and the older
+MVIC_Calibration_Constants class has been replaced by the 
+Radiometric_Calibration_Constants class, which applies to multipl
+instruments. The test data file contained a single framing
 camera observation sequence from the MVIC Framing Array (identified as "mpf"
 in file names). This particular sequence resulted in 11 individual 
 frames.
 
-The mockup shows the entire *<Product_Observationsl>*
+The mockup shows the entire *<Product_Observational>*
 structure, including the New Horizons dictionary classes, which are 
 found in the *<Mission_Area>* of the structure.
 
-  **Note** that the versions of both the New Horizons (nh:) and Small Bodies (sb:)
-  shown here are pre-release. Consult the current release documentation for changes
-  to these namespaces-in-development before attempting and real-would applications.
+  **Note** that the New Horizons (nh:) and Small Bodies (sb:) dictionaries are in 
+  active development. Consult the current release documentation for changes
+  to these namespaces-in-development before attempting and real-would applications,
+  or the Github repo for latest development versions. 
 
 .. code-block:: XML
 
@@ -25,18 +29,18 @@ found in the *<Mission_Area>* of the structure.
     xmlns:img="http://pds.nasa.gov/pds4/img/v1" 
     xmlns:sb="http://pds.nasa.gov/pds4/sb/v0" 
     xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1" 
-    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd
-    http://pds.nasa.gov/pds4/disp/v1 https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1J00_1510.xsd
-    http://pds.nasa.gov/pds4/geom/v1 https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1J00_1970.xsd
-    http://pds.nasa.gov/pds4/img/v1  https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1J00_1870.xsd
-    http://pds.nasa.gov/pds4/sb/v0   https://pds.nasa.gov/pds4/sb/v0/PDS4_SB_1J00_0100.xsd
-    http://pds.nasa.gov/pds4/mission/nh/v1 https://pds.nasa.gov/pds4/mission/nh/v1/PDS4_NH_1J00_1000.xsd">
+    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd
+    http://pds.nasa.gov/pds4/disp/v1 https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1L00_1510.xsd
+    http://pds.nasa.gov/pds4/geom/v1 https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1L00_1970.xsd
+    http://pds.nasa.gov/pds4/img/v1  https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1L00_1890.xsd
+    http://pds.nasa.gov/pds4/sb/v1   https://pds.nasa.gov/pds4/sb/v0/PDS4_SB_1L00_1000.xsd
+    http://pds.nasa.gov/pds4/mission/nh/v1 https://pds.nasa.gov/pds4/mission/nh/v1/PDS4_NH_1L00_1100.xsd">
     
     <Identification_Area>
         <logical_identifier>urn:nasa:pds:nh_mvic:kem1_cal:mpf_0408630768_0x539_sci</logical_identifier>
         <version_id>1.0</version_id>
         <title>New Horizons MVIC Panchromatic Framing Observation :mpf_0408630768_0x539_sci (Processed Data)</title>
-        <information_model_version>1.19.0.0</information_model_version>
+        <information_model_version>1.21.0.0</information_model_version>
         <product_class>Product_Observational</product_class>
 
         <Modification_History>

@@ -7,7 +7,7 @@
     the core and the New Horisons dictionary itself have been removed to avoid irrelevant testing failures
     that would ultimately prevent the NH schemas from building.
     
-    A "real world" label would be required to have the appropriate classes fro the Imaging, Geometry,
+    A "real world" label would be required to have the appropriate classes for the Imaging, Geometry,
     Display, and Small Bodies dictionaries; and additional changes have been made to some core namespace
     values also to avoid unrelated testing failures. Consequently, UNDER NO CIRCUMSTANCES should it be 
     assumed that any particular part of this label is valid in a "real world" situation. 
@@ -24,7 +24,7 @@
         <logical_identifier>urn:nasa:pds:nh_mvic:kem1_cal:mpf_0408630768_0x539_sci</logical_identifier>
         <version_id>1.0</version_id>
         <title>New Horizons MVIC Panchromatic Framing Observation :mpf_0408630768_0x539_sci (Processed Data)</title>
-        <information_model_version>1.19.0.0</information_model_version>
+        <information_model_version>[IM VERSION]</information_model_version>
         <product_class>Product_Observational</product_class>
 
         <Modification_History>

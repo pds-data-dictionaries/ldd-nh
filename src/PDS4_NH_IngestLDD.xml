@@ -11,9 +11,28 @@
   <full_name>Anne Raugh</full_name>
   <steward_id>sbn</steward_id>
   <namespace_id>nh</namespace_id>
-  <last_modification_date_time>2024-02-02</last_modification_date_time>
-  <!-- Modifications for Extended Mission 2 to include all New Horizons Instruments-->
-
+  <comment>
+    This dictionary is in development by multiple parties at UMD (NH migration) 
+    and SWRI (NH second extended mission). Async releases are anticipated to 
+    keep the published dictionary in line with published data.
+    
+    Initials/handles:
+       ACR        Anne Raugh, SBN at UMD
+       C. Gobat   Caden Gobat, SWRI
+       
+    
+    Modification History:
+    
+      2024-04-03  ACR  Begin history
+      
+      2024-04-03 to ????  Version 1.1.0 continued updates:
+             ACR    Deprecate MVIC_Conversion_Constants class in favor of
+                    Radiometric_Conversion_Constants class, with corresponding
+                    Schematron rule.
+                    Consistently add "nh:" prefix to references in descriptions.
+  </comment>
+  <last_modification_date_time>2024-04-03</last_modification_date_time>
+  
   <!-- Attributes -->
   
   <DD_Attribute>
@@ -24,8 +43,8 @@
     <submitter_name>C. Gobat</submitter_name>
     <definition>
       The nh:arrokoth_constant attribute supplies the constant to be used for sources with 
-      spectral distribution similar to Arrokoth to convert calibrated data to physical
-      units.
+      spectral distribution similar to (486958) Arrokoth (a.k.a., 2014 MU69) to convert 
+      calibrated data to physical units.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -41,7 +60,7 @@
     <submitter_name>ACR</submitter_name>
     <definition>
       The nh:charon_constant attribute supplies the constant to be used for sources with 
-      spectral distribution similar to Pluto I (Charon) to convert MVIC calibrated data to
+      spectral distribution similar to Pluto I (Charon) to convert calibrated data to
       physical units.
     </definition>
     <DD_Value_Domain>
@@ -57,8 +76,8 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The clock_partition holds the mission clock partition counter. This
-      is a simple integer
+      The nh:clock_partition holds the mission clock partition counter. This
+      is a simple integer.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -72,7 +91,7 @@
     <local_identifier>coefficient_0</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
-    <definition>Gives the value of the 0th term coeffcient.</definition>
+    <definition>INADEQUATE Gives the value of the 0th term coeffcient.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
@@ -85,7 +104,7 @@
     <local_identifier>coefficient_1</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
-    <definition>Gives the value of the 1st term coeffcient.</definition>
+    <definition>INADEQUATE Gives the value of the 1st term coeffcient.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
@@ -98,7 +117,7 @@
     <local_identifier>coefficient_2</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
-    <definition>Gives the value of the 2nd term coeffcient.</definition>
+    <definition>INADEQUATE Gives the value of the 2nd term coeffcient.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
@@ -111,7 +130,7 @@
     <local_identifier>coefficient_3</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
-    <definition>Gives the value of the 3rd term coeffcient.</definition>
+    <definition>INADEQUATE Gives the value of the 3rd term coeffcient.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
@@ -125,10 +144,10 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The name of the detector that recorded the observation(s) comprising the
-      product. For instruments with multiple detectors, as in the case of MVIC, 
-      for example, this string will include both the instrument ID and the 
-      specific detector ID.
+      The nh:detector_name provides the identifier of the detector that recorded 
+      the observation(s) comprising the product. For instruments with multiple 
+      detectors, as in the case of MVIC, for example, this string will include 
+      both the instrument ID and the specific detector ID.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
@@ -242,7 +261,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The detector_type attribute provides a brief indication of the type of
+      The nh:detector_type attribute provides a brief indication of the type of
       hardware comprising the detector.
     </definition>
     <DD_Value_Domain>
@@ -250,18 +269,18 @@
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <DD_Permissible_Value>
         <value>CCD</value>
-        <value_meaning>The detector is a standard CCD.</value_meaning>
+        <value_meaning>INADEQUATE [How is this different from the "Frame Transfer CCD" following?] The detector is a standard CCD.</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>Dust Imapct Counter</value>
-        <value_meaning>The detector is a set of permanently polarized PVDF plastic films      
+        <value_meaning>INADEQUATE [spell out "PVDF"] The detector is a set of permanently polarized PVDF plastic films      
         that generate an electrical signal when dust particles penetrate their    
         surface.
         </value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>Electrostatic</value>
-        <value_meaning>The detector is an elctrostic low energy plasma instrument.</value_meaning>
+        <value_meaning>The detector is an electrostatic low-energy plasma instrument.</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>Frame Transfer CCD</value>
@@ -270,7 +289,7 @@
       <DD_Permissible_Value>
         <value>HgCdTe PICNIC array</value>
         <value_meaning>
-          The detector is a modified HgCdTe PICNIC array.</value_meaning>
+          INADEQUATE [spell out PICNIC] The detector is a modified HgCdTe PICNIC array.</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>Local oscillator vs. uplink signal phase comparator</value>
@@ -297,7 +316,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The engineering_component_description attribute gives a description of the named engineering component.
+      The nh:engineering_component_description attribute gives a description of the named engineering component.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -311,8 +330,8 @@
     <local_identifier>engineering_conversion_equation</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
-    <definition>The engineering_conversion_equation attribute gives the engineering conversion equation and definition of 
-     terms for the named engineering component measuremnt.
+    <definition>The nh:engineering_conversion_equation attribute gives the engineering conversion equation and definition of 
+      terms for the engineering component measuremnt identified by nh:engineering_component_name.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -326,7 +345,8 @@
     <local_identifier>engineering_component_name</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
-    <definition>The engineering_component_name attribute gives the name of the engineering component of interest.
+    <definition>The nh:engineering_component_name attribute identified the engineering component described by the other 
+      elements in the containing nh:Engineering_Component class.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -342,7 +362,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The frame_number attribute is used to identify a single frame (or image plane)
+      The nh:frame_number attribute is used to identify a single frame (or image plane)
       in an observation that is formatted as a 3D image cube. The first frame is
       numbered "0" (zero).
     </definition>
@@ -359,7 +379,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The gain attribute provides the gain setting applied to the data collection,
+      The nh:gain attribute provides the gain setting applied in collecting the data,
       in units of electrons/DN.
     </definition>
     <DD_Value_Domain>
@@ -378,7 +398,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The gc_scan_rate attribute provides the scan rate of XXXXX in units of TBD
+      INADEQUATE [what is "XXXXX"?] The nh:gc_scan_rate attribute provides the scan rate of XXXXX in units of TBD
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -411,7 +431,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The left_side_median_bias attribute provides the median bias, in DN,
+      The nh:left_side_median_bias attribute provides the median bias, in DN,
       determined by averaging the bias levels for the shielded pixels on 
       the left side of the detector array.
     </definition>
@@ -431,8 +451,8 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The leisa_mode attribute describes the data collection readout mode of the LEISA instrument, where RAW is 
-      for un-subtracted readout mode and SUBTRACTED for correlated double sample (CDS) mode
+      The nh:leisa_mode attribute identifies the data collection readout mode of the LEISA instrument, where RAW is 
+      for un-subtracted readout mode and SUBTRACTED for correlated double sample (CDS) mode.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
@@ -459,7 +479,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The leisa_offset_1 attribute provides the voltage offset, in DN,
+      The nh:leisa_offset_1 attribute provides the voltage offset, in DN,
       in the first of the four LEISA quadrants.
     </definition>
     <DD_Value_Domain>
@@ -478,7 +498,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The leisa_offset_2 attribute provides the voltage offset, in DN,
+      The nh:leisa_offset_2 attribute provides the voltage offset, in DN,
       in the second of the four LEISA quadrants.
     </definition>
     <DD_Value_Domain>
@@ -497,7 +517,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The leisa_offset_3 attribute provides the voltage offset, in DN,
+      The nh:leisa_offset_3 attribute provides the voltage offset, in DN,
       in the third of the four LEISA quadrants.
     </definition>
     <DD_Value_Domain>
@@ -516,7 +536,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The leisa_offset_4 attribute provides the voltage offset, in DN,
+      The nh:leisa_offset_4 attribute provides the voltage offset, in DN,
       in the fourth of the four LEISA quadrants.
     </definition>
     <DD_Value_Domain>
@@ -535,8 +555,8 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      LEISA exposure time (ms). Same as the Ralph exposure time that is expressed in seconds
-      and enumerated in the exposure_duration attribute.
+      INADEQUATE [Units are wrong for a rate, which would be (time^-1, not time). Exposure time is usually specified as am img: class unless there are special considitions that would be described here.] 
+      LEISA exposure time (ms). Same as the Ralph exposure time that is expressed in seconds and enumerated in the exposure_duration attribute.
       There is zero dead time between frames so the frame rate is exactly 1/EXPTIME
     </definition>
     <DD_Value_Domain>
@@ -554,7 +574,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The leisa_side attribute indicates the hardware side in use during the observation sequence.
+      The nh:leisa_side attribute indicates the hardware side in use during the observation sequence.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
@@ -581,7 +601,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The leisa_temperature attribute provides the temperature of the
+      The nh:leisa_temperature attribute provides the temperature of the
       LEISA instrument.
     </definition>
     <DD_Value_Domain>
@@ -599,7 +619,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The met510 attribute provides the mission elapsed time (MET) of the Ralph housekeeping packet that marks the start of an observation, used to determine the observation start time and frame rate.
+      [INADEQUATE Why is the minimum negative?] The nh:met510 attribute provides the mission elapsed time (MET) of the Ralph housekeeping packet that marks the start of an observation, used to determine the observation start time and frame rate.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -617,7 +637,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The formal identification of the mission phase. Phases are identified
+      The nh:mission_phase_name provides the formal identification of the mission phase. Phases are identified
       continuously from primary through extended missions.
     </definition>
     <DD_Value_Domain>
@@ -651,8 +671,8 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The observation_description element provides a human-readable decoding of
-      the nh:sequence_id string. It provides a basic description of the planned
+      The nh:observation_description element provides a human-readable decoding of
+      the sequence_id string. It provides a basic description of the planned
       observation activity. Each instrument should have an accompanying 
       ancillary/documentation file that lists all the planned sequences for each
       instrument for each mission phase.
@@ -687,7 +707,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The physical_pixel_size attribute gives the hardware dimension of a single,
+      The nh:physical_pixel_size attribute gives the hardware dimension of a single,
       square pixel within the detector.
     </definition>
     <DD_Value_Domain>
@@ -706,9 +726,9 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The pivot_wavelength is used in converting the pixel values in the calibrated
-      data into physical units. It is wavelength-dependent, but once defined is
-      constant for each detector.
+      The nh:pivot_wavelength is used in converting the pixel values in the calibrated
+      data into physical units for some instruments. It is wavelength-dependent, but once
+      defined is constant for each detector.
       
       A description of how to convert from data values to physical units is provided
       in the "New Horizons SOC to Instrument Pipeline ICD" document.
@@ -750,7 +770,8 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The pointing_method attribute indicates the spacecraft pointing method enabled during the operational sequence.
+      INADEQUATE [the pattern implies encoded information. How should the value be interpreted?] 
+      The nh:pointing_method attribute indicates the spacecraft pointing method enabled during the operational sequence.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -766,7 +787,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The read_noise attribute provides the noise level of the detector as a count
+      The nh:read_noise attribute provides the noise level of the detector as a count
       of electrons.
     </definition>
     <DD_Value_Domain>
@@ -782,7 +803,8 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The relative_control_mode attribute indicates if the relative control mode of the spacecraft was enabled during the operational sequence.
+      INADEQUATE [The attribute name should be more specific so that the boolean values can be immediately interpreted. For example, "relative_control_mode_active" would be better.]
+      The nh:relative_control_mode attribute is a true/false flag that indicates if the relative control mode of the spacecraft was enabled during the operational sequence.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -797,7 +819,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The right_side_median_bias attribute provides the median bias, in DN,
+      The nh:right_side_median_bias attribute provides the median bias, in DN,
       determined by averaging the bias levels for the shielded pixels on 
       the right side of the detector array.
     </definition>
@@ -817,7 +839,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The scan_type attribute indicates what sort of scanning was employed in 
+      The nh:scan_type attribute indicates what sort of scanning was employed in 
       collecting the data.
     </definition>
     <DD_Value_Domain>
@@ -827,7 +849,7 @@
         <value>TDI - Time Delay Integration Mode</value>
         <value_meaning>
           The data were obtained using time delayed integration (TDI). The TDI
-          frequency should be provided in the nh:tdi_rate attribute.
+          frequency should be provided in the tdi_rate attribute.
         </value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
@@ -852,7 +874,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The sequence_id provides a long string encoded some infomation about the
+      The nh:sequence_id provides a long string encoding some infomation about the
       planned observing sequence. A more human-readable description should be 
       provided in the nh:observation_description element. Each instrument should 
       have an accompanying ancillary/documentation file that lists all the planned
@@ -888,20 +910,20 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The spacecraft_spin_state attribute indicates whichi of the spacecraft spin states was emplyed during the observation sequence.</definition>
+      The nh:spacecraft_spin_state attribute indicates which of the spacecraft spin states was employed during the observation sequence.</definition>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <DD_Permissible_Value>
         <value>3-Axis</value>
         <value_meaning>
-          TBD
+          INADEQUATE [No "TBDs" allowed. Ever.] TBD
         </value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>Spinning</value>
         <value_meaning>
-          TBD
+          INADEQUATE [No "TBDs" allowed. Ever.] TBD
         </value_meaning>
       </DD_Permissible_Value>
     </DD_Value_Domain>
@@ -914,7 +936,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The start_clock_count is the Mission Elapsed Time code at the start
+      The nh:start_clock_count is the Mission Elapsed Time code at the start
       of the observation(s), formatted as spacecraft clock ticks and indicating 
       whole and fractional seconds.
     </definition>
@@ -932,7 +954,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The stop_clock_count is the Mission Elapsed Time code at the end
+      The nh:stop_clock_count is the Mission Elapsed Time code at the end
       of the observation(s), formatted as spacecraft clock ticks and indicating 
       whole and fractional seconds.
     </definition>
@@ -950,7 +972,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The sweep_samples_count attribute is the count of samples during a sweep of the SWAP electro-optics. 
+      The nh:sweep_samples_count attribute is the count of samples during a sweep of the SWAP electro-optics. 
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -966,7 +988,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The target_motion_rate attribute is the rate of motion of the target with respect to the instrument detector in units of (TBR). 
+      INADEQUATE [Replace "TBR" with something meaningful.] The nh:target_motion_rate attribute is the rate of motion of the target with respect to the instrument detector in units of (TBR). 
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -982,7 +1004,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The tdi_median_bias_level attribute gives the median bias level of a time-delay
+      The nh:tdi_median_bias_level attribute gives the median bias level of a time-delay
       integration observation. For TDI mode, bias levels in each detector were determined
       in-flight during early mission phases. They may vary depending on exposure length.
       See the "New Horizonz SOC to Instrument Pipeline ICD" document for details.
@@ -1007,7 +1029,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The tdi_rate attribute is the rate at which charge was moved through 
+      The nh:tdi_rate attribute is the rate at which charge was moved through 
       successive rows of the detector in obtaining the observation. This rate
       was calculated to match the scan rate of the spacecraft.
     </definition>
@@ -1027,7 +1049,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The telemetry_apid is the application identifier for the observation. The
+      The nh:telemetry_apid is the application identifier for the observation. The
       values are specific to instrument and activity. The definitions for apIDs 
       relevant to the archived observations are contained in various tables in 
       the "New Horizons SOC to Instrument Pipeline ICD document. The apID is used
@@ -1052,7 +1074,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The thruster_x_enable attribute describes the state of the x thruster. The state is either "enabled" or "disabled"
+      INADEQUATE [The attribute name should make the boolean value meaningful, e.g., "nh:thruster_x_enabled"] The nh:thruster_x_enable attribute describes the state of the x thruster. The state is either "enabled" or "disabled"
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -1067,7 +1089,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The thruster_y_enable attribute describes the state of the y thruster. The state is either "enabled" or "disabled"
+      INADEQUATE [The attribute name should make the boolean value meaningful, e.g., "nh:thruster_y_enabled"] The nh:thruster_y_enable attribute describes the state of the y thruster. The state is either "enabled" or "disabled"
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -1082,7 +1104,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The thruster_y_enable attribute describes the state of the z thruster. The state is either "enabled" or "disabled"
+      INADEQUATE [The attribute name should make the boolean value meaningful, e.g., "nh:thruster_x_enabled"] The nh:thruster_y_enable attribute describes the state of the z thruster. The state is either "enabled" or "disabled"
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -1097,7 +1119,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The true510 attribute describes whether the 0x510 Ralph housekeeping packet is real (true) or assumed from a gap (false)
+      INADEQUATE [What is a "0x150 packet"? The attribute name should make the meaning of the value obvious, e.g., nh:housekeeping_packet_is_real] The nh:true510 attribute describes whether the 0x510 Ralph housekeeping packet is real (true) or assumed from a gap (false)
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -1117,10 +1139,10 @@
       conversion applied depends on the general spectrum of the object being 
       converted and whether it is resolved. For resolved sources, the conversion
       produces data in units of radiance. For unresolved sources, the conversion
-      results in units of flux (irradiance). This attribute contains the appropriate
-      physical units for the conversion constants in the class in which it is contained
-      to produce either radiance or flux units, as appropriate, when the conversion is
-      applied. 
+      results in units of flux (irradiance). The nh:units_of_conversion_constants 
+      attribute contains the appropriate physical units for the conversion constants 
+      in the class in which it is contained to produce either radiance or flux units, 
+      as appropriate, when the conversion is applied. 
       
       A description of how to convert from data values to physical units is provided
       in the "New Horizons SOC to Instrument Pipeline ICD" document.
@@ -1157,7 +1179,7 @@
     <local_identifier>Detector</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The Detector class provides observation metadata relevant to the specific
+      The nh:Detector class provides observation metadata relevant to the specific
       detector (an instrument may have more than one detector) used to collect
       the data.
     </definition>
@@ -1206,7 +1228,7 @@
     <local_identifier>Mission_Elapsed_Time</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The Mission_Elapsed_Time class provides spacecraft clock partition and 
+      The nh:Mission_Elapsed_Time class provides spacecraft clock partition and 
       count readings for the start and end of the observation(s) comprising 
       the data product.
     </definition>
@@ -1236,7 +1258,7 @@
     <local_identifier>Frame_Bias_Levels</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The Frame_Bias_Levels class records the frame number and left/right bias levels
+      The nh:Frame_Bias_Levels class records the frame number and left/right bias levels
       for a single frame in a framing observation sequence.
       
       In the MVIC detector used for framing observations, the bias level for left and
@@ -1272,7 +1294,7 @@
     <local_identifier>Framing_Biases</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The Framing_Biases class contains one nh:Frame_Bias_Levels class for each 
+      The nh:Framing_Biases class contains one nh:Frame_Bias_Levels class for each 
       individual frame of a framing observation. These classes provide the left and
       right side bias levels applied in calibrating the data.
     </definition>
@@ -1290,7 +1312,7 @@
     <local_identifier>MVIC_Calibration_Information</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The MVIC_Calibration_Information class gathers attributes related to the
+      The nh:MVIC_Calibration_Information class gathers attributes related to the
       attributes of the detector and other information relevant to the calibration
       processing performed to produce the current data product.
     </definition>
@@ -1327,12 +1349,53 @@
   </DD_Class>
   
   <DD_Class>
+    <name>MVIC_Conversion_Constants</name>
+    <version_id>1.0</version_id>
+    <local_identifier>MVIC_Conversion_Constants</local_identifier>
+    <submitter_name>ACR</submitter_name>
+    <definition>
+      This class is deprecated as of version 1.1.0.0. Please use
+      nh:Radiometric_Conversion_Constants instead.
+      
+      The nh:MVIC_Conversion_Constants class provides the values needed to run the
+      conversion from the calibrated pixel values to physical units. This conversion
+      is dependent on the spectral distribition of the source, the MVIC detector 
+      wavelength range, and whether or not the source is resolved. 
+      
+      A description of how to convert from data values to physical units is provided
+      in the "New Horizons SOC to Instrument Pipeline ICD" document.
+    </definition>
+    <Internal_Reference>
+      <lid_reference>urn:nasa:pds:nh_doc:all:soc_inst_icd</lid_reference>
+      <reference_type>class_to_document</reference_type>
+    </Internal_Reference>
+    <DD_Association>
+      <identifier_reference>pivot_wavelength</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Resolved_Source</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Unresolved_Source</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  
+  <DD_Class>
     <name>Radiometric_Conversion_Constants</name>
     <version_id>1.0</version_id>
     <local_identifier>Radiometric_Conversion_Constants</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The Radiometric_Conversion_Constants class provides the values needed to run the
+      The nh:Radiometric_Conversion_Constants class provides the values needed to run the
       conversion from the calibrated pixel values to physical units. This conversion
       is dependent on the spectral distribition of the source, the detector 
       wavelength range, and whether or not the source is resolved. 
@@ -1370,10 +1433,10 @@
     <local_identifier>Engineering_Unit_Conversions</local_identifier>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The Engineering_Unit_Conversions class provides the values needed to convert
-      housekeeping values downlinked as digital numbers into engineering units.
+      The nh:Engineering_Unit_Conversions class provides the values needed to convert
+      housekeeping values downlinked as digital numbers Ii.e., as DN) into physical units.
       
-      A description of how to convert from data values to physical units is provided
+      A description of how to convert from DN to physical units is provided
       in the "New Horizons SOC to Instrument Pipeline ICD" document.
     </definition>
     <Internal_Reference>
@@ -1394,8 +1457,8 @@
     <local_identifier>Engineering_Component</local_identifier>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The Engineering_Component class collects the engineering component measurement
-      conversion equation properties.
+      The nh:Engineering_Component class collects the engineering component measurement
+      conversion (from DN to physical units) equation properties.
     </definition>
     <DD_Association>
       <identifier_reference>engineering_component_name</identifier_reference>
@@ -1429,8 +1492,9 @@
     <local_identifier>Engineering_Conversion_Coefficients</local_identifier>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The Engineering_Conversion_Coefficients class collects the polynomial
-      coeffcients for the named Engineering Component.
+      The nh:Engineering_Conversion_Coefficients class collects the polynomial
+      coeffcients neede to convert the Engineering Component identified by the
+      nh:engineering_component_name attribute to physical units.
     </definition>
     <DD_Association>
       <identifier_reference>coefficient_0</identifier_reference>
@@ -1464,7 +1528,7 @@
     <local_identifier>LEISA_Details</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The LEISA_Details class collects observational parameters that are specific
+      The nh:LEISA_Details class collects observational parameters that are specific
       to the LEISA instrument and its various channels.
     </definition>
     <DD_Association>
@@ -1530,7 +1594,7 @@
     <local_identifier>MVIC_Details</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The MVIC_Details class collects observational parameters that are specific
+      The nh:MVIC_Details class collects observational parameters that are specific
       to the MVIC instrument and its various channels.
     </definition>
     <DD_Association>
@@ -1554,7 +1618,7 @@
     <local_identifier>Observation_Parameters</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The Observation_Parameters class collects observational metadata that
+      The nh:Observation_Parameters class collects observational metadata that
       is specific to the mission, spacecraft, and instrument which produced 
       the data product.
     </definition>
@@ -1602,7 +1666,7 @@
     <local_identifier>Ralph_Details</local_identifier>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The Ralph_Details class presents Ralph common instrument parameters needed for data calibration.
+      The nh:Ralph_Details class presents Ralph common instrument parameters needed for data calibration.
     </definition>
     <DD_Association>
       <identifier_reference>met510</identifier_reference>
@@ -1624,7 +1688,7 @@
     <local_identifier>Resolved_Source</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The Resolved_Source class presents MVIC conversion constants for converting
+      The nh:Resolved_Source class presents radiometric conversion constants for converting
       calibrated pixel values into physical units for sources which are resolved.
     </definition>
     <DD_Association>
@@ -1677,7 +1741,7 @@
     <local_identifier>Spacecraft_State</local_identifier>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The Spacecraft_State class collects observational parameters that are specific
+      The nh:Spacecraft_State class collects observational parameters that are specific
       to the spacecraft state at the time of the observation.
     </definition>
     <DD_Association>
@@ -1737,7 +1801,7 @@
     <local_identifier>SWAP_Details</local_identifier>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The SWAP_Details class collects observational parameters that are specific
+      The nh:SWAP_Details class collects observational parameters that are specific
       to the SAWP instrument.
     </definition>
     <DD_Association>
@@ -1754,7 +1818,7 @@
     <local_identifier>Unresolved_Source</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The Unresolved_Source class presents conversion constants for converting
+      The nh:Unresolved_Source class presents radiometric conversion constants for converting
       calibrated pixel values into physical units for sources which are not resolved.
     </definition>
     <DD_Association>
@@ -1809,7 +1873,7 @@
     <local_identifier>Mission_Parameters</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
-      The Mission_Parameters class presents the various New Horizons-specific metadata 
+      The nh:Mission_Parameters class presents the various New Horizons-specific metadata 
       for both primary and extended missions.
     </definition>
     <element_flag>true</element_flag>
@@ -1825,8 +1889,14 @@
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
-    <DD_Association> <!-- This will likely need to be a choice list -->
+    <DD_Association>
       <identifier_reference>MVIC_Calibration_Information</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association> <!-- DEPRECATED -->
+      <identifier_reference>MVIC_Conversion_Constants</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1861,6 +1931,18 @@
       <rule_type>Assert</rule_type>
       <rule_test>if (//pds:processing_level != ('Partially Processed') and (nh:tdi_rate)) then (false()) else (true())</rule_test>
       <rule_message>In nh:MVIC_Details, if pds:processing_level is not partially processed, then tdi_rate cannot be included.</rule_message>
+    </DD_Rule_Statement>
+  </DD_Rule>
+  
+  <!-- Deprecate MVIC_Conversion_Constants -->
+  
+  <DD_Rule>
+    <local_identifier>deprecate_mvic_cc</local_identifier>
+    <rule_context>nh:MVIC_Conversion_Constants</rule_context>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>false()</rule_test>
+      <rule_message>As of version 1.1 of the New Horizons mission dictionary, the MVIC_Conversion_Constants class is deprecated. Please use the Radiometric_Conversion_Constants class for all instruments supplying this information.</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
   

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- 
+    *** As of v1.1.0 of this dictionary, this label should FAIL regression testing with a message
+    *** about the MVIC_Conversion_Constants class being deprecated.
+    
     
     This label is a mockup of an MVIC color channel TDI observation, created as part of the design
     process for the New Horizons KEM1 MVIC migration. All references to the dictionaries other than
@@ -146,7 +149,7 @@
                     <nh:gain unit="electron/DN">58.6000</nh:gain>
                     <nh:tdi_median_bias_level unit="DN">25</nh:tdi_median_bias_level>
                 </nh:MVIC_Calibration_Information>
-                <nh:Radiometric_Conversion_Constants>
+                <nh:MVIC_Conversion_Constants>
                     <nh:pivot_wavelength unit="micrometer">0.624</nh:pivot_wavelength>
                     <nh:Resolved_Source>
                         <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom/sr)</nh:units_of_conversion_constants>
@@ -164,7 +167,7 @@
                         <nh:pluto_constant>7.879E+13</nh:pluto_constant>
                         <nh:charon_constant>7.866E+13</nh:charon_constant>
                     </nh:Unresolved_Source>
-                </nh:Radiometric_Conversion_Constants>
+                </nh:MVIC_Conversion_Constants>
             </nh:Mission_Parameters>
         </Mission_Area>
 

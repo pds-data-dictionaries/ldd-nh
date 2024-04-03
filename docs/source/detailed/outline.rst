@@ -85,6 +85,7 @@ they are included in a label.
               <nh:pholus_constant>
               <nh:pluto_constant>
               <nh:charon_constant>
+              <nh:arrokoth_constant>
           
           <nh:Unresolved_Source>
               <nh:units_of_conversion_constants>
@@ -93,6 +94,7 @@ they are included in a label.
               <nh:pholus_constant>
               <nh:pluto_constant>
               <nh:charon_constant>
+              <nh:arrokoth_constant>
       
       <nh:Engineering_Unit_Conversions>
           <nh:Engineering_Component>

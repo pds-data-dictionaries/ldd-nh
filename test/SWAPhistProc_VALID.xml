@@ -26,7 +26,7 @@
         <logical_identifier>urn:nasa:pds:nh_swap:kem2_cal:swa_0556675232_0x586_sci</logical_identifier>
         <version_id>1.0</version_id>
         <title>New Horizons SWAP Sample Calibrated Histogram Data</title>
-        <information_model_version>1.19.0.0</information_model_version>
+        <information_model_version>[IM VERSION]</information_model_version>
         <product_class>Product_Observational</product_class>
     </Identification_Area>
 

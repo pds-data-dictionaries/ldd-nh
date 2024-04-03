@@ -11,10 +11,10 @@ including the New Horizons dictionary classes, which are found in the
 specified path/location of the mission dictionary .xsd file, which should
 be updated prior to attempting to validate it.
 
-  **Note** that the version of the New Horizons (nh:) dictionary shown
-  here is a pre-release. Consult the current release documentation for
-  changes to this namespace-in-development before attempting any real-
-  world applications.
+  **Note** that the New Horizons (nh:) and Small Bodies (sb:) dictionaries are in 
+  active development. Consult the current release documentation for changes
+  to these namespaces-in-development before attempting and real-would applications,
+  or the Github repo for latest development versions. 
 
 .. code-block:: XML
     
@@ -25,18 +25,18 @@ be updated prior to attempting to validate it.
         xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"
         xmlns:sb="http://pds.nasa.gov/pds4/sb/v1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd
-        http://pds.nasa.gov/pds4/disp/v1 https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1J00_1510.xsd
-        http://pds.nasa.gov/pds4/geom/v1 https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1J00_1960.xsd
-        http://pds.nasa.gov/pds4/proc/v1 https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1J00_1300.xsd
-        http://pds.nasa.gov/pds4/mission/nh/v1 ../../../build/development/*/1.19.0.0/PDS4_NH_1J00_1100.xsd
-        http://pds.nasa.gov/pds4/sb/v1 https://pds.nasa.gov/pds4/sb/v1/PDS4_SB_1J00_1000.xsd">
+        xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd
+        http://pds.nasa.gov/pds4/disp/v1 https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1L00_1510.xsd
+        http://pds.nasa.gov/pds4/geom/v1 https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1L00_1960.xsd
+        http://pds.nasa.gov/pds4/proc/v1 https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1L00_1300.xsd
+        http://pds.nasa.gov/pds4/mission/nh/v1 https://pds.nasa.gov/pds4/mission/nh/v1/PDS4_NH_1L00_1100.xsd
+        http://pds.nasa.gov/pds4/sb/v1 https://pds.nasa.gov/pds4/sb/v1/PDS4_SB_1L00_1000.xsd">
     
     <Identification_Area>
         <logical_identifier>urn:nasa:pds:nh_swap:kem2_cal:swa_0556675232_0x586_sci</logical_identifier>
         <version_id>1.0</version_id>
         <title>New Horizons SWAP Sample Calibrated Histogram Data</title>
-        <information_model_version>1.19.0.0</information_model_version>
+        <information_model_version>1.21.0.0</information_model_version>
         <product_class>Product_Observational</product_class>
     </Identification_Area>
     
