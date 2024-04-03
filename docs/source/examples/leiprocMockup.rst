@@ -125,12 +125,12 @@ found in the *<Mission_Area>* of the structure.
                             </nh:LEISA_Details>
                         </nh:Detector>
                         <nh:Spacecraft_State>
-                            <nh:thruster_x_enable>true</nh:thruster_x_enable>
-                            <nh:thruster_y_enable>true</nh:thruster_y_enable>
-                            <nh:thruster_z_enable>true</nh:thruster_z_enable>
+                            <nh:thruster_x_enabled>true</nh:thruster_x_enabled>
+                            <nh:thruster_y_enabled>true</nh:thruster_y_enabled>
+                            <nh:thruster_z_enabled>true</nh:thruster_z_enabled>
                             <nh:gc_scan_rate>-40.0</nh:gc_scan_rate>
                             <nh:target_motion_rate>40.0</nh:target_motion_rate>
-                            <nh:relative_control_mode>false</nh:relative_control_mode>
+                            <nh:relative_control_mode_active>false</nh:relative_control_mode_active>
                             <nh:pointing_method>CB1</nh:pointing_method>
                             <nh:spacecraft_spin_state>3-Axis</nh:spacecraft_spin_state>
                         </nh:Spacecraft_State>
