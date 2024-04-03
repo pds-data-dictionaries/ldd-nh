@@ -395,7 +395,9 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      INADEQUATE [what is "XXXXX"?] The nh:gc_scan_rate attribute provides the scan rate of XXXXX in units of TBD
+      The nh:gc_scan_rate attribute provides the scan rate requested of the Guidance, Navigation,
+      and Control (GNC) system by the Ralph instrument. If the scan rate was not forced, GNC will
+      return the actual scan rate achieved.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
