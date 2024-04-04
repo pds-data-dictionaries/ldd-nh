@@ -924,13 +924,13 @@
       <DD_Permissible_Value>
         <value>3-Axis</value>
         <value_meaning>
-          INADEQUATE [No "TBDs" allowed. Ever.] TBD
+          [INCOMPLETE] The spacecraft's pointing is triaxially stable.
         </value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>Spinning</value>
         <value_meaning>
-          INADEQUATE [No "TBDs" allowed. Ever.] TBD
+          [INCOMPLETE] The spacecraft is spinning about one or more of its axes.
         </value_meaning>
       </DD_Permissible_Value>
     </DD_Value_Domain>
