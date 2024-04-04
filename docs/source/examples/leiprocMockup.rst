@@ -110,7 +110,7 @@ found in the *<Mission_Area>* of the structure.
                             <nh:detector_type>HgCdTe PICNIC array</nh:detector_type>
                             <nh:Ralph_Details>
                                 <nh:met510 unit="s">408606595</nh:met510>
-                                <nh:true510>true</nh:true510>
+                                <nh:hk_packet_is_real>true</nh:hk_packet_is_real>
                             </nh:Ralph_Details>
                             <nh:LEISA_Details>
                                 <nh:scan_type>LEISA</nh:scan_type>

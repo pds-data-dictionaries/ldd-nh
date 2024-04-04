@@ -33,7 +33,7 @@ they are included in a label.
               
               <nh:Ralph_Details>
                   <nh:met510>
-                  <nh:true510>
+                  <nh:hk_packet_is_real>
               
               <nh:MVIC_Details>
                   <nh:scan_type>
