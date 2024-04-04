@@ -1809,7 +1809,7 @@
     <submitter_name>MKC</submitter_name>
     <definition>
       The nh:SWAP_Details class collects observational parameters that are specific
-      to the SAWP instrument.
+      to the SWAP instrument.
     </definition>
     <DD_Association>
       <identifier_reference>sweep_samples_count</identifier_reference>
