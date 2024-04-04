@@ -1120,13 +1120,13 @@
   </DD_Attribute>
   
   <DD_Attribute>
-    <name>true510</name>
+    <name>hk_packet_is_real</name>
     <version_id>1.0</version_id>
-    <local_identifier>true510</local_identifier>
+    <local_identifier>hk_packet_is_real</local_identifier>
     <nillable_flag>false</nillable_flag>
-    <submitter_name>MKC</submitter_name>
+    <submitter_name>cgobat</submitter_name>
     <definition>
-      INADEQUATE [What is a "0x150 packet"? The attribute name should make the meaning of the value obvious, e.g., nh:housekeeping_packet_is_real] The nh:true510 attribute describes whether the 0x510 Ralph housekeeping packet is real (true) or assumed from a gap (false)
+      The nh:hk_packet_is_real attribute describes whether the Ralph housekeeping packet (ApID 0x510) is real (true) or assumed from a gap (false).
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
@@ -1682,7 +1682,7 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>true510</identifier_reference>
+      <identifier_reference>hk_packet_is_real</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
