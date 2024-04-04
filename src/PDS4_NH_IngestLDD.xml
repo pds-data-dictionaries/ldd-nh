@@ -285,8 +285,7 @@
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>HgCdTe PICNIC array</value>
-        <value_meaning>
-          INADEQUATE [spell out PICNIC] The detector is a modified HgCdTe PICNIC array.</value_meaning>
+        <value_meaning>The detector is a modified Rockwell PICNIC HgCdTe array.</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>Local oscillator vs. uplink signal phase comparator</value>
