@@ -92,7 +92,7 @@
     <local_identifier>coefficient_0</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
-    <definition>INADEQUATE Gives the value of the 0th term coeffcient.</definition>
+    <definition>The nh:coefficient_0 value is the zeroth-order term coefficient in the engineering unit conversion polynomial.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
@@ -105,7 +105,7 @@
     <local_identifier>coefficient_1</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
-    <definition>INADEQUATE Gives the value of the 1st term coeffcient.</definition>
+    <definition>The nh:coefficient_1 value is the first-order term coefficient in the engineering unit conversion polynomial.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
@@ -118,7 +118,7 @@
     <local_identifier>coefficient_2</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
-    <definition>INADEQUATE Gives the value of the 2nd term coeffcient.</definition>
+    <definition>The nh:coefficient_2 value is the second-order term coefficient in the engineering unit conversion polynomial.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
@@ -131,7 +131,7 @@
     <local_identifier>coefficient_3</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
-    <definition>INADEQUATE Gives the value of the 3rd term coeffcient.</definition>
+    <definition>The nh:coefficient_3 value is the third-order term coefficient in the engineering unit conversion polynomial.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
@@ -995,7 +995,7 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      INADEQUATE [Replace "TBR" with something meaningful.] The nh:target_motion_rate attribute is the rate of motion of the target with respect to the instrument detector in units of (TBR). 
+      [INCOMPLETE] The nh:target_motion_rate attribute is the rate of motion of the target with respect to the instrument detector in units of (TBR). 
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
