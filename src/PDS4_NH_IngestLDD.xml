@@ -26,11 +26,13 @@
     
       2024-04-03  ACR  Begin history
       
-      2024-04-03 to ????  Version 1.1.0 continued updates:
+      2024-04-03 to 2024-04-05  Version 1.1.0 continued updates:
              ACR    Deprecate MVIC_Conversion_Constants class in favor of
                     Radiometric_Conversion_Constants class, with corresponding
                     Schematron rule.
                     Consistently add "nh:" prefix to references in descriptions.
+                    Review definitions for completeness, consistency, and style;
+                      flag problems.
   </comment>
   <last_modification_date_time>2024-04-03</last_modification_date_time>
   
