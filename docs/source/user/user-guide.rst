@@ -73,7 +73,6 @@ The major subclasses of the *<nh:Mission_Parameters>* class are:
 - :ref:`<nh:Observation_Parameters><observation-parameters>`
 - :ref:`<nh:MVIC_Calibration_Information><mvic-calibration-information>`
 - :ref:`<nh:Radiometric_Converstion_Constants><radiometric-conversion-constants>`
-- :ref:`<nh:Engineering_Unit_Conversions><engineering-unit-conversions>`
 
 You can see a complete outline of the namespace under the
 :doc:`../detailed/outline` topic.
@@ -218,25 +217,3 @@ This class contains:
     - Pluto
     - Charon
     - Arrokoth
-    
-.. _engineering_unit_conversions:
- 
-*************************************************
-Subclass: <nh:Engineering_Unit_Conversions>
-*************************************************
-    
-Housekeeping values are present with the data in some files. These values are
-presented as a data number, which can be converted via a linear equation to 
-physical units. This class collects the information needed to identify and
-convert the housekeeping values to physical units.
-
-This class contains:
-
-- <nh:Engineering_Component>
-
-<nh:Engineering_Component>
-
-This class is repeated for each housekeeping value. It identifies the value
-by name, describes it, provides a human-readable form of the conversion
-equation, and lists the constants and coefficients needed to perform the
-conversion.

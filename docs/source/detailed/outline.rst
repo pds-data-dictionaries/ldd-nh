@@ -95,14 +95,3 @@ they are included in a label.
               <nh:pluto_constant>
               <nh:charon_constant>
               <nh:arrokoth_constant>
-      
-      <nh:Engineering_Unit_Conversions>
-          <nh:Engineering_Component>
-              <nh:engineering_component_name>
-              <nh:engineering_component_description>
-              <nh:engineering_conversion_equation>
-              <nh:Engineering_Conversion_Coefficients>
-                  <nh:coefficient_0>
-                  <nh:coefficient_1>
-                  <nh:coefficient_2>
-                  <nh:coefficient_3>
