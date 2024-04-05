@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- 
+    *** As of v1.1.0 of this dictionary, this label should FAIL regression testing with a message
+    *** about the MVIC_Conversion_Constants class being deprecated.
     
-    This label is a mockup of an MVIC color channel TDI observation, created as part of the design
+
+    This label is a mockup of an MVIC Framing Array observation, created as part of the design
     process for the New Horizons KEM1 MVIC migration. All references to the dictionaries other than
     the core and the New Horisons dictionary itself have been removed to avoid irrelevant testing failures
     that would ultimately prevent the NH schemas from building.
@@ -19,20 +22,20 @@
 <Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"> 
-
+    
     <Identification_Area>
-        <logical_identifier>urn:nasa:pds:nh_mvic:kem1_cal:mc0_0408625487_0x545_sci</logical_identifier>
+        <logical_identifier>urn:nasa:pds:nh_mvic:kem1_cal:mpf_0408630768_0x539_sci</logical_identifier>
         <version_id>1.0</version_id>
-        <title>New Horizons MVIC Red Channel Observation mc0_0408625487_0x545_sci (Processed Data)</title>
+        <title>New Horizons MVIC Panchromatic Framing Observation :mpf_0408630768_0x539_sci (Processed Data)</title>
         <information_model_version>[IM VERSION]</information_model_version>
         <product_class>Product_Observational</product_class>
 
         <Modification_History>
             <Modification_Detail>
-                <modification_date>2022-12-26</modification_date>
+                <modification_date>2023-01-02</modification_date>
                 <version_id>1.0</version_id>
                 <description>
-                    A.C.Raugh: Migrated from PDS3 product NH-A-MVIC-3-KEM1-V6.0:MC0_0408625487_0X545_SCI
+                    A.C.Raugh: Migrated from PDS3 product NH-A-MVIC-3-KEM1-V5.0:MPF_0408630768_0X539_SCI
                 </description>
             </Modification_Detail>
         </Modification_History>
@@ -40,8 +43,8 @@
 
     <Observation_Area>
         <Time_Coordinates>
-            <start_date_time>2019-01-01T05:12:55.280Z</start_date_time>
-            <stop_date_time>2019-01-01T05:14:34.148Z</stop_date_time>
+            <start_date_time>2019-01-01T06:40:52.440Z</start_date_time>
+            <stop_date_time>2019-01-01T06:43:13.970Z</stop_date_time>
         </Time_Coordinates>
 
         <Primary_Result_Summary>
@@ -49,8 +52,8 @@
             <processing_level>Partially Processed</processing_level>
             <Science_Facets>
                 <wavelength_range>Visible</wavelength_range>
+                <wavelength_range>Near Infrared</wavelength_range>
                 <discipline_name>Imaging</discipline_name>
-                <facet1>Grayscale</facet1>
             </Science_Facets>
         </Primary_Result_Summary>
 
@@ -113,28 +116,27 @@
             <nh:Mission_Parameters>
                 <nh:mission_phase_name>KEM1 Encounter</nh:mission_phase_name>
                 <nh:Observation_Parameters>
-                    <nh:telemetry_apid>0x545</nh:telemetry_apid>
-                    <nh:sequence_id>KEMV_MU69_CA05_HIRES_MC_2019001</nh:sequence_id>
-                    <nh:observation_description>MVIC Color CA Scan, LORRI Rider</nh:observation_description>
+                    <nh:telemetry_apid>0x539</nh:telemetry_apid>
+                    <nh:sequence_id>KEMV_MU69_DPDEEP_RIDE_MF_2019001A1</nh:sequence_id>
+                    <nh:observation_description>Departure MVIC Deep Ring Search Rider</nh:observation_description>
                     <nh:Mission_Elapsed_Time>
                         <nh:clock_partition>3</nh:clock_partition>
-                        <nh:start_clock_count>0408625493:06600</nh:start_clock_count>
-                        <nh:stop_clock_count>0408625592:00000</nh:stop_clock_count>
+                        <nh:start_clock_count>0408630770:14600</nh:start_clock_count>
+                        <nh:stop_clock_count>0408630911:41100</nh:stop_clock_count>
                     </nh:Mission_Elapsed_Time>
                     <nh:Detector>
-                        <nh:detector_name>MVIC Red (RED) Channel</nh:detector_name>
+                        <nh:detector_name>MVIC Panchromatic Framing (FRAME) Array</nh:detector_name>
                         <nh:detector_type>CCD</nh:detector_type>
                         <nh:MVIC_Details>
-                            <nh:scan_type>TDI - Time Delay Integration Mode</nh:scan_type>
-                            <nh:tdi_rate unit="Hz">40.4694</nh:tdi_rate>
+                            <nh:scan_type>FRAMING - Framing Mode</nh:scan_type>
                         </nh:MVIC_Details>
                     </nh:Detector>
                     <nh:Spacecraft_State>
-                        <nh:thruster_x_enabled>false</nh:thruster_x_enabled>
-                        <nh:thruster_y_enabled>false</nh:thruster_y_enabled>
-                        <nh:thruster_z_enabled>false</nh:thruster_z_enabled>
-                        <nh:gc_scan_rate>800.0</nh:gc_scan_rate>
-                        <nh:target_motion_rate>800.0</nh:target_motion_rate>
+                        <nh:thruster_x_enabled>true</nh:thruster_x_enabled>
+                        <nh:thruster_y_enabled>true</nh:thruster_y_enabled>
+                        <nh:thruster_z_enabled>true</nh:thruster_z_enabled>
+                        <nh:gc_scan_rate>0.0</nh:gc_scan_rate>
+                        <nh:target_motion_rate>0.0</nh:target_motion_rate>
                         <nh:relative_control_mode_active>false</nh:relative_control_mode_active>
                         <nh:pointing_method>CB1</nh:pointing_method>
                         <nh:spacecraft_spin_state>3-Axis</nh:spacecraft_spin_state>
@@ -144,27 +146,84 @@
                     <nh:physical_pixel_size unit="micrometer">13.0000</nh:physical_pixel_size>
                     <nh:read_noise>30.000</nh:read_noise>
                     <nh:gain unit="electron/DN">58.6000</nh:gain>
-                    <nh:tdi_median_bias_level unit="DN">25</nh:tdi_median_bias_level>
+                    <nh:Framing_Biases>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>0</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">24.0</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">26.0</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>1</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">26.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>2</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">26.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>3</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">26.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>4</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">23.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>5</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">24.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>6</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">24.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>7</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">23.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>8</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">23.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>9</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">25.0000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">23.0000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                        <nh:Frame_Bias_Levels>
+                            <nh:frame_number>10</nh:frame_number>
+                            <nh:left_side_median_bias unit="DN">-1.00000</nh:left_side_median_bias>
+                            <nh:right_side_median_bias unit="DN">-1.00000</nh:right_side_median_bias>
+                        </nh:Frame_Bias_Levels>
+                    </nh:Framing_Biases>
                 </nh:MVIC_Calibration_Information>
-                <nh:Radiometric_Conversion_Constants>
-                    <nh:pivot_wavelength unit="micrometer">0.624</nh:pivot_wavelength>
+                
+                <nh:MVIC_Conversion_Constants>
+                    <nh:pivot_wavelength unit="micrometer">0.692</nh:pivot_wavelength>
                     <nh:Resolved_Source>
                         <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom/sr)</nh:units_of_conversion_constants>
-                        <nh:solar_constant>30910.883</nh:solar_constant>
-                        <nh:jupiter_constant>32852.793</nh:jupiter_constant>
-                        <nh:pholus_constant>32509.977</nh:pholus_constant>
-                        <nh:pluto_constant>30908.678</nh:pluto_constant>
-                        <nh:charon_constant>30856.479</nh:charon_constant>
+                        <nh:solar_constant>98313.172</nh:solar_constant>
+                        <nh:jupiter_constant>84425.375</nh:jupiter_constant>
+                        <nh:pholus_constant>97097.703</nh:pholus_constant>
+                        <nh:pluto_constant>94817.766</nh:pluto_constant>
+                        <nh:charon_constant>97732.594</nh:charon_constant>
                     </nh:Resolved_Source>
                     <nh:Unresolved_Source>
                         <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom)</nh:units_of_conversion_constants>
-                        <nh:solar_constant>7.880E+13</nh:solar_constant>
-                        <nh:jupiter_constant>8.375E+13</nh:jupiter_constant>
-                        <nh:pholus_constant>8.287E+13</nh:pholus_constant>
-                        <nh:pluto_constant>7.879E+13</nh:pluto_constant>
-                        <nh:charon_constant>7.866E+13</nh:charon_constant>
+                        <nh:solar_constant>2.506E+14</nh:solar_constant>
+                        <nh:jupiter_constant>2.152E+14</nh:jupiter_constant>
+                        <nh:pholus_constant>2.475E+14</nh:pholus_constant>
+                        <nh:pluto_constant>2.417E+14</nh:pluto_constant>
+                        <nh:charon_constant>2.491E+14</nh:charon_constant>
                     </nh:Unresolved_Source>
-                </nh:Radiometric_Conversion_Constants>
+                </nh:MVIC_Conversion_Constants>
             </nh:Mission_Parameters>
         </Mission_Area>
 
@@ -185,10 +244,9 @@
         <File>
             <file_name>No.Data</file_name>
             <comment>
-                This file contains a single observation from one of the MVIC color channel detectors.
-                The image dimensions reflect the full area of the detector, not all of which contains
-                data in all cases. Pixels for which data was not downloaded are filled with the 
-                "missing_constant" value.
+                This file contains a single Panchromatic Framing observation from the MVIC Pan Frame detector.
+                The image dimensions reflect the full area of the detector, not all of which contains data in 
+                all cases. Pixels not downloaded are filled with a "missing data" value of -1.00.
             </comment>
         </File>
         
@@ -196,17 +254,17 @@
         
         <Header>
             <offset unit="byte">0</offset>
-            <object_length unit="byte">25920</object_length>
+            <object_length unit="byte">40320</object_length>
             <parsing_standard_id>FITS 3.0</parsing_standard_id>
             <description>
                 Primary FITS header unit. The New Horizons pipeline produced data in FITS format.
             </description>
         </Header>
-        <Array_2D_Image>
+        <Array_3D_Image>
             <name>Observational Data (DN)</name>
             <local_identifier>Image</local_identifier>
-            <offset unit="byte">25920</offset>
-            <axes>2</axes>
+            <offset unit="byte">40320</offset>
+            <axes>3</axes>
             <axis_index_order>Last Index Fastest</axis_index_order>
             <description>
                 This array contains data only for pixels within the window(s) defined by the
@@ -218,35 +276,40 @@
                 <unit>DN</unit>
             </Element_Array>
             <Axis_Array>
-                <axis_name>Line</axis_name>
-                <elements>3984</elements>
+                <axis_name>Frame</axis_name>
+                <elements>11</elements>
                 <sequence_number>1</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Line</axis_name>
+                <elements>128</elements>
+                <sequence_number>2</sequence_number>
             </Axis_Array>
             <Axis_Array>
                 <axis_name>Sample</axis_name>
                 <elements>5024</elements>
-                <sequence_number>2</sequence_number>
+                <sequence_number>3</sequence_number>
             </Axis_Array>
             <Special_Constants>
                 <missing_constant>-1.000</missing_constant>
             </Special_Constants>
-        </Array_2D_Image>
+        </Array_3D_Image>
         
         <!-- First extension header and data unit -->
         
         <Header>
-            <offset unit="byte">80089920</offset>
+            <offset unit="byte">28336320</offset>
             <object_length unit="byte">2880</object_length>
             <parsing_standard_id>FITS 3.0</parsing_standard_id>
             <description>
                 FITS IMAGE extension header - a minimal header.
             </description>
         </Header>
-        <Array_2D_Image>
+        <Array_3D>
             <name>Per-pixel Error Estimate (DN)</name>
             <local_identifier>ErrorEstimate</local_identifier>
-            <offset unit="byte">80092800</offset>
-            <axes>2</axes>
+            <offset unit="byte">28339200</offset>
+            <axes>3</axes>
             <axis_index_order>Last Index Fastest</axis_index_order>
             <description>
                 This array provides per-pixel error estimates in DN for each of the corresponding
@@ -259,24 +322,29 @@
                 <unit>DN</unit>
             </Element_Array>
             <Axis_Array>
-                <axis_name>Line</axis_name>
-                <elements>3984</elements>
+                <axis_name>Frame</axis_name>
+                <elements>11</elements>
                 <sequence_number>1</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Line</axis_name>
+                <elements>128</elements>
+                <sequence_number>2</sequence_number>
             </Axis_Array>
             <Axis_Array>
                 <axis_name>Sample</axis_name>
                 <elements>5024</elements>
-                <sequence_number>2</sequence_number>
+                <sequence_number>3</sequence_number>
             </Axis_Array>
             <Special_Constants>
                 <missing_constant>-1.00</missing_constant>
             </Special_Constants>
-        </Array_2D_Image>
+        </Array_3D>
         
         <!-- Second extension header and data unit -->
         
         <Header>
-            <offset unit="byte">160156800</offset>
+            <offset unit="byte">56635200</offset>
             <object_length unit="byte">2880</object_length>
             <parsing_standard_id>FITS 3.0</parsing_standard_id>
             <description>
@@ -284,29 +352,34 @@
                 quality code definitions.
             </description>
         </Header>
-        <Array_2D_Image>
+        <Array_3D>
             <name>Per-pixel Quality Assessment</name>
             <local_identifier>Quality</local_identifier>
-            <offset unit="byte">160159680</offset>
-            <axes>2</axes>
+            <offset unit="byte">56638080</offset>
+            <axes>3</axes>
             <axis_index_order>Last Index Fastest</axis_index_order>
             <Element_Array>
                 <data_type>SignedMSB2</data_type>
             </Element_Array>
             <Axis_Array>
-                <axis_name>Line</axis_name>
-                <elements>3984</elements>
+                <axis_name>Frame</axis_name>
+                <elements>11</elements>
                 <sequence_number>1</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Line</axis_name>
+                <elements>128</elements>
+                <sequence_number>2</sequence_number>
             </Axis_Array>
             <Axis_Array>
                 <axis_name>Sample</axis_name>
                 <elements>5024</elements>
-                <sequence_number>2</sequence_number>
+                <sequence_number>3</sequence_number>
             </Axis_Array>
             <Special_Constants>
                 <missing_constant>-1</missing_constant>
             </Special_Constants>
-        </Array_2D_Image>
+        </Array_3D>
     </File_Area_Observational>
     
 </Product_Observational>

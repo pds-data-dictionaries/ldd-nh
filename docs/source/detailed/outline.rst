@@ -30,11 +30,39 @@ they are included in a label.
           <nh:Detector>
               <nh:detector_name>
               <nh:detector_type>
-            
+              
+              <nh:Ralph_Details>
+                  <nh:met510>
+                  <nh:hk_packet_is_real>
+              
               <nh:MVIC_Details>
                   <nh:scan_type>
                   <nh:tdi_rate>
-      
+              
+              <nh:LEISA_Details>
+                  <nh:scan_type>
+                  <nh:leisa_mode>
+                  <nh:leisa_offset_1>
+                  <nh:leisa_offset_2>
+                  <nh:leisa_offset_3>
+                  <nh:leisa_offset_4>
+                  <nh:leisa_rate>
+                  <nh:leisa_side>
+                  <nh:leisa_temperature>
+              
+              <nh:SWAP_Details>
+                  <nh:sweep_samples_count>
+          
+          <nh:Spacecraft_State>
+              <nh:thruster_x_enabled>
+              <nh:thruster_y_enabled>
+              <nh:thruster_z_enabled>
+              <nh:gc_scan_rate>
+              <nh:target_motion_rate>
+              <nh:relative_control_mode_active>
+              <nh:pointing_method>
+              <nh:spacecraft_spin_state>
+
       <nh:MVIC_Calibration_Information>
           <nh:physical_pixel_size>
           <nh:read_noise>
@@ -47,7 +75,7 @@ they are included in a label.
                   <nh:left_side_median_bias>
                   <nh:right_side_median_bias>
       
-      <nh:MVIC_Conversion_Constants>
+      <nh:Radiometric_Conversion_Constants>
           <nh:pivot_wavelength>
           
           <nh:Resolved_Source>
@@ -57,6 +85,7 @@ they are included in a label.
               <nh:pholus_constant>
               <nh:pluto_constant>
               <nh:charon_constant>
+              <nh:arrokoth_constant>
           
           <nh:Unresolved_Source>
               <nh:units_of_conversion_constants>
@@ -65,3 +94,15 @@ they are included in a label.
               <nh:pholus_constant>
               <nh:pluto_constant>
               <nh:charon_constant>
+              <nh:arrokoth_constant>
+      
+      <nh:Engineering_Unit_Conversions>
+          <nh:Engineering_Component>
+              <nh:engineering_component_name>
+              <nh:engineering_component_description>
+              <nh:engineering_conversion_equation>
+              <nh:Engineering_Conversion_Coefficients>
+                  <nh:coefficient_0>
+                  <nh:coefficient_1>
+                  <nh:coefficient_2>
+                  <nh:coefficient_3>

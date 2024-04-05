@@ -1,18 +1,22 @@
 Mockup Label: MVIC Red Channel, Processed Data
 ##################################################
 
-This label is a mockup created for design purposes during the migration
-planning for the MVIC data. The test data file contained processed data
-from a TDI observation through the MVIC Red Channel (identified as
-"mc0" in file names).
+This label mockup has been updated for version 1.1.0.0 of the mission
+dictionary. Namespace references have been updated, and the older
+MVIC_Calibration_Constants class has been replaced by the 
+Radiometric_Calibration_Constants class, which applies to multipl
+instruments. The data file correspunding to this label would contain
+processed data from a TDI observation through the MVIC Red Channel 
+(identified as "mc0" in file names).
 
-The mockup shows the entire *<Product_Observationsl>*
+The mockup shows the entire *<Product_Observational>*
 structure including the New Horizons dictionary classes, which are 
 found in the *<Mission_Area>* of the structure.
 
-  **Note** that the versions of both the New Horizons (nh:) and Small Bodies (sb:)
-  shown here are pre-release. Consult the current release documentation for changes
-  to these namespaces-in-development before attempting and real-would applications. 
+  **Note** that the New Horizons (nh:) and Small Bodies (sb:) dictionaries are in 
+  active development. Consult the current release documentation for changes
+  to these namespaces-in-development before attempting and real-would applications,
+  or the Github repo for latest development versions. 
 
 .. code-block:: XML
 
@@ -23,18 +27,18 @@ found in the *<Mission_Area>* of the structure.
     xmlns:img="http://pds.nasa.gov/pds4/img/v1" 
     xmlns:sb="http://pds.nasa.gov/pds4/sb/v0" 
     xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1" 
-    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd
-    http://pds.nasa.gov/pds4/disp/v1 https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1J00_1510.xsd
-    http://pds.nasa.gov/pds4/geom/v1 https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1J00_1970.xsd
-    http://pds.nasa.gov/pds4/img/v1  https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1J00_1870.xsd
-    http://pds.nasa.gov/pds4/sb/v0   https://pds.nasa.gov/pds4/sb/v0/PDS4_SB_1J00_0100.xsd
-    http://pds.nasa.gov/pds4/mission/nh/v1 https://pds.nasa.gov/pds4/mission/nh/v1/PDS4_NH_1J00_1000.xsd">
+    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd
+    http://pds.nasa.gov/pds4/disp/v1 https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1L00_1510.xsd
+    http://pds.nasa.gov/pds4/geom/v1 https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1L00_1970.xsd
+    http://pds.nasa.gov/pds4/img/v1  https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1L00_1890.xsd
+    http://pds.nasa.gov/pds4/sb/v1   https://pds.nasa.gov/pds4/sb/v0/PDS4_SB_1L00_1000.xsd
+    http://pds.nasa.gov/pds4/mission/nh/v1 https://pds.nasa.gov/pds4/mission/nh/v1/PDS4_NH_1L00_1100.xsd">
 
     <Identification_Area>
         <logical_identifier>urn:nasa:pds:nh_mvic:kem1_cal:mc0_0408625487_0x545_sci</logical_identifier>
         <version_id>1.0</version_id>
         <title>New Horizons MVIC Red Channel Observation mc0_0408625487_0x545_sci (Processed Data)</title>
-        <information_model_version>1.19.0.0</information_model_version>
+        <information_model_version>1.21.0.0</information_model_version>
         <product_class>Product_Observational</product_class>
 
         <Modification_History>
@@ -146,7 +150,7 @@ found in the *<Mission_Area>* of the structure.
                     <nh:gain unit="electron/DN">58.6000</nh:gain>
                     <nh:tdi_median_bias_level unit="DN">25</nh:tdi_median_bias_level>
                 </nh:MVIC_Calibration_Information>
-                <nh:MVIC_Conversion_Constants>
+                <nh:Radiometric_Conversion_Constants>
                     <nh:pivot_wavelength unit="micrometer">0.624</nh:pivot_wavelength>
                     <nh:Resolved_Source>
                         <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom/sr)</nh:units_of_conversion_constants>
@@ -164,7 +168,7 @@ found in the *<Mission_Area>* of the structure.
                         <nh:pluto_constant>7.879E+13</nh:pluto_constant>
                         <nh:charon_constant>7.866E+13</nh:charon_constant>
                     </nh:Unresolved_Source>
-                </nh:MVIC_Conversion_Constants>
+                </nh:Radiometric_Conversion_Constants>
             </nh:Mission_Parameters>
         </Mission_Area>
 
@@ -469,7 +473,7 @@ found in the *<Mission_Area>* of the structure.
     
     <Reference_List>
         <Internal_Reference>
-            <lid_reference>urn:nasa:pds:nh_doc:all:ralph_ssr</lid_reference>
+            <lid_reference>urn:nasa:pds:nh_documents:ralph:ralph_ssr</lid_reference>
             <reference_type>data_to_document</reference_type>
             <comment>
                 This document from Space Science Reviews describes technical and operational 

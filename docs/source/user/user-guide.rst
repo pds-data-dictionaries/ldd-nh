@@ -32,7 +32,7 @@ Overview of the New Horizons (NH) Mission Dictionary
 
 .. include:: ../intro.md
 
-- **Steward:** Anne Raugh, Small Bodies Node, University of Maryland (@acraugh on Github)
+- **Primary Steward:** Anne Raugh, Small Bodies Node, University of Maryland (@acraugh on Github)
 - **Dictionary Repo:** https://github.com/pds-data-dictionaries/ldd-nh
 - **Namespace Prefix:** nh:
 
@@ -72,7 +72,8 @@ The major subclasses of the *<nh:Mission_Parameters>* class are:
 
 - :ref:`<nh:Observation_Parameters><observation-parameters>`
 - :ref:`<nh:MVIC_Calibration_Information><mvic-calibration-information>`
-- :ref:`<nh:MVIC_Converstion_Constants><mvic-conversion-constants>`
+- :ref:`<nh:Radiometric_Converstion_Constants><radiometric-conversion-constants>`
+- :ref:`<nh:Engineering_Unit_Conversions><engineering-unit-conversions>`
 
 You can see a complete outline of the namespace under the
 :doc:`../detailed/outline` topic.
@@ -165,13 +166,17 @@ This class contains:
   in processing that particular frame. For framing observations, bias is measured 
   during each observations using shielded pixels on either edge of the array.
    
-.. _mvic-conversion-constants:
+.. _radiometric-conversion-constants:
  
 *************************************************
-Subclass: <nh:MVIC_Conversion_Constants>
+Subclass: <nh:Radiometric_Conversion_Constants>
 *************************************************
 
-The *<nh:MVIC_Conversion_Constants>* class is used in labels for processed
+**NOTE:** *As of version 1.1.0, this class replaces the deprecated
+<nh:MVIC_Conversion_Constants> class. The content of that class is included in this
+one, with additional constants added as needed. This class is used by multiple instruments.*
+
+The *<nh:Radiometric_Conversion_Constants>* class is used in labels for processed
 data from all seven MVIC detectors. The MVIC pipeline does not produce "calibrated"
 data in the sense that PDS defines "calibrated" - specifically, "Data reduced to 
 physical units". The final reduction step depends on both the spectal characteristics
@@ -200,6 +205,7 @@ This class contains:
     - \(5145\) Pholus, a centaur
     - Pluto
     - Charon
+    - Arrokoth
 
 <nh:Unresolved_Source>
   The *<nh:Unresolved_Source>* class provides the units of measure (units of 
@@ -211,5 +217,26 @@ This class contains:
     - \(5145\) Pholus, a centaur
     - Pluto
     - Charon
-  
+    - Arrokoth
     
+.. _engineering_unit_conversions:
+ 
+*************************************************
+Subclass: <nh:Engineering_Unit_Conversions>
+*************************************************
+    
+Housekeeping values are present with the data in some files. These values are
+presented as a data number, which can be converted via a linear equation to 
+physical units. This class collects the information needed to identify and
+convert the housekeeping values to physical units.
+
+This class contains:
+
+- <nh:Engineering_Component>
+
+<nh:Engineering_Component>
+
+This class is repeated for each housekeeping value. It identifies the value
+by name, describes it, provides a human-readable form of the conversion
+equation, and lists the constants and coefficients needed to perform the
+conversion.

@@ -7,7 +7,7 @@
     the core and the New Horisons dictionary itself have been removed to avoid irrelevant testing failures
     that would ultimately prevent the NH schemas from building.
     
-    A "real world" label would be required to have the appropriate classes fro the Imaging, Geometry,
+    A "real world" label would be required to have the appropriate classes for the Imaging, Geometry,
     Display, and Small Bodies dictionaries; and additional changes have been made to some core namespace
     values also to avoid unrelated testing failures. Consequently, UNDER NO CIRCUMSTANCES should it be 
     assumed that any particular part of this label is valid in a "real world" situation. 
@@ -24,7 +24,7 @@
         <logical_identifier>urn:nasa:pds:nh_mvic:kem1_cal:mpf_0408630768_0x539_sci</logical_identifier>
         <version_id>1.0</version_id>
         <title>New Horizons MVIC Panchromatic Framing Observation :mpf_0408630768_0x539_sci (Processed Data)</title>
-        <information_model_version>1.19.0.0</information_model_version>
+        <information_model_version>[IM VERSION]</information_model_version>
         <product_class>Product_Observational</product_class>
 
         <Modification_History>
@@ -128,6 +128,16 @@
                             <nh:scan_type>FRAMING - Framing Mode</nh:scan_type>
                         </nh:MVIC_Details>
                     </nh:Detector>
+                    <nh:Spacecraft_State>
+                        <nh:thruster_x_enabled>true</nh:thruster_x_enabled>
+                        <nh:thruster_y_enabled>true</nh:thruster_y_enabled>
+                        <nh:thruster_z_enabled>true</nh:thruster_z_enabled>
+                        <nh:gc_scan_rate>0.0</nh:gc_scan_rate>
+                        <nh:target_motion_rate>0.0</nh:target_motion_rate>
+                        <nh:relative_control_mode_active>false</nh:relative_control_mode_active>
+                        <nh:pointing_method>CB1</nh:pointing_method>
+                        <nh:spacecraft_spin_state>3-Axis</nh:spacecraft_spin_state>
+                    </nh:Spacecraft_State>
                 </nh:Observation_Parameters>
                 <nh:MVIC_Calibration_Information>
                     <nh:physical_pixel_size unit="micrometer">13.0000</nh:physical_pixel_size>
@@ -192,7 +202,7 @@
                     </nh:Framing_Biases>
                 </nh:MVIC_Calibration_Information>
                 
-                <nh:MVIC_Conversion_Constants>
+                <nh:Radiometric_Conversion_Constants>
                     <nh:pivot_wavelength unit="micrometer">0.692</nh:pivot_wavelength>
                     <nh:Resolved_Source>
                         <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom/sr)</nh:units_of_conversion_constants>
@@ -210,7 +220,7 @@
                         <nh:pluto_constant>2.417E+14</nh:pluto_constant>
                         <nh:charon_constant>2.491E+14</nh:charon_constant>
                     </nh:Unresolved_Source>
-                </nh:MVIC_Conversion_Constants>
+                </nh:Radiometric_Conversion_Constants>
             </nh:Mission_Parameters>
         </Mission_Area>
 
@@ -218,7 +228,7 @@
     
     <Reference_List>
         <Internal_Reference>
-            <lid_reference>urn:nasa:pds:nh_doc:all:ralph_ssr</lid_reference>
+            <lid_reference>urn:nasa:pds:nh_documents:ralph:ralph_ssr</lid_reference>
             <reference_type>data_to_document</reference_type>
             <comment>
                 This document from Space Science Reviews describes technical and operational 
