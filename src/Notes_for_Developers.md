@@ -1,13 +1,13 @@
 # LDD Conventions for This Project
 
-When updating, modifying, or otherwise constributing to the New Horizons namespace,
+When updating, modifying, or otherwise contributing to the New Horizons namespace,
 please observe the following conventions.
 
 ## Process
 
 * Before you begin work on a new development task or bugfix, raise an issue for it in the ldd-nh repo
-  "Issues" list. We will be using this for communication amongst the various developers (typically 
-  the local "Issues" list is *not* used for tracking LDD issues). Reference the local issue in your 
+  [Issues list](https://github.com/pds-data-dictionaries/ldd-nh/issues). We will be using this for communication amongst the various developers (typically 
+  the local Issues list is *not* used for tracking LDD issues). Reference the local issue in your 
   commit message(s).
 * Build and test locally before commiting to the repo. 
   Commiting a new IngestLDD file triggers the autobuild function of the repo. There are limits on the
@@ -27,8 +27,69 @@ please observe the following conventions.
 of the file.
 * If you change the definition of an existing attribute or class, update the &lt;version_id&gt; of that 
 particular element and either replace or add your initials/identifier to the &lt;submitter_name&gt; field.
+
+### Naming Classes and Attributes
+
+It is important that classes and attributes have names that are meaningful to knowledgeable, 
+but not expert, users because we expect humans to have to make decisions for directing software
+based on the metadata returned - and "metadata" is the names and value of attributes and classes 
+in our labels. When designed names for classes and attributes, keep the following in mind:
+
+* You can assume that a human will have ready access to other things in the label for context. 
+  That is, you can assume they either know or can easily discover the name and ID of the mission,
+  spacecraft, instrument, and even operating modes if they are included elsewhere in the metadata
+  (with good supporting definitions, of course).
+* You should not assume a human has a SIS open before them, or has memorized the content of such
+  a document, for decoding acronyms and abbreviations that refer to details of instrument or 
+  spacecraft design, telemetry parsing, commanding, or similar engineering and pipeline 
+  processing jargon. These things should be avoided in favor of plain English wherever possible,
+  or robust definitions when it is not possible.
+* Wherever possible, the combination of (attribute name, unit of measure, value) should be
+  sufficiently meaningful to a user that the user can make a decision based on the value. So, for
  
-### Writing &lt;description&gt; and &lt;value_meaning&gt; Content
+      <cal_flag>true</cal_flag>
+      
+  is not actionable because I don't know for sure what "cal" means, nor if the "true" value 
+  indicates that calibration is done, calibration should be done, or if the data I am looking 
+  at are for use in calibration. Better names would be:
+  
+      <calibration_completed>true</calibration_completed>
+      <data_are_calibrated>true</data_are_calibrated>
+      <calibration_successful>true</calibration_successful>
+      
+  depending on the context of the flag. As an even more explicit alternative, "_flag" could be
+  added to any of the three examples as well, if there is a convention within the namespace to
+  indicate all boolean attributes by a "_flag" suffix on their names.
+  
+  Similarly, something like:
+  
+        <dettemp>70</dettemp>
+              
+  is not actionable, whereas something like:
+  
+        <detector_temperature unit="K">70</detector_temperature>
+        
+  leaves very little to the imagination.
+   
+### Attribute Data Types
+
+A number of facets are provided for customizing data types of attributes. Some things to keep in
+mind:
+
+* PDS predefines an array of data types, including type for positive and non-negative integers.
+  Use the type that most closely aligns with the actual range of your data.
+* When your data are further constrained, do add those constraints to your &lt;DD_Attribute&gt;
+  definitions. These are enforced by XSD, which is faster at validating its constraints than
+* If you are defining a boolean attribute (i.e., values of literally only 
+  "true" and "false" or "TRUE" and "FALSE"), *use the ASCII_Boolean data type*. Do not create 
+  a new permissible value list to mimc the boolean type because this masks the datatype from 
+  schema-aware software.
+* If you are defining a data type that makes use of the &lt;pattern&gt; facet, you should also
+  provide regression tests to demonstrate that the regular expresseions are properly filtering
+  the attribute content.  
+  
+
+### Writing &lt;description&gt; and &lt;value_meaning&gt; Definitions
 
 Definitions need to be written in such a way that users can understand them whenever they encounter them.
 It is highly unlikely that a user will be reading through the entire schema, but it is likely that a user 
@@ -40,32 +101,38 @@ fact, this is probably the right situation to image as you formulate your defini
 In terms of style:
 
 * Write in complete sentences in standard English.
-* Include the namespace prefix whenever referencing something in the nh: or any other namespace, including
-* the name of an attribute or class you are defining. So,
-  for example, "&lt;description&gt;The nh:arrokoth_constant supplies the...&lt;/description&gt;".
+* Avoid circular definitions ("nh:A_is_B indicate that A is B", e.g.). Permissible value lists
+  can, admittedly, sometimes be impossible to describe otherwise.
+* Include the namespace prefix whenever referencing something in the nh: or any other namespace, 
+  including the name of an attribute or class you are defining. So,
+  for example:
+
+      <description>The nh:arrokoth_constant supplies the...</description>
+      
 * Do not use acronyms like "TBD" or "TBS" alone to indicate missing information. If it is not 
   possible to provide a complete definition, then preface the definition with the string "[INCOMPLETE]".
   For example: 
 
-        ``&lt;description&gt;[INCOMPLETE] The nh:spin_rate is TBD.&lt;/description&gt;``
+      <description>[INCOMPLETE] The nh:spin_rate is TBD.</description>
     
 * If you are not confident that a definition or some part of it is correct, preface the description with
   "[CHECK]" so it can be found later for verification. For example:
 
-        ``<value_meaning>[CHECK] Data were obtained using the blue channel detector. The blue
-          filter covers the range (?) 400-550nm.</value_meaning>``
+      <value_meaning>[CHECK] Data were obtained using the blue channel detector. 
+      The blue filter covers the range (?) 400-550nm.</value_meaning>
 
 * Do not invent other flag values.       
 
 ### Schematron Rules
 
 Schematron Rules are used to enforce things that the XSD language has difficulty with. This
-usually involved tests based on optional elements or specific value existing in the label.
-Write a Schematron rule when certain optional elements must be present in order for the user to
-be able to use a label. If you cannot verify code or formulate the XSD to the point of being 
+usually involves tests based on optional elements or specific values existing in the label.
+
+* Write a Schematron rule when certain optional elements must be present in order for the user to
+be able to use or understand the data. 
+* If you cannot verify code or formulate the XSD to the point of being 
 100% certain that dependent
 conditions will always be satisified by pipeline output, write a Schematron rule to enforce it.
-
 * There is no need to write a Schematron rule for anything that can be enforced by a structural
   constraint in XSD.
 * XSD validation is **much** more efficient than Schematron validation. 
@@ -83,7 +150,8 @@ It is possible, and generally likely, that choice lists will allow invalid combi
 selections to be present in the label. In general, they should be avoided for that reason alone.
 If a choice list is, for some reason, required, several regression test scenarios need to be
 included to demonstrate that invalid repetition and omission of elements is being effectively
-constrained.
+* If an class is defined with many optional elements, a Schematron rule might be required to 
+  ensure that either a minimal se, a compatible set, or both are present in any given label.
 * As noted above, every Schematron rule you right should be accompanied by at least one 
   and generally two 
   regression tests: One that demonstrates that no error is signaled when the correct situation
