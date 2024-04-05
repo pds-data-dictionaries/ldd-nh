@@ -89,58 +89,6 @@
   </DD_Attribute>
   
   <DD_Attribute>
-    <name>coefficient_0</name>
-    <version_id>1.0</version_id>
-    <local_identifier>coefficient_0</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>MKC</submitter_name>
-    <definition>The nh:coefficient_0 value is the zeroth-order term coefficient in the engineering unit conversion polynomial.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Real</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  
-  <DD_Attribute>
-    <name>coefficient_1</name>
-    <version_id>1.0</version_id>
-    <local_identifier>coefficient_1</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>MKC</submitter_name>
-    <definition>The nh:coefficient_1 value is the first-order term coefficient in the engineering unit conversion polynomial.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Real</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  
-  <DD_Attribute>
-    <name>coefficient_2</name>
-    <version_id>1.0</version_id>
-    <local_identifier>coefficient_2</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>MKC</submitter_name>
-    <definition>The nh:coefficient_2 value is the second-order term coefficient in the engineering unit conversion polynomial.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Real</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  
-  <DD_Attribute>
-    <name>coefficient_3</name>
-    <version_id>1.0</version_id>
-    <local_identifier>coefficient_3</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>MKC</submitter_name>
-    <definition>The nh:coefficient_3 value is the third-order term coefficient in the engineering unit conversion polynomial.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Real</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  
-  <DD_Attribute>
     <name>detector_name</name>
     <version_id>1.1</version_id>
     <local_identifier>detector_name</local_identifier>
@@ -306,52 +254,6 @@
       </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
-  
-  <DD_Attribute>
-    <name>engineering_component_description</name>
-    <version_id>1.0</version_id>
-    <local_identifier>engineering_component_description</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>MKC</submitter_name>
-    <definition>
-      The nh:engineering_component_description attribute gives a description of the named engineering component.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  
-  <DD_Attribute>
-    <name>engineering_conversion_equation</name>
-    <version_id>1.0</version_id>
-    <local_identifier>engineering_conversion_equation</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>MKC</submitter_name>
-    <definition>The nh:engineering_conversion_equation attribute gives the engineering conversion equation and definition of 
-      terms for the engineering component measuremnt identified by nh:engineering_component_name.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Text_Preserved</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  
-  <DD_Attribute>
-    <name>engineering_component_name</name>
-    <version_id>1.0</version_id>
-    <local_identifier>engineering_component_name</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>MKC</submitter_name>
-    <definition>The nh:engineering_component_name attribute identified the engineering component described by the other 
-      elements in the containing nh:Engineering_Component class.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  
   
   <DD_Attribute>
     <name>frame_number</name>
@@ -1440,101 +1342,6 @@
   </DD_Class>
   
   <DD_Class>
-    <name>Engineering_Unit_Conversions</name>
-    <version_id>1.0</version_id>
-    <local_identifier>Engineering_Unit_Conversions</local_identifier>
-    <submitter_name>MKC</submitter_name>
-    <definition>
-      The nh:Engineering_Unit_Conversions class provides the values needed to convert
-      housekeeping values downlinked as digital numbers Ii.e., as DN) into physical units.
-      
-      A description of how to convert from DN to physical units is provided
-      in the "New Horizons SOC to Instrument Pipeline ICD" document.
-    </definition>
-    <Internal_Reference>
-      <lid_reference>urn:nasa:pds:nh_documents:mission:soc_inst_icd</lid_reference>
-      <reference_type>class_to_document</reference_type>
-    </Internal_Reference>
-    <DD_Association>
-      <identifier_reference>Engineering_Component</identifier_reference>
-      <reference_type>component_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>*</maximum_occurrences>
-    </DD_Association>
-  </DD_Class>
-  
-  <DD_Class>
-    <name>Engineering_Component</name>
-    <version_id>1.0</version_id>
-    <local_identifier>Engineering_Component</local_identifier>
-    <submitter_name>MKC</submitter_name>
-    <definition>
-      The nh:Engineering_Component class collects the engineering component measurement
-      conversion (from DN to physical units) equation properties.
-    </definition>
-    <DD_Association>
-      <identifier_reference>engineering_component_name</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>engineering_component_description</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>engineering_conversion_equation</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>Engineering_Conversion_Coefficients</identifier_reference>
-      <reference_type>component_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-  </DD_Class>
-  
-  <DD_Class>
-    <name>Engineering_Conversion_Coefficients</name>
-    <version_id>1.0</version_id>
-    <local_identifier>Engineering_Conversion_Coefficients</local_identifier>
-    <submitter_name>MKC</submitter_name>
-    <definition>
-      The nh:Engineering_Conversion_Coefficients class collects the polynomial
-      coeffcients neede to convert the Engineering Component identified by the
-      nh:engineering_component_name attribute to physical units.
-    </definition>
-    <DD_Association>
-      <identifier_reference>coefficient_0</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>coefficient_1</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>coefficient_2</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>coefficient_3</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-  </DD_Class>
-  
-  <DD_Class>
     <name>LEISA_Details</name>
     <version_id>1.0</version_id>
     <local_identifier>LEISA_Details</local_identifier>
@@ -1915,12 +1722,6 @@
     </DD_Association>
     <DD_Association>
       <identifier_reference>Radiometric_Conversion_Constants</identifier_reference>
-      <reference_type>component_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>Engineering_Unit_Conversions</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
