@@ -76,35 +76,41 @@ in our labels. When designed names for classes and attributes, keep the followin
 A number of facets are provided for customizing data types of attributes. Some things to keep in
 mind:
 
-* PDS predefines an array of data types, including type for positive and non-negative integers.
-  Use the type that most closely aligns with the actual range of your data.
-* When your data are further constrained, do add those constraints to your &lt;DD_Attribute&gt;
+* PDS predefines an array of data types, including types for positive and non-negative integers 
+  and true/false flags.
+  Use the existing type that most closely aligns with the actual range of your data for your
+  base type.
+* When your data are further constrained than the base type, 
+  do add those constraints to your &lt;DD_Attribute&gt;
   definitions. These are enforced by XSD, which is faster at validating its constraints than
+  Schematron rules would be. (Permissible value lists are enforced by Schematron rules, however.)
 * If you are defining a boolean attribute (i.e., values of literally only 
   "true" and "false" or "TRUE" and "FALSE"), *use the ASCII_Boolean data type*. Do not create 
-  a new permissible value list to mimc the boolean type because this masks the datatype from 
+  a new permissible value list to mimic the boolean type because this masks the true data type from 
   schema-aware software.
 * If you are defining a data type that makes use of the &lt;pattern&gt; facet, you should also
-  provide regression tests to demonstrate that the regular expresseions are properly filtering
+  provide regression tests to demonstrate that the regular expressions are properly filtering
   the attribute content.  
   
 
 ### Writing &lt;description&gt; and &lt;value_meaning&gt; Definitions
 
 Definitions need to be written in such a way that users can understand them whenever they encounter them.
-It is highly unlikely that a user will be reading through the entire schema, but it is likely that a user 
-will be looking at a label. The description should provide useful information if, for example, a user 
+It is highly unlikely that a user will be reading through the entire schema, or looking at an
+interface document, but it is likely that a user 
+will be looking at a label. The definition you write 
+should provide useful information if, for example, a user 
 were to hover
 over an attribute name or permissible value long enough to trigger a pop-up containing the definition. In
-fact, this is probably the right situation to image as you formulate your definitions.
+fact, this is probably the right situation to imagine as you formulate your definitions.
 
 In terms of style:
 
 * Write in complete sentences in standard English.
-* Avoid circular definitions ("nh:A_is_B indicate that A is B", e.g.). Permissible value lists
+* Avoid circular definitions ("nh:A_is_B indicates that A is B", e.g.). Permissible values
   can, admittedly, sometimes be impossible to describe otherwise.
 * Include the namespace prefix whenever referencing something in the nh: or any other namespace, 
-  including the name of an attribute or class you are defining. So,
+  including the name of the attribute or class you are defining. So,
   for example:
 
       <description>The nh:arrokoth_constant supplies the...</description>
@@ -121,7 +127,8 @@ In terms of style:
       <value_meaning>[CHECK] Data were obtained using the blue channel detector. 
       The blue filter covers the range (?) 400-550nm.</value_meaning>
 
-* Do not invent other flag values.       
+* Do not invent other flag values to indicate missing or uncertain information, or any other 
+  odd situation in the IngestLDD file. If you need one, raise it as an Issue *first*.       
 
 ### Schematron Rules
 
@@ -145,13 +152,16 @@ conditions will always be satisified by pipeline output, write a Schematron rule
 ## Regression Tests
 
 * There's not a lot of point in writing regression tests for most XSD changes.
-The notable exception to this is anything involving an *xs:choice* list.
+The notable exception to this is *anything* involving an *xs:choice* list.
 It is possible, and generally likely, that choice lists will allow invalid combinations of
 selections to be present in the label. In general, they should be avoided for that reason alone.
 If a choice list is, for some reason, required, several regression test scenarios need to be
 included to demonstrate that invalid repetition and omission of elements is being effectively
-* If an class is defined with many optional elements, a Schematron rule might be required to 
-  ensure that either a minimal se, a compatible set, or both are present in any given label.
+identified and prohibited.
+* If a class is defined with many optional elements (that is, attributes and/or classes), 
+  a Schematron rule might be required to 
+  ensure that either a minimal set of elements, a compatible set of elements, 
+  or both are present in any given label.
 * As noted above, every Schematron rule you right should be accompanied by at least one 
   and generally two 
   regression tests: One that demonstrates that no error is signaled when the correct situation
@@ -176,8 +186,8 @@ is not necessary to document *every* change. Use the existing documentation as a
   as another class for the same or a different instrument, then add it to the user documentation
   following the model of the existing class.
 * If you have modified a class that is already documented, update the documentation.
-* If you have added a new permissible value to a list for which the existing value are all 
-  documented, add the new value information to the documentation.
+* If you have added a new permissible value to a list for which the existing values are all 
+  listed in the documentation, add the new value information.
 
 Some additional places to check for needed updates:
 
@@ -194,6 +204,6 @@ This file, located in the root of the repo, should be updated whenever a change 
 could be helpful in coordinating simultaneous editing by multiple parties.
 
 * Note intended changes even before you start the editing. Include the issue number for
-  reference and identify yourself as the assignee for the particular task.
+  reference.
 * Doesn't have to be pretty - we'll clean up and 
   consolidate redundant or unnecessary details before release.
