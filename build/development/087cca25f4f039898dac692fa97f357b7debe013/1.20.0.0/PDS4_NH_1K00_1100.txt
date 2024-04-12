@@ -1,13 +1,21 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
+<<<<<<< HEAD:build/development/087cca25f4f039898dac692fa97f357b7debe013/1.20.0.0/PDS4_NH_1K00_1100.txt
    LDDTool Version        15.1.0
+=======
+   LDDTool Version        15.0.2
+>>>>>>> Auto-generated LDDs by PDSEN CI Bot:build/development/544e6a7e5c74a5dc2c3b11a6190219193efbcc42/1.20.0.0/PDS4_NH_1K00_1100.txt
    LDD Version Id:        1.1.0.0
    LDD Label Version Id:  1.26
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
+<<<<<<< HEAD:build/development/087cca25f4f039898dac692fa97f357b7debe013/1.20.0.0/PDS4_NH_1K00_1100.txt
    Time                   Thu Jun 20 21:03:28 UTC 2024
+=======
+   Time                   Fri Apr 12 22:56:14 UTC 2024
+>>>>>>> Auto-generated LDDs by PDSEN CI Bot:build/development/544e6a7e5c74a5dc2c3b11a6190219193efbcc42/1.20.0.0/PDS4_NH_1K00_1100.txt
    Common Schema          [PDS4_PDS_1K00.xsd]
    Common Schematron      [PDS4_PDS_1K00.sch]
    IM Version Id:         1.20.0.0
@@ -28,9 +36,15 @@ Parameters:
    Merge with Master      false
 
 Summary:
+<<<<<<< HEAD:build/development/087cca25f4f039898dac692fa97f357b7debe013/1.20.0.0/PDS4_NH_1K00_1100.txt
    Classes                18
    Attributes             50
    Associations           77
+=======
+   Classes                17
+   Attributes             56
+   Associations           83
+>>>>>>> Auto-generated LDDs by PDSEN CI Bot:build/development/544e6a7e5c74a5dc2c3b11a6190219193efbcc42/1.20.0.0/PDS4_NH_1K00_1100.txt
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -92,6 +106,7 @@ Parsed Input - Header:
 
 Parsed Input - Attributes:
 
+<<<<<<< HEAD:build/development/087cca25f4f039898dac692fa97f357b7debe013/1.20.0.0/PDS4_NH_1K00_1100.txt
    name                   aperture
    version                1.20
    value data type        ASCII_Short_String_Collapsed
@@ -112,11 +127,40 @@ Parsed Input - Attributes:
    version                1.20
    value data type        ASCII_Integer
    description             The nh:approx_target_sample attribute provides the approximate pixel position in the image of the center of the best guess target (as specified by nh:approx_target_name) in one-based absolute units along the "Sample" axis as defined in the primary_image Array object. The origin is in the lower left of the image when disp:horizontal_display_direction is "Left to Right" and disp:vertical_display_direction is "Bottom to Top". If there is no best guess at the target position, the attribute will be omitted. 
+=======
+   name                   agc_gain_setting
+   version                1.20
+   value data type        ASCII_Real
+   description             The nh:agc_gain_setting attribute supplies the value of the AGC gain setting used in the radiometry calibration. 
+   minimum value          0.0
+
+   name                   agc_gain_provenance
+   version                1.20
+   value data type        ASCII_Short_String_Collapsed
+   description             The nh:agc_gain_provenance attribute supplies the provenance for the nh:agc_gain_setting attribute. If nh:agc_setting_source='ULDB', this value will take the form 'YYDOY.ssf:...', where YY is the two-digit year, DOY is the day-of-year, and '...' represents a string that indicates the source sequence file. Otherwise (if nh:agc_setting_source='AUX'), this value will be 'Nominal'. The nominal AGC gain values are 167 for side A and 163 for side B. 
+
+   name                   agc_setting_source
+   version                1.20
+   value data type        ASCII_Short_String_Collapsed
+   description             The nh:agc_setting_source attribute provides the source of the nh:agc_gain_setting value. 
+>>>>>>> Auto-generated LDDs by PDSEN CI Bot:build/development/544e6a7e5c74a5dc2c3b11a6190219193efbcc42/1.20.0.0/PDS4_NH_1K00_1100.txt
 
    name                   arrokoth_constant
    version                1.20
    value data type        ASCII_Real
    description             The nh:arrokoth_constant attribute supplies the constant to be used for sources with spectral distribution similar to (486958) Arrokoth (a.k.a., 2014 MU69) to convert calibrated data to physical units. 
+
+   name                   base_agc_gain
+   version                1.20
+   value data type        ASCII_Real
+   description             The nh:base_agc_gain attribute supplies the nominal/base AGC gain setting for the active side of the REX electronics. 
+   minimum value          0.0
+
+   name                   base_power
+   version                1.20
+   value data type        ASCII_Real
+   description             The nh:base_power attribute supplies the base/offset dBm value for REX radiometry. This is equivalent to the output power when RAW = (10^(-Ro/10))/Bandwidth and AGC = AGCOF, given the formula Power[dBm] = Rbase + 10*log10(Bandwidth*RAW) + dBstep*(AGC-AGCOF) + Ro The nominal values for this attribute are -176.852 for right circular polarization (side A) and -177.177 for left circular polarization (side B). 
+   unit of measure type   Units_of_Power
 
    name                   charon_constant
    version                1.20
@@ -143,6 +187,11 @@ Parsed Input - Attributes:
    value data type        ASCII_NonNegative_Integer
    description             The nh:frame_number attribute is used to identify a single frame (or image plane) in an observation that is formatted as a 3D image cube. The first frame is numbered "0" (zero). 
 
+   name                   frame_data_source
+   version                1.20
+   value data type        ASCII_Short_String_Collapsed
+   description             The nh:frame_data_source attribute indicates the source of the input as a two-digit hexadecimal number (i.e., one octet), represented as a string prefixed by '0x'. 0x00 is the default source when taking data of external 7.2 GHz signal or external radiometry. All other values indicate REX-internal sources intended for diagnostics. The 4 least significant bits and the single most significant bit are not used. 
+
    name                   gain
    version                1.20
    value data type        ASCII_Real
@@ -154,6 +203,12 @@ Parsed Input - Attributes:
    version                1.20
    value data type        ASCII_Real
    description             The nh:gc_scan_rate attribute provides the scan rate requested of the Guidance, Navigation, and Control (GNC) system by the Ralph instrument. If the scan rate was not forced, GNC will return the actual scan rate achieved. 
+
+   name                   iq_calibration_constant
+   version                1.20
+   value data type        ASCII_Real
+   description             The nh:iq_calibration_constant attribute supplies the I and Q response of the REX instrument, used to convert between raw counts and an I/Q value in mV. This constant has a nominal value of (1000 / (2^13)) mV/count. 
+   unit of measure type   Units_of_Voltage
 
    name                   jupiter_constant
    version                1.20
@@ -265,6 +320,25 @@ Parsed Input - Attributes:
    value data type        ASCII_Short_String_Collapsed
    description             The nh:pointing_method attribute indicates the spacecraft pointing method enabled during the operational sequence. Possible enumerated values are 'CB1', 'CB2', 'CB3', 'EARTH', 'SUN' or 'ORBIT NORMAL', which describe the body or plane used to establish a reference frame onboard the spacecraft for pointing purposes (where 'CB' stands for central body). Alternatively, this value can take the form 'RADEC=[X],[Y]' (where [X] and [Y] represent a numeric right ascension and declination in degrees, respectively) to indicate inertial pointing. This value does *not* indicate that any particular axis of the spacecraft is aligned with the target or direction indicated by the pointing method. This attribute is not applicable if nh:spacecraft_spin_state is 'Spinning'. 
 
+   name                   radio_bandwidth
+   version                1.20
+   value data type        ASCII_Real
+   description             [CHECK] The nh:radio_bandwidth attribute provides the active bandwidth of the REX radio. 
+   minimum value          0.0
+   unit of measure type   Units_of_Frequency
+
+   name                   radiometry_response_step
+   version                1.20
+   value data type        ASCII_Real
+   description             The nh:radiometry_response_step attribute provides the REX radiometer response per -1 step in the AGC gain setting (away from the base value). This quantity is represented by 'dBstep' in the formula Power[dBm] = Rbase + 10*log10(Bandwidth*RAW) + dBstep*(AGC-AGCOF) + Ro 
+   unit of measure type   Units_of_Power
+
+   name                   radiometry_response_offset
+   version                1.20
+   value data type        ASCII_Real
+   description             [CHECK] The nh:radiometry_response_offset attribute provides the response offset of the REX radiometer. This quantity is represented by 'Ro' in the formula Power[dBm] = Rbase + 10*log10(Bandwidth*RAW) + dBstep*(AGC-AGCOF) + Ro The nominal values are -101.030 for side A and -104.547 for side B 
+   unit of measure type   Units_of_Power
+
    name                   read_noise
    version                1.20
    value data type        ASCII_Real
@@ -362,6 +436,13 @@ Parsed Input - Attributes:
    version                1.20
    value data type        ASCII_Boolean
    description             The nh:thruster_z_enabled attribute describes the state of the z thruster. The thruster is either enabled ('true') or disabled ('false'). 
+
+   name                   time_tag_calibration_constant
+   version                1.20
+   value data type        ASCII_Real
+   description             [CHECK] The nh:time_tag_calibration_constant attribute provides the coefficient to be used to convert between raw counts and time tag seconds, e.g. the 'DT' in the formula timetag[s] = DT * RAW 
+   minimum value          0.0
+   unit of measure type   Units_of_Time
 
    name                   hk_packet_is_real
    version                1.20
@@ -767,6 +848,69 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
+   name                   REX_Radiometry_Information
+   description             The nh:REX_Radiometry_Information class collects radiometric parameter values and conversion information specific to Radio Science Experiment (REX) observations. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      nh:frame_data_source
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      nh:agc_gain_setting
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      nh:agc_setting_source
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      nh:agc_gain_provenance
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      nh:base_agc_gain
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      nh:base_power
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      nh:radio_bandwidth
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      nh:radiometry_response_step
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      nh:radiometry_response_offset
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      nh:iq_calibration_constant
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      nh:time_tag_calibration_constant
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
    name                   Spacecraft_State
    description             The nh:Spacecraft_State class collects observational parameters that are specific to the spacecraft state at the time of the observation. 
    is abstract            false
@@ -900,6 +1044,11 @@ Parsed Input - Classes:
       reference type        component_of
 
       local identifier      nh:Radiometric_Conversion_Constants
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      nh:REX_Radiometry_Information
       minimum occurrences   0
       maximum occurrences   1
       reference type        component_of

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD:build/development/087cca25f4f039898dac692fa97f357b7debe013/1.20.0.0/PDS4_NH_1K00_1100.sch
   <!-- PDS4 Schematron for Name Space Id:nh  Version:1.1.0.0 - Thu Jun 20 21:03:28 UTC 2024 -->
+=======
+  <!-- PDS4 Schematron for Name Space Id:nh  Version:1.1.0.0 - Fri Apr 12 22:56:14 UTC 2024 -->
+>>>>>>> Auto-generated LDDs by PDSEN CI Bot:build/development/544e6a7e5c74a5dc2c3b11a6190219193efbcc42/1.20.0.0/PDS4_NH_1K00_1100.sch
   <!-- Generated from the PDS4 Information Model Version 1.20.0.0 - System Build 13.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -130,7 +134,7 @@
     <sch:rule context="nh:MVIC_Calibration_Information">
       <sch:assert test="if (starts-with(//nh:MVIC_Details/nh:scan_type,'TDI')) then (nh:tdi_median_bias_level and not(nh:Framing_Biases)) else (nh:Framing_Biases and not(nh:tdi_median_bias_level))">
         <title>nh:MVIC_Calibration_Information/Rule</title>
-        In MVIC_Calibration_Information, TDI scans data must include the attribute nh:tdi_median_bias_level; framing observations must include the nh:Framing_Biases class; both should never used together.      </sch:assert>
+        In MVIC_Calibration_Information, TDI scans data must include the attribute nh:tdi_median_bias_level; framing observations must include the nh:Framing_Biases class; both should never used together.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -197,6 +201,72 @@
       <sch:assert test=". = ('KEM1 Cruise', 'KEM1 Encounter', 'KEM2 Cruise')">
         <title>nh:Mission_Parameters/nh:mission_phase_name/nh:mission_phase_name</title>
         The attribute nh:Mission_Parameters/nh:mission_phase_name must be equal to one of the following values 'KEM1 Cruise', 'KEM1 Encounter', 'KEM2 Cruise'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="nh:REX_Radiometry_Information">
+      <sch:assert test="if (nh:agc_setting_source = ('AUX')) then (nh:agc_gain_provenance = ('Nominal')) else (true())">
+        <title>nh:REX_Radiometry_Information/Rule</title>
+        In nh:REX_Radiometry_Information, if nh:agc_setting_source is 'AUX', then nh:agc_gain_provenance must be 'Nominal', and vice versa.</sch:assert>
+      <sch:assert test="if (nh:agc_gain_provenance = ('Nominal')) then (nh:agc_setting_source = ('AUX')) else (true())">
+        <title>nh:REX_Radiometry_Information/Rule</title>
+        In nh:REX_Radiometry_Information, nh:agc_gain_provenance cannot be 'Nominal' unless nh:agc_setting_source is 'AUX', and vice versa.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="nh:REX_Radiometry_Information/nh:agc_setting_source">
+      <sch:assert test=". = ('AUX', 'ULCMD')">
+        <title>nh:REX_Radiometry_Information/nh:agc_setting_source/nh:agc_setting_source</title>
+        The attribute nh:REX_Radiometry_Information/nh:agc_setting_source must be equal to one of the following values 'AUX', 'ULCMD'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="nh:REX_Radiometry_Information/nh:base_power">
+      <sch:assert test="@unit = ('EW', 'GW', 'MW', 'PW', 'TW', 'W', 'YW', 'ZW', 'aW', 'cW', 'dBm', 'dW', 'daW', 'fW', 'hW', 'kW', 'mW', 'microW', 'nW', 'pW', 'yW', 'zW')">
+        <title>nh:REX_Radiometry_Information/nh:base_power/nh:base_power</title>
+        The attribute @unit must be equal to one of the following values 'EW', 'GW', 'MW', 'PW', 'TW', 'W', 'YW', 'ZW', 'aW', 'cW', 'dBm', 'dW', 'daW', 'fW', 'hW', 'kW', 'mW', 'microW', 'nW', 'pW', 'yW', 'zW'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="nh:REX_Radiometry_Information/nh:frame_data_source">
+      <sch:assert test=". = ('0x00', '0x10', '0x20', '0x30', '0x40', '0x50', '0x60', '0x70', '0xFF')">
+        <title>nh:REX_Radiometry_Information/nh:frame_data_source/nh:frame_data_source</title>
+        The attribute nh:REX_Radiometry_Information/nh:frame_data_source must be equal to one of the following values '0x00', '0x10', '0x20', '0x30', '0x40', '0x50', '0x60', '0x70', '0xFF'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="nh:REX_Radiometry_Information/nh:iq_calibration_constant">
+      <sch:assert test="@unit = ('V', 'mV')">
+        <title>nh:REX_Radiometry_Information/nh:iq_calibration_constant/nh:iq_calibration_constant</title>
+        The attribute @unit must be equal to one of the following values 'V', 'mV'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="nh:REX_Radiometry_Information/nh:radio_bandwidth">
+      <sch:assert test="@unit = ('GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz')">
+        <title>nh:REX_Radiometry_Information/nh:radio_bandwidth/nh:radio_bandwidth</title>
+        The attribute @unit must be equal to one of the following values 'GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="nh:REX_Radiometry_Information/nh:radiometry_response_offset">
+      <sch:assert test="@unit = ('EW', 'GW', 'MW', 'PW', 'TW', 'W', 'YW', 'ZW', 'aW', 'cW', 'dBm', 'dW', 'daW', 'fW', 'hW', 'kW', 'mW', 'microW', 'nW', 'pW', 'yW', 'zW')">
+        <title>nh:REX_Radiometry_Information/nh:radiometry_response_offset/nh:radiometry_response_offset</title>
+        The attribute @unit must be equal to one of the following values 'EW', 'GW', 'MW', 'PW', 'TW', 'W', 'YW', 'ZW', 'aW', 'cW', 'dBm', 'dW', 'daW', 'fW', 'hW', 'kW', 'mW', 'microW', 'nW', 'pW', 'yW', 'zW'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="nh:REX_Radiometry_Information/nh:radiometry_response_step">
+      <sch:assert test="@unit = ('EW', 'GW', 'MW', 'PW', 'TW', 'W', 'YW', 'ZW', 'aW', 'cW', 'dBm', 'dW', 'daW', 'fW', 'hW', 'kW', 'mW', 'microW', 'nW', 'pW', 'yW', 'zW')">
+        <title>nh:REX_Radiometry_Information/nh:radiometry_response_step/nh:radiometry_response_step</title>
+        The attribute @unit must be equal to one of the following values 'EW', 'GW', 'MW', 'PW', 'TW', 'W', 'YW', 'ZW', 'aW', 'cW', 'dBm', 'dW', 'daW', 'fW', 'hW', 'kW', 'mW', 'microW', 'nW', 'pW', 'yW', 'zW'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="nh:REX_Radiometry_Information/nh:time_tag_calibration_constant">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
+        <title>nh:REX_Radiometry_Information/nh:time_tag_calibration_constant/nh:time_tag_calibration_constant</title>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
