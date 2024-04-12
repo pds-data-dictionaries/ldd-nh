@@ -103,3 +103,16 @@ they are included in a label.
               <nh:pluto_constant>
               <nh:charon_constant>
               <nh:arrokoth_constant>
+    
+      <nh:REX_Radiometry_Information>
+          <nh:frame_data_source>
+          <nh:agc_gain_setting>
+          <nh:agc_setting_source>
+          <nh:agc_gain_provenance>
+          <nh:base_agc_gain>
+          <nh:base_power>
+          <nh:radio_bandwidth>
+          <nh:radiometry_response_step>
+          <nh:radiometry_response_offset>
+          <nh:iq_calibration_constant>
+          <nh:time_tag_calibration_constant>
