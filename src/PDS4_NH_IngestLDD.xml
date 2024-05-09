@@ -26,6 +26,8 @@
     
       2024-04-03  ACR  Begin history
       
+      === Version 1.1.0.0 Updates ===
+      
       2024-04-03 to 2024-04-05  Version 1.1.0 continued updates:
              ACR    Deprecate MVIC_Conversion_Constants class in favor of
                     Radiometric_Conversion_Constants class, with corresponding
@@ -33,10 +35,100 @@
                     Consistently add "nh:" prefix to references in descriptions.
                     Review definitions for completeness, consistency, and style;
                       flag problems.
+     
+     2024-05-09  ACR  Additions for Alice and LORRI instruments.
   </comment>
   <last_modification_date_time>2024-04-03</last_modification_date_time>
   
   <!-- Attributes -->
+  
+  <DD_Attribute>
+    <name>aperture</name>
+    <version_id>1.0</version_id>
+    <local_identifier>aperture</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>AGB</submitter_name>
+    <definition>
+      The aperture indicates what sort of aperture was employed in 
+      collecting the data.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>Airglow</value>
+        <value_meaning>
+          The data were obtained using the airglow aperture.
+        </value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>approx_target_name</name>
+    <version_id>1.0</version_id>
+    <local_identifier>approx_target_name</local_identifier>
+    <nillable_flag>true</nillable_flag>
+    <submitter_name>BJH</submitter_name>
+    <definition>
+      The nh:approx_target_name attribute is the best guess of the intended
+      target of the observation made by the automated data processing pipeline.
+      
+      If the best guess at the target is unknown, the attribute will be UNK i.e.
+      unknown. If there was no target, i.e. for some instances of instrument
+      calibration activities, the attribute will be nilled.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>approx_target_line</name>
+    <version_id>1.0</version_id>
+    <local_identifier>approx_target_line</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>BJH</submitter_name>
+    <definition>
+      The nh:approx_target_line attribute provides the approximate pixel
+      position in the image of the center of the best guess target (as specified
+      by nh:approx_target_name) in one-based absolute units along the "Line"
+      axis as defined in the primary_image Array object. The origin is in the
+      lower left of the image when disp:horizontal_display_direction is "Left to
+      Right" and disp:vertical_display_direction is "Bottom to Top".
+      
+      If there is no best guess at the target position, the attribute will be
+      omitted.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>approx_target_sample</name>
+    <version_id>1.0</version_id>
+    <local_identifier>approx_target_sample</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>BJH</submitter_name>
+    <definition>
+      The nh:approx_target_sample attribute provides the approximate pixel
+      position in the image of the center of the best guess target (as specified
+      by nh:approx_target_name) in one-based absolute units along the "Sample"
+      axis as defined in the primary_image Array object. The origin is in the
+      lower left of the image when disp:horizontal_display_direction is "Left to
+      Right" and disp:vertical_display_direction is "Bottom to Top".
+      
+      If there is no best guess at the target position, the attribute will be
+      omitted.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
   
   <DD_Attribute>
     <name>arrokoth_constant</name>
@@ -52,6 +144,36 @@
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>binning_mode</name>
+    <version_id>1.0</version_id>
+    <local_identifier>binning_mode</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>BJH</submitter_name>
+    <definition>
+      The nh:binning_mode attribute indicates whether LORRI was operating
+      in 1x1 or 4x4 binning mode.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>1x1</value>
+        <value_meaning>
+          The data were obtained in 1x1 binning mode with image dimensions of
+          either 1028x1024 for raw data or 1024x1024 for partially processed.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>4x4</value>
+        <value_meaning>
+          The data were obtained in 4x4 binning mode with image dimensions of
+          either 257x256 for raw data or 256x256 for partially processed.
+        </value_meaning>
+      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -202,6 +324,20 @@
           3-6A FWHM, and an instantaneous spatial field-of-view that is 6 degrees long.
         </value_meaning>
       </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>ALICE spectrograph</value>
+        <value_meaning>
+          Data were obtained using the Alice spectrograph. The ALICE UV spectrograph
+          covers the range 520-1870 Angstrom.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>LORRI imager</value>
+        <value_meaning>
+          Data were obtained using the LORRI imager. LORRI is a high-resolution
+          telescope with a wavelength range of 350-850 nm.
+        </value_meaning>
+      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -223,7 +359,7 @@
         <value_meaning>The detector is a standard CCD.</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
-        <value>Dust Imapct Counter</value>
+        <value>Dust Impact Counter</value>
         <value_meaning>The detector is a set of permanently polarized Polyvinylidene Fluoride
           (PVDF) plastic films that generate an electrical signal when dust particles penetrate
           their surface.
@@ -251,6 +387,11 @@
         <value>SSD</value>
         <value_meaning>
           The detector is a solid-state silicon detector.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Microchannel plate</value>
+        <value_meaning>The detector is a Microchannel plate (MCP) which is sensitive
+          to extreme and far UV light and energetic particles.</value_meaning>
       </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
@@ -1133,6 +1274,19 @@
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
+    <DD_Association>  
+      <identifier_reference>ALICE_Details</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>LORRI_Details</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    
   </DD_Class>
   
   
@@ -1475,6 +1629,12 @@
       <identifier_reference>Spacecraft_State</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>LORRI_Target_Information</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
