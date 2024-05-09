@@ -1,16 +1,22 @@
 
->>  INFO LDDTOOL Version: 14.3.0
->>  INFO IM Version Id: 1.20.0.0
+>>  INFO LDDTOOL Version: 15.0.6
+>>  INFO IM Version Id: 1.19.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.26
->>  INFO Date: Fri Apr 05 17:22:16 UTC 2024
->>  INFO PARENT_DIR: /tmp/lddtool-14.3.0
->>  INFO SCRIPT_DIR: /tmp/lddtool-14.3.0/bin
->>  INFO LIB_DIR: /tmp/lddtool-14.3.0/lib
+>>  INFO IM Label Version Id: 1.25
+>>  INFO Date: Thu May 09 20:16:32 UTC 2024
+>>  INFO PARENT_DIR: /tmp/lddtool-15.0.6/Data/
 
+>>> ERROR Class:0001_NASA_PDS_1.nh.Detector  Association:nh:ALICE_Details  Class:nh:ALICE_Details - Missing Component Class
+>>> ERROR Association: nh:ALICE_Details - Missing Component - Reference Type: component_of
+>>> ERROR Class:0001_NASA_PDS_1.nh.Detector  Association:nh:LORRI_Details  Class:nh:LORRI_Details - Missing Component Class
+>>> ERROR Association: nh:LORRI_Details - Missing Component - Reference Type: component_of
+>>> ERROR Class:0001_NASA_PDS_1.nh.Observation_Parameters  Association:nh:LORRI_Target_Information  Class:nh:LORRI_Target_Information - Missing Component Class
+>>> ERROR Association: nh:LORRI_Target_Information - Missing Component - Reference Type: component_of
 >>> INFO Init:  - Config.Properties Namespace Id Found:nh
 >>> INFO Init:  - Config.Properties Namespace Id Using:nh
 >>> INFO Init:  - LDD Dictionary_Type is Mission
+>>> INFO Attribute: <approx_target_name> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <aperture> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <gain> - The default minimum value provided by the attribute's data type is being overridden with 0.0
 >>> INFO Attribute: <left_side_median_bias> - The default minimum value provided by the attribute's data type is being overridden with -1.0
 >>> INFO Attribute: <leisa_offset_1> - The default minimum value provided by the attribute's data type is being overridden with 0
@@ -26,15 +32,20 @@
 >>> INFO Attribute: <target_motion_rate> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <tdi_median_bias_level> - The default minimum value provided by the attribute's data type is being overridden with 0.0
 >>> INFO Attribute: <tdi_rate> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> WARNING Attribute: <aperture> - This local attribute was not used in an Association.
+>>> WARNING Attribute: <approx_target_line> - This local attribute was not used in an Association.
+>>> WARNING Attribute: <approx_target_name> - This local attribute was not used in an Association.
+>>> WARNING Attribute: <approx_target_sample> - This local attribute was not used in an Association.
+>>> WARNING Attribute: <binning_mode> - This local attribute was not used in an Association.
 
  -- LDDTool Execution Summary --
-     0 warning(s)
-     0 error(s)
+     5 warning(s)
+     6 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1K00
+     - IM Version: 1J00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -44,9 +55,9 @@ Input:
 
 Output:
 
-     - ./PDS4_NH_1K00_1100.xsd
-     - ./PDS4_NH_1K00_1100.sch
-     - ./PDS4_NH_1K00_1100.xml
-     - ./export/JSON/PDS4_PDS_1K00.JSON
+     - ./PDS4_NH_1J00_1100.xsd
+     - ./PDS4_NH_1J00_1100.sch
+     - ./PDS4_NH_1J00_1100.xml
+     - ./export/JSON/PDS4_PDS_1J00.JSON
 
->>  INFO Exit(0)
+>>  INFO Exit(1)
