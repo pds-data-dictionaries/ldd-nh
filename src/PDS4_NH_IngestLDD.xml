@@ -11,7 +11,38 @@
   <full_name>Anne Raugh</full_name>
   <steward_id>sbn</steward_id>
   <namespace_id>nh</namespace_id>
-  <last_modification_date_time>2022-12-27</last_modification_date_time>
+  <comment>
+    This dictionary is in development by multiple parties at UMD (NH migration) 
+    and SWRI (NH second extended mission). Async releases are anticipated to 
+    keep the published dictionary in line with published data.
+    
+    Initials/handles:
+    ACR        Anne Raugh, SBN at UMD
+    MKC        M. Kate Crombie, Indigo Information Systems, LLC
+    cgobat     Caden Gobat, SwRI
+    
+    
+    Modification History:
+    
+    2024-04-03  ACR  Begin history. Version 1.0.0.0 has been published. Next
+                     official release will be version 1.1.0.0
+    
+    === Version 1.1.0 Progressive Updates ===
+    
+    2024-04-03 to 2024-04-05  Version 1.1.0 continued updates:
+    ACR    Deprecate MVIC_Conversion_Constants class in favor of
+    Radiometric_Conversion_Constants class, with corresponding
+    Schematron rule.
+    Consistently add "nh:" prefix to references in descriptions.
+    Review definitions for completeness, consistency, and style;
+    flag problems.
+    
+    2024-05-09  ACR  Restored history deleted by subsequent editors.
+                     Resolved merge conflicts between the main branch
+                     version of this file and a version with Alice and
+                     LORRI instrument additions.
+  </comment>
+  <last_modification_date_time>2024-05-09</last_modification_date_time>
 
   <!-- Attributes -->
   
@@ -102,7 +133,24 @@
       <value_data_type>ASCII_Integer</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
-
+  
+  <DD_Attribute>
+    <name>arrokoth_constant</name>
+    <version_id>1.0</version_id>
+    <local_identifier>arrokoth_constant</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      The nh:arrokoth_constant attribute supplies the constant to be used for sources with 
+      spectral distribution similar to (486958) Arrokoth (a.k.a., 2014 MU69) to convert 
+      calibrated data to physical units.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
   <DD_Attribute>
     <name>binning_mode</name>
     <version_id>1.0</version_id>
@@ -246,6 +294,41 @@
           telescope with a wavelength range of 350-850 nm.
         </value_meaning>
       </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Pluto Energetic Particles Spectrometer Science Investigation</value>
+        <value_meaning>
+          Data were obtained using the PEPSSI time-of-flight (TOF) spectrometer that
+          measures ions and electrons over a broad range of energies and pitch angles.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Radio Science Experiment</value>
+        <value_meaning>
+          Data were obtained using the REX subsystem comprising the 2.1 m spacecraft    
+          high-gain antenna (HGA) and the NH radio receiver as well as the the Deep   
+          Space Network (DSN).
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Student Dust Counter</value>
+        <value_meaning>
+          Data were obtained using the SDC dust imapact counter.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Solar Wind Around Pluto</value>
+        <value_meaning>
+          Data were obtained using the SWAP electrostatic analyzer.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Ultraviolet Imaging Spectrograph</value>
+        <value_meaning>
+          Data were obtained using the ALICE ultraviolet imaging spectrograph, with a 520-1870A 
+          spectral passband, a spectral point spread function of
+          3-6A FWHM, and an instantaneous spatial field-of-view that is 6 degrees long.
+        </value_meaning>
+      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -270,6 +353,36 @@
         <value>Microchannel plate</value>
         <value_meaning>The detector is a Microchannel plate (MCP) which is sensitive
           to extreme and far UV light and energetic particles.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Dust Impsct Counter</value>
+        <value_meaning>The detector is a set of permanently polarized Polyvinylidene Fluoride
+          (PVDF) plastic films that generate an electrical signal when dust particles penetrate
+          their surface.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Electrostatic</value>
+        <value_meaning>The detector is an electrostatic low-energy plasma instrument.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>HgCdTe PICNIC array</value>
+        <value_meaning>The detector is a modified HgCdTe 'PICNIC' array from Rockwell Scientific Imaging.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Local oscillator vs. uplink signal phase comparator</value>
+        <value_meaning>
+          The detector is a local oscillator vs. uplink signal phase comparator.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Spectrograph</value>
+        <value_meaning>
+          The detector is a Rowland-circle spectrograph.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>SSD</value>
+        <value_meaning>
+          The detector is a solid-state silicon detector.</value_meaning>
       </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
@@ -755,6 +868,12 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
+      <identifier_reference>LEISA_Details</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
       <identifier_reference>LORRI_Details</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
@@ -1048,6 +1167,12 @@
     </DD_Association>
     <DD_Association>
       <identifier_reference>Detector</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Spacecraft_State</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
