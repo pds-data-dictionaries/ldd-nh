@@ -1,11 +1,11 @@
-Mockup Label: SWAP ApID 0x586, Processed Data
+Mockup Label: REX ApID 0x7B1, Processed Data
 ##################################################
 
 This label is a mockup created for design purposes. The data file
 it describes contains processed data REX radio output frame data with
 ApID 0x7B1.
 
-The mockup shows the entire *<Product_Observationsl>* structure
+The mockup shows the entire *<Product_Observational>* structure
 including the New Horizons dictionary classes, which are found in the
 *<Mission_Area>* of the structure. It is a valid label, except for the
 specified path/location of the mission dictionary .xsd file, which should
