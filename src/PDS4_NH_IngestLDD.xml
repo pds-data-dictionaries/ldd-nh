@@ -223,7 +223,7 @@
         <value_meaning>The detector is a standard CCD.</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
-        <value>Dust Imapct Counter</value>
+        <value>Dust Impact Counter</value>
         <value_meaning>The detector is a set of permanently polarized Polyvinylidene Fluoride
           (PVDF) plastic films that generate an electrical signal when dust particles penetrate
           their surface.
