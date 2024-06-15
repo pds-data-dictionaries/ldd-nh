@@ -62,7 +62,7 @@ It contains one required attribute and (as of this writing) two optional classes
 for data specific to the Multispectral Visible Imaging Camera (MVIC) part of
 in the Ralph instrument package.
 
-The class contains a single required attribute, *<nh:mission_phase>*, with the
+The class contains a single required attribute, *<nh:mission_phase_name>*, with the
 string identifying the mission phase. Mission phase names are unique to the
 primary or extended mission in which they occur. Specifically, the phases in the
 extended missions contain the extended mission acronym ("KEM1 Encounter", for 

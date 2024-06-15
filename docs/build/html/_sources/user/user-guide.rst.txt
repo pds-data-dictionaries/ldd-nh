@@ -32,7 +32,7 @@ Overview of the New Horizons (NH) Mission Dictionary
 
 .. include:: ../intro.md
 
-- **Steward:** Anne Raugh, Small Bodies Node, University of Maryland (@acraugh on Github)
+- **Primary Steward:** Anne Raugh, Small Bodies Node, University of Maryland (@acraugh on Github)
 - **Dictionary Repo:** https://github.com/pds-data-dictionaries/ldd-nh
 - **Namespace Prefix:** nh:
 
@@ -62,7 +62,7 @@ It contains one required attribute and (as of this writing) two optional classes
 for data specific to the Multispectral Visible Imaging Camera (MVIC) part of
 in the Ralph instrument package.
 
-The class contains a single required attribute, *<nh:mission_phase>*, with the
+The class contains a single required attribute, *<nh:mission_phase_name>*, with the
 string identifying the mission phase. Mission phase names are unique to the
 primary or extended mission in which they occur. Specifically, the phases in the
 extended missions contain the extended mission acronym ("KEM1 Encounter", for 
@@ -72,7 +72,7 @@ The major subclasses of the *<nh:Mission_Parameters>* class are:
 
 - :ref:`<nh:Observation_Parameters><observation-parameters>`
 - :ref:`<nh:MVIC_Calibration_Information><mvic-calibration-information>`
-- :ref:`<nh:MVIC_Converstion_Constants><mvic-conversion-constants>`
+- :ref:`<nh:Radiometric_Converstion_Constants><radiometric-conversion-constants>`
 
 You can see a complete outline of the namespace under the
 :doc:`../detailed/outline` topic.
@@ -96,6 +96,8 @@ This class contains:
 - <nh:observation_description>
 - <nh:Mission_Elapsed_Time>
 - <nh:Detector>
+- <nh:LORRI_Target_Information>
+- <nh:Spacecraft_State>
 
 None of these components is repeatable; all are expected to be present in all raw
 and processed/calibrated data labels.
@@ -124,6 +126,14 @@ and processed/calibrated data labels.
   within an instrument (as is the case of the MVIC instrument, for example). This
   class will contain detector-specific subclasses where needed to provide specific
   observational settings for the detector.
+  
+<nh:LORRI_Target_Information>
+  The *<nh:LORRI_Target_Information>* class provides attributes specific to the 
+  targeting of a LORRI imager observation.
+  
+<nh:Spacecraft_State>
+  The *<nh:Spacecraft_State>* class provides information about thruster firings,
+  spin state, scan rate, and spacecraft motion at the time of the observation.
   
   
 .. _mvic-calibration-information:
@@ -165,13 +175,17 @@ This class contains:
   in processing that particular frame. For framing observations, bias is measured 
   during each observations using shielded pixels on either edge of the array.
    
-.. _mvic-conversion-constants:
+.. _radiometric-conversion-constants:
  
 *************************************************
-Subclass: <nh:MVIC_Conversion_Constants>
+Subclass: <nh:Radiometric_Conversion_Constants>
 *************************************************
 
-The *<nh:MVIC_Conversion_Constants>* class is used in labels for processed
+**NOTE:** *As of version 1.1.0, this class replaces the deprecated
+<nh:MVIC_Conversion_Constants> class. The content of that class is included in this
+one, with additional constants added as needed. This class is used by multiple instruments.*
+
+The *<nh:Radiometric_Conversion_Constants>* class is used in labels for processed
 data from all seven MVIC detectors. The MVIC pipeline does not produce "calibrated"
 data in the sense that PDS defines "calibrated" - specifically, "Data reduced to 
 physical units". The final reduction step depends on both the spectal characteristics
@@ -200,6 +214,7 @@ This class contains:
     - \(5145\) Pholus, a centaur
     - Pluto
     - Charon
+    - Arrokoth
 
 <nh:Unresolved_Source>
   The *<nh:Unresolved_Source>* class provides the units of measure (units of 
@@ -211,5 +226,4 @@ This class contains:
     - \(5145\) Pholus, a centaur
     - Pluto
     - Charon
-  
-    
+    - Arrokoth
