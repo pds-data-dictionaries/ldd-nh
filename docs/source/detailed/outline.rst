@@ -31,13 +31,12 @@ they are included in a label.
               <nh:detector_name>
               <nh:detector_type>
               
+              <nh:Alice_Details>
+                  <nh:aperture>
+              
               <nh:Ralph_Details>
                   <nh:met510>
                   <nh:hk_packet_is_real>
-              
-              <nh:MVIC_Details>
-                  <nh:scan_type>
-                  <nh:tdi_rate>
               
               <nh:LEISA_Details>
                   <nh:scan_type>
@@ -49,9 +48,21 @@ they are included in a label.
                   <nh:leisa_rate>
                   <nh:leisa_side>
                   <nh:leisa_temperature>
+
+              <nh:LORRI_Details>
+                  <nh:binning_mode>
+              
+              <nh:MVIC_Details>
+                  <nh:scan_type>
+                  <nh:tdi_rate>
               
               <nh:SWAP_Details>
                   <nh:sweep_samples_count>
+
+          <nh:LORRI_Target_Information>
+              <nh:approx_target_name>
+              <nh:approx_target_line>
+              <nh:approx_target_sample>
           
           <nh:Spacecraft_State>
               <nh:thruster_x_enabled>

@@ -1,51 +1,37 @@
-Mockup Label: SWAP ApID 0x586, Processed Data
-##################################################
+<?xml version='1.0' encoding='UTF-8'?>
 
-This label is a mockup created for design purposes. The data file
-it describes contains processed data SWAP histogram data (identified
-by telemetry ApID 0x586).
-
-The mockup shows the entire *<Product_Observationsl>* structure
-including the New Horizons dictionary classes, which are found in the
-*<Mission_Area>* of the structure. It is a valid label, except for the
-specified path/location of the mission dictionary .xsd file, which should
-be updated prior to attempting to validate it.
-
-  **Note** that the New Horizons (nh:) and Small Bodies (sb:) dictionaries are in 
-  active development. Consult the current release documentation for changes
-  to these namespaces-in-development before attempting and real-would applications,
-  or the Github repo for latest development versions. 
-
-.. code-block:: XML
+<!-- 
     
-    <Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
-        xmlns:disp="http://pds.nasa.gov/pds4/disp/v1"
-        xmlns:geom="http://pds.nasa.gov/pds4/geom/v1"
-        xmlns:proc="http://pds.nasa.gov/pds4/proc/v1"
-        xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"
-        xmlns:sb="http://pds.nasa.gov/pds4/sb/v1"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd
-        http://pds.nasa.gov/pds4/disp/v1 https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1L00_1510.xsd
-        http://pds.nasa.gov/pds4/geom/v1 https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1L00_1960.xsd
-        http://pds.nasa.gov/pds4/proc/v1 https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1L00_1300.xsd
-        http://pds.nasa.gov/pds4/mission/nh/v1 https://pds.nasa.gov/pds4/mission/nh/v1/PDS4_NH_1L00_1100.xsd
-        http://pds.nasa.gov/pds4/sb/v1 https://pds.nasa.gov/pds4/sb/v1/PDS4_SB_1L00_1000.xsd">
+    This label is a mockup of a SWAP Histogram product, created as part of the design process for the
+    New Horizons KEM2 PDS4 delivery. All references to the dictionaries other than the core and the New
+    Horizons dictionary itself have been removed to avoid irrelevant testing failures that would
+    prevent the NH schemas from building.
     
+    A "real world" label would be required to have the appropriate classes from the Imaging, Geometry,
+    Small Bodies, etc. dictionaries; and additional changes have been made to some core namespace
+    values also to avoid unrelated testing failures. Consequently, UNDER NO CIRCUMSTANCES should it be 
+    assumed that any particular part of this label is valid in a "real world" situation.
+
+-->
+
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
+    xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
     <Identification_Area>
         <logical_identifier>urn:nasa:pds:nh_swap:kem2_cal:swa_0556675232_0x586_sci</logical_identifier>
         <version_id>1.0</version_id>
         <title>New Horizons SWAP Sample Calibrated Histogram Data</title>
-        <information_model_version>1.21.0.0</information_model_version>
+        <information_model_version>[IM VERSION]</information_model_version>
         <product_class>Product_Observational</product_class>
     </Identification_Area>
-    
+
     <Observation_Area>
         <Time_Coordinates>
             <start_date_time>2023-09-10T18:08:35.833086Z</start_date_time>
             <stop_date_time>2023-09-10T18:09:38.833087Z</stop_date_time>
         </Time_Coordinates>
-        
+
         <Primary_Result_Summary>
             <purpose>Science</purpose>
             <processing_level>Calibrated</processing_level>
@@ -54,13 +40,16 @@ be updated prior to attempting to validate it.
                 <discipline_name>Particles</discipline_name>
             </Science_Facets>
         </Primary_Result_Summary>
-        
+
         <Investigation_Area>
             <name>New Horizons Kuiper Belt Extended Mission 2</name>
             <type>Mission</type>
             <Internal_Reference>
-                <lid_reference>urn:nasa:pds:context:investigation:mission.new_horizons_kem2</lid_reference>
+                <lid_reference>urn:nasa:pds:context:investigation:mission.new_horizons_kem1</lid_reference>
                 <reference_type>data_to_investigation</reference_type>
+                <comment>Note that the LID reference is to the KEM1 investigation, to avoid CI
+                    failures due to a nonexistent context product. The correct KEM2 context product
+                    will be created eventually.</comment>
             </Internal_Reference>
         </Investigation_Area>
 
@@ -111,88 +100,15 @@ be updated prior to attempting to validate it.
                             <nh:sweep_samples_count>1284</nh:sweep_samples_count>
                         </nh:SWAP_Details>
                     </nh:Detector>
+                    <nh:Spacecraft_State/>
                 </nh:Observation_Parameters>
             </nh:Mission_Parameters>
         </Mission_Area>
-        <Discipline_Area>
-            <geom:Geometry>
-                <geom:SPICE_Kernel_Files>
-                    <!-- SPICE kernel listing has been omitted here for brevity -->
-                </geom:SPICE_Kernel_Files>
-                <geom:Geometry_Orbiter>
-                    <geom:geometry_reference_time_utc>2023-09-10T18:09:07.316Z</geom:geometry_reference_time_utc>
-                    <geom:geometry_reference_time_tdb unit="s">747641416.4988446</geom:geometry_reference_time_tdb>
-                    <geom:Orbiter_Identification>
-                        <geom:Geometry_Target_Identification>
-                            <geom:name>Solar Wind</geom:name>
-                        </geom:Geometry_Target_Identification>
-                    </geom:Orbiter_Identification>
-                    <geom:Distances>
-                        <geom:Distances_Specific>
-                            <geom:spacecraft_geocentric_distance unit="km">8443507612.226274</geom:spacecraft_geocentric_distance>
-                            <geom:spacecraft_heliocentric_distance unit="km">8519324552.582178</geom:spacecraft_heliocentric_distance>
-                        </geom:Distances_Specific>
-                    </geom:Distances>
-                    <geom:Vectors>
-                        <geom:Vectors_Cartesian_Specific>
-                            <geom:Vector_Cartesian_Position_Sun_To_Spacecraft>
-                                <geom:x_position unit="km">-2604657186.626188</geom:x_position>
-                                <geom:y_position unit="km">7554480608.205512</geom:y_position>
-                                <geom:z_position unit="km">2953722145.468826</geom:z_position>
-                                <geom:light_time_correction_applied>None</geom:light_time_correction_applied>
-                            </geom:Vector_Cartesian_Position_Sun_To_Spacecraft>
-                            <geom:Vector_Cartesian_Position_Earth_To_Spacecraft>
-                                <geom:x_position unit="km">2457775162.027096</geom:x_position>
-                                <geom:y_position unit="km">-7523715923.028048</geom:y_position>
-                                <geom:z_position unit="km">-2940384457.893204</geom:z_position>
-                                <geom:light_time_correction_applied>None</geom:light_time_correction_applied>
-                            </geom:Vector_Cartesian_Position_Earth_To_Spacecraft>
-                            <geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun>
-                                <geom:x_velocity unit="km/s">-5.359432893566657</geom:x_velocity>
-                                <geom:y_velocity unit="km/s">11.77299466131345</geom:y_velocity>
-                                <geom:z_velocity unit="km/s">4.56295410415987</geom:z_velocity>
-                                <geom:light_time_correction_applied>None</geom:light_time_correction_applied>
-                            </geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun>
-                            <geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth>
-                                <geom:x_velocity unit="km/s">-0.7950686046080202</geom:x_velocity>
-                                <geom:y_velocity unit="km/s">-38.32037430619861</geom:y_velocity>
-                                <geom:z_velocity unit="km/s">-16.07088706656015</geom:z_velocity>
-                                <geom:light_time_correction_applied>None</geom:light_time_correction_applied>
-                            </geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth>
-                        </geom:Vectors_Cartesian_Specific>
-                    </geom:Vectors>
-                </geom:Geometry_Orbiter>
-            </geom:Geometry>
 
-            <sb:SB_Metadata/>
+        <Discipline_Area/>
 
-            <proc:Processing_Information>
-                <Local_Internal_Reference>
-                    <local_identifier_reference>data_file</local_identifier_reference>
-                    <local_reference_type>processing_information_to_data_object</local_reference_type>
-                </Local_Internal_Reference>
-                <proc:Process>
-                    <proc:name>NH SOC Data Processing Pipeline</proc:name>
-                    <proc:process_owner_name>TSOC</proc:process_owner_name>
-                    <proc:process_owner_institution_name>Southwest Research Institute</proc:process_owner_institution_name>
-                    <proc:Software>
-                        <proc:software_id>L1</proc:software_id>
-                        <proc:software_version_id>6.4</proc:software_version_id>
-                    </proc:Software>
-                </proc:Process>
-                <proc:Process>
-                    <proc:Software>
-                        <proc:software_id>SWAP Flight Software</proc:software_id>
-                        <proc:software_version_id>12</proc:software_version_id>
-                    </proc:Software>
-                    <proc:Software>
-                        <proc:software_id>SWAP Ground Processing Software</proc:software_id>
-                        <proc:software_version_id>4.0</proc:software_version_id>
-                    </proc:Software>
-                </proc:Process>
-            </proc:Processing_Information>
-        </Discipline_Area>
     </Observation_Area>
+
     <Reference_List>
         <Internal_Reference>
             <lid_reference>urn:nasa:pds:nh_swap:kem2_raw:swa_0556675232_0x586_eng</lid_reference>
@@ -2349,5 +2265,4 @@ be updated prior to attempting to validate it.
             </Record_Binary>
         </Table_Binary>
     </File_Area_Observational>
-    </Product_Observational>
-    
+</Product_Observational>

@@ -32,8 +32,9 @@ particular element and either replace or add your initials/identifier to the &lt
 
 It is important that classes and attributes have names that are meaningful to knowledgeable, 
 but not expert, users because we expect humans to have to make decisions for directing software
-based on the metadata returned - and "metadata" is the names and value of attributes and classes 
-in our labels. When designed names for classes and attributes, keep the following in mind:
+based on the metadata returned - and "metadata" is both the names *and* values of attributes 
+and classes 
+in our labels. When designinf names for classes and attributes, keep the following in mind:
 
 * You can assume that a human will have ready access to other things in the label for context. 
   That is, you can assume they either know or can easily discover the name and ID of the mission,
@@ -43,7 +44,7 @@ in our labels. When designed names for classes and attributes, keep the followin
   a document, for decoding acronyms and abbreviations that refer to details of instrument or 
   spacecraft design, telemetry parsing, commanding, or similar engineering and pipeline 
   processing jargon. These things should be avoided in favor of plain English wherever possible,
-  or robust definitions when it is not possible.
+  or robust attribute and permissible value definitions when it is not possible.
 * Wherever possible, the combination of (attribute name, unit of measure, value) should be
   sufficiently meaningful to a user that the user can make a decision based on the value. So, for
  
