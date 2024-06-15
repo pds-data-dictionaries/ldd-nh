@@ -1,14 +1,15 @@
 
 >>  INFO LDDTOOL Version: 15.1.0
->>  INFO IM Version Id: 1.20.0.0
+>>  INFO IM Version Id: 1.21.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.26
->>  INFO Date: Thu May 30 03:42:02 UTC 2024
+>>  INFO IM Label Version Id: 1.27
+>>  INFO Date: Sat Jun 15 22:08:03 UTC 2024
 >>  INFO PARENT_DIR: /tmp/lddtool-15.1.0/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:nh
 >>> INFO Init:  - Config.Properties Namespace Id Using:nh
 >>> INFO Init:  - LDD Dictionary_Type is Mission
+>>> INFO Attribute: <aperture> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <gain> - The default minimum value provided by the attribute's data type is being overridden with 0.0
 >>> INFO Attribute: <left_side_median_bias> - The default minimum value provided by the attribute's data type is being overridden with -1.0
 >>> INFO Attribute: <leisa_offset_1> - The default minimum value provided by the attribute's data type is being overridden with 0
@@ -24,15 +25,16 @@
 >>> INFO Attribute: <target_motion_rate> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <tdi_median_bias_level> - The default minimum value provided by the attribute's data type is being overridden with 0.0
 >>> INFO Attribute: <tdi_rate> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> WARNING Attribute: <scan_type> - The attribute name is duplicated in this local data dictionary.
 
  -- LDDTool Execution Summary --
-     0 warning(s)
+     1 warning(s)
      0 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1K00
+     - IM Version: 1L00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -42,9 +44,9 @@ Input:
 
 Output:
 
-     - ./PDS4_NH_1K00_1100.xsd
-     - ./PDS4_NH_1K00_1100.sch
-     - ./PDS4_NH_1K00_1100.xml
-     - ./export/JSON/PDS4_PDS_1K00.JSON
+     - ./PDS4_NH_1L00_1100.xsd
+     - ./PDS4_NH_1L00_1100.sch
+     - ./PDS4_NH_1L00_1100.xml
+     - ./export/JSON/PDS4_PDS_1L00.JSON
 
 >>  INFO Exit(0)
