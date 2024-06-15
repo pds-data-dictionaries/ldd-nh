@@ -2,7 +2,7 @@
 
 <Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"> _1100.xsd">
+    xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1">
 
     <!-- Regression Test Label for Alice (Instrument) classes in NH (mission) dictionary -->
 
