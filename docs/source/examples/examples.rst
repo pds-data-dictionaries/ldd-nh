@@ -12,9 +12,9 @@ Mockup Labels
 
 Mockup labels are created during the initial design and test phase for
 each instrument. They are not particularly good templates for designing
-a *real* label, in that they usually omit the half dosen or so discipline
+a *real* label, in that they usually omit the half dozen or so discipline
 dictionaries needed to provide complete metadata for an actual observational
-product. But they do so plausible values for the specific classes illustrated,
+product. But they do contain plausible values for the specific classes illustrated,
 as found in a sample product from the mission.
 
 Mockup labels can be found in the New Horizions Mission Dictionary 

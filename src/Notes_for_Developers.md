@@ -34,7 +34,7 @@ It is important that classes and attributes have names that are meaningful to kn
 but not expert, users because we expect humans to have to make decisions for directing software
 based on the metadata returned - and "metadata" is both the names *and* values of attributes 
 and classes 
-in our labels. When designinf names for classes and attributes, keep the following in mind:
+in our labels. When designing names for classes and attributes, keep the following in mind:
 
 * You can assume that a human will have ready access to other things in the label for context. 
   That is, you can assume they either know or can easily discover the name and ID of the mission,

@@ -141,94 +141,6 @@
   </DD_Attribute>
   
   <DD_Attribute>
-    <name>aperture</name>
-    <version_id>1.0</version_id>
-    <local_identifier>aperture</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>AGB</submitter_name>
-    <definition>
-      The aperture indicates what sort of aperture was employed in 
-      collecting the data.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <DD_Permissible_Value>
-        <value>Airglow</value>
-        <value_meaning>
-          The data were obtained using the airglow aperture.
-        </value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-
-  <DD_Attribute>
-    <name>approx_target_name</name>
-    <version_id>1.0</version_id>
-    <local_identifier>approx_target_name</local_identifier>
-    <nillable_flag>true</nillable_flag>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:approx_target_name attribute is the best guess of the intended
-      target of the observation made by the automated data processing pipeline.
-
-      If the best guess at the target is unknown, the attribute will be UNK i.e.
-      unknown. If there was no target, i.e. for some instances of instrument
-      calibration activities, the attribute will be nilled.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-
-  <DD_Attribute>
-    <name>approx_target_line</name>
-    <version_id>1.0</version_id>
-    <local_identifier>approx_target_line</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:approx_target_line attribute provides the approximate pixel
-      position in the image of the center of the best guess target (as specified
-      by nh:approx_target_name) in one-based absolute units along the "Line"
-      axis as defined in the primary_image Array object. The origin is in the
-      lower left of the image when disp:horizontal_display_direction is "Left to
-      Right" and disp:vertical_display_direction is "Bottom to Top".
-
-      If there is no best guess at the target position, the attribute will be
-      omitted.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Integer</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-
-  <DD_Attribute>
-    <name>approx_target_sample</name>
-    <version_id>1.0</version_id>
-    <local_identifier>approx_target_sample</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:approx_target_sample attribute provides the approximate pixel
-      position in the image of the center of the best guess target (as specified
-      by nh:approx_target_name) in one-based absolute units along the "Sample"
-      axis as defined in the primary_image Array object. The origin is in the
-      lower left of the image when disp:horizontal_display_direction is "Left to
-      Right" and disp:vertical_display_direction is "Bottom to Top".
-
-      If there is no best guess at the target position, the attribute will be
-      omitted.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Integer</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-
-  <DD_Attribute>
     <name>arrokoth_constant</name>
     <version_id>1.0</version_id>
     <local_identifier>arrokoth_constant</local_identifier>
@@ -242,36 +154,6 @@
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-
-  <DD_Attribute>
-    <name>binning_mode</name>
-    <version_id>1.0</version_id>
-    <local_identifier>binning_mode</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:binning_mode attribute indicates whether LORRI was operating
-      in 1x1 or 4x4 binning mode.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <DD_Permissible_Value>
-        <value>1x1</value>
-        <value_meaning>
-          The data were obtained in 1x1 binning mode with image dimensions of
-          either 1028x1024 for raw data or 1024x1024 for partially processed.
-        </value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>4x4</value>
-        <value_meaning>
-          The data were obtained in 4x4 binning mode with image dimensions of
-          either 257x256 for raw data or 256x256 for partially processed.
-        </value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -1565,52 +1447,6 @@
     </DD_Association>
   </DD_Class>
   
-  <DD_Class>
-    <name>LORRI_Details</name>
-    <version_id>1.0</version_id>
-    <local_identifier>LORRI_Details</local_identifier>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:LORRI_Details class collects observational parameters that are specific
-      to the LORRI instrument and its various modes.
-    </definition>
-    <DD_Association>
-      <identifier_reference>binning_mode</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-  </DD_Class>
-  
-  <DD_Class>
-    <name>LORRI_Target_Information</name>
-    <version_id>1.0</version_id>
-    <local_identifier>LORRI_Target_Information</local_identifier>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:LORRI_Target_Information class collects attributes related to the
-      target of the LORRI observation.
-    </definition>
-    <DD_Association>
-      <identifier_reference>approx_target_name</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>approx_target_line</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>approx_target_sample</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-  </DD_Class>
-    
   <DD_Class>
     <name>MVIC_Calibration_Information</name>
     <version_id>1.0</version_id>
