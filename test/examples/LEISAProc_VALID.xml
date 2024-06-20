@@ -94,7 +94,7 @@
                             <nh:leisa_offset_4 unit="DN">2945</nh:leisa_offset_4>
                             <nh:leisa_rate unit="ms">1521</nh:leisa_rate>
                             <nh:leisa_side>B</nh:leisa_side>
-                            <nh:leisa_temperature unit="degC">-161.77116450294238</nh:leisa_temperature>
+                            <nh:leisa_temperature unit="degC">-161.77</nh:leisa_temperature>
                         </nh:LEISA_Details>
                     </nh:Detector>
                     <nh:Spacecraft_State>

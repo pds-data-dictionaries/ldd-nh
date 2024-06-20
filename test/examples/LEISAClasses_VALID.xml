@@ -90,7 +90,7 @@
                             <nh:leisa_offset_4 unit="DN">50</nh:leisa_offset_4>
                             <nh:leisa_rate unit="day">50</nh:leisa_rate>
                             <nh:leisa_side>A</nh:leisa_side>
-                            <nh:leisa_temperature unit="K">-1073741773</nh:leisa_temperature>
+                            <nh:leisa_temperature unit="degC">-1.0</nh:leisa_temperature>
                         </nh:LEISA_Details>
                     </nh:Detector>
                     <nh:Spacecraft_State>
