@@ -227,6 +227,27 @@
   </DD_Attribute>
   
   <DD_Attribute>
+    <name>declination_angle</name>
+    <version_id>1.0</version_id>
+    <local_identifier>declination_angle</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>The nh:declination_angle attribute provides a declination (dec)
+      value as an angle. Declination is measured north from the celestial equator
+      to the point in question, with negative values indicating points south of
+      the it.
+    </definition>
+    <DD_Value_Domain>
+        <enumeration_flag>false</enumeration_flag>
+        <value_data_type>ASCII_Real</value_data_type>
+        <minimum_value>-90</minimum_value>
+        <maximum_value>90</maximum_value>
+        <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+        <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
     <name>detector_name</name>
     <version_id>1.1</version_id>
     <local_identifier>detector_name</local_identifier>
@@ -889,6 +910,26 @@
     </DD_Value_Domain>
   </DD_Attribute>
   
+  <DD_Attribute>
+    <name>right_ascension_angle</name>
+    <version_id>1.0</version_id>
+    <local_identifier>right_ascension_angle</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>The nh:right_ascension_angle attribute provides a right ascension
+      (RA) value as an angle. Right ascension is measured from the vernal  equinox
+      in a circle towards the east.
+    </definition>
+    <DD_Value_Domain>
+        <enumeration_flag>false</enumeration_flag>
+        <value_data_type>ASCII_Real</value_data_type>
+        <minimum_value>0</minimum_value>
+        <maximum_value>360</maximum_value>
+        <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+        <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
   <DD_Attribute>
     <name>right_side_median_bias</name>
     <version_id>1.0</version_id>
@@ -1819,24 +1860,27 @@
     <local_identifier>Reference_RA_Dec</local_identifier>
     <submitter_name>cgobat</submitter_name>
     <definition>
-      The nh:Reference_RA_Dec class provides a right ascension and declination used as a reference for spacecraft pointing control.
+      The nh:Reference_RA_Dec class provides a right ascension and declination
+      used as a reference for spacecraft pointing control. If the RA/Dec pair
+      coincides with a named object (e.g. a constellation, NGC object, etc.), its
+      name can also be provided for ease of reference.
     </definition>
+    <DD_Association>
+      <identifier_reference>right_ascension_angle</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>declination_angle</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
     <DD_Association>
       <identifier_reference>pds.name</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>geom.right_ascension_angle</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>geom.declination_angle</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
