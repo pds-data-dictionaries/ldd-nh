@@ -429,13 +429,13 @@
   </DD_Attribute>
   
   <DD_Attribute>
-    <name>gc_scan_rate</name>
+    <name>gnc_scan_rate</name>
     <version_id>1.0</version_id>
-    <local_identifier>gc_scan_rate</local_identifier>
+    <local_identifier>gnc_scan_rate</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The nh:gc_scan_rate attribute provides the scan rate requested of the Guidance, Navigation,
+      The nh:gnc_scan_rate attribute provides the scan rate requested of the Guidance, Navigation,
       and Control (GNC) system by the Ralph instrument. If the scan rate was not forced, GNC will
       return the actual scan rate achieved.
     </definition>
@@ -1831,7 +1831,7 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>gc_scan_rate</identifier_reference>
+      <identifier_reference>gnc_scan_rate</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
