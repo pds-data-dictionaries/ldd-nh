@@ -136,8 +136,7 @@
                         <nh:gc_scan_rate>800.0</nh:gc_scan_rate>
                         <nh:target_motion_rate>800.0</nh:target_motion_rate>
                         <nh:relative_control_mode_active>false</nh:relative_control_mode_active>
-                        <nh:pointing_method>CB1</nh:pointing_method>
-                        <nh:spacecraft_spin_state>3-Axis</nh:spacecraft_spin_state>
+                        <nh:spacecraft_spin_state>Spinning</nh:spacecraft_spin_state>
                     </nh:Spacecraft_State>
                 </nh:Observation_Parameters>
                 <nh:MVIC_Calibration_Information>

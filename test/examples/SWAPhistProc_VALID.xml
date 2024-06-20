@@ -100,7 +100,18 @@
                             <nh:sweep_samples_count>1284</nh:sweep_samples_count>
                         </nh:SWAP_Details>
                     </nh:Detector>
-                    <nh:Spacecraft_State/>
+                    <nh:Spacecraft_State>
+                        <nh:thruster_x_enabled>true</nh:thruster_x_enabled>
+                        <nh:thruster_y_enabled>true</nh:thruster_y_enabled>
+                        <nh:thruster_z_enabled>true</nh:thruster_z_enabled>
+                        <nh:gc_scan_rate>0.0</nh:gc_scan_rate>
+                        <nh:target_motion_rate>0.0</nh:target_motion_rate>
+                        <nh:relative_control_mode_active>false</nh:relative_control_mode_active>
+                        <nh:spacecraft_spin_state>3-Axis</nh:spacecraft_spin_state>
+                        <nh:Pointing_Method>
+                            <nh:reference_kind>Orbit Normal</nh:reference_kind>
+                        </nh:Pointing_Method>
+                    </nh:Spacecraft_State>
                 </nh:Observation_Parameters>
             </nh:Mission_Parameters>
         </Mission_Area>
