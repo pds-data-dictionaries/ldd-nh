@@ -62,7 +62,7 @@ It contains one required attribute and (as of this writing) two optional classes
 for data specific to the Multispectral Visible Imaging Camera (MVIC) part of
 in the Ralph instrument package.
 
-The class contains a single required attribute, *<nh:mission_phase>*, with the
+The class contains a single required attribute, *<nh:mission_phase_name>*, with the
 string identifying the mission phase. Mission phase names are unique to the
 primary or extended mission in which they occur. Specifically, the phases in the
 extended missions contain the extended mission acronym ("KEM1 Encounter", for 
@@ -96,6 +96,8 @@ This class contains:
 - <nh:observation_description>
 - <nh:Mission_Elapsed_Time>
 - <nh:Detector>
+- <nh:LORRI_Target_Information>
+- <nh:Spacecraft_State>
 
 None of these components is repeatable; all are expected to be present in all raw
 and processed/calibrated data labels.
@@ -124,6 +126,14 @@ and processed/calibrated data labels.
   within an instrument (as is the case of the MVIC instrument, for example). This
   class will contain detector-specific subclasses where needed to provide specific
   observational settings for the detector.
+  
+<nh:LORRI_Target_Information>
+  The *<nh:LORRI_Target_Information>* class provides attributes specific to the 
+  targeting of a LORRI imager observation.
+  
+<nh:Spacecraft_State>
+  The *<nh:Spacecraft_State>* class provides information about thruster firings,
+  spin state, scan rate, and spacecraft motion at the time of the observation.
   
   
 .. _mvic-calibration-information:

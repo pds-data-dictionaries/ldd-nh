@@ -22,10 +22,14 @@
        BJH        Ben Hirsch, SBN at UMD
        cgobat     Caden Gobat, SwRI
        MKC        M. Kate Crombie, Indigo Information Systems, LLC
+
+    =======
     
     Modification History:
     
       2024-04-03  ACR  Begin history
+      
+      === Version 1.1.0.0 ===
       
       2024-04-03 to 2024-04-05  Version 1.1.0 continued updates:
              ACR    Deprecate MVIC_Conversion_Constants class in favor of
@@ -34,33 +38,66 @@
                     Consistently add "nh:" prefix to references in descriptions.
                     Review definitions for completeness, consistency, and style;
                       flag problems.
+      2024-06-15  ACR  Manually resolved conflicts resulting from multiple people editing
+                       the the same parts of the file in separate branches.
+                       Convert all occurrences of the name to "Alice".
+                       Split "scan_type" attribute definition into two occurences, one for
+                       MVIC and one for LEISA, to accommodate different permissible value
+                       lists.
+                       Modified LEISA_Details class definition to not refer to "channels".
+      
+      2024-06-20       Added schematron rule to enforce correct units for resolved vs.
+          cgobat       unresolved sources in nh:units_of_conversion_constants; updated
+                       several attribute descriptions and removed [INCOMPLETE] and [CHECK]
+                       flags; removed "Spectrograph" as a permissible value for
+                       nh:detector_type; added a minimum value of absolute zero for LEISA
+                       temperature attribute; added the SOCC to the list of permissible
+                       Alice aperture values; removed nh:binning_mode attribute and its
+                       parent class nh:LORRI_Details (of which it was the only member).
   </comment>
-  <last_modification_date_time>2024-05-14</last_modification_date_time>
+
+  <last_modification_date_time>2024-06-20</last_modification_date_time>
   
   <!-- Attributes -->
-  
+
   <DD_Attribute>
     <name>aperture</name>
     <version_id>1.0</version_id>
     <local_identifier>aperture</local_identifier>
     <nillable_flag>false</nillable_flag>
-    <submitter_name>AGB</submitter_name>
+    <submitter_name>AGB; cgobat</submitter_name>
     <definition>
-      The aperture indicates what sort of aperture was employed in 
-      collecting the data.
+      The Alice instrument has two different apertures (i.e., optical paths)
+      through which it can collect data: the "airglow" aperture and the solar
+      occultation channel (SOCC). The nh:aperture attribute indicates which was
+      used for a given data product.
     </definition>
+    <Internal_Reference>
+      <lid_reference>urn:nasa:pds:nh_documents:alice:alice_inst_overview</lid_reference>
+      <reference_type>attribute_to_document</reference_type>
+    </Internal_Reference>
+    <Internal_Reference>
+      <lid_reference>urn:nasa:pds:nh_documents:mission:nh_obs_geom</lid_reference>
+      <reference_type>attribute_to_document</reference_type>
+    </Internal_Reference>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <DD_Permissible_Value>
         <value>Airglow</value>
         <value_meaning>
-          The data were obtained using the airglow aperture.
+          The data were collected through Alice's airglow aperture.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Solar Occultation Channel</value>
+        <value_meaning>
+          The data were obtained via Alice's solar occultation channel (SOCC).
         </value_meaning>
       </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
-
+  
   <DD_Attribute>
     <name>approx_target_name</name>
     <version_id>1.0</version_id>
@@ -70,7 +107,7 @@
     <definition>
       The nh:approx_target_name attribute is the best guess of the intended
       target of the observation made by the automated data processing pipeline.
-
+      
       If the best guess at the target is unknown, the attribute will be UNK i.e.
       unknown. If there was no target, i.e. for some instances of instrument
       calibration activities, the attribute will be nilled.
@@ -80,7 +117,7 @@
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
-
+  
   <DD_Attribute>
     <name>approx_target_line</name>
     <version_id>1.0</version_id>
@@ -94,7 +131,7 @@
       axis as defined in the primary_image Array object. The origin is in the
       lower left of the image when disp:horizontal_display_direction is "Left to
       Right" and disp:vertical_display_direction is "Bottom to Top".
-
+      
       If there is no best guess at the target position, the attribute will be
       omitted.
     </definition>
@@ -103,7 +140,7 @@
       <value_data_type>ASCII_Integer</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
-
+  
   <DD_Attribute>
     <name>approx_target_sample</name>
     <version_id>1.0</version_id>
@@ -117,7 +154,7 @@
       axis as defined in the primary_image Array object. The origin is in the
       lower left of the image when disp:horizontal_display_direction is "Left to
       Right" and disp:vertical_display_direction is "Bottom to Top".
-
+      
       If there is no best guess at the target position, the attribute will be
       omitted.
     </definition>
@@ -126,7 +163,7 @@
       <value_data_type>ASCII_Integer</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
-
+  
   <DD_Attribute>
     <name>arrokoth_constant</name>
     <version_id>1.0</version_id>
@@ -141,36 +178,6 @@
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-
-  <DD_Attribute>
-    <name>binning_mode</name>
-    <version_id>1.0</version_id>
-    <local_identifier>binning_mode</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:binning_mode attribute indicates whether LORRI was operating
-      in 1x1 or 4x4 binning mode.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <DD_Permissible_Value>
-        <value>1x1</value>
-        <value_meaning>
-          The data were obtained in 1x1 binning mode with image dimensions of
-          either 1028x1024 for raw data or 1024x1024 for partially processed.
-        </value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>4x4</value>
-        <value_meaning>
-          The data were obtained in 4x4 binning mode with image dimensions of
-          either 257x256 for raw data or 256x256 for partially processed.
-        </value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -280,9 +287,9 @@
         </value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
-        <value>ALICE spectrograph</value>
+        <value>Alice spectrograph</value>
         <value_meaning>
-          Data were obtained using the Alice spectrograph. The ALICE UV spectrograph
+          Data were obtained using the Alice spectrograph. The Alice UV spectrograph
           has a spectral passband of 520-1870 Angstrom, a spectral PSF of 3-6 Angstrom
           FWHM, and an instantaneous spatial field of view that is 6 degrees long.
         </value_meaning>
@@ -342,7 +349,7 @@
         <value_meaning>The detector is a standard CCD.</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
-        <value>Dust Imapct Counter</value>
+        <value>Dust Impact Counter</value>
         <value_meaning>The detector is a set of permanently polarized Polyvinylidene Fluoride
           (PVDF) plastic films that generate an electrical signal when dust particles penetrate
           their surface.
@@ -576,15 +583,17 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      Time between LEISA readouts. There is zero dead time between frames, so in practice,
-      this is equivalent to the exposure time found in the the img:exposure_duration attribute,
-      and the frame rate is exactly 1/(exposure time).
+      The nh:leisa_rate attribute provides the time between LEISA readouts.
+      There is zero dead time between frames, so in practice, this value is
+      equivalent to the per-frame exposure time, and the number of frames
+      per second is exactly its reciprocal.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
       <minimum_value>0</minimum_value>
       <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+      <specified_unit_id>ms</specified_unit_id>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -628,6 +637,7 @@
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>-273.15</minimum_value>
       <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
       <specified_unit_id>degC</specified_unit_id>
     </DD_Value_Domain>
@@ -643,12 +653,11 @@
       The nh:met510 attribute provides the mission elapsed time (MET) of the Ralph housekeeping packet
       (ApID 0x510) that marks the start of an observation, used to determine the observation start
       time and frame rate.
-      [CHECK]: should the minimum value really be negative?
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
-      <minimum_value>-1.0</minimum_value>
+      <minimum_value>0</minimum_value>
       <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
       <specified_unit_id>s</specified_unit_id>
     </DD_Value_Domain>
@@ -862,10 +871,22 @@
     </DD_Value_Domain>
   </DD_Attribute>
   
+  <!-- *** SPECIAL NOTE FOR scan_type
+    
+    This attribute appears in multiple classes for different instruments. Its
+    Permissible Value list is context-dependent. Consequently, this attribute 
+    has multiple definitions. The local_identifier provides the unique identifer
+    to be associated with each context. If additional contexts are needed, copy
+    an existing DD_Attribute class, changing only the <local_idenfitier> value
+    and replace the <DD_Permissible_Value> classes with the new values needed
+    for the new context.
+    
+    NOTE THAT THIS WILL GENERATE A WARNING WHEN THE DICTIONARY IS BUILT.
+  -->
   <DD_Attribute>
     <name>scan_type</name>
     <version_id>1.1</version_id>
-    <local_identifier>scan_type</local_identifier>
+    <local_identifier>MVICscan_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>ACR</submitter_name>
     <definition>
@@ -888,6 +909,24 @@
           The data were obtained as a sequence of 2D image frames.
         </value_meaning>
       </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <!-- See SPECIAL NOTE FOR scan_type, above -->
+  
+  <DD_Attribute>
+    <name>scan_type</name>
+    <version_id>1.1</version_id>
+    <local_identifier>LEISAscan_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>ACR</submitter_name>
+    <definition>
+      The nh:scan_type attribute indicates what sort of scanning was employed in 
+      collecting the data.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <DD_Permissible_Value>
         <value>LEISA</value>
         <value_meaning>
@@ -947,13 +986,13 @@
       <DD_Permissible_Value>
         <value>3-Axis</value>
         <value_meaning>
-          [INCOMPLETE] The spacecraft's pointing is triaxially stable.
+          The spacecraft is actively controlling its pointing in all 3 axes.
         </value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>Spinning</value>
         <value_meaning>
-          [INCOMPLETE] The spacecraft is spinning about one or more of its axes.
+          The spacecraft is maintaining pointing stability by spinning about one of its axes.
         </value_meaning>
       </DD_Permissible_Value>
     </DD_Value_Domain>
@@ -1229,7 +1268,7 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>  
-      <identifier_reference>ALICE_Details</identifier_reference>
+      <identifier_reference>Alice_Details</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1247,12 +1286,6 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>LORRI_Details</identifier_reference>
-      <reference_type>component_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>  <!-- This will probably evolve into a choice list. -->
       <identifier_reference>MVIC_Details</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
@@ -1350,24 +1383,7 @@
       <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
   </DD_Class>
-
-  <DD_Class>
-    <name>LORRI_Details</name>
-    <version_id>1.0</version_id>
-    <local_identifier>LORRI_Details</local_identifier>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:LORRI_Details class collects observational parameters that are specific
-      to the LORRI instrument and its various modes.
-    </definition>
-    <DD_Association>
-      <identifier_reference>binning_mode</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-  </DD_Class>
-
+  
   <DD_Class>
     <name>LORRI_Target_Information</name>
     <version_id>1.0</version_id>
@@ -1525,10 +1541,10 @@
     <submitter_name>ACR</submitter_name>
     <definition>
       The nh:LEISA_Details class collects observational parameters that are specific
-      to the LEISA instrument and its various channels.
+      to the LEISA instrument.
     </definition>
     <DD_Association>
-      <identifier_reference>scan_type</identifier_reference>
+      <identifier_reference>LEISAscan_type</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1594,7 +1610,7 @@
       to the MVIC instrument and its various channels.
     </definition>
     <DD_Association>
-      <identifier_reference>scan_type</identifier_reference>
+      <identifier_reference>MVICscan_type</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1608,13 +1624,13 @@
   </DD_Class>
   
   <DD_Class>
-    <name>ALICE_Details</name>
+    <name>Alice_Details</name>
     <version_id>1.0</version_id>
-    <local_identifier>ALICE_Details</local_identifier>
+    <local_identifier>Alice_Details</local_identifier>
     <submitter_name>AGB</submitter_name>
     <definition>
-      The ALICE_Details class collects observational parameters that are specific
-      to the ALCICE instrument.
+      The Alice_Details class collects observational parameters that are specific
+      to the Alice instrument.
     </definition>
     <DD_Association>
       <identifier_reference>aperture</identifier_reference>
@@ -1957,6 +1973,27 @@
       <rule_message>As of version 1.1 of the New Horizons mission dictionary, the MVIC_Conversion_Constants class is deprecated. Please use the Radiometric_Conversion_Constants class for all instruments supplying this information.</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
+
+  <!-- Check units of radiometric conversion constants -->
+  <DD_Rule>
+    <local_identifier>resolved_cc_units</local_identifier>
+    <rule_context>nh:Resolved_Source</rule_context>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>(nh:units_of_conversion_constants eq '(DN/s)/(erg/cm^2/s/Angstrom/sr)')</rule_test>
+      <rule_message>The units of the radiometric conversion constants for a resolved source should be (DN/s)/(erg/cm^2/s/Angstrom/sr).</rule_message>
+    </DD_Rule_Statement>
+  </DD_Rule>
+  <DD_Rule>
+    <local_identifier>unresolved_cc_units</local_identifier>
+    <rule_context>nh:Unresolved_Source</rule_context>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>(nh:units_of_conversion_constants eq '(DN/s)/(erg/cm^2/s/Angstrom)')</rule_test>
+      <rule_message>The units of the radiometric conversion constants for an unresolved source should be (DN/s)/(erg/cm^2/s/Angstrom).</rule_message>
+    </DD_Rule_Statement>
+  </DD_Rule>
+
   
   <!-- Check that correct bias information is provided -->
   
@@ -1970,16 +2007,8 @@
     </DD_Rule_Statement>
   </DD_Rule>
   
-  <!-- NEEDED: Frame_Ancillary_Data Rules -->
-  
-  <!-- NEEDED: Inst_Details class choice list -->
-  
-  <!-- + number_of_frames must match count(Frame_Associations) -->
-  <!-- + frame_number must be in range [0-(number_of_frames-1)] -->
-  <!-- + any *_local_identifier value must match a local_identifier in the label -->
-
   <!-- LORRI_Target_Information rules -->
-
+  
   <DD_Rule>
     <local_identifier>lorri_target</local_identifier>
     <rule_context>nh:LORRI_Target_Information</rule_context>

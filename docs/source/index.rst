@@ -27,7 +27,4 @@ New Horizons Mission Namespace Documentation
     :maxdepth: 3
     :caption: Examples
     
-    examples/leiprocMockup
-    examples/mc0procMockup
-    examples/mpfprocMockup
-    examples/swaprocMockup
+    examples/examples.rst
