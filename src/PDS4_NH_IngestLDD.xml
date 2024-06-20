@@ -2007,6 +2007,27 @@
       <rule_message>As of version 1.1 of the New Horizons mission dictionary, the MVIC_Conversion_Constants class is deprecated. Please use the Radiometric_Conversion_Constants class for all instruments supplying this information.</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
+
+  <!-- Check units of radiometric conversion constants -->
+  <DD_Rule>
+    <local_identifier>resolved_cc_units</local_identifier>
+    <rule_context>nh:Resolved_Source</rule_context>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>(nh:units_of_conversion_constants eq '(DN/s)/(erg/cm^2/s/Angstrom/sr)')</rule_test>
+      <rule_message>The units of the radiometric conversion constants for a resolved source should be (DN/s)/(erg/cm^2/s/Angstrom/sr).</rule_message>
+    </DD_Rule_Statement>
+  </DD_Rule>
+  <DD_Rule>
+    <local_identifier>unresolved_cc_units</local_identifier>
+    <rule_context>nh:Unresolved_Source</rule_context>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>(nh:units_of_conversion_constants eq '(DN/s)/(erg/cm^2/s/Angstrom)')</rule_test>
+      <rule_message>The units of the radiometric conversion constants for an unresolved source should be (DN/s)/(erg/cm^2/s/Angstrom).</rule_message>
+    </DD_Rule_Statement>
+  </DD_Rule>
+
   
   <!-- Check that correct bias information is provided -->
   
