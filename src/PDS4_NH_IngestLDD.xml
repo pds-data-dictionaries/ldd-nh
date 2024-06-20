@@ -45,10 +45,18 @@
                        MVIC and one for LEISA, to accommodate different permissible value
                        lists.
                        Modified LEISA_Details class definition to not refer to "channels".
+      
+      2024-06-20       Added schematron rule to enforce correct units for resolved vs.
+          cgobat       unresolved sources in nh:units_of_conversion_constants; renamed
+                       nh:gc_scan_rate to nh:gnc_scan_rate; updated several attribute
+                       descriptions and removed [INCOMPLETE] and [CHECK] flags; removed
+                       "Spectrograph" as a permissible value for nh:detector_type; added
+                       a minimum value of absolute zero for LEISA temperature attribute;
+                       added the SOCC to the list of permissible Alice aperture values.
                        
   </comment>
 
-  <last_modification_date_time>2024-06-15</last_modification_date_time>
+  <last_modification_date_time>2024-06-20</last_modification_date_time>
   
   <!-- Attributes -->
 
