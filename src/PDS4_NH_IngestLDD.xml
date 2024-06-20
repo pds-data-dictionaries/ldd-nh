@@ -52,7 +52,8 @@
                        flags; removed "Spectrograph" as a permissible value for
                        nh:detector_type; added a minimum value of absolute zero for LEISA
                        temperature attribute; added the SOCC to the list of permissible
-                       Alice aperture values.
+                       Alice aperture values; removed nh:binning_mode attribute and its
+                       parent class nh:LORRI_Details (of which it was the only member).
   </comment>
 
   <last_modification_date_time>2024-06-20</last_modification_date_time>
