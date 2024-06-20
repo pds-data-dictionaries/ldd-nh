@@ -589,10 +589,10 @@
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
     <definition>
-      The nh:leisa_rate is the time between LEISA readouts. There is zero 
-      dead time between frames, so in practice, this is equivalent to the 
-      exposure time found in the the img:exposure_duration attribute,
-      and the frame rate is exactly 1/(exposure time).
+      The nh:leisa_rate attribute provides the time between LEISA readouts.
+      There is zero dead time between frames, so in practice, this value is
+      equivalent to the per-frame exposure time, and the number of frames
+      per second is exactly its reciprocal.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
