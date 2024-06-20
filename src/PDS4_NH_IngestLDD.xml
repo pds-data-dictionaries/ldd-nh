@@ -1992,7 +1992,7 @@
     <DD_Association>
       <identifier_reference>Pointing_Method</identifier_reference>
       <reference_type>component_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
+      <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
@@ -2187,6 +2187,16 @@
       <rule_type>Assert</rule_type>
       <rule_test>if (nh:reference_kind eq 'RA/Dec') then (nh:Reference_RA_Dec) else true()</rule_test>
       <rule_message>In nh:Pointing_Method, if the reference kind is "RA/Dec", then the nh:Reference_RA_Dec class must be used.</rule_message>
+    </DD_Rule_Statement>
+  </DD_Rule>
+  
+  <DD_Rule>
+    <local_identifier>three_axis_needs_pointing</local_identifier>
+    <rule_context>nh:Spacecraft_State</rule_context>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>if (nh:spacecraft_spin_state eq '3-Axis') then (nh:Pointing_Method) else true()</rule_test>
+      <rule_message>In nh:Spacecraft_State, if the spin state is "3-Axis", then the nh:Pointing_Method class must be used.</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
 
