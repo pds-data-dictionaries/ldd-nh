@@ -380,11 +380,6 @@
           to extreme and far UV light and energetic particles.</value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
-        <value>Spectrograph</value>
-        <value_meaning>
-          The detector is a Rowland-circle spectrograph.</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
         <value>SSD</value>
         <value_meaning>
           The detector is a solid-state silicon detector.</value_meaning>
