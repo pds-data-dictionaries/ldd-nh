@@ -1,11 +1,15 @@
 
 >>  INFO LDDTOOL Version: 15.1.0
->>  INFO IM Version Id: 1.21.0.0
+>>  INFO IM Version Id: 1.19.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.27
->>  INFO Date: Wed Jun 19 19:14:38 UTC 2024
+>>  INFO IM Label Version Id: 1.25
+>>  INFO Date: Thu Jun 20 01:30:08 UTC 2024
 >>  INFO PARENT_DIR: /tmp/lddtool-15.1.0/Data/
 
+>>> ERROR Class:0001_NASA_PDS_1.nh.Reference_RA_Dec  Association:geom.right_ascension_angle  Attribute: geom.right_ascension_angle - Missing Attribute
+>>> ERROR Association: geom.right_ascension_angle - Could not find referenced attribute - Reference Type: attribute_of
+>>> ERROR Class:0001_NASA_PDS_1.nh.Reference_RA_Dec  Association:geom.declination_angle  Attribute: geom.declination_angle - Missing Attribute
+>>> ERROR Association: geom.declination_angle - Could not find referenced attribute - Reference Type: attribute_of
 >>> INFO Init:  - Config.Properties Namespace Id Found:geom
 >>> INFO Init:  - Config.Properties Namespace Id Using:geom
 >>> INFO Init:  - LDD Dictionary_Type is Discipline
@@ -404,12 +408,12 @@
 
  -- LDDTool Execution Summary --
      9 warning(s)
-     0 error(s)
+     4 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1L00
+     - IM Version: 1J00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -419,9 +423,9 @@ Input:
 
 Output:
 
-     - ./PDS4_NH_1L00_1100.xsd
-     - ./PDS4_NH_1L00_1100.sch
-     - ./PDS4_NH_1L00_1100.xml
-     - ./export/JSON/PDS4_PDS_1L00.JSON
+     - ./PDS4_NH_1J00_1100.xsd
+     - ./PDS4_NH_1J00_1100.sch
+     - ./PDS4_NH_1J00_1100.xml
+     - ./export/JSON/PDS4_PDS_1J00.JSON
 
->>  INFO Exit(0)
+>>  INFO Exit(1)
