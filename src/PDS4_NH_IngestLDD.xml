@@ -181,36 +181,6 @@
   </DD_Attribute>
   
   <DD_Attribute>
-    <name>binning_mode</name>
-    <version_id>1.0</version_id>
-    <local_identifier>binning_mode</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:binning_mode attribute indicates whether LORRI was operating
-      in 1x1 or 4x4 binning mode.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <DD_Permissible_Value>
-        <value>1x1</value>
-        <value_meaning>
-          The data were obtained in 1x1 binning mode with image dimensions of
-          either 1028x1024 for raw data or 1024x1024 for partially processed.
-        </value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>4x4</value>
-        <value_meaning>
-          The data were obtained in 4x4 binning mode with image dimensions of
-          either 257x256 for raw data or 256x256 for partially processed.
-        </value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  
-  <DD_Attribute>
     <name>charon_constant</name>
     <version_id>1.0</version_id>
     <local_identifier>charon_constant</local_identifier>
@@ -1315,12 +1285,6 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>LORRI_Details</identifier_reference>
-      <reference_type>component_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
       <identifier_reference>MVIC_Details</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
@@ -1418,24 +1382,7 @@
       <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
   </DD_Class>
-
-  <DD_Class>
-    <name>LORRI_Details</name>
-    <version_id>1.0</version_id>
-    <local_identifier>LORRI_Details</local_identifier>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:LORRI_Details class collects observational parameters that are specific
-      to the LORRI instrument and its various modes.
-    </definition>
-    <DD_Association>
-      <identifier_reference>binning_mode</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-  </DD_Class>
-
+  
   <DD_Class>
     <name>LORRI_Target_Information</name>
     <version_id>1.0</version_id>

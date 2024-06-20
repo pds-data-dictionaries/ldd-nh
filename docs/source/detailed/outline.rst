@@ -49,9 +49,6 @@ they are included in a label.
                   <nh:leisa_side>
                   <nh:leisa_temperature>
 
-              <nh:LORRI_Details>
-                  <nh:binning_mode>
-              
               <nh:MVIC_Details>
                   <nh:scan_type>
                   <nh:tdi_rate>

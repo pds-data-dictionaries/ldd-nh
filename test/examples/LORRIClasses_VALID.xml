@@ -77,9 +77,6 @@
                     <nh:Detector>
                         <nh:detector_name>LORRI imager</nh:detector_name>
                         <nh:detector_type>CCD</nh:detector_type>
-                        <nh:LORRI_Details>
-                            <nh:binning_mode>1x1</nh:binning_mode>
-                        </nh:LORRI_Details>
                     </nh:Detector>
                     <nh:LORRI_Target_Information>
                         <nh:approx_target_name nilReason="inapplicable">approx_target_name0</nh:approx_target_name>
