@@ -57,18 +57,34 @@
     <version_id>1.0</version_id>
     <local_identifier>aperture</local_identifier>
     <nillable_flag>false</nillable_flag>
-    <submitter_name>AGB</submitter_name>
+    <submitter_name>AGB; cgobat</submitter_name>
     <definition>
-      The nh:aperture indicates what sort of aperture was employed in 
-      collecting the data.
+      The Alice instrument has two different apertures (i.e., optical paths)
+      through which it can collect data: the "airglow" aperture and the solar
+      occultation channel (SOCC). The nh:aperture attribute indicates which was
+      used for a given data product.
     </definition>
+    <Internal_Reference>
+      <lid_reference>urn:nasa:pds:nh_documents:alice:alice_inst_overview</lid_reference>
+      <reference_type>attribute_to_document</reference_type>
+    </Internal_Reference>
+    <Internal_Reference>
+      <lid_reference>urn:nasa:pds:nh_documents:mission:nh_obs_geom</lid_reference>
+      <reference_type>attribute_to_document</reference_type>
+    </Internal_Reference>
     <DD_Value_Domain>
       <enumeration_flag>true</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <DD_Permissible_Value>
         <value>Airglow</value>
         <value_meaning>
-          The data were obtained using the airglow aperture.
+          The data were collected through Alice's airglow aperture.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Solar Occultation Channel</value>
+        <value_meaning>
+          The data were obtained via Alice's solar occultation channel (SOCC).
         </value_meaning>
       </DD_Permissible_Value>
     </DD_Value_Domain>
