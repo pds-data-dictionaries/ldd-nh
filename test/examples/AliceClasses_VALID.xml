@@ -2,7 +2,8 @@
 
 <Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1">
+    xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"
+    xmlns:geom="http://pds.nasa.gov/pds4/geom/v1">
 
     <!-- Regression Test Label for Alice (Instrument) classes in NH (mission) dictionary -->
 
@@ -92,7 +93,7 @@
                         <nh:Pointing_Method>
                             <nh:reference_kind>Central Body</nh:reference_kind>
                             <nh:Central_Body_Identification>
-                                <name>Arrokoth</name>
+                                <geom:name>Arrokoth</geom:name>
                             </nh:Central_Body_Identification>
                         </nh:Pointing_Method>
                     </nh:Spacecraft_State>

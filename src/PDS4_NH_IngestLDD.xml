@@ -2180,8 +2180,8 @@
     <rule_context>nh:Pointing_Method</rule_context>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
-      <rule_test>if (nh:reference_kind eq 'Central Body') then (geom:Central_Body_Identification) else true()</rule_test>
-      <rule_message>In nh:Pointing_Method, if the reference kind is "Central Body", then the geom:Central_Body_Identification class must be used.</rule_message>
+      <rule_test>if (nh:reference_kind eq 'Central Body') then (nh:Central_Body_Identification) else true()</rule_test>
+      <rule_message>In nh:Pointing_Method, if the reference kind is "Central Body", then the nh:Central_Body_Identification class must be used.</rule_message>
     </DD_Rule_Statement>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
