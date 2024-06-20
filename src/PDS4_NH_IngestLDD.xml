@@ -997,13 +997,13 @@
       <DD_Permissible_Value>
         <value>3-Axis</value>
         <value_meaning>
-          [INCOMPLETE] The spacecraft's pointing is triaxially stable.
+          The spacecraft is actively controlling its pointing in all 3 axes.
         </value_meaning>
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>Spinning</value>
         <value_meaning>
-          [INCOMPLETE] The spacecraft is spinning about one or more of its axes.
+          The spacecraft is maintaining pointing stability by spinning about one of its axes.
         </value_meaning>
       </DD_Permissible_Value>
     </DD_Value_Domain>
