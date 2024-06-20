@@ -1778,7 +1778,7 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>geom.Object_Orientation_RA_Dec</identifier_reference>
+      <identifier_reference>Reference_RA_Dec</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -1811,8 +1811,36 @@
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
-    </DD_Class>
+  </DD_Class>
   
+  <DD_Class>
+    <name>Reference_RA_Dec</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Reference_RA_Dec</local_identifier>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      The nh:Reference_RA_Dec class provides a right ascension and declination used as a reference for spacecraft pointing control.
+    </definition>
+    <DD_Association>
+      <identifier_reference>pds.name</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>geom.right_ascension_angle</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>geom.declination_angle</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+
   <DD_Class>
     <name>Resolved_Source</name>
     <version_id>1.0</version_id>
@@ -2109,12 +2137,12 @@
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>if (nh:reference_kind eq 'Central Body') then (geom:Central_Body_Identification) else true()</rule_test>
-      <rule_message>In nh:Pointing_Method, if the reference type is "Central Body", then the geom:Central_Body_Identification class must be used.</rule_message>
+      <rule_message>In nh:Pointing_Method, if the reference kind is "Central Body", then the geom:Central_Body_Identification class must be used.</rule_message>
     </DD_Rule_Statement>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
-      <rule_test>if (nh:reference_kind eq 'RA/Dec') then (geom:Object_Orientation_RA_Dec) else true()</rule_test>
-      <rule_message>In nh:Pointing_Method, if the reference type is "RA/Dec", then the geom:Object_Orientation_RA_Dec class must be used.</rule_message>
+      <rule_test>if (nh:reference_kind eq 'RA/Dec') then (nh:Reference_RA_Dec) else true()</rule_test>
+      <rule_message>In nh:Pointing_Method, if the reference kind is "RA/Dec", then the nh:Reference_RA_Dec class must be used.</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
 
