@@ -73,6 +73,7 @@ The major subclasses of the *<nh:Mission_Parameters>* class are:
 - :ref:`<nh:Observation_Parameters><observation-parameters>`
 - :ref:`<nh:MVIC_Calibration_Information><mvic-calibration-information>`
 - :ref:`<nh:Radiometric_Converstion_Constants><radiometric-conversion-constants>`
+- :ref:`<nh:REX_Radiometry_Information><rex-radiometry-information>`
 
 You can see a complete outline of the namespace under the
 :doc:`../detailed/outline` topic.
@@ -174,7 +175,8 @@ This class contains:
   left- and right-side bias levels applied
   in processing that particular frame. For framing observations, bias is measured 
   during each observations using shielded pixels on either edge of the array.
-   
+
+
 .. _radiometric-conversion-constants:
  
 *************************************************
@@ -227,3 +229,88 @@ This class contains:
     - Pluto
     - Charon
     - Arrokoth
+
+
+.. _rex-radiometry-information:
+ 
+*************************************************
+Subclass: <nh:REX_Radiometry_Information>
+*************************************************
+
+The *<nh:REX_Radiometry_Information>* class is used in labels for data from the Radio
+Science Experiment. The attributes in this class provide important instrument
+parameters and coefficients used to translate raw radiometer counts into physical
+units for a given product.
+
+This class contains:
+
+- <nh:frame_data_source>
+- <nh:agc_gain_setting>
+- <nh:agc_setting_source>
+- <nh:agc_gain_provenance>
+- <nh:base_agc_gain>
+- <nh:base_power>
+- <nh:radio_bandwidth>
+- <nh:radiometry_response_step>
+- <nh:radiometry_response_offset>
+- <nh:iq_calibration_constant>
+- <nh:time_tag_calibration_constant>
+
+<nh:frame_data_source>
+  The *<nh:frame_data_source>* attribute indicates the source of the input as a two-
+  digit hexadecimal number (i.e., one octet), represented as a string prefixed by
+  '0x'. 0x00 is the default source when taking data of external 7.2 GHz signal or
+  external radiometry. All other values indicate REX-internal sources intended for
+  diagnostics. The 4 least significant bits and the single most significant bit are
+  not used.
+  
+<nh:agc_gain_setting>
+  The *<nh:agc_gain_setting>* attribute supplies the value of the AGC gain setting
+  used in the radiometry calibration.
+
+<nh:agc_setting_source>
+  The *<nh:agc_setting_source>* attribute provides the source of the
+  *<nh:agc_gain_setting>* value. This attribute will have a value of either 'AUX' or
+  'ULCMD'.
+
+<nh:agc_gain_provenance>
+  The *<nh:agc_gain_provenance>* attribute supplies the provenance for the
+  *<nh:agc_gain_setting>* attribute. If *<nh:agc_setting_source>*='ULCMD', this value
+  will take the form 'YYDOY.ssf:...', where YY is the two-digit year, DOY is the
+  day-of-year, and '...' represents a string that indicates the source sequence file.
+  Otherwise (if *<nh:agc_setting_source>*='AUX'), this value will be 'Nominal'. The
+  nominal AGC gain values are 167 for side A and 163 for side B.
+
+<nh:base_agc_gain> and <nh:base_power>
+  The *<nh:base_agc_gain>* and *<nh:base_power>* contain the nominal/base AGC gain
+  setting and the base/offset dBm value for the active side of the REX electronics,
+  respectively. The base power is equivalent to the output power when
+  RAW = (10^(-Ro/10))/Bandwidth and AGC = AGCOF, given the formula
+  
+    Power[dBm] = Rbase + 10*log10(Bandwidth*RAW) + dBstep*(AGC-AGCOF) + Ro
+  
+  The nominal values for this attribute are -176.852 for right circular polarization
+  (side A) and -177.177 for left circular polarization (side B).
+
+<nh:radio_bandwidth>
+  The *<nh:radio_bandwidth>* attribute provides the active bandwidth of the REX radio.
+
+<nh:radiometry_response_step> and <nh:radiometry_response_offset>
+  The *<nh:radiometry_response_step>* and *<nh:radiometry_response_offset>* attributes
+  contain the slope and intercept, for converting from raw counts to physical/
+  radiometric quantities. These two attributes' values are represented by 'dBstep' and
+  'Ro', respectively, in the formula
+
+    Power[dBm] = Rbase + 10*log10(Bandwidth*RAW) + dBstep*(AGC-AGCOF) + Ro
+
+<nh:iq_calibration_constant>
+  The *<nh:iq_calibration_constant>* attribute supplies the I and Q response of the
+  REX instrument, used to convert between raw counts and an I/Q value in mV. This
+  constant has a nominal value of (1000 / (2^13)) mV/count.
+
+<nh:time_tag_calibration_constant>
+  The *<nh:time_tag_calibration_constant>* attribute provides the coefficient to be
+  used when converting between raw counts and time tag seconds, e.g. 'DT' in the
+  formula
+  
+    timetag[s] = DT * RAW
