@@ -275,7 +275,7 @@ This class contains:
 
 <nh:agc_gain_provenance>
   The *<nh:agc_gain_provenance>* attribute supplies the provenance for the
-  *<nh:agc_gain_setting>* attribute. If *<nh:agc_setting_source>*='ULCMD', this value
+  *<nh:agc_gain_setting>* attribute. If *<nh:agc_setting_source>* = 'ULCMD', this value
   will take the form 'YYDOY.ssf:...', where YY is the two-digit year, DOY is the
   day-of-year, and '...' represents a string that indicates the source sequence file.
   Otherwise (if *<nh:agc_setting_source>*='AUX'), this value will be 'Nominal'. The
