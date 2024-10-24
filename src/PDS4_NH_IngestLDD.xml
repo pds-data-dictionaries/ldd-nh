@@ -165,6 +165,73 @@
   </DD_Attribute>
   
   <DD_Attribute>
+    <name>agc_gain_setting</name>
+    <version_id>1.0</version_id>
+    <local_identifier>agc_gain_setting</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      The nh:agc_gain_setting attribute supplies the value of the AGC gain setting used in the
+      radiometry calibration.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0.0</minimum_value>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>agc_gain_provenance</name>
+    <version_id>1.0</version_id>
+    <local_identifier>agc_gain_provenance</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      The nh:agc_gain_provenance attribute supplies the provenance for the nh:agc_gain_setting
+      attribute. If nh:agc_setting_source='ULDB', this value will take the form 'YYDOY.ssf:...',
+      where YY is the two-digit year, DOY is the day-of-year, and '...' represents a string that
+      indicates the source sequence file. Otherwise (if nh:agc_setting_source='AUX'), this value
+      will be 'Nominal'. The nominal AGC gain values are 167 for side A and 163 for side B.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <pattern>(\d{5}\.ssf:[^\s]+)|Nominal</pattern>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>agc_setting_source</name>
+    <version_id>1.0</version_id>
+    <local_identifier>agc_setting_source</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      The nh:agc_setting_source attribute provides the source of the nh:agc_gain_setting value.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>ULCMD</value>
+        <value_meaning>
+          The source is the UpLink DataBase (ULDB), using values extracted from the sequence
+          command files.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>AUX</value>
+        <value_meaning>
+          No values were available from the ULDB, so nominal values (167 for side A, 163 for side
+          B) have been used.
+        </value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
     <name>arrokoth_constant</name>
     <version_id>1.0</version_id>
     <local_identifier>arrokoth_constant</local_identifier>
@@ -178,6 +245,47 @@
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>base_agc_gain</name>
+    <version_id>1.0</version_id>
+    <local_identifier>base_agc_gain</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      The nh:base_agc_gain attribute supplies the nominal/base AGC gain setting for the active side
+      of the REX electronics.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0.0</minimum_value>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>base_power</name>
+    <version_id>1.0</version_id>
+    <local_identifier>base_power</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      The nh:base_power attribute supplies the base/offset dBm value for REX radiometry. This is
+      equivalent to the output power when RAW = (10^(-Ro/10))/Bandwidth and AGC = AGCOF, given the
+      formula
+
+          Power[dBm] = Rbase + 10*log10(Bandwidth*RAW) + dBstep*(AGC-AGCOF) + Ro
+
+      The nominal values for this attribute are -176.852 for right circular polarization (side A)
+      and -177.177 for left circular polarization (side B).
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Power</unit_of_measure_type>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -399,6 +507,82 @@
   </DD_Attribute>
   
   <DD_Attribute>
+    <name>frame_data_source</name>
+    <version_id>1.0</version_id>
+    <local_identifier>frame_data_source</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      The nh:frame_data_source attribute indicates the source of the input as a two-digit
+      hexadecimal number (i.e., one octet), represented as a string prefixed by '0x'. 0x00 is the
+      default source when taking data of external 7.2 GHz signal or external radiometry. All other
+      values indicate REX-internal sources intended for diagnostics. The 4 least significant bits
+      and the single most significant bit are not used.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>0x00</value>
+        <value_meaning>
+          The data come from the REX Analog-To-Digital converter (ADC), whose input is the wideband
+          IF output from the NH Radiometrics channel: HGA; switch assembly (SP3T switch, diplexer,
+          filter, Low-Noise Amplifier); 4.5 MHz bandpass filter.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>0x10</value>
+        <value_meaning>
+          Impulse mode: the data consist of 2 samples (200ns) of value 128 at the start of each
+          ROF, followed by zeroes.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>0x20</value>
+        <value_meaning>
+          The data source is an artifically-generated Low-Frequency Square Wave: +/-256 @ 610.3515625 Hz.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>0x30</value>
+        <value_meaning>
+          The data source is an artifically-generated Mid Frequency Square Wave: +/-256 @ 19.53125 KHz.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>0x40</value>
+        <value_meaning>
+          The data source is a Pseudo-Random Number generator with values of +/-1 @ 10 MHz.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>0x50</value>
+        <value_meaning>
+          [INCOMPLETE] The data source is a Pseudo-Random Number generator (full scale) @ 10 MHz.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>0x60</value>
+        <value_meaning>
+          The data source is an artifically-generated Hi Frequency Square Wave: +/-256 @ 78.125 KHz
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>0x70</value>
+        <value_meaning>
+          The data are all zeroes.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>0xFF</value>
+        <value_meaning>
+          Undefined; indicates probable corruption.
+        </value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
     <name>gain</name>
     <version_id>1.0</version_id>
     <local_identifier>gain</local_identifier>
@@ -433,8 +617,25 @@
       <value_data_type>ASCII_Real</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
-  
-  
+    
+  <DD_Attribute>
+    <name>iq_calibration_constant</name>
+    <version_id>1.0</version_id>
+    <local_identifier>iq_calibration_constant</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      The nh:iq_calibration_constant attribute supplies the I and Q response of the REX instrument,
+      used to convert between raw counts and an I/Q value in mV. This constant has a nominal value
+      of (1000 / (2^13)) mV/count.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Voltage</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+    
   <DD_Attribute>
     <name>jupiter_constant</name>
     <version_id>1.0</version_id>
@@ -821,6 +1022,65 @@
   </DD_Attribute>
   
   <DD_Attribute>
+    <name>radio_bandwidth</name>
+    <version_id>1.0</version_id>
+    <local_identifier>radio_bandwidth</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      [CHECK] The nh:radio_bandwidth attribute provides the active bandwidth of the REX radio.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0.0</minimum_value>
+      <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
+      <specified_unit_id>Hz</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>radiometry_response_step</name>
+    <version_id>1.0</version_id>
+    <local_identifier>radiometry_response_step</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      The nh:radiometry_response_step attribute provides the REX radiometer response per -1 step in
+      the AGC gain setting (away from the base value). This quantity is represented by 'dBstep' in
+      the formula
+
+          Power[dBm] = Rbase + 10*log10(Bandwidth*RAW) + dBstep*(AGC-AGCOF) + Ro
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Power</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>radiometry_response_offset</name>
+    <version_id>1.0</version_id>
+    <local_identifier>radiometry_response_offset</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      [CHECK] The nh:radiometry_response_offset attribute provides the response offset of the REX
+      radiometer. This quantity is represented by 'Ro' in the formula
+
+          Power[dBm] = Rbase + 10*log10(Bandwidth*RAW) + dBstep*(AGC-AGCOF) + Ro
+      
+      The nominal values are -101.030 for side A and -104.547 for side B
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Power</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
     <name>read_noise</name>
     <version_id>1.0</version_id>
     <local_identifier>read_noise</local_identifier>
@@ -1181,6 +1441,27 @@
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Boolean</value_data_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>time_tag_calibration_constant</name>
+    <version_id>1.0</version_id>
+    <local_identifier>time_tag_calibration_constant</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      [CHECK] The nh:time_tag_calibration_constant attribute provides the coefficient to be used to
+      convert between raw counts and time tag seconds, e.g. the 'DT' in the formula
+      
+          timetag[s] = DT * RAW
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0.0</minimum_value>
+      <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+      <specified_unit_id>s</specified_unit_id>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -1770,6 +2051,83 @@
   </DD_Class>
   
   <DD_Class>
+    <name>REX_Radiometry_Information</name>
+    <version_id>1.0</version_id>
+    <local_identifier>REX_Radiometry_Information</local_identifier>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      The nh:REX_Radiometry_Information class collects radiometric parameter values and conversion
+      information specific to Radio Science Experiment (REX) observations.
+    </definition>
+    <DD_Association>
+      <identifier_reference>frame_data_source</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>      
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>agc_gain_setting</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>      
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>agc_setting_source</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>agc_gain_provenance</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>base_agc_gain</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>base_power</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>radio_bandwidth</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>radiometry_response_step</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>radiometry_response_offset</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>iq_calibration_constant</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>time_tag_calibration_constant</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  
+  <DD_Class>
     <name>Spacecraft_State</name>
     <version_id>1.0</version_id>
     <local_identifier>Spacecraft_State</local_identifier>
@@ -1941,6 +2299,12 @@
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
+    <DD_Association>
+      <identifier_reference>REX_Radiometry_Information</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
   </DD_Class>
   
   <!-- Rules -->
@@ -1959,6 +2323,23 @@
       <rule_type>Assert</rule_type>
       <rule_test>if (//pds:processing_level != ('Partially Processed') and (nh:tdi_rate)) then (false()) else (true())</rule_test>
       <rule_message>In nh:MVIC_Details, if pds:processing_level is not partially processed, then tdi_rate cannot be included.</rule_message>
+    </DD_Rule_Statement>
+  </DD_Rule>
+  
+  <!-- REX AGC source/provenance association -->
+
+  <DD_Rule>
+    <local_identifier>rex_agc_source</local_identifier>
+    <rule_context>nh:REX_Radiometry_Information</rule_context>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>if (nh:agc_setting_source = ('AUX')) then (nh:agc_gain_provenance = ('Nominal')) else (true())</rule_test>
+      <rule_message>In nh:REX_Radiometry_Information, if nh:agc_setting_source is 'AUX', then nh:agc_gain_provenance must be 'Nominal', and vice versa.</rule_message>
+    </DD_Rule_Statement>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>if (nh:agc_gain_provenance = ('Nominal')) then (nh:agc_setting_source = ('AUX')) else (true())</rule_test>
+      <rule_message>In nh:REX_Radiometry_Information, nh:agc_gain_provenance cannot be 'Nominal' unless nh:agc_setting_source is 'AUX', and vice versa.</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
   
@@ -2003,7 +2384,7 @@
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>if (starts-with(//nh:MVIC_Details/nh:scan_type,'TDI')) then (nh:tdi_median_bias_level and not(nh:Framing_Biases)) else (nh:Framing_Biases and not(nh:tdi_median_bias_level))</rule_test>
-      <rule_message>In MVIC_Calibration_Information, TDI scans data must include the attribute nh:tdi_median_bias_level; framing observations must include the nh:Framing_Biases class; both should never used together.      </rule_message>
+      <rule_message>In MVIC_Calibration_Information, TDI scans data must include the attribute nh:tdi_median_bias_level; framing observations must include the nh:Framing_Biases class; both should never used together.</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
   
