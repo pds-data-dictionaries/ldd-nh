@@ -1,5 +1,12 @@
 # New Horizons Mission Dictionary Change Log
 
+## Versuib 1.2.0.0
+
+Continuing development to support migration.
+
+* The LORRI_Target_Information class was ultimately not used for migrating the KEM1 data, and
+has been removed from the dictionary.
+
 ## Version 1.1.0.0
 
 Upgrades and modifications to support ongoing migration of PDS3 data and developement of

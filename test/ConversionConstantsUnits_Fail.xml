@@ -4,7 +4,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"> 
 
-    <!-- Regression Test Label for LORRI (Instrument) classes in NH (mission) dictionary -->
+    <!-- Regression Test Label to demonstrate failure cases for the unit check in the
+         Conversion_Constants class -->
 
     <Identification_Area>
         <logical_identifier>urn:nasa:pds:nh_lorri:test:test</logical_identifier>
@@ -91,7 +92,7 @@
                     <nh:Radiometric_Conversion_Constants>
                         <nh:pivot_wavelength unit="Angstrom">6076.2</nh:pivot_wavelength>
                         <nh:Resolved_Source>
-                            <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom/sr)</nh:units_of_conversion_constants>
+                            <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom)</nh:units_of_conversion_constants>
                             <nh:solar_constant>4092000.0</nh:solar_constant>
                             <nh:jupiter_constant>3605000.0</nh:jupiter_constant>
                             <nh:pholus_constant>4746000.0</nh:pholus_constant>
@@ -100,7 +101,7 @@
                             <nh:arrokoth_constant>4354000.0</nh:arrokoth_constant>
                         </nh:Resolved_Source>
                         <nh:Unresolved_Source>
-                            <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom)</nh:units_of_conversion_constants>
+                            <nh:units_of_conversion_constants>m/s</nh:units_of_conversion_constants>
                             <nh:solar_constant>1.03799996516E16</nh:solar_constant>
                             <nh:jupiter_constant>9.14400040557E15</nh:jupiter_constant>
                             <nh:pholus_constant>1.20400002165E16</nh:pholus_constant>

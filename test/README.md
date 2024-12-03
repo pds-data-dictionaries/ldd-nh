@@ -8,6 +8,10 @@ observational labels.
 
 The issue-related tests include:
 
+**ConversionConstantsUnits_Fail.xml**
+
+  Verify that incorrect values for *nh:units_of_conversion_constants* produce errors.
+
 **MVICmc0Proc_DEPREC_FAIL.xml**
 
 **MVICmpfProv_DEPREC_FAIL.xml**

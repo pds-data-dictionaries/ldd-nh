@@ -6,7 +6,7 @@
   xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd">
   
   <name>New Horizons Primary and Extended Missions Dictionary</name>
-  <ldd_version_id>1.1.0.0</ldd_version_id>
+  <ldd_version_id>1.2.0.0</ldd_version_id>
   <dictionary_type>Mission</dictionary_type>
   <full_name>Anne Raugh</full_name>
   <steward_id>sbn</steward_id>
@@ -28,6 +28,13 @@
     Modification History:
     
       2024-04-03  ACR  Begin history
+      
+      === Version 1.2.0.0
+      
+      2024-11-26  ACR  Removed (well, commented out) unused class LORRI_Target_Information and its three
+                       attributes. There were issues with the attribute descriptions in any event, 
+                       misconstruing the use of xsi:nil and instructing users to inser "UNK" as a value
+                       for target name, which is not appropriate.
       
       === Version 1.1.0.0 ===
       
@@ -98,6 +105,7 @@
     </DD_Value_Domain>
   </DD_Attribute>
   
+  <!-- Removed (unused) in Version 1.2.0.0
   <DD_Attribute>
     <name>approx_target_name</name>
     <version_id>1.0</version_id>
@@ -107,6 +115,9 @@
     <definition>
       The nh:approx_target_name attribute is the best guess of the intended
       target of the observation made by the automated data processing pipeline.
+      
+      *** NOTE that "UNK" should NEVER be used as an attribute value - the value 
+      *** should be nil with a nilReason of "unknown".
       
       If the best guess at the target is unknown, the attribute will be UNK i.e.
       unknown. If there was no target, i.e. for some instances of instrument
@@ -163,7 +174,8 @@
       <value_data_type>ASCII_Integer</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
-  
+  -->
+
   <DD_Attribute>
     <name>agc_gain_setting</name>
     <version_id>1.0</version_id>
@@ -607,8 +619,8 @@
     <local_identifier>gc_scan_rate</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>MKC</submitter_name>
-    <definition>
-      The nh:gc_scan_rate attribute provides the scan rate requested of the Guidance, Navigation,
+    <definition>  <!-- This attribute needs a unit of measure -->
+      [INCOMPLETE] The nh:gc_scan_rate attribute provides the scan rate requested of the Guidance, Navigation,
       and Control (GNC) system by the Ralph instrument. If the scan rate was not forced, GNC will
       return the actual scan rate achieved.
     </definition>
@@ -1665,6 +1677,7 @@
     </DD_Association>
   </DD_Class>
   
+  <!-- Removed (unused) in Version 1.2.0.0
   <DD_Class>
     <name>LORRI_Target_Information</name>
     <version_id>1.0</version_id>
@@ -1693,6 +1706,7 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
+  -->
   
   <DD_Class>
     <name>MVIC_Calibration_Information</name>
@@ -1961,12 +1975,14 @@
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
+    <!-- Removed (unused) Version 1.2.0.0
     <DD_Association>
       <identifier_reference>LORRI_Target_Information</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
+    -->
     <DD_Association>
       <identifier_reference>Spacecraft_State</identifier_reference>
       <reference_type>component_of</reference_type>
