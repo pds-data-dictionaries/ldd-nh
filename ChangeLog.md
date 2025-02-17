@@ -1,12 +1,23 @@
 # New Horizons Mission Dictionary Change Log
 
-## Versuib 1.2.0.0
+## Version 1.2.0.0
 
-Continuing development to support migration.
+Continuing development to support migration and clean up some details.
 
 * The LORRI_Target_Information class was ultimately not used for migrating the KEM1 data, and
 has been removed from the dictionary.
 
+* The Observational_Parameters class was made optional to accommodate some cases where the class
+is not relevant but other Mission_Parameters are.
+
+* The Spacecraft_State class was made optional within Observational_Parameters for cases where
+the state attributes would otherwise all be omitted.
+
+* Updated the online document reference to the PDS Dictionary webhelp site to the 1M00 version, 
+which includes the version 1.1 contents of this dictionary. Users should note that there is a 
+version lag between in this facility relative to the release of the latest version of the NH dictionary.
+
+* Update nh:detector_name for SWAP and deprecated previous detector name. Added regression test for the FAIL condition.
 ## Version 1.1.0.0
 
 Upgrades and modifications to support ongoing migration of PDS3 data and developement of

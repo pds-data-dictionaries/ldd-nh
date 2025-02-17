@@ -18,6 +18,10 @@ The issue-related tests include:
 
   Verify that the original MVIC_Calibration_Constants class is now deprecated in 
   favor of the Radiometric_Conversion_Constants class.
+  
+**SWAPdetectorName_FAIL.xml**
+
+  Verify that the old nh:detector_name for SWAP is flagged as not appropriate in new data.
 
 ## *examples/* Directory
 
