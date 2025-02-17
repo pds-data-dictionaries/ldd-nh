@@ -3,13 +3,13 @@ PDS Validate Tool Report
 
 Configuration:
    Version     3.6.3
-   Date        2024-12-03T09:47:52Z
+   Date        2025-02-17T00:46:19Z
 
 Parameters:
    Targets                        [file:/home/runner/work/ldd-nh/ldd-nh/test/REXrofProc_VALID.xml]
    Rule Type                      pds4.label
-   User Specified Schemas         [file:/home/runner/work/ldd-nh/ldd-nh/build/development/3afaad0c80a76372d80cef3bbc36c5efe99fd230/1.20.0.0/PDS4_NH_1K00_1200.xsd, file:/tmp/PDS4_PDS_1K00.xsd]
-   User Specified Schematrons     [file:/home/runner/work/ldd-nh/ldd-nh/build/development/3afaad0c80a76372d80cef3bbc36c5efe99fd230/1.20.0.0/PDS4_NH_1K00_1200.sch, file:/tmp/PDS4_PDS_1K00.sch]
+   User Specified Schemas         [file:/home/runner/work/ldd-nh/ldd-nh/build/development/9e7f91320242a273b3e384f65505eb105c4f4e2f/1.21.0.0/PDS4_NH_1L00_1200.xsd, file:/tmp/PDS4_PDS_1L00.xsd]
+   User Specified Schematrons     [file:/home/runner/work/ldd-nh/ldd-nh/build/development/9e7f91320242a273b3e384f65505eb105c4f4e2f/1.21.0.0/PDS4_NH_1L00_1200.sch, file:/tmp/PDS4_PDS_1L00.sch]
    Severity Level                 WARNING
    Recurse Directories            true
    File Filters Used              [*.xml, *.XML]
@@ -22,8 +22,9 @@ Parameters:
 
 Product Level Validation Results
 
-  PASS: file:/home/runner/work/ldd-nh/ldd-nh/test/REXrofProc_VALID.xml
+  FAIL: file:/home/runner/work/ldd-nh/ldd-nh/test/REXrofProc_VALID.xml
       WARNING  [warning.label.schematron]   Cannot check versioning because no Schematron given.
+      ERROR  [error.label.schematron]   line 90, 42: In nh:Spacecraft_State, the attribute nh:pointing_method is deprecated and should not be used in new products or migrations.
       WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
       WARNING  [warning.label.context_ref_mismatch]   line 39: Context reference name mismatch. Value: 'New Horizons Kuiper Belt Extended Mission 1' Expected one of: '[New Horizons Kuiper Belt Extended Mission]'
       WARNING  [warning.label.context_ref_mismatch]   line 49: Context reference name mismatch. Value: 'New Horizons Spacecraft' Expected one of: '[NEW HORIZONS]'
@@ -34,12 +35,12 @@ Product Level Validation Results
 Summary:
 
   1 product(s)
-  0 error(s)
+  1 error(s)
   6 warning(s)
 
   Product Validation Summary:
-    1          product(s) passed
-    0          product(s) failed
+    0          product(s) passed
+    1          product(s) failed
     0          product(s) skipped
     1          product(s) total
 
@@ -50,10 +51,11 @@ Summary:
     0          check(s) total
 
   Message Types:
+    1            error.label.schematron
     4            warning.label.context_ref_mismatch
     1            warning.label.missing_schematron_spec
     1            warning.label.schematron
 
 End of Report
-Completed execution in 4946 ms
+Completed execution in 5095 ms
 
