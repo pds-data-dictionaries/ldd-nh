@@ -1,5 +1,11 @@
 # New Horizons Mission Dictionary Change Log
 
+## Version 1.2.0.0
+
+* Add Alice door_position attribute
+
+* Add REX-specific class and attributes
+
 ## Version 1.1.0.0
 
 Upgrades and modifications to support ongoing migration of PDS3 data and developement of

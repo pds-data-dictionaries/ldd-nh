@@ -37,7 +37,8 @@
                     Schematron rule.
                     Consistently add "nh:" prefix to references in descriptions.
                     Review definitions for completeness, consistency, and style;
-                      flag problems.
+                    flag problems.
+      
       2024-06-15  ACR  Manually resolved conflicts resulting from multiple people editing
                        the the same parts of the file in separate branches.
                        Convert all occurrences of the name to "Alice".
@@ -47,13 +48,16 @@
                        Modified LEISA_Details class definition to not refer to "channels".
       
       2024-06-20       Added schematron rule to enforce correct units for resolved vs.
-          cgobat       unresolved sources in nh:units_of_conversion_constants; updated
+               cgobat  unresolved sources in nh:units_of_conversion_constants; updated
                        several attribute descriptions and removed [INCOMPLETE] and [CHECK]
                        flags; removed "Spectrograph" as a permissible value for
                        nh:detector_type; added a minimum value of absolute zero for LEISA
                        temperature attribute; added the SOCC to the list of permissible
                        Alice aperture values; removed nh:binning_mode attribute and its
                        parent class nh:LORRI_Details (of which it was the only member).
+      
+      2025-02-23       Added door_position attribute to Alice_Details class.
+               cgobat
   </comment>
 
   <last_modification_date_time>2024-06-20</last_modification_date_time>
