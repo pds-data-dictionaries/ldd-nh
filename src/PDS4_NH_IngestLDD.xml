@@ -490,6 +490,33 @@
   </DD_Attribute>
   
   <DD_Attribute>
+    <name>door_position</name>
+    <version_id>1.0</version_id>
+    <local_identifier>door_position</local_identifier>
+    <nillable_flag>true</nillable_flag>
+    <submitter_name>cgobat</submitter_name>
+    <definition>
+      The nh:door_position attribute provides the position of the Alice aperture door. If the status is unknown, this attribute can be nil.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <DD_Permissible_Value>
+        <value>Open</value>
+        <value_meaning>The Alice door is open.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Closed</value>
+        <value_meaning>The Alice door is closed.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>In Between</value>
+        <value_meaning>The Alice door is between closed and fully open.</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
     <name>frame_number</name>
     <version_id>1.0</version_id>
     <local_identifier>frame_number</local_identifier>
@@ -1915,6 +1942,12 @@
     </definition>
     <DD_Association>
       <identifier_reference>aperture</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>door_position</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
