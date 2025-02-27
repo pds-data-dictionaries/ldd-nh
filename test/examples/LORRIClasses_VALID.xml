@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="PDS4_NH_1J00_1200.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
-<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"> 
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1" xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd
+    http://pds.nasa.gov/pds4/mission/nh/v1 PDS4_NH_1J00_1200.xsd">
 
     <!-- Regression Test Label for LORRI (Instrument) classes in NH (mission) dictionary -->
 
@@ -10,7 +11,7 @@
         <logical_identifier>urn:nasa:pds:nh_lorri:test:test</logical_identifier>
         <version_id>1.0</version_id>
         <title>LORRI Classes Test Label</title>
-        <information_model_version>[IM VERSION]</information_model_version>
+        <information_model_version>1.19.0.0</information_model_version>
         <product_class>Product_Observational</product_class>
         <Modification_History>
             <Modification_Detail>
@@ -64,7 +65,7 @@
 
         <Mission_Area>
             <nh:Mission_Parameters>
-                <nh:mission_phase_name>KEM1 Cruise</nh:mission_phase_name>
+                <nh:mission_phase_name>Cruise to First KBO Encounter</nh:mission_phase_name>
                 <nh:Observation_Parameters>
                     <nh:telemetry_apid>0x000</nh:telemetry_apid>
                     <nh:sequence_id>sequence_id0</nh:sequence_id>
@@ -82,34 +83,31 @@
                         <nh:thruster_x_enabled>false</nh:thruster_x_enabled>
                         <nh:thruster_y_enabled>false</nh:thruster_y_enabled>
                         <nh:thruster_z_enabled>false</nh:thruster_z_enabled>
-                        <nh:gc_scan_rate>-1073741773</nh:gc_scan_rate>
-                        <nh:target_motion_rate>50</nh:target_motion_rate>
                         <nh:relative_control_mode_active>false</nh:relative_control_mode_active>
-                        <nh:pointing_method>CB1</nh:pointing_method>
                         <nh:spacecraft_spin_state>Spinning</nh:spacecraft_spin_state>
                     </nh:Spacecraft_State>
-                    <nh:Radiometric_Conversion_Constants>
-                        <nh:pivot_wavelength unit="Angstrom">6076.2</nh:pivot_wavelength>
-                        <nh:Resolved_Source>
-                            <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom/sr)</nh:units_of_conversion_constants>
-                            <nh:solar_constant>4092000.0</nh:solar_constant>
-                            <nh:jupiter_constant>3605000.0</nh:jupiter_constant>
-                            <nh:pholus_constant>4746000.0</nh:pholus_constant>
-                            <nh:pluto_constant>3955000.0</nh:pluto_constant>
-                            <nh:charon_constant>4039000.0</nh:charon_constant>
-                            <nh:arrokoth_constant>4354000.0</nh:arrokoth_constant>
-                        </nh:Resolved_Source>
-                        <nh:Unresolved_Source>
-                            <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom)</nh:units_of_conversion_constants>
-                            <nh:solar_constant>1.03799996516E16</nh:solar_constant>
-                            <nh:jupiter_constant>9.14400040557E15</nh:jupiter_constant>
-                            <nh:pholus_constant>1.20400002165E16</nh:pholus_constant>
-                            <nh:pluto_constant>1.00299995454E16</nh:pluto_constant>
-                            <nh:charon_constant>1.02499995814E16</nh:charon_constant>
-                            <nh:arrokoth_constant>1.10499995174E16</nh:arrokoth_constant>
-                        </nh:Unresolved_Source>
-                    </nh:Radiometric_Conversion_Constants>
                 </nh:Observation_Parameters>
+                <nh:Radiometric_Conversion_Constants>
+                    <nh:pivot_wavelength unit="Angstrom">6076.2</nh:pivot_wavelength>
+                    <nh:Resolved_Source>
+                        <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom/sr)</nh:units_of_conversion_constants>
+                        <nh:solar_constant>4092000.0</nh:solar_constant>
+                        <nh:jupiter_constant>3605000.0</nh:jupiter_constant>
+                        <nh:pholus_constant>4746000.0</nh:pholus_constant>
+                        <nh:pluto_constant>3955000.0</nh:pluto_constant>
+                        <nh:charon_constant>4039000.0</nh:charon_constant>
+                        <nh:arrokoth_constant>4354000.0</nh:arrokoth_constant>
+                    </nh:Resolved_Source>
+                    <nh:Unresolved_Source>
+                        <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom)</nh:units_of_conversion_constants>
+                        <nh:solar_constant>1.03799996516E16</nh:solar_constant>
+                        <nh:jupiter_constant>9.14400040557E15</nh:jupiter_constant>
+                        <nh:pholus_constant>1.20400002165E16</nh:pholus_constant>
+                        <nh:pluto_constant>1.00299995454E16</nh:pluto_constant>
+                        <nh:charon_constant>1.02499995814E16</nh:charon_constant>
+                        <nh:arrokoth_constant>1.10499995174E16</nh:arrokoth_constant>
+                    </nh:Unresolved_Source>
+                </nh:Radiometric_Conversion_Constants>
             </nh:Mission_Parameters>
         </Mission_Area>
 

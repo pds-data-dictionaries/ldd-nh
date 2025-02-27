@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- 
-    *** As of v1.1.0 of this dictionary, this label should FAIL regression testing with a message
-    *** about the MVIC_Conversion_Constants class being deprecated.
-    
+    *** As of v1.2.0 of this dictionary, this label should FAIL regression testing with the following
+    *** messages:
+
+        - nh:MVIC_Conversion_Constants class is deprecated.
+        - nh:pointing_method is deprecated.
+        - nh:gc_scan_rate must have units of frequency.
+        - nh:target_motion_rate must have units of angular rotation rate.
 
     This label is a mockup of an MVIC Framing Array observation, created as part of the design
     process for the New Horizons KEM1 MVIC migration. All references to the dictionaries other than

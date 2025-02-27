@@ -5,7 +5,14 @@
     xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"> 
 
     <!-- Regression Test Label for LEISA (Instrument) classes in NH (mission) dictionary -->
-
+    
+    <!--
+        
+        NOTE that this label does not represent real data, or even a plausible template for real data.
+        It does demonstrate the use of the nh:LEISA_Details class within the nh:Detector_Class of the
+        New Horizons mission dictionary area.
+    -->
+    
     <Identification_Area>
         <logical_identifier>urn:nasa:pds:nh_leisa:test:test</logical_identifier>
         <version_id>1.0</version_id>
@@ -88,19 +95,18 @@
                             <nh:leisa_offset_2 unit="DN">50</nh:leisa_offset_2>
                             <nh:leisa_offset_3 unit="DN">50</nh:leisa_offset_3>
                             <nh:leisa_offset_4 unit="DN">50</nh:leisa_offset_4>
-                            <nh:leisa_rate unit="day">50</nh:leisa_rate>
+                            <nh:leisa_rate unit="ms">50</nh:leisa_rate>
                             <nh:leisa_side>A</nh:leisa_side>
-                            <nh:leisa_temperature unit="degC">-1.0</nh:leisa_temperature>
+                            <nh:leisa_temperature unit="degC">-150.0</nh:leisa_temperature>
                         </nh:LEISA_Details>
                     </nh:Detector>
                     <nh:Spacecraft_State>
                         <nh:thruster_x_enabled>false</nh:thruster_x_enabled>
                         <nh:thruster_y_enabled>false</nh:thruster_y_enabled>
                         <nh:thruster_z_enabled>false</nh:thruster_z_enabled>
-                        <nh:gc_scan_rate>-1073741773</nh:gc_scan_rate>
-                        <nh:target_motion_rate>50</nh:target_motion_rate>
+                        <nh:gc_scan_rate unit="Hz">-1073741773</nh:gc_scan_rate>
+                        <nh:target_motion_rate unit="rad/s">0.000050</nh:target_motion_rate>
                         <nh:relative_control_mode_active>false</nh:relative_control_mode_active>
-                        <nh:pointing_method>CB1</nh:pointing_method>
                         <nh:spacecraft_spin_state>Spinning</nh:spacecraft_spin_state>
                     </nh:Spacecraft_State>
                 </nh:Observation_Parameters>

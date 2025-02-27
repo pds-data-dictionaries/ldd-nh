@@ -1,14 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
 <Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
-    xmlns:disp="http://pds.nasa.gov/pds4/disp/v1"
-    xmlns:geom="http://pds.nasa.gov/pds4/geom/v1"
-    xmlns:img="http://pds.nasa.gov/pds4/img/v1"
-    xmlns:msn="http://pds.nasa.gov/pds4/msn/v1"
-    xmlns:proc="http://pds.nasa.gov/pds4/proc/v1"
     xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"
-    xmlns:sb="http://pds.nasa.gov/pds4/sb/v1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd                         http://pds.nasa.gov/pds4/disp/v1 https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1J00_1510.xsd                         http://pds.nasa.gov/pds4/geom/v1 https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1J00_1960.xsd                         http://pds.nasa.gov/pds4/img/v1 https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1J00_1870.xsd                         http://pds.nasa.gov/pds4/msn/v1 https://pds.nasa.gov/pds4/msn/v1/PDS4_MSN_1J00_1300.xsd                         http://pds.nasa.gov/pds4/proc/v1 https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1J00_1300.xsd                         http://pds.nasa.gov/pds4/mission/nh/v1 /home/cgobat/NH/pds4_pipeline/alg/schema/PDS4_NH_1J00_1100.xsd                         http://pds.nasa.gov/pds4/sb/v1 https://raw.githubusercontent.com/pds-data-dictionaries/ldd-sb/add_x_axis_pa/build/development/b946dad203281616f47fadbd046e160c05ec230f/1.19.0.0/PDS4_SB_1J00_1000.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Identification_Area>
         <logical_identifier>urn:nasa:pds:nh_rex:kem1_cal:rex_0408622814_0x7b1_sci</logical_identifier>
         <version_id>1.0</version_id>
@@ -87,10 +81,6 @@
                         <nh:detector_name>Radio Science Experiment</nh:detector_name>
                         <nh:detector_type>Local oscillator vs. uplink signal phase comparator</nh:detector_type>
                     </nh:Detector>
-                    <nh:Spacecraft_State>
-                        <nh:pointing_method>CB1</nh:pointing_method>
-                        <nh:spacecraft_spin_state>3-Axis</nh:spacecraft_spin_state>
-                    </nh:Spacecraft_State>
                 </nh:Observation_Parameters>
                 <nh:REX_Radiometry_Information>
                     <nh:frame_data_source>0x00</nh:frame_data_source>

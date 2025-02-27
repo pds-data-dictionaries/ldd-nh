@@ -17,7 +17,9 @@ The issue-related tests include:
 **MVICmpfProv_DEPREC_FAIL.xml**
 
   Verify that the original MVIC_Calibration_Constants class is now deprecated in 
-  favor of the Radiometric_Conversion_Constants class.
+  favor of the Radiometric_Conversion_Constants class. These files also demonstrate
+  that units of measure are required on the gc_scan_rate and target_motion_rate
+  attronites/
   
 **SWAPdetectorName_FAIL.xml**
 

@@ -17,7 +17,7 @@
 <Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
     xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
+    
     <Identification_Area>
         <logical_identifier>urn:nasa:pds:nh_swap:kem2_cal:swa_0556675232_0x586_sci</logical_identifier>
         <version_id>1.0</version_id>
@@ -94,6 +94,7 @@
                         <nh:stop_clock_count>0556675295:00000</nh:stop_clock_count>
                     </nh:Mission_Elapsed_Time>
                     <nh:Detector>
+                        <!-- The detector_name value here should produce an error indicating a different value should be used.  -->
                         <nh:detector_name>Solar Wind Around Pluto</nh:detector_name>
                         <nh:detector_type>Electrostatic</nh:detector_type>
                         <nh:SWAP_Details>
