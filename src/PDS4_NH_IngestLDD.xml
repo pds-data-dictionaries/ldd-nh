@@ -569,7 +569,7 @@
   
   <DD_Attribute>
     <name>frame_data_source</name>
-    <version_id>1.2</version_id>
+    <version_id>1.1</version_id>
     <local_identifier>frame_data_source</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>cgobat</submitter_name>
@@ -1132,7 +1132,7 @@
 
           Power[dBm] = Rbase + 10*log10(Bandwidth*RAW) + dBstep*(AGC-AGCOF) + Ro
           
-      given in section 12.3.1.2 of the "New Horizonsz SOC to Instrument Pipeline ICD"
+      given in section 12.3.1.2 of the "New Horizons SOC to Instrument Pipeline ICD"
       document.
     </definition>
     <Internal_Reference>
@@ -1159,7 +1159,10 @@
       The nh:radiometry_response_offset attribute provides the response offset of the REX
       radiometer. The "offset" is the power level in REX if there is no RF power going
       into the X-band receiver. It is the power level produced by the receiver itself, and
-      thus represents the noise level, or "system temperature", of the receiver.
+      thus represents the noise level, or "system temperature", of the receiver. It is the 
+      "Ro" term in the formula
+      
+        Power[dBm[ = Rbase + 10*log10(Bandwidth*RAW) + dBstep*(AGC-AGCOF) + Ro
       
       The nominal values are -101.030 dBm for side A and -104.547 dBm for side B.
     </definition>
@@ -1550,14 +1553,14 @@
       after a "start" command, rather than with each sequence. The time tags are used 
       to check for a break in the ROF sequence, and to calculate time between ROFs. 
       The nh:time_tag_calibration_constant is the length of time corresponding to a 
-      single time tag increment, nominally 102.4ms.
+      single time tag increment, nominally 0.1024s.
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
       <minimum_value>0.0</minimum_value>
       <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
-      <specified_unit_id>ms</specified_unit_id>
+      <specified_unit_id>s</specified_unit_id>
     </DD_Value_Domain>
   </DD_Attribute>
   
