@@ -1,0 +1,60 @@
+
+PDS Validate Tool Report
+
+Configuration:
+   Version     3.6.3
+   Date        2025-03-06T18:22:49Z
+
+Parameters:
+   Targets                        [file:/home/runner/work/ldd-nh/ldd-nh/test/SWAPdetectorName_FAIL.xml]
+   Rule Type                      pds4.label
+   User Specified Schemas         [file:/home/runner/work/ldd-nh/ldd-nh/build/development/6e1f6d80d941a7ee1f6302f0e24f13eaf40c902d/1.21.0.0/PDS4_NH_1L00_1200.xsd, file:/tmp/PDS4_PDS_1L00.xsd]
+   User Specified Schematrons     [file:/home/runner/work/ldd-nh/ldd-nh/build/development/6e1f6d80d941a7ee1f6302f0e24f13eaf40c902d/1.21.0.0/PDS4_NH_1L00_1200.sch, file:/tmp/PDS4_PDS_1L00.sch]
+   Severity Level                 WARNING
+   Recurse Directories            true
+   File Filters Used              [*.xml, *.XML]
+   Data Content Validation        off
+   Product Level Validation       on
+   Max Errors                     100000
+   Registered Contexts File       /tmp/validate-3.6.3/resources/registered_context_products.json
+
+
+
+Product Level Validation Results
+
+  FAIL: file:/home/runner/work/ldd-nh/ldd-nh/test/SWAPdetectorName_FAIL.xml
+      WARNING  [warning.label.schema]   Cannot check versioning because no Schema given.
+      ERROR  [error.label.schematron]   line 98, 43: In nh:detector, the value "Solar Wind Around Pluto" should not be used. Instead, use "SWAP Channel Electron Multiplier (CEM)".
+      WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
+      WARNING  [warning.label.context_ref_mismatch]   line 48: Context reference name mismatch. Value: 'New Horizons Kuiper Belt Extended Mission 2' Expected one of: '[New Horizons Kuiper Belt Extended Mission]'
+      WARNING  [warning.label.context_ref_mismatch]   line 61: Context reference name mismatch. Value: 'New Horizons Spacecraft' Expected one of: '[NEW HORIZONS]'
+      WARNING  [warning.label.context_ref_mismatch]   line 69: Context reference name mismatch. Value: 'SWAP' Expected one of: '[SOLAR WIND AROUND PLUTO]'
+        1 product validation(s) completed
+
+Summary:
+
+  1 product(s)
+  1 error(s)
+  5 warning(s)
+
+  Product Validation Summary:
+    0          product(s) passed
+    1          product(s) failed
+    0          product(s) skipped
+    1          product(s) total
+
+  Referential Integrity Check Summary:
+    0          check(s) passed
+    0          check(s) failed
+    0          check(s) skipped
+    0          check(s) total
+
+  Message Types:
+    1            error.label.schematron
+    3            warning.label.context_ref_mismatch
+    1            warning.label.missing_schematron_spec
+    1            warning.label.schema
+
+End of Report
+Completed execution in 5884 ms
+
