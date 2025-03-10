@@ -22,12 +22,19 @@
 
     <Identification_Area>
         <logical_identifier>urn:nasa:pds:nh_mvic:kem1_cal:mc0_0408625487_0x545_sci</logical_identifier>
-        <version_id>1.0</version_id>
+        <version_id>2.0</version_id>
         <title>New Horizons MVIC Red Channel Observation mc0_0408625487_0x545_sci (Processed Data)</title>
         <information_model_version>[IM VERSION]</information_model_version>
         <product_class>Product_Observational</product_class>
 
         <Modification_History>
+            <Modification_Detail>
+                <modification_date>2025-02-27</modification_date>
+                <version_id>2.0</version_id>
+                <description>
+                    ACR: Modified to reflect v1.2.0.0 of the NH mission dictionary.
+                </description>
+            </Modification_Detail>
             <Modification_Detail>
                 <modification_date>2022-12-26</modification_date>
                 <version_id>1.0</version_id>
@@ -72,19 +79,6 @@
                     <reference_type>is_instrument_host</reference_type>
                 </Internal_Reference>
             </Observing_System_Component>
-<!--
-            <Observing_System_Component>
-                <name>RALPH</name>
-                <type>Instrument Package</type> 
-                <description>
-                    RALPH is an instrument package supporting two independent instrument,
-                    the Multispectral Visible Imaging Camera (MVIC) and the Linear Etalon
-                    Imaging Spectral Array (LEISA), that share a boresight, a focal plane, 
-                    and electronics. Detectors and pipeline processing are unique to each
-                    instrument.
-                </description>
-            </Observing_System_Component>
--->            
             <Observing_System_Component>
                 <name>Multispectral Visible Imaging Camera (MVIC)</name>
                 <type>Instrument</type>
@@ -129,16 +123,6 @@
                             <nh:tdi_rate unit="Hz">40.4694</nh:tdi_rate>
                         </nh:MVIC_Details>
                     </nh:Detector>
-                    <nh:Spacecraft_State>
-                        <nh:thruster_x_enabled>false</nh:thruster_x_enabled>
-                        <nh:thruster_y_enabled>false</nh:thruster_y_enabled>
-                        <nh:thruster_z_enabled>false</nh:thruster_z_enabled>
-                        <nh:gc_scan_rate>800.0</nh:gc_scan_rate>
-                        <nh:target_motion_rate>800.0</nh:target_motion_rate>
-                        <nh:relative_control_mode_active>false</nh:relative_control_mode_active>
-                        <nh:pointing_method>CB1</nh:pointing_method>
-                        <nh:spacecraft_spin_state>3-Axis</nh:spacecraft_spin_state>
-                    </nh:Spacecraft_State>
                 </nh:Observation_Parameters>
                 <nh:MVIC_Calibration_Information>
                     <nh:physical_pixel_size unit="micrometer">13.0000</nh:physical_pixel_size>

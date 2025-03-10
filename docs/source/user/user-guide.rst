@@ -97,7 +97,6 @@ This class contains:
 - <nh:observation_description>
 - <nh:Mission_Elapsed_Time>
 - <nh:Detector>
-- <nh:LORRI_Target_Information>
 - <nh:Spacecraft_State>
 
 None of these components is repeatable; all are expected to be present in all raw
@@ -128,13 +127,11 @@ and processed/calibrated data labels.
   class will contain detector-specific subclasses where needed to provide specific
   observational settings for the detector.
   
-<nh:LORRI_Target_Information>
-  The *<nh:LORRI_Target_Information>* class provides attributes specific to the 
-  targeting of a LORRI imager observation.
-  
 <nh:Spacecraft_State>
   The *<nh:Spacecraft_State>* class provides information about thruster firings,
   spin state, scan rate, and spacecraft motion at the time of the observation.
+  For cases where none of the attributes of this class are relevant to the data
+  product, this class should be omitted.
   
   
 .. _mvic-calibration-information:
