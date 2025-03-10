@@ -1,0 +1,69 @@
+
+PDS Validate Tool Report
+
+Configuration:
+   Version     3.6.3
+   Date        2025-03-10T19:13:36Z
+
+Parameters:
+   Targets                        [file:/home/runner/work/ldd-nh/ldd-nh/test/MVICmpfProc_DEPREC_FAIL.xml]
+   Rule Type                      pds4.label
+   User Specified Schemas         [file:/home/runner/work/ldd-nh/ldd-nh/build/development/39a6f76c35ce11688c5b6176cebd18cefc15443e/1.20.0.0/PDS4_NH_1K00_1200.xsd, file:/tmp/PDS4_PDS_1K00.xsd]
+   User Specified Schematrons     [file:/home/runner/work/ldd-nh/ldd-nh/build/development/39a6f76c35ce11688c5b6176cebd18cefc15443e/1.20.0.0/PDS4_NH_1K00_1200.sch, file:/tmp/PDS4_PDS_1K00.sch]
+   Severity Level                 WARNING
+   Recurse Directories            true
+   File Filters Used              [*.xml, *.XML]
+   Data Content Validation        off
+   Product Level Validation       on
+   Max Errors                     100000
+   Registered Contexts File       /tmp/validate-3.6.3/resources/registered_context_products.json
+
+
+
+Product Level Validation Results
+
+  FAIL: file:/home/runner/work/ldd-nh/ldd-nh/test/MVICmpfProc_DEPREC_FAIL.xml
+      WARNING  [warning.label.schema]   Cannot check versioning because no Schema given.
+      ERROR  [error.label.schema]   line 142, 42: cvc-complex-type.4: Attribute 'unit' must appear on element 'nh:gc_scan_rate'.
+      ERROR  [error.label.schema]   line 143, 48: cvc-complex-type.4: Attribute 'unit' must appear on element 'nh:target_motion_rate'.
+      ERROR  [error.label.schema]   line 143, 48: cvc-minInclusive-valid: Value '0.0' is not facet-valid with respect to minInclusive '1.0E-6' for type 'target_motion_rate_WO_Units'.
+      ERROR  [error.label.schema]   line 143, 48: cvc-complex-type.2.2: Element 'nh:target_motion_rate' must have no element [children], and the value must be valid.
+      ERROR  [error.label.schematron]   line 212, 47: As of version 1.1 of the New Horizons mission dictionary, the MVIC_Conversion_Constants class is deprecated. Please use the Radiometric_Conversion_Constants class for all instruments supplying this information.
+      ERROR  [error.label.schematron]   line 138, 42: In nh:Spacecraft_State, the attribute nh:pointing_method is deprecated and should not be used in new products or migrations.
+      ERROR  [error.label.schematron]   line 142, 42: The attribute @unit must be equal to one of the following values 'GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz'.
+      ERROR  [error.label.schematron]   line 143, 48: The attribute @unit must be equal to one of the following values 'deg/day', 'deg/s', 'rad/s'.
+      WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
+      WARNING  [warning.label.context_ref_mismatch]   line 68: Context reference name mismatch. Value: 'New Horizons Kuiper Belt Extended Mission 1' Expected one of: '[No Specific Investigation]'
+      WARNING  [warning.label.context_ref_mismatch]   line 78: Context reference name mismatch. Value: 'New Horizons Spacecraft' Expected one of: '[NEW HORIZONS]'
+      WARNING  [warning.label.context_ref_mismatch]   line 103: Context reference name mismatch. Value: 'Multispectral Visible Imaging Camera (MVIC)' Expected one of: '[Multispectral Visible Imaging Camera]'
+      WARNING  [warning.label.context_ref_mismatch]   line 114: Context reference name mismatch. Value: '(486958) Arrokoth' Expected one of: '[(486958) 2014 MU69]'
+        1 product validation(s) completed
+
+Summary:
+
+  1 product(s)
+  8 error(s)
+  6 warning(s)
+
+  Product Validation Summary:
+    0          product(s) passed
+    1          product(s) failed
+    0          product(s) skipped
+    1          product(s) total
+
+  Referential Integrity Check Summary:
+    0          check(s) passed
+    0          check(s) failed
+    0          check(s) skipped
+    0          check(s) total
+
+  Message Types:
+    4            error.label.schema
+    4            error.label.schematron
+    4            warning.label.context_ref_mismatch
+    1            warning.label.missing_schematron_spec
+    1            warning.label.schema
+
+End of Report
+Completed execution in 4659 ms
+
