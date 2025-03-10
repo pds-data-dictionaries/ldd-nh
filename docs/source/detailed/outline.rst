@@ -55,11 +55,6 @@ they are included in a label.
               
               <nh:SWAP_Details>
                   <nh:sweep_samples_count>
-
-          <nh:LORRI_Target_Information>
-              <nh:approx_target_name>
-              <nh:approx_target_line>
-              <nh:approx_target_sample>
           
           <nh:Spacecraft_State>
               <nh:thruster_x_enabled>

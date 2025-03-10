@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"> 
 
-    <!-- Regression Test Label for LEISA (Instrument) classes in NH (mission) dictionary -->
-    
-    <!--
-        
-        NOTE that this label does not represent real data, or even a plausible template for real data.
-        It does demonstrate the use of the nh:LEISA_Details class within the nh:Detector_Class of the
-        New Horizons mission dictionary area.
-    -->
-    
+    <!-- Regression Test Label to demonstrate failure cases for the unit check in the
+         Conversion_Constants classes -->
+
     <Identification_Area>
-        <logical_identifier>urn:nasa:pds:nh_leisa:test:test</logical_identifier>
+        <logical_identifier>urn:nasa:pds:nh_lorri:test:test</logical_identifier>
         <version_id>1.0</version_id>
-        <title>LEISA Classes Test Label</title>
+        <title>LORRI Classes Test Label</title>
         <information_model_version>[IM VERSION]</information_model_version>
         <product_class>Product_Observational</product_class>
         <Modification_History>
@@ -24,6 +18,11 @@
                 <modification_date>2024-06-15</modification_date>
                 <version_id>1.0</version_id>
                 <description>ACR _ Creation</description>
+            </Modification_Detail>
+            <Modification_Detail>
+                <modification_date>2025-02-27</modification_date>
+                <version_id>1.1</version_id>
+                <description>ACR: Modified for NH LDD v 1.2 changes (tested elsewhere)</description>
             </Modification_Detail>
         </Modification_History>
     </Identification_Area>
@@ -56,10 +55,10 @@
                 </Internal_Reference>
             </Observing_System_Component>
             <Observing_System_Component>
-                <name>Linear Etalon Imaging Spectral Array for New Horizons</name>
+                <name>Long Range Reconnaissance Imager for New Horizons</name>
                 <type>Instrument</type>
                 <Internal_Reference>
-                    <lid_reference>urn:nasa:pds:context:instrument:nh.leisa</lid_reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:nh.lorri</lid_reference>
                     <reference_type>is_instrument</reference_type>
                 </Internal_Reference>
             </Observing_System_Component>
@@ -71,7 +70,7 @@
 
         <Mission_Area>
             <nh:Mission_Parameters>
-                <nh:mission_phase_name>KEM2 Cruise</nh:mission_phase_name>
+                <nh:mission_phase_name>Cruise to First KBO Encounter</nh:mission_phase_name>
                 <nh:Observation_Parameters>
                     <nh:telemetry_apid>0x000</nh:telemetry_apid>
                     <nh:sequence_id>sequence_id0</nh:sequence_id>
@@ -82,23 +81,8 @@
                         <nh:stop_clock_count>0000000000:00000</nh:stop_clock_count>
                     </nh:Mission_Elapsed_Time>
                     <nh:Detector>
-                        <nh:detector_name>Linear Etalon Imaging Spectral Array</nh:detector_name>
-                        <nh:detector_type>HgCdTe PICNIC array</nh:detector_type>
-                        <nh:Ralph_Details>
-                            <nh:met510 unit="day">49.5</nh:met510>
-                            <nh:hk_packet_is_real>false</nh:hk_packet_is_real>
-                        </nh:Ralph_Details>
-                        <nh:LEISA_Details>
-                            <nh:scan_type>LEISA</nh:scan_type>
-                            <nh:leisa_mode>SUBTRACTED</nh:leisa_mode>
-                            <nh:leisa_offset_1 unit="DN">50</nh:leisa_offset_1>
-                            <nh:leisa_offset_2 unit="DN">50</nh:leisa_offset_2>
-                            <nh:leisa_offset_3 unit="DN">50</nh:leisa_offset_3>
-                            <nh:leisa_offset_4 unit="DN">50</nh:leisa_offset_4>
-                            <nh:leisa_rate unit="ms">50</nh:leisa_rate>
-                            <nh:leisa_side>A</nh:leisa_side>
-                            <nh:leisa_temperature unit="degC">-150.0</nh:leisa_temperature>
-                        </nh:LEISA_Details>
+                        <nh:detector_name>LORRI imager</nh:detector_name>
+                        <nh:detector_type>CCD</nh:detector_type>
                     </nh:Detector>
                     <nh:Spacecraft_State>
                         <nh:thruster_x_enabled>false</nh:thruster_x_enabled>
@@ -109,28 +93,28 @@
                         <nh:relative_control_mode_active>false</nh:relative_control_mode_active>
                         <nh:spacecraft_spin_state>Spinning</nh:spacecraft_spin_state>
                     </nh:Spacecraft_State>
+                    <nh:Radiometric_Conversion_Constants>
+                        <nh:pivot_wavelength unit="Angstrom">6076.2</nh:pivot_wavelength>
+                        <nh:Resolved_Source>
+                            <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom)</nh:units_of_conversion_constants>
+                            <nh:solar_constant>4092000.0</nh:solar_constant>
+                            <nh:jupiter_constant>3605000.0</nh:jupiter_constant>
+                            <nh:pholus_constant>4746000.0</nh:pholus_constant>
+                            <nh:pluto_constant>3955000.0</nh:pluto_constant>
+                            <nh:charon_constant>4039000.0</nh:charon_constant>
+                            <nh:arrokoth_constant>4354000.0</nh:arrokoth_constant>
+                        </nh:Resolved_Source>
+                        <nh:Unresolved_Source>
+                            <nh:units_of_conversion_constants>m/s</nh:units_of_conversion_constants>
+                            <nh:solar_constant>1.03799996516E16</nh:solar_constant>
+                            <nh:jupiter_constant>9.14400040557E15</nh:jupiter_constant>
+                            <nh:pholus_constant>1.20400002165E16</nh:pholus_constant>
+                            <nh:pluto_constant>1.00299995454E16</nh:pluto_constant>
+                            <nh:charon_constant>1.02499995814E16</nh:charon_constant>
+                            <nh:arrokoth_constant>1.10499995174E16</nh:arrokoth_constant>
+                        </nh:Unresolved_Source>
+                    </nh:Radiometric_Conversion_Constants>
                 </nh:Observation_Parameters>
-                <nh:Radiometric_Conversion_Constants>
-                    <nh:pivot_wavelength unit="AU">50</nh:pivot_wavelength>
-                    <nh:Resolved_Source>
-                        <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom/sr)</nh:units_of_conversion_constants>
-                        <nh:solar_constant>-1073741773</nh:solar_constant>
-                        <nh:jupiter_constant>-1073741773</nh:jupiter_constant>
-                        <nh:pholus_constant>-1073741773</nh:pholus_constant>
-                        <nh:pluto_constant>-1073741773</nh:pluto_constant>
-                        <nh:charon_constant>-1073741773</nh:charon_constant>
-                        <nh:arrokoth_constant>-1073741773</nh:arrokoth_constant>
-                    </nh:Resolved_Source>
-                    <nh:Unresolved_Source>
-                        <nh:units_of_conversion_constants>(DN/s)/(erg/cm^2/s/Angstrom)</nh:units_of_conversion_constants>
-                        <nh:solar_constant>-1073741773</nh:solar_constant>
-                        <nh:jupiter_constant>-1073741773</nh:jupiter_constant>
-                        <nh:pholus_constant>-1073741773</nh:pholus_constant>
-                        <nh:pluto_constant>-1073741773</nh:pluto_constant>
-                        <nh:charon_constant>-1073741773</nh:charon_constant>
-                        <nh:arrokoth_constant>-1073741773</nh:arrokoth_constant>
-                    </nh:Unresolved_Source>
-                </nh:Radiometric_Conversion_Constants>
             </nh:Mission_Parameters>
         </Mission_Area>
 

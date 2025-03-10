@@ -8,12 +8,22 @@ observational labels.
 
 The issue-related tests include:
 
+**ConversionConstantsUnits_Fail.xml**
+
+  Verify that incorrect values for *nh:units_of_conversion_constants* produce errors.
+
 **MVICmc0Proc_DEPREC_FAIL.xml**
 
 **MVICmpfProv_DEPREC_FAIL.xml**
 
   Verify that the original MVIC_Calibration_Constants class is now deprecated in 
-  favor of the Radiometric_Conversion_Constants class.
+  favor of the Radiometric_Conversion_Constants class. These files also demonstrate
+  that units of measure are required on the gc_scan_rate and target_motion_rate
+  attronites/
+  
+**SWAPdetectorName_FAIL.xml**
+
+  Verify that the old nh:detector_name for SWAP is flagged as not appropriate in new data.
 
 ## *examples/* Directory
 

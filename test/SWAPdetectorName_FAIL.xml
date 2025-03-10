@@ -17,23 +17,13 @@
 <Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
     xmlns:nh="http://pds.nasa.gov/pds4/mission/nh/v1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
+    
     <Identification_Area>
         <logical_identifier>urn:nasa:pds:nh_swap:kem2_cal:swa_0556675232_0x586_sci</logical_identifier>
-        <version_id>2.0</version_id>
+        <version_id>1.0</version_id>
         <title>New Horizons SWAP Sample Calibrated Histogram Data</title>
         <information_model_version>[IM VERSION]</information_model_version>
         <product_class>Product_Observational</product_class>
-        
-        <Modification_History>
-            <Modification_Detail>
-                <modification_date>2025-02-27</modification_date>
-                <version_id>2.0</version_id>
-                <description>
-                    ACR: Modified to reflect version 1.2.0.0 of the New Horizons mission dictionary.
-                </description>
-            </Modification_Detail>
-        </Modification_History>
     </Identification_Area>
 
     <Observation_Area>
@@ -104,15 +94,14 @@
                         <nh:stop_clock_count>0556675295:00000</nh:stop_clock_count>
                     </nh:Mission_Elapsed_Time>
                     <nh:Detector>
-                        <nh:detector_name>SWAP Channel Electron Multiplier (CEM)</nh:detector_name>
+                        <!-- The detector_name value here should produce an error indicating a different value should be used.  -->
+                        <nh:detector_name>Solar Wind Around Pluto</nh:detector_name>
                         <nh:detector_type>Electrostatic</nh:detector_type>
                         <nh:SWAP_Details>
                             <nh:sweep_samples_count>1284</nh:sweep_samples_count>
                         </nh:SWAP_Details>
                     </nh:Detector>
-                    <nh:Spacecraft_State>
-                        <nh:spacecraft_spin_state>3-Axis</nh:spacecraft_spin_state>
-                    </nh:Spacecraft_State>
+                    <nh:Spacecraft_State/>
                 </nh:Observation_Parameters>
             </nh:Mission_Parameters>
         </Mission_Area>
