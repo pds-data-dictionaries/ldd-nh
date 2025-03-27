@@ -34,6 +34,9 @@ Continuing development to support migration, KEM2 extended mission, and to clean
   NH archiving team and the REX chapter of the ICD.
 * Modified the definition of the Radiometric_Conversion_Constants class to explicitly note 
   that it is used for both MVIC and LORRI data.
+* Added a door_position attribute to the Alice_Details class. While technically optional, this
+  attribute should be present in all new data labels written. It will be made required with 
+  version 2.0 of this dictionary.
 * Updated regression tests and examples to correspond to the 1.2.0.0 version of the NH mission 
 * Updated documentation
 
