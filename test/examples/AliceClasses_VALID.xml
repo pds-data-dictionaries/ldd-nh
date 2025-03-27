@@ -86,6 +86,7 @@
                         <nh:detector_type>Microchannel plate</nh:detector_type>
                         <nh:Alice_Details>
                             <nh:aperture>Airglow</nh:aperture>
+                            <nh:door_position>Open</nh:door_position>
                         </nh:Alice_Details>
                     </nh:Detector>
                     <nh:Spacecraft_State>

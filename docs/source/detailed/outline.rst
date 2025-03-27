@@ -33,6 +33,7 @@ they are included in a label.
               
               <nh:Alice_Details>
                   <nh:aperture>
+                  <nh:door_position>
               
               <nh:Ralph_Details>
                   <nh:met510>
