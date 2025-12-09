@@ -1,0 +1,59 @@
+
+PDS Validate Tool Report
+
+Configuration:
+   Version      4.0.8
+   Date         2025-12-09T13:57:22Z
+   CLI args     -R pds4.label --skip-content-validation -x /home/runner/work/ldd-nh/ldd-nh/build/development/3d9b6692a518e6a6354e8089812364e690bd2729/1.19.0.0/PDS4_NH_1J00_1200.xsd /tmp/PDS4_PDS_1J00.xsd -S /home/runner/work/ldd-nh/ldd-nh/build/development/3d9b6692a518e6a6354e8089812364e690bd2729/1.19.0.0/PDS4_NH_1J00_1200.sch /tmp/PDS4_PDS_1J00.sch -t /home/runner/work/ldd-nh/ldd-nh/test//examples/SWAPhistProc_VALID.xml
+
+Parameters:
+   Targets                        [file:/home/runner/work/ldd-nh/ldd-nh/test/examples/SWAPhistProc_VALID.xml]
+   Rule Type                      pds4.label
+   User Specified Schemas         [file:/home/runner/work/ldd-nh/ldd-nh/build/development/3d9b6692a518e6a6354e8089812364e690bd2729/1.19.0.0/PDS4_NH_1J00_1200.xsd, file:/tmp/PDS4_PDS_1J00.xsd]
+   User Specified Schematrons     [file:/home/runner/work/ldd-nh/ldd-nh/build/development/3d9b6692a518e6a6354e8089812364e690bd2729/1.19.0.0/PDS4_NH_1J00_1200.sch, file:/tmp/PDS4_PDS_1J00.sch]
+   Severity Level                 WARNING
+   Recurse Directories            true
+   File Filters Used              [*.xml, *.XML]
+   Data Content Validation        off
+   Product Level Validation       on
+   Max Errors                     100000
+   Registered Contexts File       /tmp/validate-4.0.8/resources/registered_context_products.json
+
+
+
+Product Level Validation Results
+
+  PASS: file:/home/runner/work/ldd-nh/ldd-nh/test/examples/SWAPhistProc_VALID.xml (urn:nasa:pds:nh_swap:kem2_cal:swa_0556675232_0x586_sci::2.0)
+      WARNING  [warning.label.schema]   Cannot check versioning because no Schema given.
+      WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
+      WARNING  [warning.label.context_ref_mismatch]   line 58: Context reference name mismatch. Value: 'New Horizons Kuiper Belt Extended Mission 2' Expected one of: '[NH_KEM, The New Horizons Kuiper Belt Extended Mission 1 (KEM1), New Horizons KEM, New Horizons Kuiper Belt Extended Mission (KEM1), New Horizons Kuiper Belt Extended Mission 1, NH KEM1, New Horizons Kuiper Belt Extended Mission]'
+      WARNING  [warning.label.context_ref_mismatch]   line 71: Context reference name mismatch. Value: 'New Horizons Spacecraft' Expected one of: '[The New Horizons (NH) Spacecraft, NEW HORIZONS]'
+      WARNING  [warning.label.context_ref_mismatch]   line 79: Context reference name mismatch. Value: 'SWAP' Expected one of: '[SOLAR WIND AROUND PLUTO, SOLAR WIND AROUND PLUTO for NH, The Solar Wind Around Pluto (SWAP) Instrument for New Horizons, urn:nasa:pds:context:instrument:swap.nh]'
+        1 product validation(s) completed
+
+Summary:
+
+  1 product(s)
+  0 error(s)
+  5 warning(s)
+
+  Product Validation Summary:
+    1          product(s) passed
+    0          product(s) failed
+    0          product(s) skipped
+    1          product(s) total
+
+  Referential Integrity Check Summary:
+    0          check(s) passed
+    0          check(s) failed
+    0          check(s) skipped
+    0          check(s) total
+
+  Message Types:
+    3            warning.label.context_ref_mismatch
+    1            warning.label.missing_schematron_spec
+    1            warning.label.schema
+
+End of Report
+Completed execution in 5768 ms
+

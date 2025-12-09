@@ -1,0 +1,59 @@
+
+PDS Validate Tool Report
+
+Configuration:
+   Version      4.0.8
+   Date         2025-12-09T13:56:58Z
+   CLI args     -R pds4.label --skip-content-validation -x /home/runner/work/ldd-nh/ldd-nh/build/development/3d9b6692a518e6a6354e8089812364e690bd2729/1.20.0.0/PDS4_NH_1K00_1200.xsd /tmp/PDS4_PDS_1K00.xsd -S /home/runner/work/ldd-nh/ldd-nh/build/development/3d9b6692a518e6a6354e8089812364e690bd2729/1.20.0.0/PDS4_NH_1K00_1200.sch /tmp/PDS4_PDS_1K00.sch -t /home/runner/work/ldd-nh/ldd-nh/test//examples/LEISAProc_VALID.xml
+
+Parameters:
+   Targets                        [file:/home/runner/work/ldd-nh/ldd-nh/test/examples/LEISAProc_VALID.xml]
+   Rule Type                      pds4.label
+   User Specified Schemas         [file:/home/runner/work/ldd-nh/ldd-nh/build/development/3d9b6692a518e6a6354e8089812364e690bd2729/1.20.0.0/PDS4_NH_1K00_1200.xsd, file:/tmp/PDS4_PDS_1K00.xsd]
+   User Specified Schematrons     [file:/home/runner/work/ldd-nh/ldd-nh/build/development/3d9b6692a518e6a6354e8089812364e690bd2729/1.20.0.0/PDS4_NH_1K00_1200.sch, file:/tmp/PDS4_PDS_1K00.sch]
+   Severity Level                 WARNING
+   Recurse Directories            true
+   File Filters Used              [*.xml, *.XML]
+   Data Content Validation        off
+   Product Level Validation       on
+   Max Errors                     100000
+   Registered Contexts File       /tmp/validate-4.0.8/resources/registered_context_products.json
+
+
+
+Product Level Validation Results
+
+  PASS: file:/home/runner/work/ldd-nh/ldd-nh/test/examples/LEISAProc_VALID.xml (urn:nasa:pds:nh_leisa:kem1_cal:lsb_0408606595_0x53c_sci::2.0)
+      WARNING  [warning.label.schema]   Cannot check versioning because no Schema given.
+      WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
+      WARNING  [warning.label.context_ref_mismatch]   line 55: Context reference name mismatch. Value: 'New Horizons Spacecraft' Expected one of: '[The New Horizons (NH) Spacecraft, NEW HORIZONS]'
+      WARNING  [warning.label.context_ref_mismatch]   line 64: Context reference name mismatch. Value: 'LEISA' Expected one of: '[The Linear Etalon Imaging Spectral Array (LEISA) for New Horizons, LINEAR ETALON IMAGING SPECTRAL ARRAY for NH, LINEAR ETALON IMAGING SPECTRAL ARRAY, urn:nasa:pds:context:instrument:leisa.nh]'
+      WARNING  [warning.label.context_ref_mismatch]   line 75: Context reference name mismatch. Value: 'Asteroid 486958 (2014 MU69)' Expected one of: '[2014 MU69, NAIF ID 2486958, Ultima Thule, Minor Planet 486958, (486958) 2014 MU69, (486958) Arrokoth, Arrokoth]'
+        1 product validation(s) completed
+
+Summary:
+
+  1 product(s)
+  0 error(s)
+  5 warning(s)
+
+  Product Validation Summary:
+    1          product(s) passed
+    0          product(s) failed
+    0          product(s) skipped
+    1          product(s) total
+
+  Referential Integrity Check Summary:
+    0          check(s) passed
+    0          check(s) failed
+    0          check(s) skipped
+    0          check(s) total
+
+  Message Types:
+    3            warning.label.context_ref_mismatch
+    1            warning.label.missing_schematron_spec
+    1            warning.label.schema
+
+End of Report
+Completed execution in 5400 ms
+
