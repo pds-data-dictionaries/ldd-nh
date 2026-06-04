@@ -35,6 +35,24 @@
                         and Jupiter phases of the mission that have an unresolved discrepancy in units 
                         for these constants in the MVIC labels. The constants are being omitted from the 
                         PDS4 v1.0 labels in these cases until the discrepancy can be resolved.
+      2024-06-04   ACR  Multiple minor changes to clear issues:
+      
+                        #330 Change some Observational_Parameters elements to optional
+                           - Modified constraints in nh:Observational_Parameters for
+                             elements nh:sequence_id, nh:observation_description, and
+                             nh:Mission_Elapsed_Time
+      
+                        #349 Allow multiple mission_phase_name values
+                           - Modified constraint in nh:Mission_Parameters class
+                        
+                        #352 Add SWAP ApID Translation
+                           - Added nh:telemetry_apid_translation as optional attribute in 
+                             nh:Observation_Parameters
+                             
+                        #36 (in local repo) nh:target_motion_rate...
+                          - Removed vaild max/min in definition because different instruments
+                            have differing ranges with vastly different units of measure. Schema
+                            validation cannot validate based on unit of measure or context.
       
       === Version 1.2.0.0
       
@@ -105,7 +123,7 @@
                        parent class nh:LORRI_Details (of which it was the only member).
   </comment>
 
-  <last_modification_date_time>2024-06-20</last_modification_date_time>
+  <last_modification_date_time>2026-06-04</last_modification_date_time>
   
   <!-- Attributes -->
 
@@ -1454,18 +1472,20 @@
   
   <DD_Attribute>
     <name>target_motion_rate</name>
-    <version_id>1.1</version_id>
+    <version_id>1.2</version_id>
     <local_identifier>target_motion_rate</local_identifier>
     <nillable_flag>false</nillable_flag>
-    <submitter_name>MKC</submitter_name>
+    <submitter_name>MKC, ACR</submitter_name>
     <definition>
       The nh:target_motion_rate attribute is the rate of motion of the target with respect to the instrument detector in units of rad/s. 
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Real</value_data_type>
+      <!--
       <minimum_value>0.000001</minimum_value>
       <maximum_value>0.001100</maximum_value>
+      -->
       <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
       <specified_unit_id>rad/s</specified_unit_id>
     </DD_Value_Domain>
@@ -1539,6 +1559,23 @@
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <pattern>0x[0-9A-Za-z]{3}</pattern>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>telemetry_apid_translation</name>
+    <version_id>1.0</version_id>
+    <local_identifier>telemetry_apid_translation</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>ACR</submitter_name>
+    <definition>
+      The nh:telemetry_apid_translation is an optional attribute that provides
+      a human-readable indication of the mode of activity corresponding to the
+      nh:telemetry_apid value.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
   
@@ -2078,13 +2115,14 @@
   
   <DD_Class>
     <name>Observation_Parameters</name>
-    <version_id>1.1</version_id>
+    <version_id>1.2</version_id>
     <local_identifier>Observation_Parameters</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
       The nh:Observation_Parameters class collects observational metadata that
       is specific to the mission, spacecraft, and instrument which produced 
-      the data product.
+      the data product. Some elements are optional to accommodate higher-level
+      producet for which particular attributes might not be applicable.
     </definition>
     <DD_Association>
       <identifier_reference>telemetry_apid</identifier_reference>
@@ -2093,21 +2131,27 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
+      <identifier_reference>telemetry_apid_translation</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
       <identifier_reference>sequence_id</identifier_reference>
       <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
+      <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>observation_description</identifier_reference>
       <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
+      <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>Mission_Elapsed_Time</identifier_reference>
       <reference_type>component_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
+      <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
@@ -2431,7 +2475,7 @@
       <identifier_reference>mission_phase_name</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>Observation_Parameters</identifier_reference>

@@ -19,6 +19,7 @@ they are included in a label.
       
       <nh:Observation_Parameters>
           <nh:telemetry_apid>
+          <nh:telemetry_apid_translation>
           <nh:sequence_id>
           <nh:observation_description>
           

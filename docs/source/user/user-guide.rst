@@ -92,7 +92,8 @@ class names are in title case.
 
 This class contains:
 
-- <nh:telemetry_appid>
+- <nh:telemetry_apid>
+- <nh:telemetry_apid_translation>
 - <nh:sequence_id>
 - <nh:observation_description>
 - <nh:Mission_Elapsed_Time>
@@ -102,9 +103,10 @@ This class contains:
 None of these components is repeatable; all are expected to be present in all raw
 and processed/calibrated data labels.
 
-<nh:telemetry_appid>, <nh:sequence_id>, and <nh:observation_description>
+<nh:telemetry_appid>, <nh:telemetry_apid_translation, <nh:sequence_id>, and <nh:observation_description>
   These attributes are provided primarily for provenance and to provide some minimal
-  description of planned activities for the end user. The *nh:telementry_appid* is
+  description of planned activities for the end user. The *nh:telementry_apid* and
+  *nh:telemetry_apid_translation* are
   tied to instrument operating mode and to onboard processing like data compression. 
   The mission documentation for each instrument will provide further detail 
   if desired. The *<nh:sequence_id>* ties into the instrument observing plan, and
