@@ -13,7 +13,7 @@ mission documentation and metadata.
 
 ----
 
-   **Note** *that the New Horizons legacy data migration is in its early stages, with* 
+   **Note** *that the New Horizons legacy data migration is ongoing, with* 
    *labels being designed for each instrument in turn. This namespace is in active* 
    *development and will continue to be so for the forseeable future.* 
 
@@ -92,7 +92,8 @@ class names are in title case.
 
 This class contains:
 
-- <nh:telemetry_appid>
+- <nh:telemetry_apid>
+- <nh:telemetry_apid_translation>
 - <nh:sequence_id>
 - <nh:observation_description>
 - <nh:Mission_Elapsed_Time>
@@ -102,9 +103,10 @@ This class contains:
 None of these components is repeatable; all are expected to be present in all raw
 and processed/calibrated data labels.
 
-<nh:telemetry_appid>, <nh:sequence_id>, and <nh:observation_description>
+<nh:telemetry_appid>, <nh:telemetry_apid_translation, <nh:sequence_id>, and <nh:observation_description>
   These attributes are provided primarily for provenance and to provide some minimal
-  description of planned activities for the end user. The *nh:telementry_appid* is
+  description of planned activities for the end user. The *nh:telementry_apid* and
+  *nh:telemetry_apid_translation* are
   tied to instrument operating mode and to onboard processing like data compression. 
   The mission documentation for each instrument will provide further detail 
   if desired. The *<nh:sequence_id>* ties into the instrument observing plan, and
@@ -173,6 +175,10 @@ This class contains:
   in processing that particular frame. For framing observations, bias is measured 
   during each observations using shielded pixels on either edge of the array.
 
+**Note:** In the early launch and Jupiter phases of the MVIC data, this class will
+not contain the complete metadata for *<nh:Framing_Biases>* found later phases 
+because it was not included in either the original PDS3 labels or FITS headers.
+
 
 .. _radiometric-conversion-constants:
  
@@ -227,6 +233,10 @@ This class contains:
     - Charon
     - Arrokoth
 
+**Note:** The MVIC PDS4 labels for the launch and Jupiter mission phases will not
+contain the *<nh:Resolved_Source>* and *<nh:Unresolved_Source>* metadata
+because of an unresolved discrepancy in definitions between these early phases
+and later phases of the mission.
 
 .. _rex-radiometry-information:
  
