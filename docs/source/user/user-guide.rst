@@ -13,7 +13,7 @@ mission documentation and metadata.
 
 ----
 
-   **Note** *that the New Horizons legacy data migration is in its early stages, with* 
+   **Note** *that the New Horizons legacy data migration is ongoing, with* 
    *labels being designed for each instrument in turn. This namespace is in active* 
    *development and will continue to be so for the forseeable future.* 
 
@@ -173,6 +173,10 @@ This class contains:
   in processing that particular frame. For framing observations, bias is measured 
   during each observations using shielded pixels on either edge of the array.
 
+**Note:** In the early launch and Jupiter phases of the MVIC data, this class will
+not contain the complete metadata for *<nh:Framing_Biases>* found later phases 
+because it was not included in either the original PDS3 labels or FITS headers.
+
 
 .. _radiometric-conversion-constants:
  
@@ -227,6 +231,10 @@ This class contains:
     - Charon
     - Arrokoth
 
+**Note:** The MVIC PDS4 labels for the launch and Jupiter mission phases will not
+contain the *<nh:Resolved_Source>* and *<nh:Unresolved_Source>* metadata
+because of an unresolved discrepancy in definitions between these early phases
+and later phases of the mission.
 
 .. _rex-radiometry-information:
  

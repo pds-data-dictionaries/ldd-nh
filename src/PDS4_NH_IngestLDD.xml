@@ -6,7 +6,7 @@
   xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd">
   
   <name>New Horizons Primary and Extended Missions Dictionary</name>
-  <ldd_version_id>1.2.0.0</ldd_version_id>
+  <ldd_version_id>1.2.1.0</ldd_version_id>
   <dictionary_type>Mission</dictionary_type>
   <full_name>Anne Raugh</full_name>
   <steward_id>sbn</steward_id>
@@ -28,6 +28,13 @@
     Modification History:
     
       2024-04-03  ACR  Begin history
+      
+      === Version 1.2.1.0
+      
+      2024-06-03   ACR  Minor tweaks to Radiometric_Conversion_Constants class to accommodate the launch 
+                        and Jupiter phases of the mission that have an unresolved discrepancy in units 
+                        for these constants in the MVIC labels. The constants are being omitted from the 
+                        PDS4 v1.0 labels in these cases until the discrepancy can be resolved.
       
       === Version 1.2.0.0
       
@@ -1909,7 +1916,7 @@
     <DD_Association>
       <identifier_reference>Resolved_Source</identifier_reference>
       <reference_type>component_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
+      <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
@@ -1922,7 +1929,7 @@
   
   <DD_Class>
     <name>Radiometric_Conversion_Constants</name>
-    <version_id>1.1</version_id>
+    <version_id>1.2</version_id>
     <local_identifier>Radiometric_Conversion_Constants</local_identifier>
     <submitter_name>ACR</submitter_name>
     <definition>
@@ -1947,13 +1954,13 @@
     <DD_Association>
       <identifier_reference>Resolved_Source</identifier_reference>
       <reference_type>component_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
+      <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>Unresolved_Source</identifier_reference>
       <reference_type>component_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
+      <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
