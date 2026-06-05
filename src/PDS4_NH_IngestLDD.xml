@@ -31,16 +31,18 @@
       
       === Version 1.2.1.0
       
-      2024-06-03   ACR  Minor tweaks to Radiometric_Conversion_Constants class to accommodate the launch 
+      2026-06-03   ACR  Minor tweaks to Radiometric_Conversion_Constants class to accommodate the launch 
                         and Jupiter phases of the mission that have an unresolved discrepancy in units 
                         for these constants in the MVIC labels. The constants are being omitted from the 
                         PDS4 v1.0 labels in these cases until the discrepancy can be resolved.
-      2024-06-04   ACR  Multiple minor changes to clear issues:
+      2026-06-04   ACR  Multiple minor changes to clear issues:
       
                         #330 Change some Observational_Parameters elements to optional
                            - Modified constraints in nh:Observational_Parameters for
                              elements nh:sequence_id, nh:observation_description, and
-                             nh:Mission_Elapsed_Time
+                             nh:Mission_Elapsed_Time; fixed Rule definition "check_bias"
+                             to allow nh:Framing_Biases to be absent in framing observations,
+                             and still forbidden in TDI scans.
       
                         #349 Allow multiple mission_phase_name values
                            - Modified constraint in nh:Mission_Parameters class
@@ -53,6 +55,8 @@
                           - Removed vaild max/min in definition because different instruments
                             have differing ranges with vastly different units of measure. Schema
                             validation cannot validate based on unit of measure or context.
+                            
+      2026-06-05  ACR  Removed commented-out code removed in previous versions.                           
       
       === Version 1.2.0.0
       
@@ -123,7 +127,7 @@
                        parent class nh:LORRI_Details (of which it was the only member).
   </comment>
 
-  <last_modification_date_time>2026-06-04</last_modification_date_time>
+  <last_modification_date_time>2026-06-05</last_modification_date_time>
   
   <!-- Attributes -->
 
@@ -164,77 +168,6 @@
       </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
-  
-  <!-- Removed (unused) in Version 1.2.0.0
-  <DD_Attribute>
-    <name>approx_target_name</name>
-    <version_id>1.0</version_id>
-    <local_identifier>approx_target_name</local_identifier>
-    <nillable_flag>true</nillable_flag>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:approx_target_name attribute is the best guess of the intended
-      target of the observation made by the automated data processing pipeline.
-      
-      *** NOTE that "UNK" should NEVER be used as an attribute value - the value 
-      *** should be nil with a nilReason of "unknown".
-      
-      If the best guess at the target is unknown, the attribute will be UNK i.e.
-      unknown. If there was no target, i.e. for some instances of instrument
-      calibration activities, the attribute will be nilled.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  
-  <DD_Attribute>
-    <name>approx_target_line</name>
-    <version_id>1.0</version_id>
-    <local_identifier>approx_target_line</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:approx_target_line attribute provides the approximate pixel
-      position in the image of the center of the best guess target (as specified
-      by nh:approx_target_name) in one-based absolute units along the "Line"
-      axis as defined in the primary_image Array object. The origin is in the
-      lower left of the image when disp:horizontal_display_direction is "Left to
-      Right" and disp:vertical_display_direction is "Bottom to Top".
-      
-      If there is no best guess at the target position, the attribute will be
-      omitted.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Integer</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  
-  <DD_Attribute>
-    <name>approx_target_sample</name>
-    <version_id>1.0</version_id>
-    <local_identifier>approx_target_sample</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:approx_target_sample attribute provides the approximate pixel
-      position in the image of the center of the best guess target (as specified
-      by nh:approx_target_name) in one-based absolute units along the "Sample"
-      axis as defined in the primary_image Array object. The origin is in the
-      lower left of the image when disp:horizontal_display_direction is "Left to
-      Right" and disp:vertical_display_direction is "Bottom to Top".
-      
-      If there is no best guess at the target position, the attribute will be
-      omitted.
-    </definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Integer</value_data_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  -->
 
   <DD_Attribute>
     <name>agc_gain_setting</name>
@@ -1024,14 +957,6 @@
         <value>Pluto Encounter</value>
         <value_meaning>New Horizons Mission (NH) Pluto Encounter Phase</value_meaning>
       </DD_Permissible_Value>
-      <!-- This value should not be used. I'm hoping it hasn't been...
-      <DD_Permissible_Value>
-        <value>KEM1 Cruise</value>
-        <value_meaning>
-          New Horizons Kuiper Belt Extended Mission 1 (KEM1) Cruise Phase
-        </value_meaning>
-      </DD_Permissible_Value>
-      -->
       <DD_Permissible_Value>
         <value>Cruise to First KBO Encounter</value>
         <value_meaning>New Horizons Kuiper Belt Extended Mission 1 (KEM1) Cruise to First KBO Encounter Phase</value_meaning>
@@ -1850,37 +1775,6 @@
     </DD_Association>
   </DD_Class>
   
-  <!-- Removed (unused) in Version 1.2.0.0
-  <DD_Class>
-    <name>LORRI_Target_Information</name>
-    <version_id>1.0</version_id>
-    <local_identifier>LORRI_Target_Information</local_identifier>
-    <submitter_name>BJH</submitter_name>
-    <definition>
-      The nh:LORRI_Target_Information class collects attributes related to the
-      target of the LORRI observation.
-    </definition>
-    <DD_Association>
-      <identifier_reference>approx_target_name</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>approx_target_line</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>approx_target_sample</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-  </DD_Class>
-  -->
-  
   <DD_Class>
     <name>MVIC_Calibration_Information</name>
     <version_id>1.0</version_id>
@@ -2160,14 +2054,6 @@
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
-    <!-- Removed (unused) Version 1.2.0.0
-    <DD_Association>
-      <identifier_reference>LORRI_Target_Information</identifier_reference>
-      <reference_type>component_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    -->
     <DD_Association>
       <identifier_reference>Spacecraft_State</identifier_reference>
       <reference_type>component_of</reference_type>
@@ -2585,8 +2471,9 @@
     <rule_context>nh:MVIC_Calibration_Information</rule_context>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
-      <rule_test>if (starts-with(//nh:MVIC_Details/nh:scan_type,'TDI')) then (nh:tdi_median_bias_level and not(nh:Framing_Biases)) else (nh:Framing_Biases and not(nh:tdi_median_bias_level))</rule_test>
-      <rule_message>In MVIC_Calibration_Information, time delay integration (TDI) scans data must include the attribute nh:tdi_median_bias_level and framing observations must include the nh:Framing_Biases class. Both classes should never used together.</rule_message>
+      <rule_test>if (starts-with(//nh:MVIC_Details/nh:scan_type,'TDI')) then (nh:tdi_median_bias_level and not(nh:Framing_Biases)) else (not(nh:tdi_median_bias_level))</rule_test>
+      <rule_message>In MVIC_Calibration_Information, time delay integration (TDI) scans data must include the attribute nh:tdi_median_bias_level and framing observations must not.
+        TDI scans must not contain the nh:Framing_Biases class (framing observations generally should, but sometimes do not).</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
   
